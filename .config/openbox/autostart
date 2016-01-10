@@ -1,9 +1,10 @@
 xfdesktop&
 xfce4-panel&
-urxvt -e tmux&
+termite -e tmux&
 xset m 0 5
 xset r rate 200 75
 xbindkeys
 setxkbmap -option caps:escape
 redshift -l 57.7088493,11.9744162
 setxkbmap se
+xcompmgr -n&

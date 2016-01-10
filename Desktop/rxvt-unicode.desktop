@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=rxvt-unicode
+Comment=rxvt clone with xft and unicode support
+Exec=termite -e tmux
+Icon=xterm-color
+Path=
+Terminal=false
+StartupNotify=false
