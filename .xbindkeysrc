@@ -25,7 +25,7 @@
 "sudo /sbin/reboot"
 	Mod4 + r
 
-"termite -e tmux"
+"termite"
 	Mod4 + t
 
 "sudo /sbin/hibernate"

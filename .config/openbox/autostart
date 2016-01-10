@@ -1,6 +1,6 @@
 xfdesktop&
 xfce4-panel&
-termite -e tmux&
+termite&
 xset m 0 5
 xset r rate 200 75
 xbindkeys
