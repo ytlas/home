@@ -35,6 +35,7 @@ alias clean='${emerge} -av --depclean'
 alias update='sudo etc-update'
 alias news='sudo eselect news read'
 alias layman='sudo layman'
+alias search='${emerge} --search'
 #Power management
 alias getbat='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias poweroff='sudo poweroff'
