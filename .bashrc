@@ -50,6 +50,9 @@ alias torrent='transmission-daemon -p 8000'
 #Miscellaneous
 alias reloadXB='killall xbindkeys&&xbindkeys'
 
+#powerline bash
+. /usr/lib64/python3.4/site-packages/powerline/bindings/bash/powerline.sh
+
 #-Functions-
 #Mounts cloud in ~/cloud with sshfs
 function cloud(){
