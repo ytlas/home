@@ -4,7 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
+new_window none
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -107,8 +107,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 # reload the configuration file
 bindsym $mod+Shift+r reload
 # exit i3 (logs you out of your X session)
-bindsym $mod+p exec "'i3-msg exit'"
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -144,3 +142,10 @@ mode "resize" {
 
 #fun stuff
 bindsym $mod+Shift+b exec "chromium"
+bindsym $mod+Up exec "ponymix --max-volume=500 increase 5"
+bindsym $mod+Down exec "ponymix --max-volume=500 decrease 5"
+bindsym $mod+Right exec "sudo adjbacklight +5%"
+bindsym $mod+Left exec "sudo adjbacklight -5%"
+bindsym $mod+q exec "i3-msg exit"
+exec "termite"
+exec "redshift -l 57:12"
