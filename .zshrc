@@ -1,16 +1,16 @@
-#peep
+source ~/.zprofile
 autoload -U compinit
 compinit
 
 setopt prompt_subst
-PROMPT='$(cat /sys/class/power_supply/BAT0/capacity)[%D{%L:%M:%S}]%f:%F${${(%):-%~}}%f$ %b'
+#PROMPT='$(cat /sys/class/power_supply/BAT0/capacity)[%D{%L:%M:%S}]%f:%F${${(%):-%~}}%f$ %b'
 TMOUT=1
 TRAPALRM() {
     zle reset-prompt
 }
-#-Fun stuff-
 cd ${HOME}
 
+#-Fuck-
 export PATH=${PATH}:${HOME}/bin
 export EDITOR='nvim'
 export WINEDLLOVERRIDES='winemenubuilder.exe=d'
