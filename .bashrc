@@ -42,7 +42,7 @@ alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias hibernate='sudo echo "mem">/sys/power/state'
 #Applications
-alias flix='peerflix -kd'
+alias flix='peerflix -md'
 alias steam='env LD_LIBRARY_PATH="/usr/lib32/opengl/nvidia/lib" nohup ~/.steam/steam/steam.sh>/dev/null 2>&1&'
 alias teamspeak='nohup /usr/share/teamspeak/ts3client_runscript.sh>/dev/null 2>&1&'
 alias stepmania='nohup /usr/local/stepmania-5.0/stepmania>/dev/null 2>&1&'
@@ -104,7 +104,7 @@ function stream(){
 	    printf "You didn't specify a quality: *stream \033[0;32mstreamer \033[0;34mquality\033[0m*\n"
 	else
 	    printf "Attempting to play twitch.tv/\033[0;32m${1}\033[0m in \033[0;34m${2}\033[0m quality...\n"
-	    nohup livestreamer -p mpv http://www.twitch.tv/${1} ${2}>/dev/null 2>&1&
+	    nohup livestreamer -p "mplayer" http://www.twitch.tv/${1} ${2}>/dev/null 2>&1&
 	fi
     fi
 }
