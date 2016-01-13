@@ -10,6 +10,7 @@ new_window none
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod control
+set $mod2 mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -141,14 +142,18 @@ mode "resize" {
 
 
 #fun stuff
-bindsym $mod+Shift+b exec "chromium-browser"
 bindsym $mod+Up exec "ponymix --max-volume=500 increase 5"
 bindsym $mod+Down exec "ponymix --max-volume=500 decrease 5"
 bindsym $mod+Right exec "sudo adjbacklight +5%"
 bindsym $mod+Left exec "sudo adjbacklight -5%"
 bindsym $mod+q exec "i3-msg exit"
-bindsym $mod+p exec "sudo poweroff"
-bindsym $mod+r exec "sudo reboot"
-bindsym $mod+o exec "xlock"
-exec "termite"
+bindsym $mod+d exec "dmenu_run"
+
+bindsym $mod2+b exec "chromium-browser"
+bindsym $mod2+p exec "sudo poweroff"
+bindsym $mod2+r exec "sudo reboot"
+bindsym $mod2+l exec "dm-tool lock"
+exec "rxvt"
 exec "redshift -l 57:12"
+exec "xset m 0 5&&xset r rate 200 75"
+exec "setxkbmap -option caps:escape&&setxkbmap se"
