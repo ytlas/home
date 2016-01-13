@@ -7,6 +7,8 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
 call vundle#end()
 filetype plugin indent on
 set shiftwidth=4
@@ -39,6 +41,4 @@ set nocompatible
 syntax enable
 let g:airline#extensions#tabline#enabled = 1
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | terminal
 autocmd TermOpen * set bufhidden=hide
