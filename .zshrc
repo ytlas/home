@@ -3,9 +3,11 @@ autoload -U compinit
 compinit
 
 setopt prompt_subst
-PROMPT='$(date)@%n>'
+setopt hist_ignore_all_dups
+#PROMPT='$(date)@%n>'
 #PROMPT='$(cat /sys/class/power_supply/BAT0/capacity)[%D{%L:%M:%S}]%f:%F${${(%):-%~}}%f$ %b'
-TMOUT=1
+#PROMPT='%F{magenta}{%f$(if [[ $(cat /sys/class/power_supply/BAT0/status) == "Discharging" ]];then;echo "%F{red}Discharging%f";else;echo "%F{green}Charging%f";fi) [%F{cyan}$(cat /sys/class/power_supply/BAT0/capacity)%f]%F{magenta}}%f--%F{magenta}{%F{blue}$(date +"%H:%M 20%y-%m-%d")%f%F{magenta}}%f--%F{yellow}%n%f@%F{red}${PWD}%f>'
+TMOUT=60
 TRAPALRM() {
     zle reset-prompt
 }
@@ -17,6 +19,9 @@ export EDITOR='nvim'
 export WINEDLLOVERRIDES='winemenubuilder.exe=d'
 export DISPLAY=:0
 export GTK_THEME=Raleigh
+export HISTSIZE=2000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
 
 #-RC vars-
 emerge='sudo apt-get'
@@ -24,7 +29,7 @@ emerge='sudo apt-get'
 #-Aliases-
 #Making life easier..
 alias sudo='sudo '
-alias vi='/usr/bin/nvim'
+alias vi='nvim'
 alias cp='cp -av'
 alias rm='sudo rm -rfv'
 alias mv='mv -v'
