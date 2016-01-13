@@ -3,6 +3,7 @@ autoload -U compinit
 compinit
 
 setopt prompt_subst
+PROMPT='$(date)@%n>'
 #PROMPT='$(cat /sys/class/power_supply/BAT0/capacity)[%D{%L:%M:%S}]%f:%F${${(%):-%~}}%f$ %b'
 TMOUT=1
 TRAPALRM() {
@@ -18,7 +19,7 @@ export DISPLAY=:0
 export GTK_THEME=Raleigh
 
 #-RC vars-
-emerge='sudo /usr/bin/emerge --nospinner'
+emerge='sudo apt-get'
 
 #-Aliases-
 #Making life easier..
@@ -34,12 +35,12 @@ alias visudo='sudo env EDITOR="nvim" visudo'
 alias mount='sudo mount'
 #Package management
 alias ym=$emerge
-alias upgrade='${emerge} -uDU --with-bdeps=y @world'
-alias clean='${emerge} -av --depclean'
+alias upgrade='${emerge} update'
+alias clean='${emerge} autoremove'
 alias update='sudo etc-update'
 alias news='sudo eselect news read'
 alias layman='sudo layman'
-alias search='${emerge} --search'
+alias search='sudo aptitude search'
 #Power management
 alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'

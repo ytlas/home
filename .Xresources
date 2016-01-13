@@ -1,1 +1,2 @@
-URxvt.scrollBar: false
+rxvt*foreground: #ffffff
+rxvt*background: #000000
