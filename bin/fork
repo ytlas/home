@@ -1,0 +1,13 @@
+#!/usr/bin/env python2
+import subprocess
+import os
+import sys
+
+nohup=""
+count=0
+for arg in sys.argv:
+    if not count==0:
+        nohup+=" "+arg
+    else:
+        count+=1
+subprocess.Popen("nohup "+nohup+">/dev/null 2>&1&",shell=True,stdout=subprocess.PIPE).stdout.read()

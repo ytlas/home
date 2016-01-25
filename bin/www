@@ -1,0 +1,31 @@
+#!/usr/bin/env python2
+# Imports
+from os.path import expanduser
+import subprocess
+
+#Config
+home=expanduser("~")
+user="rabbit"
+address="ytlas.com"
+path=home+"/www"
+
+#String needed for checking if a directory is already mounted
+mount=subprocess.Popen("mount", shell=True, stdout=subprocess.PIPE).stdout.read()
+if home+"/www" in mount:
+    yn=raw_input("Mount at "+home+"/www already found, unmount? (Y/n)")
+    if(yn=="y"):
+        print "Attempting to unmount..."
+        fusermount=subprocess.Popen("fusermount -u "+home+"/www", shell=True, stdout=subprocess.PIPE).stdout.read()
+    else:
+        exit()
+    if(fusermount):
+        print "Something may have went wrong, here is the output:"
+        print fusermount
+else:
+    print "Attempting to mount "+user+"@"+address+" on a remote directory ("+path+") on local directory "+home+"/www"
+    sshfs=subprocess.Popen("sshfs "+user+"@"+address+":"+path+" "+home+"/www", shell=True, stdout=subprocess.PIPE).stdout.read()
+    if(sshfs):
+        print "Something may have went wrong, here is the output:"
+        print sshfs
+
+print "Exiting"
