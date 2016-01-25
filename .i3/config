@@ -9,8 +9,7 @@ new_window none
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod control
-set $mod2 mod4
+set $mod mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -31,13 +30,12 @@ set $mod2 mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec rxvt
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -149,11 +147,6 @@ bindsym $mod+Left exec "sudo adjbacklight -5%"
 bindsym $mod+q exec "i3-msg exit"
 bindsym $mod+d exec "dmenu_run"
 
-bindsym $mod2+b exec "chromium-browser"
-bindsym $mod2+p exec "sudo poweroff"
-bindsym $mod2+r exec "sudo reboot"
-bindsym $mod2+l exec "dm-tool lock"
-exec "rxvt"
+exec "urxvt"
 exec "redshift -l 57:12"
 exec "xset m 0 5&&xset r rate 200 75"
-exec "setxkbmap -option caps:escape&&setxkbmap se"
