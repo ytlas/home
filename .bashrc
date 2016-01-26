@@ -14,12 +14,20 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+if [[ $DISPLAY ]];then
+    ls -l
+else
+    startx
+    exit
+fi
+
 # Put your fun stuff here.
 #MISC
-export PS1="[\u:${PWD}]\$"
+export EDITOR="nvim"
+export PS1="[\u:\$PWD]\$"
 export PATH="$PATH:$HOME/bin"
 #Variables
-export pmp='emerge -a'
+export pmp='sudo emerge -a'
 
 #Aliases
 #Ez life
