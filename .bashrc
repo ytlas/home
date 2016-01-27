@@ -14,12 +14,12 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-if [[ $DISPLAY ]];then
-    ls -l
-else
-    startx
-    exit
-fi
+#if [[ $DISPLAY ]];then
+    #ls -l
+#else
+    #startx
+    #exit
+#fi
 
 # Put your fun stuff here.
 #MISC
@@ -27,7 +27,7 @@ export EDITOR="nvim"
 export PS1="[\u:\$PWD]\$"
 export PATH="$PATH:$HOME/bin"
 #Variables
-export pmp='sudo emerge -a'
+export pmp='sudo emerge --color n'
 
 #Aliases
 #Ez life
@@ -35,6 +35,10 @@ alias sudo='sudo '
 alias vi="nvim"
 alias hibernate='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls --color=auto -l'
+alias rm='rm -rfv'
+alias mv='mv -v'
+alias cp='cp -av'
+alias mkdir='mkdir -vp'
 #Laptop specific
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
 #Package manager
