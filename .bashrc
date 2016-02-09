@@ -43,3 +43,8 @@ alias mkdir='mkdir -vp'
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
 #Package manager
 alias ym='${pmp}'
+alias upgrade='${pmp} -uDU --with-bdeps=y @world'
+alias clean='${pmp} -av --depclean'
+#Media
+alias adl='youtube-dl -x --audio-format vorbis'
+alias vdl='youtube-dl'
