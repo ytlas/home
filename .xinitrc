@@ -1,3 +1,2 @@
-xrdb $HOME/.Xresources
-setxkbmap -option caps:escape
-exec i3
+xrdb ~/.Xresources
+exec xfce4-session
