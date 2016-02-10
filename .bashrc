@@ -22,9 +22,16 @@ fi
 #fi
 
 # Put your fun stuff here.
+#PS1 prompt
+#colors
+GREEN="\[$(tput setaf 2)\]"
+RED="\[$(tput setaf 1)\]"
+BLUE="\[$(tput setaf 6)\]"
+PINK="\[$(tput setaf 5)\]"
+RESET="\[$(tput sgr0)\]"
+export PS1="${PINK}[${RESET}${BLUE}\u${RESET}@\h:\$PWD${PINK}]${RESET}\$"
 #MISC
 export EDITOR="nvim"
-export PS1="[\u:\$PWD]\$"
 export PATH="$PATH:$HOME/bin"
 #Variables
 export pmp='sudo emerge --color n'
@@ -39,6 +46,8 @@ alias rm='rm -rfv'
 alias mv='mv -v'
 alias cp='cp -av'
 alias mkdir='mkdir -vp'
+alias sp='sudo poweroff'
+alias sr='sudo reboot'
 #Laptop specific
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
 #Package manager
