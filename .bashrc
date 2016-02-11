@@ -31,9 +31,11 @@ BLUE="\[$(tput setaf 6)\]"
 PINK="\[$(tput setaf 5)\]"
 RESET="\[$(tput sgr0)\]"
 export PS1="${PINK}[${RESET}${BLUE}\u${RESET}@${RED}\h${RESET}:\$PWD${PINK}]${RESET}-${GREEN}>${RESET}"
+
 #MISC
 export EDITOR="nvim"
 export PATH="$PATH:$HOME/bin"
+
 #Variables
 export pmp='sudo emerge --color n'
 
@@ -49,12 +51,15 @@ alias cp='cp -av'
 alias mkdir='mkdir -vp'
 alias sp='sudo poweroff'
 alias sr='sudo reboot'
+
 #Laptop specific
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
+
 #Package manager
 alias ym='${pmp}'
 alias upgrade='${pmp} -uDU --with-bdeps=y @world'
 alias clean='${pmp} -av --depclean'
+
 #Media
 alias adl='youtube-dl -x --audio-format vorbis'
 alias vdl='youtube-dl'
