@@ -14,12 +14,12 @@ path=home+"/www"
 mount=subprocess.Popen("mount", shell=True, stdout=subprocess.PIPE).stdout.read()
 if path in mount:
     yn=raw_input("Mount at "+path+" already found, unmount? (Y/n)")
-    if(yn=="y"):
+    if(yn.lower()=="y") or (yn==""):
         print "Attempting to unmount..."
         fusermount=subprocess.Popen("fusermount -u "+path, shell=True, stdout=subprocess.PIPE).stdout.read()
     else:
         exit()
-    if(fusermount):
+    if not (fusermount==""):
         if input("A problem may have occurred, do you wish to try and do a lazy unmount? (Y/n) (Requires sudo privileges)").lower()=="y":
             fusermount=subprocess.Popen("sudo umount -l "+path, shell=True, stdout=subprocess.PIPE).stdout.read()
         else:
