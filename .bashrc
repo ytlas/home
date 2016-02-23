@@ -30,14 +30,14 @@ RED="\[$(tput setaf 1)\]"
 BLUE="\[$(tput setaf 6)\]"
 PINK="\[$(tput setaf 5)\]"
 RESET="\[$(tput sgr0)\]"
-export PS1="${PINK}[${RESET}${BLUE}\u${RESET}@${RED}\h${RESET}:\$PWD${PINK}]${RESET}-${GREEN}>${RESET}"
+export PS1="\u>"
 
 #MISC
 export EDITOR="nvim"
 export PATH="$PATH:$HOME/bin"
 
 #Variables
-export pmp='sudo emerge --color n'
+export pmp='sudo apt-get'
 
 #Aliases
 #Ez life
