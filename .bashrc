@@ -1,3 +1,4 @@
+set -o vi
 export TERM="xterm"
 export GTK_THEME="raleigh"
 # /etc/skel/.bashrc
