@@ -1,4 +1,5 @@
 export TERM="xterm"
+export GTK_THEME="raleigh"
 # /etc/skel/.bashrc
 #
 # This file is sourced by all *interactive* bash shells on startup,
@@ -33,7 +34,7 @@ RESET="\[$(tput sgr0)\]"
 export PS1="\u>"
 
 #MISC
-export EDITOR="nvim"
+export EDITOR="emacs -nw"
 export PATH="$PATH:$HOME/bin"
 
 #Variables
@@ -42,7 +43,7 @@ export pmp='sudo apt-get'
 #Aliases
 #Ez life
 alias sudo='sudo '
-alias vi="nvim"
+alias vi="emacsclient"
 alias hibernate='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls --color=auto -l'
 alias rm='rm -rfv'
@@ -63,3 +64,7 @@ alias clean='${pmp} -av --depclean'
 #Media
 alias adl='youtube-dl -x --audio-format vorbis'
 alias vdl='youtube-dl'
+
+if [ $TERM = 'linux' -a $SHELL == '/bin/bash' ] ; then
+    echo -e '\033[?17;0;64c'
+fi
