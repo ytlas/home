@@ -43,6 +43,7 @@ export pmp='sudo apt-get'
 
 #Aliases
 #Ez life
+alias mount='sudo mount'
 alias sudo='sudo '
 alias vi="emacsclient"
 alias hibernate='sudo sh -c "echo mem>/sys/power/state"'

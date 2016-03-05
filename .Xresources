@@ -1,4 +1,3 @@
 urxvt*scrollBar: false
-urxvt*depth: 32
-urxvt*background: [80]#000000
-urxvt*foreground: [100]#ffffff
+urxvt*background: #ffffff
+urxvt*foreground: #000000

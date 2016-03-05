@@ -11,6 +11,8 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (blink-cursor-mode 0)
+(fringe-mode 0)
+(scroll-bar-mode -1)
 
 (setq make-backup-files nil)
 
