@@ -38,12 +38,11 @@
       <property name="&lt;Super&gt;Left" type="string" value="sudo adjbacklight -5%"/>
       <property name="&lt;Super&gt;Up" type="string" value="ponymix --max-volume=500 increase 5"/>
       <property name="&lt;Super&gt;Down" type="string" value="ponymix --max-volume=500 decrease 5"/>
-      <property name="&lt;Super&gt;d" type="string" value="dmenu_run"/>
       <property name="&lt;Super&gt;o" type="string" value="/home/rabbit/bin/osu"/>
       <property name="&lt;Super&gt;s" type="string" value="xset dpms force off"/>
       <property name="&lt;Super&gt;q" type="string" value="xfce4-session-logout -fl"/>
       <property name="&lt;Super&gt;y" type="string" value="gnome-screenshot -a"/>
-      <property name="&lt;Super&gt;Return" type="string" value="emacs"/>
+      <property name="&lt;Super&gt;Return" type="string" value="urxvt"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
@@ -131,6 +130,8 @@
       <property name="&lt;Shift&gt;&lt;Super&gt;currency" type="string" value="move_window_workspace_4_key"/>
       <property name="&lt;Super&gt;space" type="string" value="popup_menu_key"/>
       <property name="&lt;Alt&gt;Tab" type="string" value="cycle_windows_key"/>
+      <property name="&lt;Super&gt;m" type="string" value="hide_window_key"/>
+      <property name="&lt;Super&gt;d" type="string" value="show_desktop_key"/>
     </property>
   </property>
   <property name="providers" type="array">

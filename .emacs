@@ -1,4 +1,4 @@
-;; Package init
+; Package init
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
@@ -13,6 +13,7 @@
 (blink-cursor-mode 0)
 (fringe-mode 0)
 (scroll-bar-mode -1)
+(setq inhibit-startup-message t)
 
 (setq make-backup-files nil)
 
