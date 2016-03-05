@@ -17,7 +17,20 @@
 
 (setq make-backup-files nil)
 
-(ido-mode t)
 (global-set-key (kbd "C-h") 'previous-buffer)
 (global-set-key (kbd "C-l") 'next-buffer)
-(global-set-key (kbd "C-f") 'ido-find-file)
+
+(when (require 'multi-term nil t)
+  (global-set-key (kbd "<f5>") 'multi-term)
+  (global-set-key (kbd "<C-next>") 'multi-term-next)
+  (global-set-key (kbd "<C-prior>") 'multi-term-prev)
+  (setq multi-term-buffer-name "term"
+        multi-term-program "/bin/bash"))
+
+
+;; Helm
+(add-to-list 'load-path "~/.emacs.d/emacs-async")
+(add-to-list 'load-path "~/.emacs.d/helm")
+(require 'helm-config)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-f") 'helm-find-files)
