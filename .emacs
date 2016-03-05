@@ -34,3 +34,22 @@
 (require 'helm-config)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-f") 'helm-find-files)
+(global-set-key (kbd "M-b") 'helm-buffers-list)
+
+
+;; Default theme
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (badwolf)))
+ '(custom-safe-themes
+   (quote
+    ("c95a117efd4eeefc410aa55ea883f74f07ffd64a887538e629a6c7f845fa6add" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
