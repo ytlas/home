@@ -20,6 +20,7 @@
 (setq inhibit-startup-message t)
 (global-linum-mode 1)
 (global-hl-line-mode 1)
+(ido-mode 1)
 
 (setq make-backup-files nil)
 
@@ -42,15 +43,6 @@
   (global-set-key (kbd "<C-prior>") 'multi-term-prev)
   (setq multi-term-buffer-name "term"
         multi-term-program "/bin/bash"))
-
-
-;; Helm
-(add-to-list 'load-path "~/.emacs.d/emacs-async")
-(add-to-list 'load-path "~/.emacs.d/helm")
-(require 'helm-config)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-f") 'helm-find-files)
-(global-set-key (kbd "M-b") 'helm-buffers-list)
 
 
 ;; Default theme
