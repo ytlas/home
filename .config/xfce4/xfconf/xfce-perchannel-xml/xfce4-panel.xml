@@ -14,18 +14,20 @@
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
+        <value type="int" value="5"/>
       </property>
-      <property name="output-name" type="string" value="LVDS1"/>
-      <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="output-name" type="string" value="monitor-1"/>
     </property>
   </property>
   <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="applicationsmenu">
+      <property name="show-button-title" type="bool" value="false"/>
+      <property name="button-icon" type="string" value="distributor-logo-debian"/>
+    </property>
     <property name="plugin-2" type="string" value="tasklist">
       <property name="flat-buttons" type="bool" value="true"/>
       <property name="show-handle" type="bool" value="false"/>
       <property name="window-scrolling" type="bool" value="false"/>
-      <property name="sort-order" type="uint" value="4"/>
-      <property name="show-labels" type="bool" value="false"/>
     </property>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
@@ -37,13 +39,12 @@
         <value type="string" value="steam"/>
         <value type="string" value="teamspeak 3"/>
         <value type="string" value="shutter"/>
-        <value type="string" value="google-chrome"/>
+        <value type="string" value="thunar"/>
       </property>
     </property>
-    <property name="plugin-6" type="string" value="battery"/>
-    <property name="plugin-1" type="string" value="applicationsmenu">
-      <property name="show-button-title" type="bool" value="false"/>
-      <property name="button-icon" type="string" value="distributor-logo-debian"/>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="digital-format" type="string" value="%T"/>
     </property>
+    <property name="plugin-6" type="string" value="battery"/>
   </property>
 </channel>
