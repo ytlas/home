@@ -18,24 +18,17 @@
 (fringe-mode 0)
 (scroll-bar-mode -1)
 (setq inhibit-startup-message t)
-(global-linum-mode 1)
-(global-hl-line-mode 1)
 (ido-mode 1)
 
-(setq make-backup-files nil)
-
-(global-set-key (kbd "C-h") 'previous-buffer)
-(global-set-key (kbd "C-l") 'kill-this-buffer)
+;; Set auto- and backup directory
+(setq backup-directory-alist
+    `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+    `((".*" ,temporary-file-directory t)))
 
 ;; Cursor
-(setq cursor-type 'box)
-(setq evil-insert-state-cursor 'box)
-
-;; linum format
-(defun linum-format-func (line)
-  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-     (propertize (format (format "%%%dd " w) line) 'face 'linum)))
-(setq linum-format 'linum-format-func)
+;;(setq cursor-type 'box)
+;;(setq evil-insert-state-cursor 'box)
 
 (when (require 'multi-term nil t)
   (global-set-key (kbd "<f5>") 'multi-term)
@@ -45,24 +38,24 @@
         multi-term-program "/bin/bash"))
 
 
-;; Default theme
+;;; Default theme
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (badwolf)))
- '(custom-safe-themes
-   (quote
-    ("c95a117efd4eeefc410aa55ea883f74f07ffd64a887538e629a6c7f845fa6add" default)))
+; ;; custom-set-variables was added by Custom.
+; ;; If you edit it by hand, you could mess it up, so be careful.
+; ;; Your init file should contain only one such instance.
+; ;; If there is more than one, they won't work right.
+; '(custom-enabled-themes (quote (badwolf)))
+; '(custom-safe-themes
+;   (quote
+;    ("c95a117efd4eeefc410aa55ea883f74f07ffd64a887538e629a6c7f845fa6add" default)))
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "white"))))
- '(linum ((t (:background "#1c1b1a" :foreground "white")))))
+;(custom-set-faces
+; ;; custom-set-faces was added by Custom.
+; ;; If you edit it by hand, you could mess it up, so be careful.
+; ;; Your init file should contain only one such instance.
+; ;; If there is more than one, they won't work right.
+; '(cursor ((t (:background "white"))))
+; '(linum ((t (:background "#1c1b1a" :foreground "white")))))
 
 ;; Escape quits things
 ;; esc quits
@@ -86,3 +79,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; Clean buffers
 (clean-buffer-list)
+
+;; Don't add newline at end of file
+(setq mode-require-final-newline nil)

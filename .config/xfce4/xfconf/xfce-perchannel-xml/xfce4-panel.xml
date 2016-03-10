@@ -16,6 +16,7 @@
         <value type="int" value="4"/>
       </property>
       <property name="output-name" type="string" value="LVDS1"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
     </property>
   </property>
   <property name="plugins" type="empty">
