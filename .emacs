@@ -28,3 +28,20 @@
 
 ;; Don't add newline at end of file
 (setq mode-require-final-newline nil)
+
+;; Functions
+(defun my/nld ()
+  (interactive)
+  (end-of-line)
+  (newline-and-indent))
+(defun my/nlu ()
+  (interactive)
+  (previous-line)
+  (end-of-line)
+  (newline-and-indent))
+
+;; Key binds
+(global-set-key (kbd "C-k") 'kill-whole-line)
+(global-set-key (kbd "C-S-o") 'my/nlu)
+(global-set-key (kbd "C-o") 'my/nld)
+(global-set-key (kbd "C-a") 'beginning-of-line-text)
