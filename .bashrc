@@ -31,7 +31,7 @@ RED="\[$(tput setaf 1)\]"
 BLUE="\[$(tput setaf 6)\]"
 PINK="\[$(tput setaf 5)\]"
 RESET="\[$(tput sgr0)\]"
-export PS1="\u>"
+export PS1="\u@\${PWD}>"
 
 #MISC
 export EDITOR="emacs -nw"
