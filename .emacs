@@ -45,3 +45,10 @@
 (global-set-key (kbd "C-S-o") 'my/nlu)
 (global-set-key (kbd "C-o") 'my/nld)
 (global-set-key (kbd "C-a") 'beginning-of-line-text)
+
+;; EMMS
+(require 'emms-setup)
+(emms-standard)
+(emms-default-players)
+(global-set-key (kbd "C-c +") 'emms-volume-mode-plus)
+(global-set-key (kbd "C-c -") 'emms-volume-mode-minus)
