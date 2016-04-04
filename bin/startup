@@ -1,8 +1,7 @@
 #!/bin/bash
 setxkbmap se
-#setxkbmap -option caps:escape
-setxkbmap -option ctrl:nocaps
+setxkbmap -option caps:escape
+#setxkbmap -option ctrl:nocaps
 xset r rate 200 75
 xset m 0 5
 redshift -l 57:12&
-xmodmap ~/.Xmodmap

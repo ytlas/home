@@ -30,8 +30,8 @@
       <property name="flat-buttons" type="bool" value="true"/>
       <property name="show-handle" type="bool" value="false"/>
       <property name="window-scrolling" type="bool" value="false"/>
-      <property name="grouping" type="uint" value="0"/>
-      <property name="show-labels" type="bool" value="false"/>
+      <property name="grouping" type="uint" value="1"/>
+      <property name="show-labels" type="bool" value="true"/>
       <property name="sort-order" type="uint" value="4"/>
     </property>
     <property name="plugin-3" type="string" value="separator">
@@ -41,10 +41,13 @@
     <property name="plugin-4" type="string" value="systray">
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-visible" type="array">
-        <value type="string" value="steam"/>
+        <value type="string" value="telegram"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="task manager"/>
         <value type="string" value="teamspeak 3"/>
-        <value type="string" value="shutter"/>
         <value type="string" value="thunar"/>
+        <value type="string" value="steam"/>
+        <value type="string" value="shutter"/>
       </property>
     </property>
     <property name="plugin-5" type="string" value="clock">
