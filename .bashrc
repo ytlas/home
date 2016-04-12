@@ -45,6 +45,7 @@ export pmp='sudo apt-get'
 alias mount='sudo mount'
 alias sudo='sudo '
 alias vi="emacsclient"
+alias e="emacs -nw"
 alias hibernate='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls --color=auto -l'
 alias rm='rm -rfv'
