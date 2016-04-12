@@ -1,5 +1,5 @@
 ;; Automatically install required packages
-(setq package-list '(evil emms helm magit))
+(setq package-list '(evil emms helm))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
