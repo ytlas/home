@@ -42,7 +42,7 @@
       <property name="&lt;Super&gt;s" type="string" value="xset dpms force off"/>
       <property name="&lt;Super&gt;q" type="string" value="xfce4-session-logout -fl"/>
       <property name="&lt;Super&gt;y" type="string" value="gnome-screenshot -a"/>
-      <property name="&lt;Super&gt;Return" type="string" value="urxvt -fn &quot;10x20&quot; -letsp 0"/>
+      <property name="&lt;Super&gt;Return" type="string" value="urxvt -fn &quot;10x20&quot; -letsp 0 -geometry 80x34"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

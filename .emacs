@@ -1,5 +1,5 @@
 ;; Automatically install required packages
-(setq package-list '(evil emms helm))
+(setq package-list '(evil emms helm multi-term web-mode symon))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -25,7 +25,7 @@
 (require 'evil)
 (evil-mode 1)
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
-(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(symon-mode)
 
 ;; Display column number
 (setq column-number-mode t)
@@ -41,3 +41,17 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+
+;; Multi term bind
+(global-set-key (kbd "<f5>") 'multi-term)
+
+;; Powerline
+(require 'powerline)
+(powerline-evil-vim-color-theme)
+
+;; HTML indentation
+(setq sgml-basic-offset 4)
+(add-hook 'html-mode-hook
+	  (lambda ()
+	    ;; Default indentation is usually 2 spaces, changing to 4.
+	        (set (make-local-variable 'sgml-basic-offset) 4)))
