@@ -1,4 +1,3 @@
-export TERM="xterm"
 export GTK_THEME="raleigh"
 # /etc/skel/.bashrc
 #
@@ -23,6 +22,10 @@ fi
     #exit
 #fi
 
+if [ $TERM = "rxvt-unicode" ];then
+    emacs -nw
+    exit
+fi
 # Put your fun stuff here.
 #PS1 prompt
 #colors

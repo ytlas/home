@@ -24,7 +24,6 @@
 (menu-bar-mode -1)
 (require 'evil)
 (evil-mode 1)
-(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 (symon-mode)
 
 ;; Display column number
