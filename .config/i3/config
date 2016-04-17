@@ -5,7 +5,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+w kill
 
 # change focus
 bindsym $mod+h focus left

@@ -1,5 +1,9 @@
 urxvt*scrollBar: false
 urxvt*background: #ffffff
 urxvt*foreground: #000000
+urxvt.font: 9x15
+urxvt.letterSpace: -1
+urxvt*iso14755: False
+urxvt*iso14755_52: False
 
 xterm*font:     *-fixed-*-*-*-18-*

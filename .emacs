@@ -1,40 +1,22 @@
 ;; Automatically install required packages
-(setq package-list '(evil emms helm multi-term web-mode symon))
-
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
-;; Fetch the list of packages available
-(unless package-archive-contents
-    (package-refresh-contents))
-
-;; Install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
 ;; Backup toggles
 (setq backup-directory-alist
-    `((".*" . ,temporary-file-directory)))
+      `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
-    `((".*" ,temporary-file-directory t)))
+      `((".*" ,temporary-file-directory t)))
 
 ;; Mode toggles
 (menu-bar-mode -1)
-(require 'evil)
-(evil-mode 1)
-(symon-mode)
 
 ;; Display column number
 (setq column-number-mode t)
 
 ;; Prevent welcome screen
 (setq inhibit-startup-message t)
-
-(require 'emms-setup)
-(emms-standard)
-(emms-default-players)
 
 ;; Helm binds
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -44,13 +26,15 @@
 ;; Multi term bind
 (global-set-key (kbd "<f5>") 'multi-term)
 
-;; Powerline
-(require 'powerline)
-(powerline-evil-vim-color-theme)
+;; eliminate long "yes" or "no" prompts
+(fset 'yes-or-no-p 'y-or-n-p)
 
-;; HTML indentation
-(setq sgml-basic-offset 4)
-(add-hook 'html-mode-hook
-(lambda ()
-    ;; Default indentation is usually 2 spaces, changing to 4.
-    (set (make-local-variable 'sgml-basic-offset) 4)))
+;; Pophint menu
+(global-set-key (kbd "C-x p") 'pophint:do)
+
+;; Abbrevs
+(setq-default abbrev-mode t)
+(quietly-read-abbrev-file)
+
+;; Expand region
+(global-set-key (kbd "C-x C-r") 'er/expand-region)
