@@ -38,3 +38,7 @@
 
 ;; Expand region
 (global-set-key (kbd "C-x C-r") 'er/expand-region)
+
+;; EMMS
+(emms-standard)
+(emms-default-players)
