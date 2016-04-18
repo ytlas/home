@@ -33,8 +33,8 @@
 (global-set-key (kbd "C-x p") 'pophint:do)
 
 ;; Abbrevs
-(setq-default abbrev-mode t)
-(quietly-read-abbrev-file)
+;;(setq-default abbrev-mode t)
+;;(quietly-read-abbrev-file)
 
 ;; Expand region
 (global-set-key (kbd "C-x C-r") 'er/expand-region)
