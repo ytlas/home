@@ -1,2 +1,2 @@
 xrdb ~/.Xresources
-exec xfce4-session
+exec i3

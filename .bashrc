@@ -15,17 +15,17 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-#if [[ $DISPLAY ]];then
-    #ls -l
-#else
-    #startx
-    #exit
-#fi
+export PATH="$PATH:$HOME/bin"
 
-#if [ $TERM = "rxvt-unicode" ];then
-    #emacs -nw
-    #exit
-#fi
+if [[ ! $DISPLAY ]];then
+    startx
+    exit
+fi
+
+if [ $TERM = "rxvt-unicode" ];then
+    emacs -nw
+    exit
+fi
 # Put your fun stuff here.
 #PS1 prompt
 #colors
@@ -38,7 +38,6 @@ export PS1="\u@\${PWD}>"
 
 #MISC
 export EDITOR="emacs -nw"
-export PATH="$PATH:$HOME/bin"
 
 #Variables
 export pmp='sudo apt-get'

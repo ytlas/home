@@ -11,6 +11,7 @@
 
 ;; Mode toggles
 (menu-bar-mode -1)
+(ido-mode 1)
 
 ;; Display column number
 (setq column-number-mode t)
@@ -20,8 +21,6 @@
 
 ;; Helm binds
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
 
 ;; Multi term bind
 (global-set-key (kbd "<f5>") 'multi-term)
