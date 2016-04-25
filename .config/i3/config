@@ -106,4 +106,9 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+b exec iceweasel
 bindsym $mod+e exec i3lock
 bindsym $mod+Shift+e exec "i3lock;sudo sh -c 'echo mem>/sys/power/state'"
+bindsym $mod+Left exec "sudo adjbacklight -5%"
+bindsym $mod+Right exec "sudo adjbacklight +5%"
+
 exec "startup"
+exec "pulseaudio&"
+exec "urxvt"
