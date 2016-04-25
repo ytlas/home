@@ -1,5 +1,5 @@
 ;; Automatically install required packages
-(setq package-list '(async auto-complete emms expand-region google-translate helm helm-core multi-term popup undo-tree web-mode))
+(setq package-list '(async auto-complete emms expand-region google-translate helm helm-core multi-term popup undo-tree web-mode ido-ubiquitous))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
@@ -7,7 +7,7 @@
   (package-refresh-contents))
 (dolist (package package-list)
   (unless (package-installed-p package)
-        (package-install package)))
+    (package-install package)))
 
 ;; Backup toggles
 (setq backup-directory-alist
@@ -18,6 +18,8 @@
 ;; Mode toggles
 (menu-bar-mode -1)
 (ido-mode 1)
+(ido-everywhere 1)
+(ido-ubiquitous-mode 1)
 
 ;; Display column number
 (setq column-number-mode t)
@@ -26,7 +28,7 @@
 (setq inhibit-startup-message t)
 
 ;; Helm binds
-(global-set-key (kbd "M-x") 'helm-M-x)
+;;(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; Multi term bind
 (global-set-key (kbd "<f5>") 'multi-term)
@@ -63,3 +65,6 @@
 (fringe-mode 0)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+
+;; Smex
+(global-set-key (kbd "M-x") 'smex)
