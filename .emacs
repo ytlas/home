@@ -1,7 +1,13 @@
 ;; Automatically install required packages
+(setq package-list '(async auto-complete emms expand-region google-translate helm helm-core multi-term popup undo-tree web-mode))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(dolist (package package-list)
+  (unless (package-installed-p package)
+        (package-install package)))
 
 ;; Backup toggles
 (setq backup-directory-alist
@@ -51,5 +57,9 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
 (ac-config-default)
+
+;; In case of GUI
+(fringe-mode 0)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
