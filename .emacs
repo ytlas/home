@@ -1,5 +1,5 @@
 ;; Automatically install required packages
-(setq package-list '(async auto-complete emms expand-region google-translate helm helm-core multi-term popup undo-tree web-mode ido-ubiquitous))
+(setq package-list '(async auto-complete emms expand-region google-translate helm helm-core multi-term popup undo-tree web-mode ido-ubiquitous smex))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
@@ -68,3 +68,9 @@
 
 ;; Smex
 (global-set-key (kbd "M-x") 'smex)
+
+(add-hook 'lisp-mode-hook '(lambda ()
+			     (local-set-key (kbd "RET") 'newline-and-indent)))
+
+;; Pair Mode
+(electric-pair-mode 1)

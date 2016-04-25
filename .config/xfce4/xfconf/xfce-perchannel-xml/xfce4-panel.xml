@@ -44,6 +44,7 @@
         <value type="string" value="thunar"/>
         <value type="string" value="vlc"/>
         <value type="string" value="task manager"/>
+        <value type="string" value="networkmanager applet"/>
         <value type="string" value="steam"/>
         <value type="string" value="teamspeak 3"/>
         <value type="string" value="shutter"/>
