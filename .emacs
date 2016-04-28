@@ -20,15 +20,13 @@
 (ido-mode 1)
 (ido-everywhere 1)
 (ido-ubiquitous-mode 1)
+(global-flycheck-mode 1)
 
 ;; Display column number
 (setq column-number-mode t)
 
 ;; Prevent welcome screen
 (setq inhibit-startup-message t)
-
-;; Helm binds
-;;(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; Multi term bind
 (global-set-key (kbd "<f5>") 'multi-term)
@@ -74,3 +72,33 @@
 
 ;; Pair Mode
 (electric-pair-mode 1)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(column-number-mode t)
+ '(custom-enabled-themes (quote (abyss)))
+ '(custom-safe-themes
+   (quote
+    ("45712b65018922c9173439d9b1b193cb406f725f14d02c8c33e0d2cdad844613" "f9574c9ede3f64d57b3aa9b9cef621d54e2e503f4d75d8613cbcc4ca1c962c21" "9a77026c04c2b191637239d0a2374b2cf019eb457a216f6ecc391a4a42f6ed08" default)))
+ '(notmuch-search-line-faces
+   (quote
+    (("unread" :foreground "#8cffba")
+     ("flagged" :foreground "#ff2c4b")
+     ("deleted" :foreground "#ff9eb8" :bold t))))
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Anonymous Pro for Powerline" :foundry "unknown" :slant normal :weight bold :height 128 :width normal))))
+ '(cursor ((t (:background "white"))))
+ '(mode-line ((t (:background "gainsboro" :foreground "black" :height 1.0))))
+ '(mode-line-buffer-id ((t (:background "gainsboro" :foreground "black" :weight bold :height 1.0)))))

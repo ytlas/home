@@ -102,7 +102,7 @@ bar {
 
 # Specialized edits
 
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec emacs
 bindsym $mod+b exec iceweasel
 bindsym $mod+e exec i3lock
 bindsym $mod+Shift+e exec "i3lock;sudo sh -c 'echo mem>/sys/power/state'"
@@ -113,4 +113,4 @@ exec "startup"
 exec "pulseaudio&"
 exec "urxvt"
 
-new_window 1pixel
+new_window normal 0 px
