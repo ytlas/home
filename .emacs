@@ -1,4 +1,4 @@
-(setq package-list '(async auto-complete emms expand-region google-translate helm helm-core multi-term popup undo-tree web-mode ido-ubiquitous smex))
+(setq package-list '(async auto-complete emms expand-region google-translate multi-term popup undo-tree web-mode ido-ubiquitous smex google-translate flycheck magit))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
