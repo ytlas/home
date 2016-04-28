@@ -73,8 +73,6 @@
 ;; Pair Mode
 (electric-pair-mode 1)
 
-;; Test
-
 ;; Vim-like keybinds
 (defun self/vim-o()
   (interactive)
