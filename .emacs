@@ -1,7 +1,7 @@
-;; Automatically install required packages
 (setq package-list '(async auto-complete emms expand-region google-translate helm helm-core multi-term popup undo-tree web-mode ido-ubiquitous smex))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -73,32 +73,31 @@
 ;; Pair Mode
 (electric-pair-mode 1)
 
+;; Vim-like keybinds
+(defun self/vim-o()
+  (interactive)
+  (end-of-line)
+  (newline-and-indent)
+  )
+(defun self/vim-O()
+  (interactive)
+  (beginning-of-line)
+  (newline-and-indent)
+  (previous-line)
+  (end-of-line)
+  )
+(global-set-key (kbd "C-o") 'self/vim-o)
+(global-set-key (kbd "C-S-O") 'self/vim-O)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(column-number-mode t)
- '(custom-enabled-themes (quote (abyss)))
- '(custom-safe-themes
-   (quote
-    ("45712b65018922c9173439d9b1b193cb406f725f14d02c8c33e0d2cdad844613" "f9574c9ede3f64d57b3aa9b9cef621d54e2e503f4d75d8613cbcc4ca1c962c21" "9a77026c04c2b191637239d0a2374b2cf019eb457a216f6ecc391a4a42f6ed08" default)))
- '(notmuch-search-line-faces
-   (quote
-    (("unread" :foreground "#8cffba")
-     ("flagged" :foreground "#ff2c4b")
-     ("deleted" :foreground "#ff9eb8" :bold t))))
- '(tool-bar-mode nil))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Anonymous Pro for Powerline" :foundry "unknown" :slant normal :weight bold :height 128 :width normal))))
- '(cursor ((t (:background "white"))))
- '(mode-line ((t (:background "gainsboro" :foreground "black" :height 1.0))))
- '(mode-line-buffer-id ((t (:background "gainsboro" :foreground "black" :weight bold :height 1.0)))))
+ )

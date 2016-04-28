@@ -102,7 +102,7 @@ bar {
 
 # Specialized edits
 
-bindsym $mod+Return exec emacs
+bindsym $mod+Return exec urxvt
 bindsym $mod+b exec iceweasel
 bindsym $mod+e exec i3lock
 bindsym $mod+Shift+e exec "i3lock;sudo sh -c 'echo mem>/sys/power/state'"
