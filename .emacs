@@ -35,15 +35,12 @@
 ;; eliminate long "yes" or "no" prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Pophint menu
-(global-set-key (kbd "C-x p") 'pophint:do)
-
-;; Abbrevs
-;;(setq-default abbrev-mode t)
-;;(quietly-read-abbrev-file)
-
 ;; Expand region
-(global-set-key (kbd "C-x C-r") 'er/expand-region)
+(global-set-key (kbd "C-c C-v") 'er/expand-region)
+
+;; Magit
+(global-set-key (kbd "C-c c") 'magit-commit)
+(global-set-key (kbd "C-c p") 'magit-push)
 
 ;; EMMS
 (emms-standard)
@@ -68,8 +65,8 @@
 ;; Smex
 (global-set-key (kbd "M-x") 'smex)
 
-(add-hook 'lisp-mode-hook '(lambda ()
-			     (local-set-key (kbd "RET") 'newline-and-indent)))
+;; Ace-jump
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; Pair Mode
 (electric-pair-mode 1)
@@ -86,5 +83,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight bold :height 131 :width normal))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 140 :width normal))))
  '(mode-line ((t (:background "black" :foreground "white")))))

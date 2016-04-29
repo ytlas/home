@@ -111,6 +111,6 @@ bindsym $mod+Right exec "sudo adjbacklight +5%"
 
 exec "startup"
 exec "pulseaudio&"
-exec "urxvt"
+exec "emacs"
 
 new_window pixel 0
