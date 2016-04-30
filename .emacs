@@ -30,7 +30,7 @@
 (setq inhibit-startup-message t)
 
 ;; Multi term bind
-(global-set-key (kbd "C-c t") 'multi-term)
+(global-set-key (kbd "<f5>") 'multi-term)
 
 ;; eliminate long "yes" or "no" prompts
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -89,5 +89,6 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Ubuntu Mono derivative Powerline" :foundry "unknown" :slant normal :weight normal :height 174 :width normal))))
  '(cursor ((t (:background "white"))))
+ '(highlight-current-line-face ((t (:background "gray15"))))
  '(mode-line ((t (:background "white" :foreground "black" :height 1.0))))
  '(mode-line-buffer-id ((t (:background "white" :foreground "black" :height 0.9)))))
