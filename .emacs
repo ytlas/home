@@ -32,6 +32,10 @@
 ;; Multi term bind
 (global-set-key (kbd "<f5>") 'multi-term)
 
+;; Emms
+(global-set-key (kbd "C-c m") 'emms)
+(global-set-key (kbd "C-c d") 'emms-add-directory-tree)
+
 ;; eliminate long "yes" or "no" prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -87,8 +91,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Ubuntu Mono derivative Powerline" :foundry "unknown" :slant normal :weight normal :height 201 :width normal))))
+ '(default ((t (:family "Ubuntu Mono derivative Powerline" :foundry "unknown" :slant normal :weight normal :height 174 :width normal))))
  '(cursor ((t (:background "white"))))
  '(highlight-current-line-face ((t (:background "gray15"))))
- '(mode-line ((t (:background "white" :foreground "black" :height 1.0))))
- '(mode-line-buffer-id ((t (:background "white" :foreground "black" :height 0.9)))))
+ '(mode-line ((t (:background "white" :foreground "black" :box nil :height 1.0))))
+ '(mode-line-buffer-id ((t (:background "white" :foreground "black" :weight normal :height 1.0))))
+ '(mode-line-inactive ((t (:background "dim gray" :foreground "black" :box nil :weight normal :height 1.0))))
+ '(region ((t (:background "gray40")))))
