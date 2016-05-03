@@ -96,5 +96,5 @@
  '(highlight-current-line-face ((t (:background "gray15"))))
  '(mode-line ((t (:background "white" :foreground "black" :box nil :height 1.0))))
  '(mode-line-buffer-id ((t (:background "white" :foreground "black" :weight normal :height 1.0))))
- '(mode-line-inactive ((t (:background "dim gray" :foreground "black" :box nil :weight normal :height 1.0))))
+ '(mode-line-inactive ((t (:background "light gray" :foreground "black" :box nil :weight normal :height 1.0))))
  '(region ((t (:background "gray40")))))
