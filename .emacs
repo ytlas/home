@@ -84,7 +84,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(custom-enabled-themes (quote (manoj-dark)))
+ '(custom-enabled-themes nil)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -94,7 +94,7 @@
  '(default ((t (:family "Ubuntu Mono derivative Powerline" :foundry "unknown" :slant normal :weight normal :height 143 :width normal))))
  '(cursor ((t (:background "white"))))
  '(highlight-current-line-face ((t (:background "gray15"))))
- '(mode-line ((t (:background "white" :foreground "black" :box nil :height 1.0))))
- '(mode-line-buffer-id ((t (:background "white" :foreground "black" :weight normal :height 1.0))))
+ '(mode-line ((t (:background "black" :foreground "white" :box nil :height 1.0))))
+ '(mode-line-buffer-id ((t (:background "black" :foreground "white" :weight normal :height 1.0))))
  '(mode-line-inactive ((t (:background "light gray" :foreground "black" :box nil :weight normal :height 1.0))))
  '(region ((t (:background "gray40")))))
