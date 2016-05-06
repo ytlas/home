@@ -1,5 +1,5 @@
 ;; Adam's Emacs config, pretty noobish, I know, but it works.
-(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode ido-ubiquitous smex google-translate flycheck magit))
+(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode ido-ubiquitous smex google-translate flycheck magit auto-complete ace-jump-mode iy-go-to-char))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
@@ -22,29 +22,44 @@
 (ido-everywhere 1)
 (ido-ubiquitous-mode 1)
 (global-flycheck-mode 1)
+(ac-config-default)
+(blink-cursor-mode 0)
 
-;; Display column number
-(setq column-number-mode t)
+;; General keybinds
+(global-set-key (kbd "C-n") 'next-logical-line)
+(global-set-key (kbd "C-p") 'previous-logical-line)
+(global-set-key (kbd "<f5>") 'multi-term)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-c d") 'emms-add-directory-tree)
+(global-set-key (kbd "C-c m") 'emms)
+(global-set-key (kbd "C-c p") 'magit-push)
+(global-set-key (kbd "C-c c") 'magit-commit)
+(global-set-key (kbd "C-@") 'er/expand-region)
+(define-key global-map (kbd "C-ö") 'ace-jump-mode)
+(define-key global-map (kbd "M-m") 'iy-go-up-to-char)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-/") 'mc/mark-sgml-tag-pair)
+(defun my/mm()
+	       (interactive)
+	       (message "%s" major-mode)
+	       )
+			    
+;; Hooks
+(add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
+(add-hook 'web-mode-hook 'hl-line-mode)
+
+;; Mode-line config
+;;(setq mode-line-format (list "<%*%b>\t<%l:%c\t%p>  \t<%m>"))
+(setq-default mode-line-format (list "<%*%b>\t<%l:%c\t%p>  \t<%m>"))
 
 ;; Prevent welcome screen
 (setq inhibit-startup-message t)
 
-;; Multi term bind
-(global-set-key (kbd "<f5>") 'multi-term)
-
-;; Emms
-(global-set-key (kbd "C-c m") 'emms)
-(global-set-key (kbd "C-c d") 'emms-add-directory-tree)
-
 ;; eliminate long "yes" or "no" prompts
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; Expand region
-(global-set-key (kbd "C-@") 'er/expand-region)
-
-;; Magit
-(global-set-key (kbd "C-c c") 'magit-commit)
-(global-set-key (kbd "C-c p") 'magit-push)
 
 ;; EMMS
 (emms-standard)
@@ -65,15 +80,6 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-;; Smex
-(global-set-key (kbd "M-x") 'smex)
-
-;; Ace-jump
-(define-key global-map (kbd "C-ö") 'ace-jump-mode)
-
-;; Vim-like-f
-(define-key global-map (kbd "M-ö") 'iy-go-to-char)
-
 ;; Pair Mode
 (electric-pair-mode 1)
 
@@ -87,12 +93,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(font-use-system-font t)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mode-line ((t (:background "grey75" :foreground "black" :box nil))))
- '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box nil :weight light)))))
+ '(default ((t (:family "fixed" :foundry "misc" :slant normal :weight normal :height 156 :width normal))))
+ '(cursor ((t (:background "orange"))))
+ '(hl-line ((t (:inherit nil :background "gray20"))))
+ '(mode-line ((t (:background "white" :foreground "black" :box nil))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "light gray" :foreground "black" :box nil :weight light))))
+ '(region ((t (:background "chocolate")))))
