@@ -59,7 +59,6 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(ac-config-default)
 
 ;; In case of GUI
 (fringe-mode 0)
@@ -77,24 +76,3 @@
 
 ;; Pair Mode
 (electric-pair-mode 1)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(custom-enabled-themes nil)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Ubuntu Mono derivative Powerline" :foundry "unknown" :slant normal :weight normal :height 143 :width normal))))
- '(cursor ((t (:background "white"))))
- '(highlight-current-line-face ((t (:background "gray15"))))
- '(mode-line ((t (:background "black" :foreground "white" :box nil :height 1.0))))
- '(mode-line-buffer-id ((t (:background "black" :foreground "white" :weight normal :height 1.0))))
- '(mode-line-inactive ((t (:background "light gray" :foreground "black" :box nil :weight normal :height 1.0))))
- '(region ((t (:background "gray40")))))

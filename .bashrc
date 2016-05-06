@@ -17,11 +17,6 @@ fi
 
 export PATH="$PATH:$HOME/bin"
 
-if [[ ! $DISPLAY ]];then
-    startx
-    exit
-fi
-
 # Put your fun stuff here.
 #PS1 prompt
 #colors
