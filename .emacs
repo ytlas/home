@@ -1,5 +1,5 @@
 ;; Adam's Emacs config, pretty noobish, I know, but it works.
-(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode ido-ubiquitous smex google-translate flycheck magit auto-complete ace-jump-mode iy-go-to-char))
+(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode ido-ubiquitous smex google-translate flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
@@ -24,6 +24,9 @@
 (global-flycheck-mode 1)
 (ac-config-default)
 (blink-cursor-mode 0)
+(tooltip-mode nil)
+(transient-mark-mode 0)
+(setq show-help-function nil)
 
 ;; General keybinds
 (global-set-key (kbd "C-n") 'next-logical-line)
@@ -50,10 +53,18 @@
 ;; Hooks
 (add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
 (add-hook 'web-mode-hook 'hl-line-mode)
+(defun my/term-hook()
+  (interactive)
+  (setq mode-line-format (list " %b"))
+  )
+(add-hook 'term-mode-hook 'my/term-hook)
 
 ;; Mode-line config
 ;;(setq mode-line-format (list "<%*%b>\t<%l:%c\t%p>  \t<%m>"))
-(setq-default mode-line-format (list "<%*%b>\t<%l:%c\t%p>  \t<%m>"))
+(setq-default mode-line-format (list " %* %b\t<%l:%c %p>  \t<%m>"))
+(setq-default smex-prompt-string "imperatum>")
+(setq-default frame-title-format (list "%b"))
+
 
 ;; Prevent welcome screen
 (setq inhibit-startup-message t)
@@ -92,6 +103,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -99,9 +111,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "fixed" :foundry "misc" :slant normal :weight normal :height 156 :width normal))))
+ '(default ((t (:family "fixed" :foundry "misc" :slant normal :weight normal :height 113 :width normal))))
  '(cursor ((t (:background "orange"))))
  '(hl-line ((t (:inherit nil :background "gray20"))))
+ '(isearch ((t (:background "orange red" :foreground "white"))))
  '(mode-line ((t (:background "white" :foreground "black" :box nil))))
  '(mode-line-inactive ((t (:inherit mode-line :background "light gray" :foreground "black" :box nil :weight light))))
- '(region ((t (:background "chocolate")))))
+ '(region ((t (:background "orange red")))))
