@@ -38,13 +38,25 @@
 (global-set-key (kbd "C-c p") 'magit-push)
 (global-set-key (kbd "C-c c") 'magit-commit)
 (global-set-key (kbd "C-@") 'er/expand-region)
-(define-key global-map (kbd "C-ö") 'ace-jump-mode)
-(define-key global-map (kbd "M-m") 'iy-go-up-to-char)
+(global-set-key (kbd "C-ö") 'ace-jump-mode)
+(global-set-key (kbd "M-m") 'iy-go-up-to-char)
+(global-set-key (kbd "M-C-m") 'iy-go-to-char-backward)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c C-/") 'mc/mark-sgml-tag-pair)
+(defun my/scroll-down()
+  (interactive)
+  (scroll-up)
+  (recenter))
+(defun my/scroll-up()
+  (interactive)
+  (scroll-down)
+  (recenter))
+(global-set-key (kbd "C-v") 'my/scroll-down)
+(global-set-key (kbd "M-v") 'my/scroll-up)
+;; Print major-mode-string with function
 (defun my/mm()
 	       (interactive)
 	       (message "%s" major-mode)
@@ -60,7 +72,6 @@
 (add-hook 'term-mode-hook 'my/term-hook)
 
 ;; Mode-line config
-;;(setq mode-line-format (list "<%*%b>\t<%l:%c\t%p>  \t<%m>"))
 (setq-default mode-line-format (list " %* %b\t<%l:%c %p>  \t<%m>"))
 (setq-default smex-prompt-string "imperatum>")
 (setq-default frame-title-format (list "%b"))
@@ -86,6 +97,26 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+;; Disable keys that are annoying
+(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]  
+             [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
+             [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3]
+             [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4]
+             [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
+  (global-unset-key k))
+(global-unset-key (kbd "<left>"))
+(global-unset-key (kbd "<right>"))
+(global-unset-key (kbd "<up>"))
+(global-unset-key (kbd "<down>"))
+(global-unset-key (kbd "<C-left>"))
+(global-unset-key (kbd "<C-right>"))
+(global-unset-key (kbd "<C-up>"))
+(global-unset-key (kbd "<C-down>"))
+(global-unset-key (kbd "<M-left>"))
+(global-unset-key (kbd "<M-right>"))
+(global-unset-key (kbd "<M-up>"))
+(global-unset-key (kbd "<M-down>"))
+
 ;; In case of GUI
 (fringe-mode 0)
 (scroll-bar-mode -1)
@@ -96,7 +127,10 @@
 
 ;; FG and BG colors
 (add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
-(add-to-list 'default-frame-alist '(background-color . "#000000"))
+(add-to-list 'default-frame-alist '(background-color . "#131412"))
+
+;; Fixing special keys
+(require 'iso-transl)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
