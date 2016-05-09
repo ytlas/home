@@ -26,6 +26,7 @@
 (blink-cursor-mode 0)
 (tooltip-mode nil)
 (transient-mark-mode 0)
+(show-paren-mode 1)
 (setq show-help-function nil)
 
 ;; General keybinds
@@ -70,6 +71,7 @@
   (setq mode-line-format (list " %b"))
   )
 (add-hook 'term-mode-hook 'my/term-hook)
+(add-hook 'sh-mode-hook 'hl-line-mode)
 
 ;; Mode-line config
 (setq-default mode-line-format (list " %* %b\t<%l:%c %p>  \t<%m>"))
