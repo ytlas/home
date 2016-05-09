@@ -1,20 +1,32 @@
-;; Packages setup
-(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode ido-ubiquitous smex google-translate flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors smart-mode-line))
+;;; Adam's .emacs config, I know, not the best, but it works superwell!
+;;; READ: The config is optimized for XEmacs, everything might not work on terminal emulators like rxvt or xterm (color problems and such).
+;;; However, with a tweak or two, it should work perfectly.
+
+;;; Packages setup
+;; List of packages that will install unless already installed
+(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode ido-ubiquitous smex google-translate flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+
+;; Install missing packages from package-list
 (unless package-archive-contents
   (package-refresh-contents))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+;; Defaults backup files to store in /tmp
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; Fixes some foreign keyboard problems (like dead-tilde)
 (require 'iso-transl)
 
-;; Defuns
+;;; Defuns
+;; Scrolls up and down and centers screen around cursor
 (defun my/scroll-down()
   (interactive)
   (scroll-up)
@@ -23,12 +35,18 @@
   (interactive)
   (scroll-down)
   (recenter))
+
+;; Prints variable major-mode
 (defun my/mm()
   (interactive)
   (message "%s" major-mode))
+
+;; When in term, only show buffer-name in mode-line
 (defun my/term-hook()
   (interactive)
   (setq mode-line-format (list " %b")))
+
+;; Position cursor at beginning of match when using Isearch
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
 (defun my-goto-match-beginning ()
   (when (and isearch-forward isearch-other-end)
@@ -38,37 +56,61 @@
   (when (and isearch-forward isearch-other-end)
     (goto-char isearch-other-end)))
 
-;; Mode toggles
+;;; Mode toggles
+;; Removes GUI crap
 (menu-bar-mode -1)
-(ido-mode 1)
-(ido-everywhere 1)
-(ido-ubiquitous-mode 1)
-(global-flycheck-mode 1)
-(ac-config-default)
-(blink-cursor-mode 0)
-(tooltip-mode nil)
-(setq show-help-function nil)
-(transient-mark-mode 0)
-(show-paren-mode 1)
-(emms-standard)
-(emms-default-players)
 (fringe-mode 0)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(electric-pair-mode 1)
 
-;; Variables
+;; Narrowing list functions everywhere (almost)
+(ido-mode 1)
+(ido-everywhere 1)
+(ido-ubiquitous-mode 1)
+
+;; Show correction
+(global-flycheck-mode 1)
+
+;; Disables annoying GUI help
+(tooltip-mode nil)
+(setq show-help-function nil)
+
+;; Enable auto-completion
+(ac-config-default)
+
+;; Don't show region all the time
+(transient-mark-mode 0)
+
+;; Shows matching paren
+(show-paren-mode 1)
+
+;; Misc
+(emms-standard)
+(emms-default-players)
+(electric-pair-mode 1)
+(blink-cursor-mode 0)
+
+;;; Variables
+;; Sets window title to buffer name
 (setq-default frame-title-format (list "%b"))
+
+;; Disables Emacs welcome screen
 (setq inhibit-startup-message t)
+
+;; Replaces yes-or-no prompts with y-or-n prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Hooks
+;;; Hooks
+;; Enables hl-line-mode in certain major modes
 (add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
-(add-hook 'web-mode-hook 'hl-line-mode)
-(add-hook 'term-mode-hook 'my/term-hook)
 (add-hook 'sh-mode-hook 'hl-line-mode)
+(add-hook 'web-mode-hook 'hl-line-mode)
 
-;; Autoloads
+;; Changes mode-line when in term-mode
+(add-hook 'term-mode-hook 'my/term-hook)
+
+;;; Autoloads
+;; Enables web-mode in "web-files"
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
@@ -78,27 +120,12 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-;; Key unbindings
-(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]  
-             [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
-             [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3]
-             [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4]
-             [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
+;;; Key unbindings
+;; Unbinds annoying keys that I never use
+(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1] [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2] [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3] [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4] [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5] [M-down] [M-up]  [M-right]  [M-left]  [C-down]  [C-up]  [C-right]  [C-left]  [down]  [up]  [right]))
   (global-unset-key k))
-(global-unset-key (kbd "<left>"))
-(global-unset-key (kbd "<right>"))
-(global-unset-key (kbd "<up>"))
-(global-unset-key (kbd "<down>"))
-(global-unset-key (kbd "<C-left>"))
-(global-unset-key (kbd "<C-right>"))
-(global-unset-key (kbd "<C-up>"))
-(global-unset-key (kbd "<C-down>"))
-(global-unset-key (kbd "<M-left>"))
-(global-unset-key (kbd "<M-right>"))
-(global-unset-key (kbd "<M-up>"))
-(global-unset-key (kbd "<M-down>"))
 
-;; Key bindings
+;;; Key bindings
 (global-set-key (kbd "C-n") 'next-logical-line)
 (global-set-key (kbd "C-p") 'previous-logical-line)
 (global-set-key (kbd "<f5>") 'multi-term)
@@ -134,10 +161,14 @@
  ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "dark orange"))))
  '(highlight ((t (:background "gray32"))))
- '(region ((t (:background "orange")))))
+ '(mc/cursor-face ((t (:foreground "gold" :inverse-video t))))
+ '(mode-line ((t (:background "white" :foreground "black" :box nil))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "dark gray" :foreground "black" :box nil :weight light))))
+ '(region ((t (:background "gray")))))
 
 ;; Specific theme settings
 (add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
 (add-to-list 'default-frame-alist '(background-color . "#131412"))
-(setq sml/theme 'light)
-(sml/setup)
+
+(provide  '.emacs)
+;;; .emacs ends here
