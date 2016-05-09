@@ -126,25 +126,42 @@
   (global-unset-key k))
 
 ;;; Key bindings
+;; Moves by logical lines with <C-n/p>
 (global-set-key (kbd "C-n") 'next-logical-line)
 (global-set-key (kbd "C-p") 'previous-logical-line)
+
+;; Binds F5 to create a new multi-term
 (global-set-key (kbd "<f5>") 'multi-term)
+
+;; Binds M-x to smex instead
 (global-set-key (kbd "M-x") 'smex)
+
+;; Emms custom bindings
 (global-set-key (kbd "C-c d") 'emms-add-directory-tree)
 (global-set-key (kbd "C-c m") 'emms)
+
+;; Magit binds
 (global-set-key (kbd "C-c p") 'magit-push)
 (global-set-key (kbd "C-c c") 'magit-commit)
+
+;; Navigation binds
 (global-set-key (kbd "C-@") 'er/expand-region)
 (global-set-key (kbd "C-ö") 'ace-jump-mode)
 (global-set-key (kbd "M-m") 'iy-go-up-to-char)
 (global-set-key (kbd "M-C-m") 'iy-go-to-char-backward)
+
+;; Multiple-cursors binds
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c C-/") 'mc/mark-sgml-tag-pair)
+
+;; Custom scroll binds
 (global-set-key (kbd "C-v") 'my/scroll-down)
 (global-set-key (kbd "M-v") 'my/scroll-up)
+
+;;; Auto generated code (from customize-group etc.)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -166,7 +183,7 @@
  '(mode-line-inactive ((t (:inherit mode-line :background "dark gray" :foreground "black" :box nil :weight light))))
  '(region ((t (:background "gray")))))
 
-;; Specific theme settings
+;;; Specific theme settings
 (add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
 (add-to-list 'default-frame-alist '(background-color . "#131412"))
 
