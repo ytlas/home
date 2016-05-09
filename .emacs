@@ -1,4 +1,6 @@
-;; Adam's Emacs config, pretty noobish, I know, but it works.
+;;; package --- summary
+;;; Commentary:
+;;; Code:
 (setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode ido-ubiquitous smex google-translate flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -7,6 +9,7 @@
 (unless package-archive-contents
   (package-refresh-contents))
 (dolist (package package-list)
+
   (unless (package-installed-p package)
     (package-install package)))
 
@@ -127,12 +130,25 @@
 ;; Pair Mode
 (electric-pair-mode 1)
 
-;; FG and BG colors
+;; Emacs appearance settings
 (add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
 (add-to-list 'default-frame-alist '(background-color . "#131412"))
+(add-to-list 'default-frame-alist '(height . 24))
+(add-to-list 'default-frame-alist '(width . 80))
 
 ;; Fixing special keys
 (require 'iso-transl)
+
+;; Isearch fixes
+;; Goes to beginning of search match
+(add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
+(defun my-goto-match-beginning ()
+  (when (and isearch-forward isearch-other-end)
+    (goto-char isearch-other-end)))
+(defadvice isearch-exit (after my-goto-match-beginning activate)
+  "Go to beginning of match."
+  (when (and isearch-forward isearch-other-end)
+    (goto-char isearch-other-end)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -141,13 +157,15 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
- '(tool-bar-mode nil))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil)
+ '(transient-mark-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "fixed" :foundry "misc" :slant normal :weight normal :height 113 :width normal))))
+ '(default ((t (:family "Ubuntu Mono" :foundry "DAMA" :slant normal :weight normal :height 128 :width normal))))
  '(cursor ((t (:background "orange"))))
  '(hl-line ((t (:inherit nil :background "gray20"))))
  '(isearch ((t (:background "orange red" :foreground "white"))))
