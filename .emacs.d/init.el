@@ -1,13 +1,13 @@
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
 ;; Removes GUI crap before anything
 (menu-bar-mode -1)
-(fringe-mode 0)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(fringe-mode 0)
 
 ;; Identification
 (setq user-full-name "ytlas")
