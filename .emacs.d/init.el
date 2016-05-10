@@ -3,6 +3,7 @@
 ;; Adam's .emacs config, I know, not the best, but it works superwell!
 ;; READ: The config is optimized for XEmacs, everything might not work on terminal emulators like rxvt or xterm (color problems and such).
 ;; However, with a tweak or two, it should work perfectly.
+
 ;;; Code:
 ;; Removes GUI crap before anything
 (menu-bar-mode -1)
@@ -236,3 +237,4 @@
 
 (provide  '.emacs)
 ;;; .emacs ends here
+nnnn
