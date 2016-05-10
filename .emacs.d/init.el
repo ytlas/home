@@ -237,4 +237,3 @@
 
 (provide  '.emacs)
 ;;; .emacs ends here
-nnnn
