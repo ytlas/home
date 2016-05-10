@@ -2,14 +2,14 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Emacs cheat sheet"
+((".emacs"
+ (filename . "~/.emacs.d/init.el")
+ (front-context-string . ";;; package --- ")
+ (rear-context-string)
+ (position . 1))
+("Emacs cheat sheet"
  (filename . "/ssh:rabbit@ytlas.com:/home/rabbit/Documents/NOTES")
  (front-context-string . "Killing\nC-NUM C-")
  (rear-context-string)
  (position . 1))
-("Key binds .emacs"
- (filename . "~/.emacs")
- (front-context-string . ";;; Key bindings")
- (rear-context-string . "-unset-key k))\n\n")
- (position . 4761))
 )
