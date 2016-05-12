@@ -87,12 +87,14 @@
 ;; Misc
 (emms-standard)
 (emms-default-players)
-(electric-pair-mode 1)
+;;(electric-pair-mode 1)
 (blink-cursor-mode 0)
 
 ;;; Variables
+(setq-default mode-line-format " (%*)%b\t[%p]%l:%c\t%f\t%m")
+
 ;; Enable fuzzy search in all of helm
-(setq helm-mode-fuzzy-match t)
+;; (setq helm-mode-fuzzy-match t)
 
 ;; Disable annoying prompts
 (setq confirm-nonexistent-file-or-buffer nil)
@@ -155,11 +157,11 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; Helm (narrowing-lists framework)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x r b") 'helm-bookmarks)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "M-i") 'helm-imenu)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "C-x r b") 'helm-bookmarks)
+;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (global-set-key (kbd "M-i") 'helm-imenu)
 
 ;; Moves by logical lines with <C-n/p>
 (global-set-key (kbd "C-n") 'next-logical-line)
