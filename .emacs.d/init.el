@@ -55,7 +55,7 @@
 ;; When in term, only show buffer-name in mode-line
 (defun my/term-hook()
   (interactive)
-  (setq mode-line-format (list " %b")))
+  (setq mode-line-format (propertize " %b %-" 'face '(:foreground "#000000" :background "#ffffff"))))
 
 ;; Position cursor at beginning of match when using Isearch
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
@@ -91,10 +91,23 @@
 (blink-cursor-mode 0)
 
 ;;; Variables
-(setq-default mode-line-format " (%*)%b\t[%p]%l:%c\t%f\t%m")
+;; Changes the look of the mode-line
+(setq-default mode-line-format
+      (list
+       (propertize " %* %b " 'face '(:foreground "#000000" :background "dark orange"))
+       (propertize "⏵" 'face '(:foreground "dark orange" :background "#383838"))
+       (propertize " %m " 'face '(:foreground "#ffffff" :background "#383838"))
+       (propertize "⏵" 'face '(:foreground "#383838" :background "#666666"))
+       (propertize " %f " 'face '(:foreground "#ffffff" :background "#666666"))
+       (propertize "⏴" 'face '(:foreground "#383838" :background "#666666"))
+       (propertize " %l:%c " 'face '(:foreground "#ffffff" :background "#383838"))
+       (propertize "⏴" 'face '(:foreground "dark orange" :background "#383838"))
+       (propertize " %p " 'face '(:foreground "#000000" :background "dark orange"))
+       ))
 
-;; Enable fuzzy search in all of helm
-;; (setq helm-mode-fuzzy-match t)
+;; Disables newlines being added at the end of files
+(setq mode-require-final-newline nil)
+(setq require-final-newline nil)
 
 ;; Disable annoying prompts
 (setq confirm-nonexistent-file-or-buffer nil)
@@ -143,6 +156,7 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 
 ;;; Key unbindings
 ;; Unbinds annoying keys that I never use
