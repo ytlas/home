@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-((".emacs"
+(("assignment6"
+ (filename . "~/Documents/berakningsmatte/Uppg6 Adam Thunberg v0.01.html")
+ (front-context-string . "while(i<higher){")
+ (rear-context-string . "\n     t=0;\n     ")
+ (position . 2074))
+(".emacs"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . ";;; package --- ")
  (rear-context-string)
