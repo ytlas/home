@@ -15,7 +15,7 @@
 
 ;;; Packages setup
 ;; List of packages that will install unless already installed
-(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors helm google-this))
+(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors helm google-this nodejs-repl skewer-mode pdf-tools))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)

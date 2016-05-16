@@ -25,6 +25,7 @@ export pmp='sudo apt-get'
 alias mount='sudo mount'
 alias sudo='sudo '
 alias e="emacs -nw"
+alias emacs='fork emacs'
 alias hibernate='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls --color=auto -l'
 alias rm='rm -rfv'
@@ -33,6 +34,7 @@ alias cp='cp -av'
 alias mkdir='mkdir -vp'
 alias sp='sudo poweroff'
 alias sr='sudo reboot'
+alias nethogs='sudo TERM=xterm nethogs'
 
 #Laptop specific
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
