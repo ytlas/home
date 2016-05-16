@@ -95,13 +95,13 @@
 (setq-default mode-line-format
       (list
        (propertize " %* %b " 'face '(:foreground "#000000" :background "dark orange"))
-       (propertize "⏵" 'face '(:foreground "dark orange" :background "#383838"))
+       (propertize ">" 'face '(:foreground "dark orange" :background "#383838"))
        (propertize " %m " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize "⏵" 'face '(:foreground "#383838" :background "#666666"))
+       (propertize ">" 'face '(:foreground "#383838" :background "#666666"))
        (propertize " %f " 'face '(:foreground "#ffffff" :background "#666666"))
-       (propertize "⏴" 'face '(:foreground "#383838" :background "#666666"))
+       (propertize "<" 'face '(:foreground "#383838" :background "#666666"))
        (propertize " %l:%c " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize "⏴" 'face '(:foreground "dark orange" :background "#383838"))
+       (propertize "<" 'face '(:foreground "dark orange" :background "#383838"))
        (propertize " %p " 'face '(:foreground "#000000" :background "dark orange"))
        ))
 

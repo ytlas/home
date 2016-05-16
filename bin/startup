@@ -5,4 +5,3 @@ setxkbmap -option ctrl:nocaps
 xset r rate 200 75
 xset m 0 5
 redshift -l 57:12&
-emacs&

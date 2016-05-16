@@ -1,0 +1,47 @@
+set $mod Mod4
+font pango:monospace 8
+floating_modifier $mod
+bindsym $mod+w kill
+bindsym $mod+d exec dmenu_run
+bindsym $mod+b focus left
+bindsym $mod+n focus down
+bindsym $mod+p focus up
+bindsym $mod+f focus right
+bindsym $mod+Shift+b move left
+bindsym $mod+Shift+n move down
+bindsym $mod+Shift+p move up
+bindsym $mod+Shift+f move right
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+new_window none
+
+bindsym $mod+Left exec "sudo adjbacklight -5%"
+bindsym $mod+Right exec "sudo adjbacklight +5%"
+bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
+bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
+bindsym $mod+m exec "ponymix toggle"
+bindsym $mod+Return exec 'emacs'
+bindsym $mod+Tab focus right
+bindsym $mod+q exit
+exec "$HOME/bin/startup"
+exec "feh --bg-fill $HOME/Pictures/bg.jpg"

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=startupScript
-GenericName=startupScript
-Comment=Runs essential commands on startup
-Exec=/home/rabbit/bin/startup
-Terminal=false
-Type=Application
-X-GNOME-Autostart-enabled=true

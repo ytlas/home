@@ -4,6 +4,11 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 export PATH="$PATH:$HOME/bin"
+if ! [[ $DISPLAY ]];then
+    startx
+    exit
+fi
+
 #colors
 GREEN="\[$(tput setaf 2)\]"
 RED="\[$(tput setaf 1)\]"
@@ -18,7 +23,7 @@ export PS1="\u@\h>"
 export EDITOR="vi"
 
 #Variables
-export pmp='sudo apt-get'
+export pmp='sudo apt'
 
 #Aliases
 #Ez life
@@ -43,7 +48,7 @@ alias getbat='cat /sys/class/power_supply/BAT0/capacity'
 alias ym='${pmp}'
 alias clean='${pmp} autoremove && ${pmp} autoclean'
 alias upgrade='${pmp} update && ${pmp} -u dist-upgrade'
-alias search='aptitude search'
+alias search='${pmp} search'
 
 #Media
 alias adl='youtube-dl -x --audio-format vorbis'
