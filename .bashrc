@@ -5,8 +5,7 @@ if [[ $- != *i* ]] ; then
 fi
 export PATH="$PATH:$HOME/bin"
 if ! [[ $DISPLAY ]];then
-    startx
-    exit
+    startx && exit
 fi
 
 #colors
@@ -29,8 +28,6 @@ export pmp='sudo apt'
 #Ez life
 alias mount='sudo mount'
 alias sudo='sudo '
-alias e="emacs -nw"
-alias emacs='fork emacs'
 alias hibernate='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls --color=auto -l'
 alias rm='rm -rfv'
@@ -46,6 +43,8 @@ alias getbat='cat /sys/class/power_supply/BAT0/capacity'
 
 #Package manager
 alias ym='${pmp}'
+alias install='${pmp} install'
+alias remove='${pmp} remove'
 alias clean='${pmp} autoremove && ${pmp} autoclean'
 alias upgrade='${pmp} update && ${pmp} -u dist-upgrade'
 alias search='${pmp} search'

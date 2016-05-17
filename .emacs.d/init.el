@@ -69,7 +69,7 @@
 
 ;;; Mode toggles
 ;; Show correction
-(global-flycheck-mode 1)
+;;(global-flycheck-mode 1)
 
 ;; Disables annoying GUI help
 (tooltip-mode nil)

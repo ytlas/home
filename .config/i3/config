@@ -41,6 +41,7 @@ bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
 bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
+bindsym $mod+l exec 'i3lock'
 bindsym $mod+Tab focus right
 bindsym $mod+q exit
 exec "$HOME/bin/startup"
