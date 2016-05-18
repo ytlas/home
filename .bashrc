@@ -20,17 +20,18 @@ export PS1="\u${PINK}@${GREEN}:${RESET}\w${YELLOW}\$${RESET} "
 
 # Variables
 export pmp='sudo apt'
+export lpmp='sudo dpkg'
 export EDITOR="vi"
 
 # Aliases
-alias mount='sudo mount'
-alias sudo='sudo '
-alias hibernate='sudo sh -c "echo mem>/sys/power/state"'
-alias ls='ls --color=auto -l'
-alias rm='rm -rfv'
-alias mv='mv -v'
-alias cp='cp -av'
-alias mkdir='mkdir -vp'
+alias m='sudo mount'
+alias s='sudo '
+alias h='sudo sh -c "echo mem>/sys/power/state"'
+alias l='ls --color=auto -l'
+alias r='rm -rfv'
+alias m='mv -v'
+alias c='cp -av'
+alias mk='mkdir -vp'
 alias sp='sudo poweroff'
 alias sr='sudo reboot'
 alias nethogs='sudo TERM=xterm nethogs'
@@ -40,12 +41,16 @@ alias wifi='sudo TERM=xterm nmtui'
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
 
 # Package manager
-alias ym='${pmp}'
-alias install='${pmp} install'
-alias remove='${pmp} remove'
-alias clean='${pmp} autoremove && ${pmp} autoclean'
-alias upgrade='${pmp} update && ${pmp} -u dist-upgrade'
-alias search='${pmp} search'
+alias y='${pmp}'
+alias i='${pmp} install'
+alias r='${pmp} remove'
+alias c='${pmp} autoremove && ${pmp} autoclean'
+alias u='${pmp} update && ${pmp} -u dist-upgrade'
+alias s='${pmp} search'
+
+# dpkg
+alias ly='${lpmp}'
+alias li='${lpmp} -i'
 
 # Media
 alias adl='youtube-dl -x --audio-format vorbis'
