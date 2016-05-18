@@ -139,6 +139,7 @@
 (add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
 (add-hook 'sh-mode-hook 'hl-line-mode)
 (add-hook 'web-mode-hook 'hl-line-mode)
+(add-hook 'python-mode-hook 'hl-line-mode)
 
 ;; Changes mode-line when in term-mode
 (add-hook 'term-mode-hook 'my/term-hook)

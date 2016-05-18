@@ -32,7 +32,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
 new_window none
 
 bindsym $mod+Left exec "sudo adjbacklight -5%"
@@ -42,7 +41,6 @@ bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
 bindsym $mod+l exec 'i3lock'
-bindsym $mod+Tab focus right
 bindsym $mod+q exit
 exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"

@@ -16,7 +16,7 @@ YELLOW="\[$(tput setaf 3)\]"
 RESET="\[$(tput sgr0)\]"
 
 # Sets bash prompt text
-export PS1="\u@\h>"
+export PS1="\u${PINK}@${GREEN}:${RESET}\w${YELLOW}\$${RESET} "
 
 # Variables
 export pmp='sudo apt'
