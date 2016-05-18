@@ -1,3 +1,4 @@
+;;; Adam's amazing init.el
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -68,8 +69,8 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
-;; Show correction
-;;(global-flycheck-mode 1)
+;; Enable real-time suggestions
+(global-flycheck-mode 1)
 
 ;; Disables annoying GUI help
 (tooltip-mode nil)
@@ -95,13 +96,9 @@
 (setq-default mode-line-format
       (list
        (propertize " %* %b " 'face '(:foreground "#000000" :background "dark orange"))
-       (propertize ">" 'face '(:foreground "dark orange" :background "#383838"))
        (propertize " %m " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize ">" 'face '(:foreground "#383838" :background "#666666"))
        (propertize " %f " 'face '(:foreground "#ffffff" :background "#666666"))
-       (propertize "<" 'face '(:foreground "#383838" :background "#666666"))
        (propertize " %l:%c " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize "<" 'face '(:foreground "dark orange" :background "#383838"))
        (propertize " %p " 'face '(:foreground "#000000" :background "dark orange"))
        ))
 

@@ -1,8 +1,8 @@
 set $mod Mod4
-font pango:monospace 8
+font Ubuntu:Monospace 13
 floating_modifier $mod
 bindsym $mod+w kill
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13'"
 bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+p focus up
