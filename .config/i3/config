@@ -1,8 +1,8 @@
 set $mod Mod4
-font Ubuntu:Monospace 13
+font pango:Ubuntu Monospace 13
 floating_modifier $mod
 bindsym $mod+w kill
-bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13'"
+bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13' -nb black -sb orange -l 10"
 bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+p focus up
@@ -11,28 +11,26 @@ bindsym $mod+Shift+b move left
 bindsym $mod+Shift+n move down
 bindsym $mod+Shift+p move up
 bindsym $mod+Shift+f move right
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
-bindsym $mod+Shift+c reload
+
+# Workspace names
+set $w1 Emacs
+set $w2 Browser
+set $w3 Misc1
+set $w4 Misc2
+
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+c restart
 new_window none
+
+assign [class="Emacs"] $w1
+assign [class="Firefox"] $w2
 
 bindsym $mod+Left exec "sudo adjbacklight -5%"
 bindsym $mod+Right exec "sudo adjbacklight +5%"
@@ -41,6 +39,25 @@ bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
 bindsym $mod+l exec 'i3lock'
+bindsym $mod+h exec 'i3lock&&hibernate'
+bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+q exit
 exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
+
+# Colors
+set $background #131412
+set $foreground #ffffff
+set $fbackground #ff8c00
+
+# Bar
+bar {
+	status_command i3status
+	separator_symbol " > "
+	colors{
+		background $background
+		statusline $foreground
+		focused_workspace $background $background #ffffff
+		inactive_workspace $background $background #929292
+	}
+}

@@ -1,5 +1,5 @@
 # Important initial setup
-export GTK_THEME="raleigh"
+# export GTK_THEME="raleigh"
 export PATH="$PATH:$HOME/bin"
 
 # Starts an Xserver if the DISPLAY variable is not set
@@ -27,14 +27,15 @@ export EDITOR="vi"
 alias m='sudo mount'
 alias s='sudo '
 alias h='sudo sh -c "echo mem>/sys/power/state"'
-alias l='ls --color=auto -l'
+alias ls='ls --color=auto -l'
+alias cl='clear'
 alias r='rm -rfv'
 alias m='mv -v'
 alias c='cp -av'
 alias mk='mkdir -vp'
 alias sp='sudo poweroff'
 alias sr='sudo reboot'
-alias nethogs='sudo TERM=xterm nethogs'
+alias nh='sudo TERM=xterm nethogs'
 alias wifi='sudo TERM=xterm nmtui'
 
 # Laptop specific

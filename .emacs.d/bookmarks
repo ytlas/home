@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Custom Emacs variables (auto-gen)"
+(("webbprojekt"
+ (filename . "/ssh:rabbit@ytlas.com:/home/rabbit/www/webbprojekt/index.html")
+ (front-context-string . "      <article i")
+ (rear-context-string . "n 'catUrls' -->\n")
+ (position . 1874))
+("Custom Emacs variables (auto-gen)"
  (filename . "~/.emacs.d/custom.el")
  (front-context-string . " '(custom-safe-t")
  (rear-context-string . "n't work right.\n")
