@@ -39,7 +39,6 @@ bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
 bindsym $mod+l exec 'i3lock'
-bindsym $mod+h exec 'i3lock&&hibernate'
 bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+q exit
 exec "$HOME/bin/startup"
@@ -49,6 +48,14 @@ exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 set $background #131412
 set $foreground #ffffff
 set $fbackground #ff8c00
+
+# Resize binds
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+Control+f resize grow width 10 px or 10 ppt
+bindsym $mod+Control+b resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+p resize grow height 10 px or 10 ppt
+bindsym $mod+Control+n resize shrinkgrow height 10 px or 10 ppt
 
 # Bar
 bar {
