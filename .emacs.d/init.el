@@ -56,7 +56,7 @@
 ;; When in term, only show buffer-name in mode-line
 (defun my/term-hook()
   (interactive)
-  (setq mode-line-format (propertize " %b %-" 'face '(:foreground "#000000" :background "#ffffff"))))
+  (setq mode-line-format (propertize " %b %-" 'face '(:foreground "#ffffff" :background "#000000"))))
 
 ;; Position cursor at beginning of match when using Isearch
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)

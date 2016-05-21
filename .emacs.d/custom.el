@@ -16,7 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Ubuntu Mono" :foundry "unknown" :slant normal :weight normal :height 166 :width normal))))
  '(cursor ((t (:background "dark orange"))))
- '(highlight ((t (:background "gray32"))))
+ '(highlight ((t (:background "light gray"))))
  '(mc/cursor-face ((t (:foreground "gold" :inverse-video t))))
  '(mode-line ((t (:background "dark orange" :foreground "black" :box nil))))
  '(mode-line-inactive ((t (:inherit mode-line :background "dark gray" :foreground "black" :box nil :weight light))))

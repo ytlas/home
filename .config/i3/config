@@ -40,12 +40,10 @@ bindsym $mod+Shift+c restart
 new_window none
 
 assign [class="Emacs"] $w1
-for_window [class="Emacs"] floating enable
-for_window [class="Emacs"] move left 170px
-for_window [class="Emacs"] move up 150px
 assign [class="Firefox"] $w2
 assign [class="mpv"] $w3
 assign [class="TeamSpeak 3"] $w4
+assign [class="Steam"] $w4
 
 bindsym $mod+Left exec "sudo adjbacklight -5%"
 bindsym $mod+Right exec "sudo adjbacklight +5%"
