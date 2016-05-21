@@ -43,6 +43,7 @@ bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+q exit
 exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
+exec "emacs"
 
 # Colors
 set $background #131412
@@ -66,5 +67,6 @@ bar {
 		statusline $foreground
 		focused_workspace $background $background #ffffff
 		inactive_workspace $background $background #929292
+		urgent_workspace $background $background #ff0000
 	}
 }
