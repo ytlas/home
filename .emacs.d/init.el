@@ -234,8 +234,8 @@
 (load custom-file)
 
 ;;; Specific theme settings
-(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
-(add-to-list 'default-frame-alist '(background-color . "#131412"))
+(add-to-list 'default-frame-alist '(foreground-color . "#000000"))
+(add-to-list 'default-frame-alist '(background-color . "#ffffff"))
 
 (provide  '.emacs)
 ;;; .emacs ends here

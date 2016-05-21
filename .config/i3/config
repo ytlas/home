@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:Ubuntu Monospace 13
+font pango:Ubuntu Monospace 16
 floating_modifier $mod
 bindsym $mod+w kill
 bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13' -nb black -sb orange -l 10"
@@ -7,30 +7,45 @@ bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+p focus up
 bindsym $mod+f focus right
-bindsym $mod+Shift+b move left
-bindsym $mod+Shift+n move down
-bindsym $mod+Shift+p move up
-bindsym $mod+Shift+f move right
+bindsym $mod+Shift+b move left 50px
+bindsym $mod+Shift+n move down 50px
+bindsym $mod+Shift+p move up 50px
+bindsym $mod+Shift+f move right 50px
+bindsym $mod+g focus mode_toggle
 
 # Workspace names
-set $w1 Emacs
-set $w2 Browser
-set $w3 Misc1
-set $w4 Misc2
+set $w1 "1: Emacs"
+set $w2 "2: Browser"
+set $w3 "3: Media"
+set $w4 "4: Games"
+set $w5 "5: Misc1"
+set $w6 "6: Misc2"
 
 bindsym $mod+1 workspace $w1
 bindsym $mod+2 workspace $w2
 bindsym $mod+3 workspace $w3
 bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
 bindsym $mod+Shift+1 move container to workspace $w1
 bindsym $mod+Shift+2 move container to workspace $w2
 bindsym $mod+Shift+3 move container to workspace $w3
 bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6
+
+bindsym $mod+t floating toggle
+
 bindsym $mod+Shift+c restart
 new_window none
 
 assign [class="Emacs"] $w1
+for_window [class="Emacs"] floating enable
+for_window [class="Emacs"] move left 170px
+for_window [class="Emacs"] move up 150px
 assign [class="Firefox"] $w2
+assign [class="mpv"] $w3
+assign [class="TeamSpeak 3"] $w4
 
 bindsym $mod+Left exec "sudo adjbacklight -5%"
 bindsym $mod+Right exec "sudo adjbacklight +5%"
@@ -44,6 +59,7 @@ bindsym $mod+q exit
 exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "emacs"
+exec "compton -f -I 0.1 -O 0.1 -c"
 
 # Colors
 set $background #131412
@@ -68,5 +84,6 @@ bar {
 		focused_workspace $background $background #ffffff
 		inactive_workspace $background $background #929292
 		urgent_workspace $background $background #ff0000
+		separator #ffa500
 	}
 }
