@@ -95,11 +95,11 @@
 ;; Changes the look of the mode-line
 (setq-default mode-line-format
       (list
-       (propertize " %* %b " 'face '(:foreground "#000000" :background "dark orange"))
+       (propertize " %* %b " 'face '(:foreground "#ffffff" :background "#666666"))
        (propertize " %m " 'face '(:foreground "#ffffff" :background "#383838"))
        (propertize " %f " 'face '(:foreground "#ffffff" :background "#666666"))
        (propertize " %l:%c " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize " %p " 'face '(:foreground "#000000" :background "dark orange"))
+       (propertize " %p " 'face '(:foreground "#ffffff" :background "#666666"))
        ))
 
 ;; Disables newlines being added at the end of files

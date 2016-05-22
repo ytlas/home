@@ -2,9 +2,9 @@
 # export GTK_THEME="raleigh"
 export PATH="$PATH:$HOME/bin"
 
-# Starts an Xserver if the DISPLAY variable is not set
-if ! [[ $DISPLAY ]];then
-    startx && exit
+ifx=$(ps cax | grep xinit)
+if ! [[ $ifx ]]; then
+   startx&&exit
 fi
 
 # Color variables

@@ -42,6 +42,7 @@ new_window none
 assign [class="Emacs"] $w1
 assign [class="Firefox"] $w2
 assign [class="mpv"] $w3
+assign [class="google-chrome"] $w3
 assign [class="TeamSpeak 3"] $w4
 assign [class="Steam"] $w4
 
@@ -57,6 +58,7 @@ bindsym $mod+q exit
 exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "emacs"
+exec "nm-applet"
 exec "compton -f -I 0.1 -O 0.1 -c"
 
 # Colors

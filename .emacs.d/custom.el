@@ -18,6 +18,6 @@
  '(cursor ((t (:background "dark orange"))))
  '(highlight ((t (:background "light gray"))))
  '(mc/cursor-face ((t (:foreground "gold" :inverse-video t))))
- '(mode-line ((t (:background "dark orange" :foreground "black" :box nil))))
+ '(mode-line ((t (:background "#383838" :foreground "black" :box nil))))
  '(mode-line-inactive ((t (:inherit mode-line :background "dark gray" :foreground "black" :box nil :weight light))))
  '(region ((t (:background "DarkOrange3")))))
