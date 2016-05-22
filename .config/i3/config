@@ -53,6 +53,7 @@ bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
 bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
+bindsym $mod+Shift+Return exec 'xterm'
 bindsym $mod+l exec 'i3lock'
 bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+q exit
