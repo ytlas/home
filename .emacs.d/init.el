@@ -16,7 +16,7 @@
 
 ;;; Packages setup
 ;; List of packages that will install unless already installed
-(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors helm google-this nodejs-repl skewer-mode pdf-tools))
+(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors helm google-this nodejs-repl skewer-mode pdf-tools ido-ubiquitous smex))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
@@ -56,7 +56,7 @@
 ;; When in term, only show buffer-name in mode-line
 (defun my/term-hook()
   (interactive)
-  (setq mode-line-format (propertize " %b %-" 'face '(:foreground "#ffffff" :background "#000000"))))
+  (setq mode-line-format (propertize " %b %-" 'face '(:foreground "#ffffff" :background "#131412"))))
 
 ;; Position cursor at beginning of match when using Isearch
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
@@ -69,6 +69,10 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
+;; Narrowing list modes
+(ido-mode 1)
+(ido-ubiquitous-mode 1)
+
 ;; Enable real-time suggestions
 (global-flycheck-mode 1)
 
@@ -95,11 +99,11 @@
 ;; Changes the look of the mode-line
 (setq-default mode-line-format
       (list
-       (propertize " %* %b " 'face '(:foreground "#ffffff" :background "#666666"))
+       (propertize " %* %b " 'face '(:foreground "#ffffff" :background "#131412"))
        (propertize " %m " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize " %f " 'face '(:foreground "#ffffff" :background "#666666"))
+       (propertize " %f " 'face '(:foreground "#ffffff" :background "#131412"))
        (propertize " %l:%c " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize " %p " 'face '(:foreground "#ffffff" :background "#666666"))
+       (propertize " %p " 'face '(:foreground "#ffffff" :background "#131412"))
        ))
 
 ;; Disables newlines being added at the end of files
@@ -164,6 +168,9 @@
   (global-unset-key k))
 
 ;;; Key bindings
+;; Narrowing list M-x
+(global-set-key (kbd "M-x") 'smex)
+
 ;; Back-to-indentation rebind
 (global-set-key (kbd "M-p") 'back-to-indentation)
 
@@ -178,13 +185,6 @@
 
 ;; Indent when RET is pressed
 (define-key global-map (kbd "RET") 'newline-and-indent)
-
-;; Helm (narrowing-lists framework)
-;; (global-set-key (kbd "M-x") 'helm-M-x)
-;; (global-set-key (kbd "C-x r b") 'helm-bookmarks)
-;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; (global-set-key (kbd "M-i") 'helm-imenu)
 
 ;; Moves by logical lines with <C-n/p>
 (global-set-key (kbd "C-n") 'next-logical-line)
@@ -234,8 +234,8 @@
 (load custom-file)
 
 ;;; Specific theme settings
-(add-to-list 'default-frame-alist '(foreground-color . "#000000"))
-(add-to-list 'default-frame-alist '(background-color . "#ffffff"))
+(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
+(add-to-list 'default-frame-alist '(background-color . "#000000"))
 
 (provide  '.emacs)
 ;;; .emacs ends here

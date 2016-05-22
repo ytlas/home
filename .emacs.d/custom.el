@@ -14,9 +14,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Ubuntu Mono" :foundry "unknown" :slant normal :weight normal :height 166 :width normal))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 158 :width normal))))
  '(cursor ((t (:background "dark orange"))))
- '(highlight ((t (:background "light gray"))))
+ '(highlight ((t (:background "gray20"))))
  '(mc/cursor-face ((t (:foreground "gold" :inverse-video t))))
  '(mode-line ((t (:background "#383838" :foreground "black" :box nil))))
  '(mode-line-inactive ((t (:inherit mode-line :background "dark gray" :foreground "black" :box nil :weight light))))

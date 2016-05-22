@@ -37,6 +37,7 @@ alias sp='sudo poweroff'
 alias sr='sudo reboot'
 alias nh='sudo TERM=xterm nethogs'
 alias wifi='sudo TERM=xterm nmtui'
+alias pg='ping leafscript.net'
 
 # Laptop specific
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
