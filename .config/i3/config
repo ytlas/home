@@ -2,7 +2,8 @@ set $mod Mod4
 font pango:Ubuntu Monospace 16
 floating_modifier $mod
 bindsym $mod+w kill
-bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13' -nb black -sb orange -l 10"
+#bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13' -nb black -sb orange -l 10"
+bindsym $mod+d exec "rofi -show run"
 bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+p focus up
@@ -61,7 +62,6 @@ exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "emacs"
 exec "nm-applet"
-exec "compton -f -I 0.1 -O 0.1 -c"
 
 # Colors
 set $background #131412
