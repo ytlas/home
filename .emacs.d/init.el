@@ -42,11 +42,13 @@
 (defun my/scroll-down()
   (interactive)
   (scroll-up)
-  (recenter))
+  ;;(recenter)
+  )
 (defun my/scroll-up()
   (interactive)
   (scroll-down)
-  (recenter))
+  ;;(recenter)
+  )
 
 ;; Prints variable major-mode
 (defun my/mm()
@@ -234,8 +236,8 @@
 (load custom-file)
 
 ;;; Specific theme settings
-(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
-(add-to-list 'default-frame-alist '(background-color . "#000000"))
+(add-to-list 'default-frame-alist '(foreground-color . "#000000"))
+(add-to-list 'default-frame-alist '(background-color . "#ffffff"))
 
 (provide  '.emacs)
 ;;; .emacs ends here
