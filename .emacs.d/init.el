@@ -86,7 +86,7 @@
 (ac-config-default)
 
 ;; Don't show region all the time
-(transient-mark-mode 0)
+;;(transient-mark-mode 0)
 
 ;; Shows matching paren
 (show-paren-mode 1)

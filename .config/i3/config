@@ -2,8 +2,7 @@ set $mod Mod4
 font pango:Ubuntu Monospace 16
 floating_modifier $mod
 bindsym $mod+w kill
-#bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13' -nb black -sb orange -l 10"
-bindsym $mod+d exec "rofi -show run"
+bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13' -nb black -sb orange -l 10"
 bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+p focus up
@@ -74,18 +73,18 @@ bindsym $mod+v split v
 bindsym $mod+Control+f resize grow width 10 px or 10 ppt
 bindsym $mod+Control+b resize shrink width 10 px or 10 ppt
 bindsym $mod+Control+p resize grow height 10 px or 10 ppt
-bindsym $mod+Control+n resize shrinkgrow height 10 px or 10 ppt
+bindsym $mod+Control+n resize shrink height 10 px or 10 ppt
 
 # Bar
-bar {
+ bar {
 	status_command i3status
-	separator_symbol " > "
+#	separator_symbol " > "
 	colors{
 		background $background
 		statusline $foreground
 		focused_workspace $background $background #ffffff
 		inactive_workspace $background $background #929292
 		urgent_workspace $background $background #ff0000
-		separator #ffa500
+#		separator #ffa500
 	}
 }

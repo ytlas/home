@@ -46,7 +46,7 @@ alias getbat='cat /sys/class/power_supply/BAT0/capacity'
 alias y='${pmp}'
 alias i='${pmp} install'
 alias r='${pmp} remove'
-alias c='${pmp} autoremove && ${pmp} autoclean'
+alias c='${pmp}-get autoremove && ${pmp}-get autoclean'
 alias u='${pmp} update && ${pmp} -u dist-upgrade'
 alias s='${pmp} search'
 
