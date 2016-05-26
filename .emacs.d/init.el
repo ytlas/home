@@ -99,7 +99,7 @@
 ;; Misc
 (emms-standard)
 (emms-default-players)
-;;(electric-pair-mode 1)
+(electric-pair-mode 1)
 (blink-cursor-mode 0)
 
 ;;; Variables

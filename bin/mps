@@ -12,4 +12,8 @@ import sys
 #         count+=1
 
 nohup=popen('xsel').read()
-subprocess.Popen("nohup mpv $(youtube-dl -g '"+nohup+"')>/dev/null 2>&1&",shell=True,stdout=subprocess.PIPE).stdout.read()
+if "twitch.tv" in nohup or "youtube.com" in nohup:
+    subprocess.Popen("nohup livestreamer -p mpv "+nohup+" best>/dev/null 2>&1&",shell=True,stdout=subprocess.PIPE).stdout.read()
+    exit()
+else:
+    subprocess.Popen("nohup mpv $(youtube-dl -g '"+nohup+"')>/dev/null 2>&1&",shell=True,stdout=subprocess.PIPE).stdout.read()
