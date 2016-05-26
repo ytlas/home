@@ -2,10 +2,10 @@
 # export GTK_THEME="raleigh"
 export PATH="$PATH:$HOME/bin"
 
-#ifx=$(ps cax | grep xinit)
-#if ! [[ $ifx ]]; then
-   #startx&&exit
-#fi
+ifx=$(ps cax | grep xinit)
+if ! [[ $ifx ]]; then
+   startx&&exit
+fi
 
 # Color variables
 GREEN="\[$(tput setaf 2)\]"

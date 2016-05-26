@@ -71,6 +71,8 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
+;;(transient-mark-mode 1)
+
 ;; Treats CamelCase words as distinct words
 (subword-mode 1)
 
@@ -90,9 +92,6 @@
 
 ;; Enable auto-completion
 (ac-config-default)
-
-;; Don't/do show region all the time
-(transient-mark-mode 1)
 
 ;; Shows matching paren
 (show-paren-mode 1)
