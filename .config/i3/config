@@ -56,6 +56,7 @@ bindsym $mod+Return exec 'emacs'
 bindsym $mod+Shift+Return exec 'xterm'
 bindsym $mod+l exec 'i3lock'
 bindsym $mod+0 exec 'firefox-esr'
+bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
 exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
