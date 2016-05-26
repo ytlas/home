@@ -58,7 +58,7 @@
 ;; When in term, only show buffer-name in mode-line
 (defun my/term-hook()
   (interactive)
-  (setq mode-line-format (propertize " %b %-" 'face '(:foreground "#ffffff" :background "#131412"))))
+  (setq mode-line-format " %b "))
 
 ;; Position cursor at beginning of match when using Isearch
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
@@ -71,6 +71,12 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
+;; Treats CamelCase words as distinct words
+(subword-mode 1)
+
+;; Winner mode (remember window configurations)
+(winner-mode 1)
+
 ;; Narrowing list modes
 (ido-mode 1)
 (ido-ubiquitous-mode 1)
@@ -85,8 +91,8 @@
 ;; Enable auto-completion
 (ac-config-default)
 
-;; Don't show region all the time
-;;(transient-mark-mode 0)
+;; Don't/do show region all the time
+(transient-mark-mode 1)
 
 ;; Shows matching paren
 (show-paren-mode 1)
@@ -98,15 +104,12 @@
 (blink-cursor-mode 0)
 
 ;;; Variables
+;; Enables flexible string matching with various ido-modes
+(setq ido-enable-flex-matching t)
+(setq smex-flex-matching t)
+
 ;; Changes the look of the mode-line
-(setq-default mode-line-format
-      (list
-       (propertize " %* %b " 'face '(:foreground "#ffffff" :background "#131412"))
-       (propertize " %m " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize " %f " 'face '(:foreground "#ffffff" :background "#131412"))
-       (propertize " %l:%c " 'face '(:foreground "#ffffff" :background "#383838"))
-       (propertize " %p " 'face '(:foreground "#ffffff" :background "#131412"))
-       ))
+(setq-default mode-line-format " %* %b  %m  %f  %l:%c  %p ")
 
 ;; Disables newlines being added at the end of files
 (setq mode-require-final-newline nil)
@@ -173,17 +176,11 @@
 ;; Narrowing list M-x
 (global-set-key (kbd "M-x") 'smex)
 
-;; Back-to-indentation rebind
-(global-set-key (kbd "M-p") 'back-to-indentation)
-
 ;; Windmove
 (global-set-key (kbd "C-c b") 'windmove-left)
 (global-set-key (kbd "C-c f") 'windmove-right)
 (global-set-key (kbd "C-c p") 'windmove-up)
 (global-set-key (kbd "C-c n") 'windmove-down)
-
-;; Hippie expand
-(global-set-key (kbd "M-8") 'hippie-expand)
 
 ;; Indent when RET is pressed
 (define-key global-map (kbd "RET") 'newline-and-indent)
@@ -199,15 +196,11 @@
 (global-set-key (kbd "C-c d") 'emms-add-directory-tree)
 (global-set-key (kbd "C-c m") 'emms)
 
-;; Magit binds
-;;(global-set-key (kbd "C-c p") 'magit-push)
-(global-set-key (kbd "C-c c") 'magit-commit)
-
 ;; Navigation binds
 (global-set-key (kbd "C-@") 'er/expand-region)
 (global-set-key (kbd "C-ö") 'ace-jump-mode)
-(global-set-key (kbd "M-m") 'iy-go-up-to-char)
-(global-set-key (kbd "M-C-m") 'iy-go-to-char-backward)
+(global-set-key (kbd "M-i") 'iy-go-up-to-char)
+(global-set-key (kbd "C-c M-i") 'iy-go-up-to-char-backward)
 
 ;; Multiple-cursors binds
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -224,20 +217,17 @@
 (global-set-key (kbd "C-c C-g") 'google-this)
 (global-set-key (kbd "C-c C-t") 'google-translate-query-translate)
 
-;; Follow mode bind
-(global-set-key (kbd "C-c f") 'follow-mode)
-
 ;; Comment binds
-(global-set-key (kbd "M-9") 'comment-region)
-(global-set-key (kbd "C-M-9") 'uncomment-region)
+(global-set-key (kbd "C-c C-c C-r") 'comment-region)
+(global-set-key (kbd "C-c C-u C-r") 'uncomment-region)
 
 ;;; Put auto-generated code in separate file (~/.emacs.d/custom.el)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
 ;;; Specific theme settings
-(add-to-list 'default-frame-alist '(foreground-color . "#000000"))
-(add-to-list 'default-frame-alist '(background-color . "#ffffff"))
+(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
+(add-to-list 'default-frame-alist '(background-color . "#131412"))
 
 (provide  '.emacs)
 ;;; .emacs ends here
