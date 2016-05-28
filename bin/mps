@@ -3,17 +3,12 @@ import subprocess
 from os import *
 import sys
 
-# nohup=""
-# count=0
-# for arg in sys.argv:
-#     if not count==0:
-#         nohup+=" "+arg
-#     else:
-#         count+=1
-
 nohup=popen('xsel').read()
 if "twitch.tv" in nohup or "youtube.com" in nohup:
     subprocess.Popen("nohup livestreamer -p mpv "+nohup+" best>/dev/null 2>&1&",shell=True,stdout=subprocess.PIPE).stdout.read()
-    exit()
+
+elif ".torrent" in nohup or "magnet:" in nohup:
+    subprocess.Popen("xterm -e \"peerflix -kd '"+nohup+"'\"",shell=True,stdout=subprocess.PIPE).stdout.read()
+
 else:
     subprocess.Popen("nohup mpv $(youtube-dl -g '"+nohup+"')>/dev/null 2>&1&",shell=True,stdout=subprocess.PIPE).stdout.read()
