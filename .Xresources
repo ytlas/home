@@ -1,7 +1,7 @@
 urxvt*scrollBar: false
-urxvt*background: black
+urxvt*background: #131412
 urxvt*foreground: white
-urxvt.font: xft:Ubuntu Mono:size=15
+urxvt.font: xft:Ubuntu Mono:size=16
 urxvt.letterSpace: 0
 urxvt*iso14755: False
 urxvt*iso14755_52: False
@@ -21,8 +21,6 @@ urxvt*iso14755_52: False
 *color13: #AD7FA8
 *color14: #fcaf3e
 *color15: #EEEEEC
-urxvt*transparent: true
-urxvt*shading: 10
 
 xterm*font:     *-fixed-*-*-*-18-*
 xterm*faceName: Ubuntu Mono:size=16:antialias=true

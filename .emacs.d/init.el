@@ -42,12 +42,12 @@
 (defun my/scroll-down()
   (interactive)
   (scroll-up)
-  ;;(recenter)
+  (recenter)
   )
 (defun my/scroll-up()
   (interactive)
   (scroll-down)
-  ;;(recenter)
+  (recenter)
   )
 
 ;; Prints variable major-mode
@@ -71,8 +71,6 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
-;;(transient-mark-mode 1)
-
 ;; Treats CamelCase words as distinct words
 (subword-mode 1)
 
@@ -82,9 +80,6 @@
 ;; Narrowing list modes
 (ido-mode 1)
 (ido-ubiquitous-mode 1)
-
-;; Enable real-time suggestions
-(global-flycheck-mode 1)
 
 ;; Disables annoying GUI help
 (tooltip-mode nil)
@@ -103,6 +98,12 @@
 (blink-cursor-mode 0)
 
 ;;; Variables
+;; Makes point move by logical lines
+(setq line-move-visual nil)
+
+;; Sets the initial scratch buffer content
+(setq initial-scratch-message ";; Fuck you\n\n")
+
 ;; Enables flexible string matching with various ido-modes
 (setq ido-enable-flex-matching t)
 (setq smex-flex-matching t)
@@ -168,8 +169,8 @@
 
 ;;; Key unbindings
 ;; Unbinds annoying keys that I never use
-;;(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1] [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2] [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3] [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4] [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5] [M-down] [M-up]  [M-right]  [M-left]  [C-down]  [C-up]  [C-right]  [C-left]  [down]  [up]  [right] [left] [C-c f]))
-  ;;(global-unset-key k))
+(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1] [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2] [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3] [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4] [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5] [M-down] [M-up]  [M-right]  [M-left]  [C-down]  [C-up]  [C-right]  [C-left]  [down]  [up]  [right] [left] [C-c f]))
+  (global-unset-key k))
 
 ;;; Key bindings
 ;; Narrowing list M-x
@@ -180,45 +181,35 @@
 (global-set-key (kbd "C-c f") 'windmove-right)
 (global-set-key (kbd "C-c p") 'windmove-up)
 (global-set-key (kbd "C-c n") 'windmove-down)
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; Indent when RET is pressed
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-;; Moves by logical lines with <C-n/p>
-(global-set-key (kbd "C-n") 'next-logical-line)
-(global-set-key (kbd "C-p") 'previous-logical-line)
-
 ;; Binds F5 to create a new multi-term
-(global-set-key (kbd "C-c t") 'multi-term)
-
-;; Emms custom bindings
-(global-set-key (kbd "C-c d") 'emms-add-directory-tree)
-(global-set-key (kbd "C-c m") 'emms)
+(global-set-key (kbd "þ") 'multi-term)
 
 ;; Navigation binds
-(global-set-key (kbd "C-@") 'er/expand-region)
-(global-set-key (kbd "C-ö") 'ace-jump-mode)
-(global-set-key (kbd "M-i") 'iy-go-up-to-char)
-(global-set-key (kbd "C-c M-i") 'iy-go-up-to-char-backward)
+(global-set-key (kbd "€") 'er/expand-region)
+(global-set-key (kbd "ª") 'ace-jump-mode)
+(global-set-key (kbd "→") 'iy-go-up-to-char)
+(global-set-key (kbd "C-→") 'iy-go-up-to-char-backward)
 
 ;; Multiple-cursors binds
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-c C-/") 'mc/mark-sgml-tag-pair)
+(global-set-key (kbd "µ") 'mc/mark-next-like-this)
+(global-set-key (kbd "ł") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-ł") 'mc/unmark-previous-like-this)
+(global-set-key (kbd "C-µ") 'mc/unmark-next-like-this)
+(global-set-key (kbd "C-c C-M-µ") 'mc/edit-lines)
+(global-set-key (kbd "C-M-µ") 'mc/mark-all-like-this)
 
 ;; Custom scroll binds
 (global-set-key (kbd "C-v") 'my/scroll-down)
 (global-set-key (kbd "M-v") 'my/scroll-up)
 
-;; Google-binds
-(global-set-key (kbd "C-c C-g") 'google-this)
-(global-set-key (kbd "C-c C-t") 'google-translate-query-translate)
-
 ;; Comment binds
-(global-set-key (kbd "C-c C-c C-r") 'comment-region)
-(global-set-key (kbd "C-c C-u C-r") 'uncomment-region)
+(global-set-key (kbd "©") 'comment-region)
+(global-set-key (kbd "C-©") 'uncomment-region)
 
 ;;; Put auto-generated code in separate file (~/.emacs.d/custom.el)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

@@ -46,6 +46,7 @@ assign [class="google-chrome"] $w3
 assign [class="TeamSpeak 3"] $w4
 assign [class="Steam"] $w4
 for_window [class="XTerm"] floating enable
+for_window [class="URxvt"] floating enable
 
 bindsym $mod+Left exec "sudo adjbacklight -5%"
 bindsym $mod+Right exec "sudo adjbacklight +5%"
@@ -53,7 +54,7 @@ bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
 bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
-bindsym $mod+Shift+Return exec 'xterm'
+bindsym $mod+Shift+Return exec 'urxvt'
 bindsym $mod+l exec 'i3lock'
 bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+9 exec 'mps'
