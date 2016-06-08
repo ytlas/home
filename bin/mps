@@ -5,10 +5,10 @@ import sys
 
 nohup=popen('xsel').read()
 if "twitch.tv" in nohup or "youtube.com" in nohup:
-    subprocess.Popen("nohup livestreamer -p mpv "+nohup+" best>/dev/null 2>&1&",shell=True,stdout=subprocess.PIPE).stdout.read()
+    subprocess.Popen("xterm -e 'livestreamer -p mpv "+nohup+" best'",shell=True,stdout=subprocess.PIPE).stdout.read()
 
 elif ".torrent" in nohup or "magnet:" in nohup:
     subprocess.Popen("xterm -e \"peerflix -kd '"+nohup+"'\"",shell=True,stdout=subprocess.PIPE).stdout.read()
 
 else:
-    subprocess.Popen("nohup mpv $(youtube-dl -g '"+nohup+"')>/dev/null 2>&1&",shell=True,stdout=subprocess.PIPE).stdout.read()
+    subprocess.Popen("xterm -e 'mpv $(youtube-dl -g '"+nohup+"')'",shell=True,stdout=subprocess.PIPE).stdout.read()

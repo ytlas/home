@@ -18,8 +18,9 @@ set $w1 "1: Emacs"
 set $w2 "2: Browser"
 set $w3 "3: Media"
 set $w4 "4: Games"
-set $w5 "5: Misc1"
-set $w6 "6: Misc2"
+set $w5 "5: Music"
+set $w6 "6: Misc1"
+set $w7 "7: Misc2"
 
 bindsym $mod+1 workspace $w1
 bindsym $mod+2 workspace $w2
@@ -27,12 +28,14 @@ bindsym $mod+3 workspace $w3
 bindsym $mod+4 workspace $w4
 bindsym $mod+5 workspace $w5
 bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
 bindsym $mod+Shift+1 move container to workspace $w1
 bindsym $mod+Shift+2 move container to workspace $w2
 bindsym $mod+Shift+3 move container to workspace $w3
 bindsym $mod+Shift+4 move container to workspace $w4
 bindsym $mod+Shift+5 move container to workspace $w5
 bindsym $mod+Shift+6 move container to workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7
 
 bindsym $mod+t floating toggle
 
@@ -42,27 +45,37 @@ new_window none
 assign [class="Emacs"] $w1
 assign [class="Firefox"] $w2
 assign [class="mpv"] $w3
+assign [title="http"] $w3
+assign [title="best"] $w3
+assign [title="magnet:"] $w3
 assign [class="google-chrome"] $w3
 assign [class="TeamSpeak 3"] $w4
 assign [class="Steam"] $w4
+assign [title="Spotify"] $w5
+assign [class="VirtualBox"] $w6
 for_window [class="XTerm"] floating enable
 for_window [class="URxvt"] floating enable
 
 bindsym $mod+Left exec "sudo adjbacklight -5%"
 bindsym $mod+Right exec "sudo adjbacklight +5%"
+bindsym $mod+Control+Left exec "adjkbacklight -"
+bindsym $mod+Control+Right exec "adjkbacklight +"
 bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
 bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
-bindsym $mod+Shift+Return exec 'urxvt'
-bindsym $mod+l exec 'i3lock'
+bindsym $mod+Shift+Return exec 'xterm'
+bindsym $mod+l exec 'i3lock-fancy'
 bindsym $mod+0 exec 'firefox-esr'
+bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
+bindsym $mod+Control+q exec 'lockhib'
 exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "emacs"
 exec "nm-applet"
+exec "compton -f -I 0.1 -O 0.1"
 
 # Colors
 set $background #131412

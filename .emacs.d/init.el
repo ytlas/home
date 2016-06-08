@@ -151,6 +151,7 @@
 (add-hook 'python-mode-hook 'hl-line-mode)
 (add-hook 'css-mode-hook 'hl-line-mode)
 (add-hook 'conf-space-mode-hook 'hl-line-mode)
+(add-hook 'c-mode-hook 'hl-line-mode)
 
 ;; Changes mode-line when in term-mode
 (add-hook 'term-mode-hook 'my/term-hook)
