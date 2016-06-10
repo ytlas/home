@@ -23,6 +23,6 @@ urxvt*iso14755_52: False
 *color15: #EEEEEC
 
 xterm*font:     *-fixed-*-*-*-18-*
-xterm*faceName: Ubuntu Mono:size=16:antialias=true
+xterm*faceName: Ubuntu Mono:size=14:antialias=true
 xterm*background: #131412
 xterm*foreground: #ffffff

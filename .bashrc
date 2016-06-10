@@ -7,6 +7,10 @@ if ! [[ $ifx ]]; then
    startx&&exit
 fi
 
+if ! [[ $DISPLAY ]];then
+    sudo loadkeys /usr/share/keymaps/Caps2Ctrl.map
+fi
+
 # Color variables
 GREEN="\[$(tput setaf 2)\]"
 RED="\[$(tput setaf 1)\]"

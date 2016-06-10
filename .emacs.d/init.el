@@ -78,8 +78,8 @@
 (winner-mode 1)
 
 ;; Narrowing list modes
-(ido-mode 1)
-(ido-ubiquitous-mode 1)
+;; (ido-mode 1)
+;; (ido-ubiquitous-mode 1)
 
 ;; Disables annoying GUI help
 (tooltip-mode nil)
@@ -217,8 +217,8 @@
 (load custom-file)
 
 ;;; Specific theme settings
-;; (add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
-;; (add-to-list 'default-frame-alist '(background-color . "#131412"))
+(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
+(add-to-list 'default-frame-alist '(background-color . "#131412"))
 
 (provide  '.emacs)
 ;;; .emacs ends here
