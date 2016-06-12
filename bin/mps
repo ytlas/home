@@ -4,6 +4,7 @@ from os import *
 import sys
 
 nohup=popen('xsel').read()
+print(nohup)
 if "twitch.tv" in nohup or "youtube.com" in nohup:
     subprocess.Popen("xterm -e 'livestreamer -p mpv "+nohup+" best'",shell=True,stdout=subprocess.PIPE).stdout.read()
 

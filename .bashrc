@@ -2,8 +2,7 @@
 # export GTK_THEME="raleigh"
 export PATH="$PATH:$HOME/bin"
 
-ifx=$(ps cax | grep xinit)
-if ! [[ $ifx ]]; then
+if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
    startx&&exit
 fi
 

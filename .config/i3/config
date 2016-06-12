@@ -46,6 +46,7 @@ assign [class="Emacs"] $w1
 assign [class="Firefox"] $w2
 assign [class="mpv"] $w3
 assign [title="http"] $w3
+assign [title="watch"] $w3
 assign [title="best"] $w3
 assign [title="magnet:"] $w3
 assign [class="google-chrome"] $w3
@@ -75,10 +76,11 @@ bindsym $mod+Control+q exec 'lockhib'
 exec "$HOME/bin/startup"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "emacs"
-exec "xterm -e 'sudo nethogs wlp4s0'"
+exec "sleep 10&&xterm -e 'sudo nethogs wlp4s0'"
 exec "xterm -e 'htop'"
 exec "nm-applet"
 exec "compton -f -I 0.1 -O 0.1"
+exec "sleep 0.7&&i3lock-fancy"
 
 # Colors
 set $background #131412
