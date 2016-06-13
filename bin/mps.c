@@ -29,9 +29,16 @@ void clipboardContains(void){
     strcat(totale,"\''");
   }
   else{
-    strcpy(totale,"xterm -e 'mpv $(youtube-dl -g ");
-    strcat(totale,clipboard);
-    strcat(totale,")'");
+    if(strstr(clipboard,"twitch")!=NULL){
+      strcpy(totale,"xterm -e 'livestreamer -p mpv \'");
+      strcat(totale,clipboard);
+      strcat(totale,"\' best'");
+    }
+    else{
+      strcpy(totale,"xterm -e 'mpv $(youtube-dl -g ");
+      strcat(totale,clipboard);
+      strcat(totale,")'");
+    }
   }
   free(clipboard);
   free(totale);

@@ -2,6 +2,6 @@
 setxkbmap se
 #setxkbmap -option caps:escape
 setxkbmap -option ctrl:nocaps
+xinput --set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.5
 xset r rate 200 75
-xset m 0 5
 redshift -l 57:12&

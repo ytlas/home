@@ -82,8 +82,8 @@ if ! [ -d /usr/local/firefox ];then
     rm /tmp/firefox.tar.bz2
     7z x -o/tmp/ /tmp/firefox*.tar
     rm /tmp/firefox*.tar
-    sudo mv /tmp/firefox-4*/ /usr/local/firefox/
-    sudo ln -s /usr/local/firefox/firefox /usr/local/bin/firefox
+    sudo mv /tmp/firefox/ /usr/local/firefox/
+    sudo ln -s /usr/local/firefox/firefox /usr/local/bin/firefox-esr
 else
     printf "\nYes, skipping..."
 fi

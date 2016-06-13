@@ -16,7 +16,7 @@
 
 ;;; Packages setup
 ;; List of packages that will install unless already installed
-(setq package-list '(async emms expand-region google-translate multi-term popup undo-tree web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors helm google-this nodejs-repl skewer-mode pdf-tools ido-ubiquitous smex))
+(setq package-list '(expand-region multi-term web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors pdf-tools smex))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
@@ -86,7 +86,7 @@
 (setq show-help-function nil)
 
 ;; Enable auto-completion
-(ac-config-default)
+;; (ac-config-default)
 
 ;; Shows matching paren
 (show-paren-mode 1)
@@ -217,8 +217,8 @@
 (load custom-file)
 
 ;;; Specific theme settings
-(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
-(add-to-list 'default-frame-alist '(background-color . "#131412"))
+;; (add-to-list 'default-frame-alist '(foreground-color . "#131412"))
+;; (add-to-list 'default-frame-alist '(background-color . "#ffffff"))
 
 (provide  '.emacs)
 ;;; .emacs ends here

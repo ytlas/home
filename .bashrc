@@ -3,7 +3,8 @@
 export PATH="$PATH:$HOME/bin"
 
 if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
-   startx&&exit
+   startx
+   exit
 fi
 
 if ! [[ $DISPLAY ]];then

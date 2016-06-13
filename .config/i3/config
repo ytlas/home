@@ -2,7 +2,7 @@ set $mod Mod4
 font pango:Ubuntu Monospace 16
 floating_modifier $mod
 bindsym $mod+w kill
-bindsym $mod+d exec "dmenu_run -fn 'Ubuntu:Monospace 13' -nb black -sb orange -l 10"
+bindsym $mod+d exec "dmenu_run -fn 'Ubuntu Monospace 10' -nb black -sb orange -l 10"
 bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+p focus up
@@ -58,10 +58,10 @@ assign [class="VirtualBox"] $w6
 for_window [title="xterm"] floating enable
 for_window [class="URxvt"] floating enable
 
-bindsym $mod+Left exec "sudo adjbacklight -5%"
-bindsym $mod+Right exec "sudo adjbacklight +5%"
-bindsym $mod+Control+Left exec "adjkbacklight -"
-bindsym $mod+Control+Right exec "adjkbacklight +"
+bindsym $mod+Left exec "sudo adjbacklight -2.5%"
+bindsym $mod+Right exec "sudo adjbacklight +2.5%"
+bindsym $mod+Control+Left exec "sudo adjkbacklight 0"
+bindsym $mod+Control+Right exec "sudo adjkbacklight 2"
 bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
 bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
