@@ -58,8 +58,8 @@ assign [class="VirtualBox"] $w6
 for_window [title="xterm"] floating enable
 for_window [class="URxvt"] floating enable
 
-bindsym $mod+Left exec "sudo adjbacklight -2.5%"
-bindsym $mod+Right exec "sudo adjbacklight +2.5%"
+bindsym $mod+Left exec "sudo ~/bin/abl -2"
+bindsym $mod+Right exec "sudo ~/bin/abl +2"
 bindsym $mod+Control+Left exec "sudo adjkbacklight 0"
 bindsym $mod+Control+Right exec "sudo adjkbacklight 2"
 bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
