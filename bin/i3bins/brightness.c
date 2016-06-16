@@ -23,5 +23,5 @@ int main(void){
   fclose(fileMaxBrightness);
   fclose(fileBrightness);
 
-  printf("%d",brightness*100/maxBrightness);
+  printf(" %d",brightness*100/maxBrightness);
 }

@@ -16,20 +16,22 @@ int main(void){
   }
 
   fclose(fBattery);
-  if(batteryLevel<10)
+  if(batteryLevel<21)
     strcpy(icon,"");
   else
-    if(batteryLevel<20)
+    if(batteryLevel<41)
       strcpy(icon,"");
     else
-      if(batteryLevel<50)
+      if(batteryLevel<61)
 	strcpy(icon,"");
       else
-	if(batteryLevel<70)
+	if(batteryLevel<81)
 	  strcpy(icon,"");
 	else
-	  if(batteryLevel<=100)
+	  if(batteryLevel<101)
 	    strcpy(icon,"");
+	  else
+	    strcpy(icon,"wat");
 
   printf("%s %d",icon,batteryLevel);
 }

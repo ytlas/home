@@ -1,8 +1,8 @@
 set $mod Mod4
-font pango:Ubuntu Monospace 16;Font Awesome 16
+font pango:Ubuntu Monospace 18;Font Awesome 18
 floating_modifier $mod
 bindsym $mod+w kill
-bindsym $mod+d exec "dmenu_run -fn 'Ubuntu Monospace 10' -nb black -sb orange -l 10"
+bindsym $mod+d exec "dmenu_run -fn 'Ubuntu Monospace 10' -nb black -sb orange -nf white -sf white -l 10"
 bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+p focus up
@@ -13,7 +13,7 @@ bindsym $mod+Shift+p move up 50px
 bindsym $mod+Shift+f move right 50px
 bindsym $mod+g focus mode_toggle
 
-gaps inner 20
+gaps inner 16
 
 # Workspace names
 set $w1 "1: "

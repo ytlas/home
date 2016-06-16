@@ -219,6 +219,8 @@
 ;;; Specific theme settings
 ;; (add-to-list 'default-frame-alist '(foreground-color . "#131412"))
 ;; (add-to-list 'default-frame-alist '(background-color . "#ffffff"))
+(set-face-attribute 'mode-line nil :font "Ubuntu Mono-16")
+(set-face-attribute 'default nil :font "Ubuntu Mono-13")
 
 (provide  '.emacs)
 ;;; .emacs ends here
