@@ -9,6 +9,7 @@ int main(void){
   FILE *fileMaxBrightness;
   int brightness;
   int maxBrightness;
+  char *icon;
 
   // Opens files
   fileBrightness=fopen("/sys/class/backlight/intel_backlight/brightness","r");
@@ -23,5 +24,16 @@ int main(void){
   fclose(fileMaxBrightness);
   fclose(fileBrightness);
 
-  printf(" %d",brightness*100/maxBrightness);
+
+  brightness=brightness*100/maxBrightness;
+  if(brightness<=33){
+    strcpy(icon,"<span color='lightgreen'></span>");
+  }
+  else if(brightness<=66){
+    strcpy(icon,"<span color='yellow'></span>");
+  }
+  else{
+    strcpy(icon,"<span color='red'></span>");
+  }
+  printf("%s %d",icon,brightness);
 }

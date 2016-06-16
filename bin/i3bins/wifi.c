@@ -5,11 +5,10 @@
 
 int main(void){
   FILE *command;
-  char *output=malloc(100);
   char *run=malloc(16);
   char *iface=interface();
   if(iface[0]=='0'){
-    printf(" OFFLINE");
+    printf("<span color='red'></span> OFFLINE");
   }
   else{
     if(iface[0]=='w'){
@@ -19,7 +18,7 @@ int main(void){
       char line[80];
       if(fgets(line,sizeof(line),command)!=NULL){
 	if(strstr(line,"off/any")!=NULL)
-	  printf(" OFF");
+	  printf("<span color='lightred'></span> OFF");
 	else{
 	  char *ssid=malloc(30);
 	  int j=0;
@@ -30,7 +29,7 @@ int main(void){
 	    ssid[j]=line[i];
 	    j++;
 	  }
-	  printf(" %s",ssid);
+	  printf("<span color='lightgreen'></span> %s",ssid);
 	}
       }
     }

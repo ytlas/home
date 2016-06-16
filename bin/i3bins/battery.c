@@ -5,7 +5,7 @@
 int main(void){
   FILE *fBattery;
   int batteryLevel;
-  char *icon=malloc(3);
+  char *icon=malloc(30);
   fBattery=fopen("/sys/class/power_supply/BAT1/capacity","r");
   fscanf(fBattery,"%d",&batteryLevel);
 
@@ -17,21 +17,21 @@ int main(void){
 
   fclose(fBattery);
   if(batteryLevel<21)
-    strcpy(icon,"");
+    strcpy(icon,"<span color='red'>");
   else
     if(batteryLevel<41)
-      strcpy(icon,"");
+      strcpy(icon,"<span color='yellow'>");
     else
       if(batteryLevel<61)
-	strcpy(icon,"");
+	strcpy(icon,"<span color='lightblue'>");
       else
 	if(batteryLevel<81)
-	  strcpy(icon,"");
+	  strcpy(icon,"<span color='lightgreen'>");
 	else
 	  if(batteryLevel<101)
-	    strcpy(icon,"");
+	    strcpy(icon,"<span color='lightgreen'>");
 	  else
 	    strcpy(icon,"wat");
 
-  printf("%s %d",icon,batteryLevel);
+  printf("%s</span> %d",icon,batteryLevel);
 }
