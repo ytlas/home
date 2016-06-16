@@ -104,6 +104,7 @@ bindsym $mod+Control+n resize shrink height 10 px or 10 ppt
  bar {
 	status_command i3blocks
 	separator_symbol " "
+	position bottom
 	colors{
 		background $background
 		statusline $foreground

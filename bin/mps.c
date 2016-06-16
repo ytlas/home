@@ -29,7 +29,7 @@ void clipboardContains(void){
     strcat(totale,"\''");
   }
   else{
-    if(strstr(clipboard,"twitch")!=NULL){
+    if(strstr(clipboard,"twitch")!=NULL||strstr(clipboard,"youtube")!=NULL){
       strcpy(totale,"xterm -e 'livestreamer -p mpv \'");
       strcat(totale,clipboard);
       strcat(totale,"\' best'");
