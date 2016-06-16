@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:Ubuntu Monospace 16
+font pango:Ubuntu Monospace 16;Font Awesome 16
 floating_modifier $mod
 bindsym $mod+w kill
 bindsym $mod+d exec "dmenu_run -fn 'Ubuntu Monospace 10' -nb black -sb orange -l 10"
@@ -13,14 +13,16 @@ bindsym $mod+Shift+p move up 50px
 bindsym $mod+Shift+f move right 50px
 bindsym $mod+g focus mode_toggle
 
+gaps inner 20
+
 # Workspace names
-set $w1 "1: Emacs"
-set $w2 "2: Browser"
-set $w3 "3: Media"
-set $w4 "4: Games"
-set $w5 "5: Stats"
-set $w6 "6: Misc1"
-set $w7 "7: Misc2"
+set $w1 "1: "
+set $w2 "2: "
+set $w3 "3: "
+set $w4 "4: "
+set $w5 "5: "
+set $w6 "6: "
+set $w7 "7: "
 
 bindsym $mod+1 workspace $w1
 bindsym $mod+2 workspace $w2
@@ -44,6 +46,7 @@ new_window none
 
 assign [class="Emacs"] $w1
 assign [class="Firefox"] $w2
+assign [class="chromium"] $w2
 assign [class="mpv"] $w3
 assign [title="http"] $w3
 assign [title="watch"] $w3
@@ -56,6 +59,7 @@ assign [title="nethogs"] $w5
 assign [title="top"] $w5
 assign [class="VirtualBox"] $w6
 for_window [title="xterm"] floating enable
+for_window [title="nmtui"] floating enable
 for_window [class="URxvt"] floating enable
 
 bindsym $mod+Left exec "sudo ~/bin/abl -2"
@@ -67,19 +71,20 @@ bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
 bindsym $mod+Shift+Return exec 'xterm'
+bindsym $mod+c exec "xterm -e 'nmtui-connect'"
 bindsym $mod+l exec 'i3lock-fancy'
-bindsym $mod+0 exec 'firefox-esr'
+bindsym $mod+0 exec 'chromium-browser'
 bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
 bindsym $mod+Control+q exec 'lockhib'
 exec "$HOME/bin/startup"
+exec "xrdb ~/.Xresources"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "emacs"
 exec "sleep 10&&xterm -e 'sudo nethogs wlp4s0'"
 exec "xterm -e 'htop'"
-exec "nm-applet"
-exec "compton -f -I 0.1 -O 0.1"
+#exec "compton -f -I 0.1 -O 0.1"
 exec "sleep 0.7&&i3lock-fancy"
 
 # Colors
@@ -97,14 +102,14 @@ bindsym $mod+Control+n resize shrink height 10 px or 10 ppt
 
 # Bar
  bar {
-	status_command i3status
-#	separator_symbol " > "
+	status_command i3blocks
+	separator_symbol " "
 	colors{
 		background $background
 		statusline $foreground
 		focused_workspace $background $background #ffffff
 		inactive_workspace $background $background #929292
 		urgent_workspace $background $background #ff0000
-#		separator #ffa500
+		separator #ffffff
 	}
 }

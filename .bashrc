@@ -1,10 +1,9 @@
 # Important initial setup
-# export GTK_THEME="raleigh"
+export GTK_THEME="raleigh"
 export PATH="$PATH:$HOME/bin"
-
 if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
-   startx
-   exit
+    startx
+    exit
 fi
 
 if ! [[ $DISPLAY ]];then

@@ -35,14 +35,17 @@ int main(int argc,const char *argv[]){
     newBrightness=brightness-deltaBrightness;
     break;
   default:
-    printf("Invalid argument.");
+    printf("Invalid argument.\Usage: abl [+|-][deltaBrightnessNumber]");
   }
 
   // Safety statement so that the brightness doesn't exceed max brightness
   if(newBrightness>=maxBrightness)
     setBrightness(maxBrightness,fileBrightness);
   else
-    setBrightness(newBrightness,fileBrightness);
+    if(newBrightness<=0)
+      setBrightness(0,fileBrightness);
+    else
+      setBrightness(newBrightness,fileBrightness);
 
   // Close file pointers
   fclose(fileMaxBrightness);
@@ -64,7 +67,7 @@ int getBrightnessArg(const char **argv){
   // Ends the string correctly, all strings in C must end with \0
   bm[strlen(bm)+1]='\0';
 
-  // Safety statement so the length of argument isn't incorrect
+  // Safety statement so the length of argument isn't too long
   if(argv[1]&&!(strlen(argv[1])>4||strlen(argv[1])<2)){
     // Converts bm to an int and stores it in bmnum
     for(int i=0;i<strlen(bm);i++){
