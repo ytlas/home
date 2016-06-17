@@ -73,7 +73,7 @@ bindsym $mod+Return exec 'emacs'
 bindsym $mod+Shift+Return exec 'xterm'
 bindsym $mod+c exec "xterm -e 'nmtui-connect'"
 bindsym $mod+l exec 'i3lock-fancy'
-bindsym $mod+0 exec 'chromium-browser'
+bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
