@@ -1,0 +1,1 @@
+char *interface(void);
