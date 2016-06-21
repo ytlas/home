@@ -16,7 +16,7 @@
 
 ;;; Packages setup
 ;; List of packages that will install unless already installed
-(setq package-list '(expand-region multi-term web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors pdf-tools smex))
+(setq package-list '(expand-region multi-term web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors pdf-tools smex emms))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)

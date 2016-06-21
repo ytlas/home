@@ -12,7 +12,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "dark orange"))))
- '(highlight ((t (:background "light gray"))))
+ '(highlight ((t (:background "white smoke"))))
  '(mc/cursor-face ((t (:foreground "gold" :inverse-video t))))
  '(mode-line ((t (:background "#2E3436" :foreground "white" :box nil))))
  '(mode-line-inactive ((t (:inherit mode-line :background "light gray" :foreground "black" :box nil :weight light))))

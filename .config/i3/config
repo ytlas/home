@@ -16,13 +16,13 @@ bindsym $mod+g focus mode_toggle
 gaps inner 16
 
 # Workspace names
-set $w1 "1: "
-set $w2 "2: "
-set $w3 "3: "
-set $w4 "4: "
-set $w5 "5: "
-set $w6 "6: "
-set $w7 "7: "
+set $w1 "1"
+set $w2 "2"
+set $w3 "3"
+set $w4 "4"
+set $w5 "5"
+set $w6 "6"
+set $w7 "7"
 
 bindsym $mod+1 workspace $w1
 bindsym $mod+2 workspace $w2
@@ -47,16 +47,16 @@ new_window none
 assign [class="Emacs"] $w1
 assign [class="Firefox"] $w2
 assign [class="chromium"] $w2
-assign [class="mpv"] $w3
-assign [title="http"] $w3
-assign [title="watch"] $w3
-assign [title="best"] $w3
-assign [title="magnet:"] $w3
-assign [class="google-chrome"] $w3
+assign [title="nethogs"] $w3
+assign [title="top"] $w3
 assign [class="TeamSpeak 3"] $w4
 assign [class="Steam"] $w4
-assign [title="nethogs"] $w5
-assign [title="top"] $w5
+assign [class="mpv"] $w5
+assign [title="http"] $w5
+assign [title="watch"] $w5
+assign [title="best"] $w5
+assign [title="magnet:"] $w5
+assign [class="google-chrome"] $w5
 assign [class="VirtualBox"] $w6
 for_window [title="xterm"] floating enable
 for_window [title="nmtui"] floating enable
@@ -64,8 +64,10 @@ for_window [class="URxvt"] floating enable
 
 bindsym $mod+Left exec "sudo ~/bin/abl -2"
 bindsym $mod+Right exec "sudo ~/bin/abl +2"
-bindsym $mod+Control+Left exec "sudo adjkbacklight 0"
-bindsym $mod+Control+Right exec "sudo adjkbacklight 2"
+bindsym $mod+Control+Left exec "adjkbacklight -"
+bindsym $mod+Control+Right exec "adjkbacklight +"
+bindsym $mod+Shift+Left exec "killall redshift"
+bindsym $mod+Shift+Right exec "redshift"
 bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
 bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
@@ -82,15 +84,12 @@ exec "$HOME/bin/startup"
 exec "xrdb ~/.Xresources"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "emacs"
-exec "sleep 10&&xterm -e 'sudo nethogs wlp4s0'"
 exec "xterm -e 'htop'"
-#exec "compton -f -I 0.1 -O 0.1"
-exec "sleep 0.7&&i3lock-fancy"
 
 # Colors
-set $background #131412
-set $foreground #ffffff
-set $fbackground #ff8c00
+# set $background #131412
+# set $foreground #ffffff
+# set $fbackground #ff8c00
 
 # Resize binds
 bindsym $mod+h split h
@@ -101,16 +100,15 @@ bindsym $mod+Control+p resize grow height 10 px or 10 ppt
 bindsym $mod+Control+n resize shrink height 10 px or 10 ppt
 
 # Bar
- bar {
-	status_command i3blocks
-	separator_symbol " "
-	position bottom
-	colors{
-		background $background
-		statusline $foreground
-		focused_workspace $background $background #ffffff
-		inactive_workspace $background $background #929292
-		urgent_workspace $background $background #ff0000
-		separator #ffffff
-	}
-}
+#  bar {
+#	status_command i3blocks
+#	separator_symbol " "
+#	position bottom
+#	colors{
+#		background $background
+#		statusline $foreground
+#		focused_workspace $background $background ffffff
+#		inactive_workspace $background $background 929292
+#		urgent_workspace $background $background ff0000
+#	}
+# }

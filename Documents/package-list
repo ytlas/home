@@ -1,4 +1,3 @@
-i3
 xorg
 mpv
 npm
@@ -47,3 +46,7 @@ libxcb-xinerama0-dev
 libxcb-xkb-dev
 libxkbcommon-dev
 libxkbcommon-x11-dev
+network-manager
+htop
+dmenu
+redshift
