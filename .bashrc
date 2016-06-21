@@ -6,10 +6,6 @@ if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
     exit
 fi
 
-if ! [[ $DISPLAY ]];then
-    sudo loadkeys /usr/share/keymaps/Caps2Ctrl.map
-fi
-
 # Color variables
 GREEN="\[$(tput setaf 2)\]"
 RED="\[$(tput setaf 1)\]"

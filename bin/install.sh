@@ -3,14 +3,6 @@
 printf "\nInstalling packages from $HOME/Documents/package-list..."
 sudo apt-get install $(grep -vE "^\s*#" "$HOME/Documents/package-list"  | tr "\n\n" " ")
 
-printf "\n\nDoes $HOME/.fonts/ exist?"
-if ! [ -d $HOME/.fonts/ ];then
-    printf "\nNo, creating that directory."
-    mkdir ~/.fonts
-else
-    printf "\nYes, proceeding..."
-fi
-
 printf "\n\nDoes $HOME/.icons/ exist?"
 if ! [ -d $HOME/.icons/ ];then
     printf "\nNo, creating that directory."
@@ -18,17 +10,6 @@ if ! [ -d $HOME/.icons/ ];then
 else
     printf "\nYes, proceeding..."
 fi
-
-# printf "\n\nAre numix icons installed?"
-# if ! [ -d $HOME/.icons/Numix ];then
-#     printf "\nNo, attempting to install."
-#     git clone https://github.com/numixproject/numix-icon-theme $HOME/.icons/numix
-#     git clone https://github.com/numixproject/numix-icon-theme-circle $HOME/.icons/numix-circle
-#     mv $HOME/.icons/numix*/Numix* $HOME/.icons/
-#     rm -rfv $HOME/.icons/numix*/*&&touch $HOME/.icons/numix*/dummy
-# else
-#     printf "\nYes, skipping..."
-# fi
 
 printf "\n\nAre Ubuntu fonts installed?"
 if ! [ -d $HOME/.fonts/ubuntu-fonts ];then
@@ -39,16 +20,6 @@ if ! [ -d $HOME/.fonts/ubuntu-fonts ];then
 else
     printf "\nYes, skipping..."
 fi
-
-# printf "\n\nIs Emacs source code downloaded in $HOME/src/emacs/?"
-# if ! [ -d $HOME/src/emacs/ ];then
-#     wget ftp://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.xz -O /tmp/emacs.tar.xz
-#     7z x -o/tmp/ /tmp/emacs.tar.xz
-#     7z x -o${HOME}/src/ /tmp/emacs.tar
-#     mv $HOME/src/emacs-24.5 $HOME/src/emacs
-# else
-#     printf "\nYes, skipping..."
-# fi
 
 printf "\n\nDoes /usr/bin/node exist?"
 if [ ! -f /usr/bin/node ]; then
@@ -73,20 +44,6 @@ if ! [[ $(pip list) == *"youtube-dl"* ]];then
 else
     printf "\nYes, skipping..."
 fi
-
-# printf "\n\nIs Firefox-esr installed in /usr/local/firefox/?"
-# if ! [ -d /usr/local/firefox ];then
-#     printf "\nNo, installing..."
-#     wget "https://download.mozilla.org/?product=firefox-esr-latest&os=linux64&lang=en-US" -O /tmp/firefox.tar.bz2
-#     7z x -o/tmp/ /tmp/firefox.tar.bz2
-#     rm /tmp/firefox.tar.bz2
-#     7z x -o/tmp/ /tmp/firefox*.tar
-#     rm /tmp/firefox*.tar
-#     sudo mv /tmp/firefox/ /usr/local/firefox/
-#     sudo ln -s /usr/local/firefox/firefox /usr/local/bin/firefox-esr
-# else
-#     printf "\nYes, skipping..."
-# fi
 
 printf "\n\nIs TeamSpeak installed in /usr/local/teamspeak/?"
 if ! [ -d /usr/local/teamspeak ];then

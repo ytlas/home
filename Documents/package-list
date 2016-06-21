@@ -50,3 +50,5 @@ network-manager
 htop
 dmenu
 redshift
+make
+xutils-dev

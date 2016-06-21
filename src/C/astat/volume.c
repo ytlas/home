@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 
-int getVolume(void){
+unsigned char getVolume(void){
   FILE *command;
   command=popen("ponymix","r");
   char *line=malloc(100);
