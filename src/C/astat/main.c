@@ -2,13 +2,14 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include <time.h>
+#include <string.h>
 #include "volume.h"
 #include "wifi.h"
 #include "battery.h"
 #include "date.h"
 
 int main(void){
-  char *battery=malloc(2);
+  int *battery=malloc(2);
   initscr();
   raw();
   noecho();
@@ -17,9 +18,9 @@ int main(void){
   printw("Volume: \n");
   printw("Date: \n");
   while(1){
-    *battery=*batteryLevels();
-    mvprintw(0,9,"%2d%%+(%2d%%)",battery[0],battery[1]);
-    mvprintw(1,8,"%3d%%",getVolume());
+    battery=batteryLevels();
+    mvprintw(0,9,"%3d%%+(%3d%%)",battery[0],battery[1]);
+    mvprintw(1,8,"%3hu%%",getVolume());
     mvprintw(2,7,"%s",dateAndTime());
     refresh();
     if(getch()=='q'){
