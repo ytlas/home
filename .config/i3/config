@@ -49,6 +49,7 @@ assign [class="Firefox"] $w2
 assign [class="chromium"] $w2
 assign [title="nethogs"] $w3
 assign [title="top"] $w3
+assign [title="astat"] $w3
 assign [class="TeamSpeak 3"] $w4
 assign [class="Steam"] $w4
 assign [class="mpv"] $w5
@@ -81,10 +82,9 @@ bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
 bindsym $mod+Control+q exec 'lockhib'
 exec "$HOME/bin/startup"
-exec "xrdb ~/.Xresources"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
-exec "emacs"
 exec "xterm -e 'htop'"
+exec "xterm -e 'astat'"
 
 # Colors
 # set $background #131412
@@ -99,6 +99,7 @@ bindsym $mod+Control+b resize shrink width 10 px or 10 ppt
 bindsym $mod+Control+p resize grow height 10 px or 10 ppt
 bindsym $mod+Control+n resize shrink height 10 px or 10 ppt
 
+# I have decided to go without bar, because fuck you
 # Bar
 #  bar {
 #	status_command i3blocks
