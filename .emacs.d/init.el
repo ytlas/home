@@ -49,6 +49,10 @@
   (scroll-down)
   (recenter)
   )
+(defun my/paste-from-x()
+  (interactive)
+  (shell-command "env DISPLAY=:0 xsel" 1)
+  )
 
 ;; Prints variable major-mode
 (defun my/mm()
@@ -171,6 +175,9 @@
   (global-unset-key k))
 
 ;;; Key bindings
+;; Paste from X clipboard
+(global-set-key (kbd "C-M-y") 'my/paste-from-x)
+
 ;; Narrowing list M-x
 (global-set-key (kbd "M-x") 'smex)
 

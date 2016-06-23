@@ -13,7 +13,6 @@
  ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "dark orange"))))
  '(highlight ((t (:background "white smoke"))))
- '(mc/cursor-face ((t (:foreground "gold" :inverse-video t))))
- '(mode-line ((t (:background "#2E3436" :foreground "white" :box nil))))
- '(mode-line-inactive ((t (:inherit mode-line :background "light gray" :foreground "black" :box nil :weight light))))
+ '(mode-line ((t (:background "#131412" :foreground "white" :box nil :slant normal :weight normal :height 158 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box nil :weight light))))
  '(region ((t (:background "DarkOrange3")))))
