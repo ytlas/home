@@ -73,6 +73,8 @@ bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
+exec "xrdb ~/.Xresources"
+exec "xmodmap ~/.Xmodmap"
 exec "setxkbmap se"
 exec "xset r rate 200 75"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
