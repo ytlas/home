@@ -75,6 +75,9 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
+;; Enables correction suggestions, errors and warnings in various programming languages
+(global-flycheck-mode)
+
 ;; Treats CamelCase words as distinct words
 (subword-mode 1)
 
@@ -90,7 +93,7 @@
 (setq show-help-function nil)
 
 ;; Enable auto-completion
-;; (ac-config-default)
+(ac-config-default)
 
 ;; Shows matching paren
 (show-paren-mode 1)

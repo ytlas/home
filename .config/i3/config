@@ -1,4 +1,4 @@
-set $mod Mod4
+set $mod Mod3
 font pango:Ubuntu Monospace 18;Font Awesome 18
 floating_modifier $mod
 bindsym $mod+w kill
@@ -74,7 +74,6 @@ bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
 exec "setxkbmap se"
-exec "setxkbmap -option ctrl:nocaps"
 exec "xset r rate 200 75"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "urxvt -title 'stat' -e sh -c 'astat'"
