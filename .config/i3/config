@@ -55,11 +55,12 @@ assign [title="http"] $w5
 assign [title="watch"] $w5
 assign [title="best"] $w5
 assign [title="magnet:"] $w5
+assign [title="sh"] $w5
 assign [class="google-chrome"] $w5
 assign [class="VirtualBox"] $w6
 for_window [title="xterm"] floating enable
 for_window [title="nmtui"] floating enable
-for_window [class="URxvt"] floating enable
+for_window [title="urxvt"] floating enable
 
 bindsym $mod+Left exec "sudo ~/bin/abl -2"
 bindsym $mod+Right exec "sudo ~/bin/abl +2"
@@ -71,8 +72,8 @@ bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
 bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+Return exec 'emacs'
-bindsym $mod+Shift+Return exec 'xterm'
-bindsym $mod+c exec "xterm -e 'nmtui-connect'"
+bindsym $mod+Shift+Return exec 'urxvt'
+bindsym $mod+c exec "urxvt -e sh -c 'nmtui-connect'"
 bindsym $mod+l exec 'i3lock-fancy'
 bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+8 fullscreen toggle

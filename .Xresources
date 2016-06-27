@@ -1,10 +1,14 @@
 urxvt*scrollBar: false
-urxvt*background: #131412
-urxvt*foreground: white
-urxvt.font: xft:Ubuntu Mono:size=16
-urxvt.letterSpace: 0
+urxvt*background: #ffffff
+urxvt*foreground: #000000
+urxvt*font: xft:Ubuntu Mono:size=13
+urxvt*letterSpace: 1
 urxvt*iso14755: False
 urxvt*iso14755_52: False
+urxvt*geometry: 80x24
+urxvt*termName: rxvt-256color
+urxvt*borderColor: #000000
+urxvt*internalBorder: 1
 *color0:  #2E3436
 *color1:  #a40000
 *color2:  #4E9A06
@@ -23,6 +27,7 @@ urxvt*iso14755_52: False
 *color15: #EEEEEC
 
 xterm*font:     *-fixed-*-*-*-18-*
-xterm*faceName: Ubuntu Mono:size=14:antialias=true
-xterm*background: #131412
-xterm*foreground: #ffffff
+xterm*faceName: Ubuntu Mono:size=13:antialias=false
+xterm*background: #ffffff
+xterm*foreground: #000000
+xterm*geometry: 80x24
