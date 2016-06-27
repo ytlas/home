@@ -20,7 +20,7 @@ export PS1="\u${PINK}@${GREEN}:${RESET}\w${YELLOW}\$${RESET} "
 # Variables
 export pmp='sudo apt'
 export lpmp='sudo dpkg'
-export EDITOR="vi"
+export EDITOR="emacs -nw"
 
 # Aliases
 alias sudo='sudo '
@@ -37,6 +37,7 @@ alias sr='sudo reboot'
 alias nh='sudo TERM=xterm nethogs'
 alias wifi='sudo TERM=xterm nmtui'
 alias pg='ping leafscript.net'
+alias vi='emacs -nw'
 
 # Laptop specific
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
