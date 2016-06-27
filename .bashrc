@@ -1,4 +1,4 @@
-# Important initial setup
+# Adam's amazing bash configuration
 export GTK_THEME="raleigh"
 export PATH="$PATH:$HOME/bin"
 if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
@@ -37,7 +37,7 @@ alias sr='sudo reboot'
 alias nh='sudo TERM=xterm nethogs'
 alias wifi='sudo TERM=xterm nmtui'
 alias pg='ping leafscript.net'
-alias vi='emacs -nw'
+alias vi='env TERM=xterm emacs -nw'
 
 # Laptop specific
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'
