@@ -24,18 +24,18 @@ void clipboardContains(void){
   }
   char *totale=malloc(500);
   if(strstr(clipboard,".torrent")!=NULL||strstr(clipboard,"magnet:")!=NULL){
-    strcpy(totale,"urxvt -e sh -c 'peerflix -kd \'");
+    strcpy(totale,"urxvt -title media -e sh -c 'peerflix -kd \'");
     strcat(totale,clipboard);
     strcat(totale,"\''");
   }
   else{
     if(strstr(clipboard,"twitch")!=NULL||strstr(clipboard,"youtube")!=NULL){
-      strcpy(totale,"urxvt -e sh -c 'livestreamer -p mpv \'");
+      strcpy(totale,"urxvt -title media -e sh -c 'livestreamer -p mpv \'");
       strcat(totale,clipboard);
       strcat(totale,"\' best'");
     }
     else{
-      strcpy(totale,"urxvt -e sh -c 'mpv $(youtube-dl -g ");
+      strcpy(totale,"urxvt -title media -e sh -c 'mpv $(youtube-dl -g ");
       strcat(totale,clipboard);
       strcat(totale,")'");
     }

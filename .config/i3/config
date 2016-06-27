@@ -45,22 +45,15 @@ new_window none
 
 assign [class="Emacs"] $w1
 assign [class="Firefox"] $w2
-assign [title="nethogs"] $w3
-assign [title="top"] $w3
-assign [title="astat"] $w3
+assign [title="stat"] $w3
 assign [class="TeamSpeak 3"] $w4
 assign [class="Steam"] $w4
-assign [class="mpv"] $w5
-assign [title="http"] $w5
-assign [title="watch"] $w5
-assign [title="best"] $w5
-assign [title="magnet:"] $w5
-assign [title="sh"] $w5
+assign [title="media"] $w5
 assign [class="google-chrome"] $w5
 assign [class="VirtualBox"] $w6
 for_window [title="xterm"] floating enable
 for_window [title="nmtui"] floating enable
-for_window [title="urxvt"] floating enable
+for_window [title="floating"] floating enable
 
 bindsym $mod+Left exec "sudo ~/bin/abl -2"
 bindsym $mod+Right exec "sudo ~/bin/abl +2"
@@ -71,17 +64,21 @@ bindsym $mod+Shift+Right exec "redshift"
 bindsym $mod+Down exec "ponymix --max-volume 250 decrease 5"
 bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
-bindsym $mod+Return exec 'emacs'
-bindsym $mod+Shift+Return exec 'urxvt'
+bindsym $mod+e exec "emacs"
+bindsym $mod+Return exec "urxvt -title floating"
+bindsym $mod+Shift+Return exec "urxvt"
 bindsym $mod+c exec "urxvt -e sh -c 'nmtui-connect'"
 bindsym $mod+l exec 'i3lock-fancy'
 bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
-bindsym $mod+Control+q exec 'lockhib'
-exec "$HOME/bin/startup"
+exec "setxkbmap se"
+exec "setxkbmap -option ctrl:nocaps"
+exec "xset r rate 200 75"
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
+exec "urxvt -title 'stat' -e sh -c 'astat'"
+# exec "urxvt -title 'stat' -e sh -c 'htop'"
 
 # Colors
 # set $background #131412
