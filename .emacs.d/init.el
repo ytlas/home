@@ -1,5 +1,6 @@
 ;;; Adam's amazing init.el
 ;; Turn off mouse interface early in startup to avoid momentary display
+(when window-system (set-frame-size (selected-frame) 90 45))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -15,18 +16,24 @@
 (setq user-mail-address "adam@ytlas.com")
 
 ;;; Packages setup
-;; List of packages that will install unless already installed
-(setq package-list '(expand-region multi-term web-mode flycheck magit auto-complete ace-jump-mode iy-go-to-char multiple-cursors pdf-tools smex emms))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
-;; Install missing packages from variable package-list
-(unless package-archive-contents
-  (package-refresh-contents))
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+(defun ensure-package-installed(&rest packages)
+  (mapcar
+   (lambda(package)
+     (if(package-installed-p package)
+	 nil
+       (if(y-or-n-p(format "Package %s is missing, install it? " package))
+	   (package-install package)
+	 package)))
+   packages))
+(or(file-exists-p package-user-dir)
+   (package-refresh-contents))
+
+(ensure-package-installed 'expand-region 'multi-term 'flycheck 'magit 'auto-complete 'iy-go-to-char 'multiple-cursors 'pdf-tools 'smex 'emms)
+
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)
 (setq backup-directory-alist
@@ -105,6 +112,11 @@
 (blink-cursor-mode 0)
 
 ;;; Variables
+;; Disable confirmation when killing buffers with running processes
+(setq kill-buffer-query-functions
+  (remq 'process-kill-buffer-query-function
+	 kill-buffer-query-functions))
+
 ;; Makes point move by logical lines
 (setq line-move-visual nil)
 
@@ -173,8 +185,7 @@
 
 ;;; Key unbindings
 ;; Unbinds annoying keys that I never use
-;; (dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1] [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2] [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3] [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4] [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5] [M-down] [M-up]  [M-right]  [M-left]  [C-down]  [C-up]  [C-right]  [C-left]  [down]  [up]  [right] [left] [C-c f]))
-(dolist (k '([mouse-1] [down-mouse-1] [double-mouse-1] [triple-mouse-1] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2] [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3] [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4] [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5] [M-down] [M-up]  [M-right]  [M-left]  [C-down]  [C-up]  [C-right]  [C-left]  [down]  [up]  [right] [left] [C-c f]))
+(dolist (k '([mouse-1] [down-mouse-1] [double-mouse-1] [triple-mouse-1] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2] [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3] [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4] [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5] [M-down] [M-up]  [M-right]  [M-left]  [C-down]  [C-up]  [C-right]  [C-left]  [down]  [up]  [right] [left] [C-c f] [C-z]))
   (global-unset-key k))
 
 ;;; Key bindings
@@ -228,6 +239,7 @@
 ;; (add-to-list 'default-frame-alist '(background-color . "#ffffff"))
 (set-face-attribute 'mode-line nil :font "Ubuntu Mono-16")
 (set-face-attribute 'default nil :font "Ubuntu Mono-13")
+(multi-term)
 
 (provide  '.emacs)
 ;;; .emacs ends here
