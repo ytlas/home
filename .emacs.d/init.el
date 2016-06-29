@@ -198,6 +198,9 @@
   (global-unset-key k))
 
 ;;; Key bindings
+;; Binding to custom multi-term adviced function
+(global-set-key (kbd "þ") 'my/multi-term)
+
 ;; Paste from X clipboard
 (global-set-key (kbd "C-M-y") 'my/paste-from-x)
 
@@ -213,9 +216,6 @@
 
 ;; Indent when RET is pressed
 (define-key global-map (kbd "RET") 'newline-and-indent)
-
-;; Binds F5 to create a new multi-term
-(global-set-key (kbd "þ") 'multi-term)
 
 ;; Navigation binds
 (global-set-key (kbd "€") 'er/expand-region)

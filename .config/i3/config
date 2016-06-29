@@ -81,9 +81,6 @@ bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
-exec "xset r rate 200 75"
-exec "xrdb ~/.Xresources"
-exec "xmodmap ~/.Xmodmap"
 exec "urxvt -title 'stat floating' -e sh -c 'astat'"
 
 # Colors
