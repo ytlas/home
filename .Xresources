@@ -7,8 +7,6 @@ urxvt*iso14755: False
 urxvt*iso14755_52: False
 urxvt*geometry: 80x24
 urxvt*termName: rxvt-256color
-urxvt*borderColor: #000000
-urxvt*internalBorder: 1
 urxvt*cursorColor: #ff0066
 *color0:  #2E3436
 *color1:  #a40000

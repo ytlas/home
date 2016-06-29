@@ -71,6 +71,15 @@
   (interactive)
   (setq mode-line-format " %b "))
 
+;; If terminal key is pressed switch to existing one, or create new one if it does not exist
+(defun my/multi-term()
+  (interactive)
+  (if(get-buffer "*terminal<1>*")
+      (if(equal (substring (buffer-name) 0 5) "*term")
+	  (multi-term)
+	(switch-to-buffer "*terminal<1>*"))
+    (multi-term)))
+
 ;; Position cursor at beginning of match when using Isearch
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
 (defun my-goto-match-beginning ()
@@ -121,7 +130,7 @@
 (setq line-move-visual nil)
 
 ;; Sets the initial scratch buffer content
-(setq initial-scratch-message ";; Fuck you\n\n")
+(setq initial-scratch-message ";; FUCK YOU\n")
 
 ;; Enables flexible string matching with various ido-modes
 (setq ido-enable-flex-matching t)
@@ -210,7 +219,6 @@
 
 ;; Navigation binds
 (global-set-key (kbd "€") 'er/expand-region)
-(global-set-key (kbd "ª") 'ace-jump-mode)
 (global-set-key (kbd "→") 'iy-go-up-to-char)
 (global-set-key (kbd "C-→") 'iy-go-up-to-char-backward)
 
@@ -239,7 +247,6 @@
 ;; (add-to-list 'default-frame-alist '(background-color . "#ffffff"))
 (set-face-attribute 'mode-line nil :font "Ubuntu Mono-16")
 (set-face-attribute 'default nil :font "Ubuntu Mono-13")
-(multi-term)
 
 (provide  '.emacs)
 ;;; .emacs ends here

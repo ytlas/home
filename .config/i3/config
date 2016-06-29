@@ -1,5 +1,5 @@
 set $mod Mod3
-font pango:Ubuntu Monospace 18;Font Awesome 18
+font pango:Ubuntu Regular 13
 floating_modifier $mod
 bindsym $mod+w kill
 bindsym $mod+d exec "dmenu_run -fn 'Ubuntu Monospace 10' -nb black -sb orange -nf white -sf white -l 10"
@@ -12,6 +12,12 @@ bindsym $mod+Shift+n move down 50px
 bindsym $mod+Shift+p move up 50px
 bindsym $mod+Shift+f move right 50px
 bindsym $mod+g focus mode_toggle
+bindsym $mod+Control+f resize grow width 10 px or 10 ppt
+bindsym $mod+Control+b resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+p resize grow height 10 px or 10 ppt
+bindsym $mod+Control+n resize shrink height 10 px or 10 ppt
+bindsym $mod+h split h
+bindsym $mod+v split v
 
 # Workspace names
 set $w1 "1"
@@ -41,7 +47,8 @@ bindsym $mod+Shift+7 move container to workspace $w7
 bindsym $mod+t floating toggle
 
 bindsym $mod+Shift+c restart
-new_window none
+new_window normal 0
+hide_edge_borders both
 
 assign [class="Emacs"] $w1
 assign [class="Firefox"] $w2
@@ -77,32 +84,14 @@ exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 exec "xset r rate 200 75"
 exec "xrdb ~/.Xresources"
 exec "xmodmap ~/.Xmodmap"
-exec "urxvt -title 'stat' -e sh -c 'astat'"
+exec "urxvt -title 'stat floating' -e sh -c 'astat'"
 
 # Colors
-# set $background #131412
-# set $foreground #ffffff
-# set $fbackground #ff8c00
+set $background #131412
+set $foreground #ffffff
+set $fbackground #ff8c00
 
-# Resize binds
-bindsym $mod+h split h
-bindsym $mod+v split v
-bindsym $mod+Control+f resize grow width 10 px or 10 ppt
-bindsym $mod+Control+b resize shrink width 10 px or 10 ppt
-bindsym $mod+Control+p resize grow height 10 px or 10 ppt
-bindsym $mod+Control+n resize shrink height 10 px or 10 ppt
-
-# I have decided to go without bar, because fuck you
-# Bar
-#  bar {
-#	status_command i3blocks
-#	separator_symbol " "
-#	position bottom
-#	colors{
-#		background $background
-#		statusline $foreground
-#		focused_workspace $background $background ffffff
-#		inactive_workspace $background $background 929292
-#		urgent_workspace $background $background ff0000
-#	}
-# }
+client.focused          #000000 #000000 #ffffff #000000   #000000
+client.focused_inactive #000000 #000000 #ffffff #000000   #000000
+client.unfocused        #4d4d4d #4d4d4d #ffffff #ffffff	  #ffffff
+client.urgent           #900000 #900000 #ffffff #900000   #900000

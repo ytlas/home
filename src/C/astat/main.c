@@ -13,7 +13,7 @@ int main(void){
   initscr();
   raw();
   noecho();
-  halfdelay(10);
+  halfdelay(100);
   printw("Battery: \n");
   printw("Volume: \n");
   printw("Date: \n");
