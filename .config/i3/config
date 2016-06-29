@@ -82,15 +82,16 @@ bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
 exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 
-client.focused          #000000 #000000 #ffffff #000000   #000000
-client.focused_inactive #000000 #000000 #ffffff #000000   #000000
-client.unfocused        #4d4d4d #4d4d4d #ffffff #ffffff	  #ffffff
-client.urgent           #900000 #900000 #ffffff #900000   #900000
-
 set $background #131412
 set $foreground #ffffff
 set $inactive #9c9c9c
 set $urgent #900000
+
+client.focused          $background $background $foreground $background   $background
+client.focused_inactive $background $background $foreground $background   $background
+client.unfocused        $inactive   $inactive   $foreground $foreground	  $foreground
+client.urgent           $urgent     $urgent     $foreground $urgent       $urgent
+
 
 bar {
     status_command i3status
