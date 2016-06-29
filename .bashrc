@@ -20,7 +20,7 @@ export PS1="\u${PINK}@${GREEN}:${RESET}\w${YELLOW}\$${RESET} "
 # Variables
 export pmp='sudo apt'
 export lpmp='sudo dpkg'
-export EDITOR="emacs -nw -q"
+export EDITOR="emacs -nw"
 
 # Aliases
 alias sudo='sudo '

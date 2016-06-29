@@ -20,13 +20,13 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # Workspace names
-set $w1 "1>"
-set $w2 "2>"
-set $w3 "3>"
-set $w4 "4>"
-set $w5 "5>"
-set $w6 "6>"
-set $w7 "7>"
+set $w1 "~1~"
+set $w2 "~2~"
+set $w3 "~3~"
+set $w4 "~4~"
+set $w5 "~5~"
+set $w6 "~6~"
+set $w7 "~7~"
 
 bindsym Mod1+F2 exec "sudo chvt 2"
 bindsym $mod+1 workspace $w1
@@ -56,11 +56,13 @@ assign [title="stat"] $w3
 assign [class="TeamSpeak 3"] $w4
 assign [class="Steam"] $w4
 assign [title="media"] $w5
+assign [class="mpv"] $w5
 assign [class="google-chrome"] $w5
 assign [class="VirtualBox"] $w6
 for_window [title="xterm"] floating enable
 for_window [title="nmtui"] floating enable
 for_window [title="floating"] floating enable
+for_window [title="Spotify"] move container to workspace $w5
 
 bindsym $mod+Left exec "sudo ~/bin/abl -2"
 bindsym $mod+Right exec "sudo ~/bin/abl +2"
