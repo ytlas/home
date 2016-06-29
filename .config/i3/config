@@ -1,5 +1,5 @@
 set $mod Mod3
-font pango:Ubuntu Regular 13
+font pango:Ubuntu Mono 13
 floating_modifier $mod
 bindsym $mod+w kill
 bindsym $mod+d exec "dmenu_run -fn 'Ubuntu Monospace 10' -nb black -sb orange -nf white -sf white -l 10"
@@ -84,7 +84,7 @@ exec "feh --bg-fill $HOME/Pictures/bg.jpg"
 
 set $background #131412
 set $foreground #ffffff
-set $inactive #9c9c9c
+set $inactive #4d4d4d
 set $urgent #900000
 
 client.focused          $background $background $foreground $background   $background
