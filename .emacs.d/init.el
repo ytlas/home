@@ -32,7 +32,7 @@
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
 
-(ensure-package-installed 'expand-region 'multi-term 'flycheck 'magit 'auto-complete 'iy-go-to-char 'multiple-cursors 'pdf-tools 'smex 'emms)
+(ensure-package-installed 'expand-region 'multi-term 'flycheck 'auto-complete 'iy-go-to-char 'multiple-cursors 'pdf-tools 'helm)
 
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)
@@ -100,10 +100,6 @@
 ;; Winner mode (remember window configurations)
 (winner-mode 1)
 
-;; Narrowing list modes
-;; (ido-mode 1)
-;; (ido-ubiquitous-mode 1)
-
 ;; Disables annoying GUI help
 (tooltip-mode nil)
 (setq show-help-function nil)
@@ -121,6 +117,10 @@
 (blink-cursor-mode 0)
 
 ;;; Variables
+;; Helm fuzzy matching
+(setq-default helm-mode-fuzzy-match t)
+(setq-default helm-completion-in-region-fuzzy-match t)
+
 ;; Disable confirmation when killing buffers with running processes
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
@@ -198,14 +198,17 @@
   (global-unset-key k))
 
 ;;; Key bindings
+;; Helm
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x r b") 'helm-bookmarks)
+
 ;; Binding to custom multi-term adviced function
 (global-set-key (kbd "þ") 'my/multi-term)
 
 ;; Paste from X clipboard
 (global-set-key (kbd "C-M-y") 'my/paste-from-x)
-
-;; Narrowing list M-x
-(global-set-key (kbd "M-x") 'smex)
 
 ;; Windmove
 (global-set-key (kbd "C-c b") 'windmove-left)

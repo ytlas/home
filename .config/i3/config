@@ -20,13 +20,13 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # Workspace names
-set $w1 "~1~"
-set $w2 "~2~"
-set $w3 "~3~"
-set $w4 "~4~"
-set $w5 "~5~"
-set $w6 "~6~"
-set $w7 "~7~"
+set $w1 "1~"
+set $w2 "2~"
+set $w3 "3~"
+set $w4 "4~"
+set $w5 "5~"
+set $w6 "6~"
+set $w7 "7~"
 
 bindsym Mod1+F2 exec "sudo chvt 2"
 bindsym $mod+1 workspace $w1
@@ -62,6 +62,7 @@ assign [class="VirtualBox"] $w6
 for_window [title="xterm"] floating enable
 for_window [title="nmtui"] floating enable
 for_window [title="floating"] floating enable
+for_window [title="Chat"] floating enable
 for_window [title="Spotify"] move container to workspace $w5
 
 bindsym $mod+Left exec "sudo ~/bin/abl -2"
@@ -78,6 +79,7 @@ bindsym $mod+Return exec "urxvt -title floating"
 bindsym $mod+Shift+Return exec "urxvt"
 bindsym $mod+c exec "urxvt -e sh -c 'nmtui-connect'"
 bindsym $mod+l exec 'i3lock-fancy'
+bindsym $mod+y exec "scrot -s -e 'mv $f ~/www/'"
 bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
@@ -89,11 +91,10 @@ set $foreground #ffffff
 set $inactive #4d4d4d
 set $urgent #900000
 
-client.focused          $background $background $foreground $background   $background
-client.focused_inactive $background $background $foreground $background   $background
-client.unfocused        $inactive   $inactive   $foreground $foreground	  $foreground
-client.urgent           $urgent     $urgent     $foreground $urgent       $urgent
-
+client.focused $background $background $foreground $background $background
+client.focused_inactive $background $background $foreground $background $background
+client.unfocused $inactive $inactive $foreground $foreground	$foreground
+client.urgent $urgent $urgent $foreground $urgent $urgent
 
 bar {
     status_command i3status
