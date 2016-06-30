@@ -32,7 +32,7 @@
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
 
-(ensure-package-installed 'expand-region 'multi-term 'flycheck 'auto-complete 'iy-go-to-char 'multiple-cursors 'pdf-tools 'helm)
+(ensure-package-installed 'expand-region 'multi-term 'flycheck 'auto-complete 'iy-go-to-char 'multiple-cursors 'pdf-tools 'smex)
 
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)
@@ -91,6 +91,9 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
+;; Interactively do mode
+(ido-mode 1)
+
 ;; Enables correction suggestions, errors and warnings in various programming languages
 (global-flycheck-mode)
 
@@ -117,10 +120,6 @@
 (blink-cursor-mode 0)
 
 ;;; Variables
-;; Helm fuzzy matching
-(setq-default helm-mode-fuzzy-match t)
-(setq-default helm-completion-in-region-fuzzy-match t)
-
 ;; Disable confirmation when killing buffers with running processes
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
@@ -198,11 +197,8 @@
   (global-unset-key k))
 
 ;;; Key bindings
-;; Helm
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-x r b") 'helm-bookmarks)
+;; Binds M-x to narrowing list function prompt
+(global-set-key (kbd "M-x") 'smex)
 
 ;; Binding to custom multi-term adviced function
 (global-set-key (kbd "þ") 'my/multi-term)
