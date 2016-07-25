@@ -92,7 +92,7 @@
 
 ;;; Mode toggles
 ;; Interactively do mode
-(ido-mode 1)
+;;(ido-mode 1)
 
 ;; Enables correction suggestions, errors and warnings in various programming languages
 (global-flycheck-mode)
