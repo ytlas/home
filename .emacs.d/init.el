@@ -114,8 +114,6 @@
 (show-paren-mode 1)
 
 ;; Misc
-(emms-standard)
-(emms-default-players)
 ;; (electric-pair-mode 1)
 (blink-cursor-mode 0)
 
@@ -181,7 +179,6 @@
 
 ;;; Autoloads
 ;; Enables web-mode in "web-files"
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
@@ -189,7 +186,7 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;;; Key unbindings
 ;; Unbinds annoying keys that I never use

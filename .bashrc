@@ -25,6 +25,7 @@ export EDITOR="emacs -nw"
 # Aliases
 alias sudo='sudo '
 alias m='sudo mount'
+alias um='sudo umount'
 alias h='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls --color=auto -l'
 alias cl='clear'
@@ -38,6 +39,9 @@ alias nh='sudo TERM=xterm nethogs'
 alias wifi='sudo TERM=xterm nmtui'
 alias pg='ping leafscript.net'
 alias vi='env TERM=xterm $EDITOR'
+alias ..='cd ..'
+alias sshls='ssh rabbit@leafscript.net'
+alias sshfsls='sshfs rabbit@leafscript.net:/home/rabbit/leafscript.net ~/leafscript.net'
 
 # Laptop specific
 alias getbat='cat /sys/class/power_supply/BAT0/capacity'

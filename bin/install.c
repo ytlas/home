@@ -11,7 +11,7 @@ int main(void){
   char *home=malloc(20);
   char *temp=malloc(100);
   strcpy(home,getenv("HOME"));
-  //system("sudo apt-get install $(grep -vE \"^\\s*#\" \"$HOME/Documents/package-list\"  | tr \"\n\n\"5 \" \")");
+  system("sudo apt-get install $(grep -vE \"^\\s*#\" \"$HOME/Documents/package-list\"  | tr \"\n\n\"5 \" \")");
   strcpy(temp,home);
 
   strcat(temp,"/.fonts");
