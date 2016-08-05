@@ -13,14 +13,14 @@ int main(void){
   initscr();
   raw();
   noecho();
-  halfdelay(100);
+  halfdelay(1);
   printw("Battery: \n");
   printw("Volume: \n");
   printw("Date: \n");
   while(1){
     battery=batteryLevels();
     mvprintw(0,9,"%3d%%+(%3d%%)",battery[0],battery[1]);
-    mvprintw(1,8,"%3hu%%",getVolume());
+    mvprintw(1,8,"%3d%%",getVolume());
     mvprintw(2,7,"%s",dateAndTime());
     refresh();
     if(getch()=='q'){

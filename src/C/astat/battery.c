@@ -14,5 +14,5 @@ int *batteryLevels(void){
     return batteryLevel;
   }
   fclose(fBattery);
-  return *batteryLevel;
+  return batteryLevel;
 }

@@ -91,8 +91,8 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
-;; Interactively do mode
-;;(ido-mode 1)
+;; Enables ya-snippets globally
+(yas-global-mode 1)
 
 ;; Enables correction suggestions, errors and warnings in various programming languages
 (global-flycheck-mode)
@@ -118,6 +118,11 @@
 (blink-cursor-mode 0)
 
 ;;; Variables
+;; Sets yasnippet paths
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+
+
+
 ;; Disable confirmation when killing buffers with running processes
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function

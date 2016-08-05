@@ -1,4 +1,6 @@
 # Adam's amazing bash configuration
+
+# Inital important variables
 export GTK_THEME="raleigh"
 export PATH="$PATH:$HOME/bin"
 if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
@@ -20,7 +22,7 @@ export PS1="\u${PINK}@${GREEN}:${RESET}\w${YELLOW}\$${RESET} "
 # Variables
 export pmp='sudo apt'
 export lpmp='sudo dpkg'
-export EDITOR="emacs -nw"
+export EDITOR="emacs -nw -q"
 
 # Aliases
 alias sudo='sudo '
@@ -37,14 +39,11 @@ alias sp='sudo poweroff'
 alias sr='sudo reboot'
 alias nh='sudo TERM=xterm nethogs'
 alias wifi='sudo TERM=xterm nmtui'
-alias pg='ping leafscript.net'
+alias pg='ping google.com'
 alias vi='env TERM=xterm $EDITOR'
-alias ..='cd ..'
 alias sshls='ssh rabbit@leafscript.net'
 alias sshfsls='sshfs rabbit@leafscript.net:/home/rabbit/leafscript.net ~/leafscript.net'
-
-# Laptop specific
-alias getbat='cat /sys/class/power_supply/BAT0/capacity'
+alias hiber='sudo sh -c "echo mem>/sys/power/state"'
 
 # Package manager
 alias y='${pmp}'
@@ -59,5 +58,5 @@ alias ly='${lpmp}'
 alias li='${lpmp} -i'
 
 # Media
-alias adl='youtube-dl -x --audio-format vorbis'
+alias adl='youtube-dl -x'
 alias vdl='youtube-dl'
