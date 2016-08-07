@@ -3,6 +3,9 @@
 # Inital important variables
 export GTK_THEME="raleigh"
 export PATH="$PATH:$HOME/bin"
+export GLOBIGNORE=".:.."
+export TERM=xterm
+shopt -s dotglob
 if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
     startx
     exit

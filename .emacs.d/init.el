@@ -32,7 +32,7 @@
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
 
-(ensure-package-installed 'expand-region 'multi-term 'flycheck 'auto-complete 'iy-go-to-char 'multiple-cursors 'pdf-tools 'smex)
+(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char)
 
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)
@@ -41,45 +41,7 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-;; Fixes some foreign keyboard problems (like dead-tilde)
-(require 'iso-transl)
-
 ;;; Defuns
-;; Scrolls up and down and centers screen around cursor
-(defun my/scroll-down()
-  (interactive)
-  (scroll-up)
-  (recenter)
-  )
-(defun my/scroll-up()
-  (interactive)
-  (scroll-down)
-  (recenter)
-  )
-(defun my/paste-from-x()
-  (interactive)
-  (shell-command "env DISPLAY=:0 xsel" 1)
-  )
-
-;; Prints variable major-mode
-(defun my/mm()
-  (interactive)
-  (message "%s" major-mode))
-
-;; When in term, only show buffer-name in mode-line
-(defun my/term-hook()
-  (interactive)
-  (setq mode-line-format " %b "))
-
-;; If terminal key is pressed switch to existing one, or create new one if it does not exist
-(defun my/multi-term()
-  (interactive)
-  (if(get-buffer "*terminal<1>*")
-      (if(equal (substring (buffer-name) 0 5) "*term")
-	  (multi-term)
-	(switch-to-buffer "*terminal<1>*"))
-    (multi-term)))
-
 ;; Position cursor at beginning of match when using Isearch
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
 (defun my-goto-match-beginning ()
@@ -91,55 +53,22 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
-;; Enables ya-snippets globally
-(yas-global-mode 1)
-
 ;; Enables correction suggestions, errors and warnings in various programming languages
 (global-flycheck-mode)
-
-;; Treats CamelCase words as distinct words
-(subword-mode 1)
-
-;; Winner mode (remember window configurations)
-(winner-mode 1)
 
 ;; Disables annoying GUI help
 (tooltip-mode nil)
 (setq show-help-function nil)
 
-;; Enable auto-completion
-(ac-config-default)
-
 ;; Shows matching paren
 (show-paren-mode 1)
 
-;; Misc
-;; (electric-pair-mode 1)
-(blink-cursor-mode 0)
-
 ;;; Variables
-;; Sets yasnippet paths
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-
-
-
-;; Disable confirmation when killing buffers with running processes
-(setq kill-buffer-query-functions
-  (remq 'process-kill-buffer-query-function
-	 kill-buffer-query-functions))
-
 ;; Makes point move by logical lines
 (setq line-move-visual nil)
 
 ;; Sets the initial scratch buffer content
-(setq initial-scratch-message ";; FUCK YOU\n")
-
-;; Enables flexible string matching with various ido-modes
-(setq ido-enable-flex-matching t)
-(setq smex-flex-matching t)
-
-;; Changes the look of the mode-line
-(setq-default mode-line-format " %* %b  %m  %f  %l:%c  %p ")
+(setq initial-scratch-message ";; Meh\n")
 
 ;; Disable annoying prompts
 (setq confirm-nonexistent-file-or-buffer nil)
@@ -171,26 +100,18 @@
 (add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
 
 ;; Enables hl-line-mode in certain major modes
-(add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
-(add-hook 'sh-mode-hook 'hl-line-mode)
-(add-hook 'web-mode-hook 'hl-line-mode)
-(add-hook 'python-mode-hook 'hl-line-mode)
-(add-hook 'css-mode-hook 'hl-line-mode)
-(add-hook 'conf-space-mode-hook 'hl-line-mode)
-(add-hook 'c-mode-hook 'hl-line-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
+;; (add-hook 'sh-mode-hook 'hl-line-mode)
+;; (add-hook 'web-mode-hook 'hl-line-mode)
+;; (add-hook 'python-mode-hook 'hl-line-mode)
+;; (add-hook 'css-mode-hook 'hl-line-mode)
+;; (add-hook 'conf-space-mode-hook 'hl-line-mode)
+;; (add-hook 'c-mode-hook 'hl-line-mode)
 
 ;; Changes mode-line when in term-mode
 (add-hook 'term-mode-hook 'my/term-hook)
 
 ;;; Autoloads
-;; Enables web-mode in "web-files"
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;;; Key unbindings
@@ -199,15 +120,6 @@
   (global-unset-key k))
 
 ;;; Key bindings
-;; Binds M-x to narrowing list function prompt
-(global-set-key (kbd "M-x") 'smex)
-
-;; Binding to custom multi-term adviced function
-(global-set-key (kbd "þ") 'my/multi-term)
-
-;; Paste from X clipboard
-(global-set-key (kbd "C-M-y") 'my/paste-from-x)
-
 ;; Windmove
 (global-set-key (kbd "C-c b") 'windmove-left)
 (global-set-key (kbd "C-c f") 'windmove-right)
@@ -215,25 +127,10 @@
 (global-set-key (kbd "C-c n") 'windmove-down)
 (global-set-key (kbd "M-o") 'other-window)
 
-;; Indent when RET is pressed
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 ;; Navigation binds
 (global-set-key (kbd "€") 'er/expand-region)
 (global-set-key (kbd "→") 'iy-go-up-to-char)
 (global-set-key (kbd "C-→") 'iy-go-up-to-char-backward)
-
-;; Multiple-cursors binds
-(global-set-key (kbd "µ") 'mc/mark-next-like-this)
-(global-set-key (kbd "ł") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-ł") 'mc/unmark-previous-like-this)
-(global-set-key (kbd "C-µ") 'mc/unmark-next-like-this)
-(global-set-key (kbd "C-c C-M-µ") 'mc/edit-lines)
-(global-set-key (kbd "C-M-µ") 'mc/mark-all-like-this)
-
-;; Custom scroll binds
-(global-set-key (kbd "C-v") 'my/scroll-down)
-(global-set-key (kbd "M-v") 'my/scroll-up)
 
 ;; Comment binds
 (global-set-key (kbd "©") 'comment-region)

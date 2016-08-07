@@ -7,7 +7,7 @@ hide_edge_borders both
 
 # Execs
 exec "xrdb ~/.Xresources&&xset r rate 200 75&&setxkbmap se&&xmodmap ~/.Xmodmap"
-exec "feh --bg-fill $HOME/Pictures/bg.jpg"
+exec "feh --bg-fill $HOME/Documents/Pictures/bg.jpg"
 
 # General binds
 bindsym $mod+w kill

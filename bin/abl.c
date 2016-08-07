@@ -35,7 +35,7 @@ int main(int argc,const char *argv[]){
     newBrightness=brightness-deltaBrightness;
     break;
   default:
-    printf("Invalid argument.\Usage: abl [+|-][deltaBrightnessNumber]");
+    printf("Invalid argument. Usage: abl [+|-][deltaBrightnessNumber]");
   }
 
   // Safety statement so that the brightness doesn't exceed max brightness
