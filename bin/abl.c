@@ -6,6 +6,7 @@
 // Declaration of functions
 int getNewBrightness(const char **argv);
 int setBrightness(int deltaBrightness,FILE *fp);
+int getBrightnessArg(const char **argv);
 
 int main(int argc,const char *argv[]){
   // Declaration of current brightness and max brightness vars
