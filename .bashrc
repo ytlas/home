@@ -2,7 +2,7 @@
 
 # Inital important variables
 export GTK_THEME="raleigh"
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:/sbin:/usr/sbin:$HOME/bin"
 export GLOBIGNORE=".:.."
 export TERM=xterm
 shopt -s dotglob
@@ -35,7 +35,7 @@ alias sudo='sudo '
 alias m='sudo mount'
 alias um='sudo umount'
 alias h='sudo sh -c "echo mem>/sys/power/state"'
-alias ls='ls --color=auto -l'
+alias ls='ls --color=auto -lF'
 alias cl='clear'
 alias rmf='rm -v'
 alias mv='mv -v'
