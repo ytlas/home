@@ -6,6 +6,9 @@ export PATH="$PATH:$HOME/bin"
 export GLOBIGNORE=".:.."
 export TERM=xterm
 shopt -s dotglob
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
     startx
     exit
@@ -34,9 +37,9 @@ alias um='sudo umount'
 alias h='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls --color=auto -l'
 alias cl='clear'
-alias rm='rm -rfv'
+alias rmf='rm -v'
 alias mv='mv -v'
-alias cp='cp -av'
+alias cp='cp -v'
 alias mkdir='mkdir -vp'
 alias sp='sudo poweroff'
 alias sr='sudo reboot'
@@ -44,6 +47,7 @@ alias nh='sudo TERM=xterm nethogs'
 alias wifi='sudo TERM=xterm nmtui'
 alias pg='ping google.com'
 alias vi='env TERM=xterm $EDITOR'
+alias f='fork'
 alias sshls='ssh rabbit@leafscript.net'
 alias sshfsls='sshfs rabbit@leafscript.net:/home/rabbit/leafscript.net ~/leafscript.net'
 alias hiber='sudo sh -c "echo mem>/sys/power/state"'
@@ -63,3 +67,8 @@ alias li='${lpmp} -i'
 # Media
 alias adl='youtube-dl -x'
 alias vdl='youtube-dl'
+
+function rm(){
+    mkdir -p /tmp/trash0/>/dev/null
+    mv $1 /tmp/trash0/
+}

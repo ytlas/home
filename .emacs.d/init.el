@@ -108,11 +108,11 @@
 ;; (add-hook 'conf-space-mode-hook 'hl-line-mode)
 ;; (add-hook 'c-mode-hook 'hl-line-mode)
 
-;; Changes mode-line when in term-mode
-(add-hook 'term-mode-hook 'my/term-hook)
-
 ;;; Autoloads
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 
 ;;; Key unbindings
 ;; Unbinds annoying keys that I never use
