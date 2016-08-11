@@ -3,8 +3,8 @@
 # Inital important variables
 export GTK_THEME="raleigh"
 export PATH="$PATH:/sbin:/usr/sbin:$HOME/bin"
-export GLOBIGNORE=".:.."
-export TERM=xterm
+GLOBIGNORE=".:.."
+TERM=xterm
 shopt -s dotglob
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
