@@ -6,7 +6,7 @@ export PATH="$PATH:/sbin:/usr/sbin:$HOME/bin"
 export EDITOR="nano -w"
 GLOBIGNORE=".:.."
 shopt -s dotglob
-umask -S u=rwx,g=,o=
+umask -S u=rwx,g=,o=>/dev/null
 # Bash completion
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
@@ -20,29 +20,24 @@ fi
 
 ## Variables
 TERM=xterm
-# Color variables
-GREEN="\[$(tput setaf 2)\]"
-RED="\[$(tput setaf 1)\]"
-BLUE="\[$(tput setaf 6)\]"
-PINK="\[$(tput setaf 5)\]"
-YELLOW="\[$(tput setaf 3)\]"
-RESET="\[$(tput sgr0)\]"
-PS1="\u${PINK}@${GREEN}:${RESET}\w${YELLOW}\$${RESET} "
+PS1="\u^\w>"
 
 ## Aliases
 alias sudo='sudo '
 alias m='sudo mount'
 alias um='sudo umount'
 alias h='sudo sh -c "echo mem>/sys/power/state"'
-alias ls='ls --color=auto -lF'
+alias ls='ls -lF'
 alias cl='clear'
 alias mv='mv -v'
 alias cp='cp -v'
+alias rm='rm -v'
+alias t='touch'
 alias mkdir='mkdir -vp'
 alias sp='sudo poweroff'
 alias sr='sudo reboot'
 alias nh='sudo TERM=xterm nethogs'
-alias wifi='sudo TERM=xterm nmtui'
+alias nmtui='sudo TERM=xterm nmtui'
 alias pg='ping google.com'
 alias vi='env TERM=xterm $EDITOR'
 alias f='fork'
@@ -60,7 +55,7 @@ if [ -f "$HOME/.debian" ];then
     alias y='${pmp}'
     alias i='${pmp} install'
     alias r='${pmp} remove'
-    alias c='${pmp}-get autoremove && ${pmp}-get autoclean'
+    alias c='${pmp} autoremove && ${pmp} autoclean'
     alias u='${pmp} update && ${pmp} -u dist-upgrade'
     alias s='apt search'
     alias ly='${lpmp}'
