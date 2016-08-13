@@ -9,7 +9,6 @@ hide_edge_borders both
 exec "feh --bg-fill $HOME/Documents/Pictures/bg.jpg"
 exec "urxvt -title stat -e sh -c 'sudo iftop'"
 exec "urxvt -title stat -e sh -c 'htop'"
-exec "i3-msg 'split v'"
 exec "urxvt -title stat -e sh -c 'astat'"
 
 # General binds
@@ -50,7 +49,7 @@ bindsym $mod+Up exec "ponymix --max-volume 250 increase 5"
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+e exec "emacs"
 bindsym $mod+d exec "dmenu_run -fn 'Ubuntu Monospace 10' -nb black -sb orange -nf white -sf white -l 10"
-bindsym $mod+l exec 'i3lock-fancy'
+bindsym $mod+l exec 'xlock'
 bindsym $mod+y exec "scrot -s -e 'mv $f ~/www/'"
 bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+8 fullscreen toggle
