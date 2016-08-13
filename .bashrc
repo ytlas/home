@@ -74,7 +74,7 @@ elif [ -f "$HOME/.slack" ];then
 fi
 # If ~/.server exists, setup stuff for server environment
 if [ -f "$HOME/.server" ];then
-    PS1="SERVER>>${PS1}"
+    PS1="[SERVER] ${PS1}"
 fi
 
 ### End
