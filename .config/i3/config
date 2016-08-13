@@ -82,7 +82,6 @@ bindsym $mod+Shift+6 move container to workspace $w6
 bindsym $mod+Shift+7 move container to workspace $w7
 
 # Assigns
-assign [class="Emacs"] $w1
 assign [class="Firefox"] $w2
 assign [title="stat"] $w3
 assign [class="TeamSpeak 3"] $w4

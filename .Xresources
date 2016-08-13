@@ -1,7 +1,7 @@
 urxvt*scrollBar: false
 urxvt*background: #ffffff
 urxvt*foreground: #000000
-urxvt*font: xft:Ubuntu Mono:size=13
+urxvt*font: xft:Ubuntu Mono:size=13:antialias=false
 urxvt*letterSpace: 1
 urxvt*iso14755: False
 urxvt*iso14755_52: False
@@ -12,7 +12,6 @@ urxvt*internalBorder: 0
 urxvt*externalBorder: 0
 
 xterm*font:     *-fixed-*-*-*-18-*
-xterm*faceName: Ubuntu Mono:size=13:antialias=false
 xterm*background: #ffffff
 xterm*foreground: #000000
 xterm*geometry: 80x24
