@@ -6,11 +6,11 @@ new_window normal 0
 hide_edge_borders both
 
 # Execs
-exec "xrdb ~/.Xresources&&xset r rate 200 75&&setxkbmap se&&xmodmap ~/.Xmodmap"
 exec "feh --bg-fill $HOME/Documents/Pictures/bg.jpg"
 exec "urxvt -title stat -e sh -c 'sudo iftop'"
 exec "urxvt -title stat -e sh -c 'htop'"
 exec "urxvt -title stat -e sh -c 'astat'"
+exec "xrdb ~/.Xresources&&xset r rate 200 75&&setxkbmap se&&xmodmap ~/.Xmodmap"
 
 # General binds
 bindsym $mod+w kill
