@@ -6,6 +6,8 @@ export PATH="$PATH:/sbin:/usr/sbin:$HOME/bin"
 GLOBIGNORE=".:.."
 TERM=xterm
 shopt -s dotglob
+umask -S u=rwx,g=,o=
+
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
@@ -37,7 +39,6 @@ alias um='sudo umount'
 alias h='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls --color=auto -lF'
 alias cl='clear'
-alias rmf='rm -v'
 alias mv='mv -v'
 alias cp='cp -v'
 alias mkdir='mkdir -vp'
@@ -48,8 +49,10 @@ alias wifi='sudo TERM=xterm nmtui'
 alias pg='ping google.com'
 alias vi='env TERM=xterm $EDITOR'
 alias f='fork'
-alias sshls='ssh rabbit@leafscript.net'
-alias sshfsls='sshfs rabbit@leafscript.net:/home/rabbit/leafscript.net ~/leafscript.net'
+alias sshls='ssh glas@leafscript.net'
+alias sftpls='sftp glas@leafscript.net'
+alias sshfsls='sshfs glas@leafscript.net:/home/glas/leafscript.net ~/leafscript.net'
+alias sshfssg='sshfs glas@leafscript.net:/sg ~/sg'
 alias hiber='sudo sh -c "echo mem>/sys/power/state"'
 
 # Package manager
@@ -67,8 +70,3 @@ alias li='${lpmp} -i'
 # Media
 alias adl='youtube-dl -x'
 alias vdl='youtube-dl'
-
-function rm(){
-    mkdir -p /tmp/trash0/>/dev/null
-    mv $1 /tmp/trash0/
-}
