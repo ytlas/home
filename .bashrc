@@ -3,8 +3,9 @@
 # Inital important variables
 export GTK_THEME="raleigh"
 export PATH="$PATH:/sbin:/usr/sbin:$HOME/bin"
+export EDITOR="nano -w"
+
 GLOBIGNORE=".:.."
-TERM=xterm
 shopt -s dotglob
 umask -S u=rwx,g=,o=
 
@@ -28,9 +29,7 @@ RESET="\[$(tput sgr0)\]"
 export PS1="\u${PINK}@${GREEN}:${RESET}\w${YELLOW}\$${RESET} "
 
 # Variables
-export pmp='sudo apt'
-export lpmp='sudo dpkg'
-export EDITOR="emacs -nw -q"
+TERM=xterm
 
 # Aliases
 alias sudo='sudo '
@@ -56,16 +55,27 @@ alias sshfssg='sshfs glas@leafscript.net:/sg ~/sg'
 alias hiber='sudo sh -c "echo mem>/sys/power/state"'
 
 # Package manager
-alias y='${pmp}'
-alias i='${pmp} install'
-alias r='${pmp} remove'
-alias c='${pmp}-get autoremove && ${pmp}-get autoclean'
-alias u='${pmp} update && ${pmp} -u dist-upgrade'
-alias s='${pmp} search'
-
-# dpkg
-alias ly='${lpmp}'
-alias li='${lpmp} -i'
+if [ -f "$HOME/.debian" ];then
+    pmp="sudo apt-get"
+    alias y='${pmp}'
+    alias i='${pmp} install'
+    alias r='${pmp} remove'
+    alias c='${pmp}-get autoremove && ${pmp}-get autoclean'
+    alias u='${pmp} update && ${pmp} -u dist-upgrade'
+    alias s='apt search'
+    alias ly='${lpmp}'
+    alias li='${lpmp} -i'
+elif [ -f "$HOME/.slack" ];then
+    pmp="sudo slackpkg"
+    alias y='${pmp}'
+    alias i='${pmp} install'
+    alias r='${pmp} remove'
+    alias c='sudo pkgtool'
+    alias u='${pmp} update&&${pmp} upgrade-all'
+    alias s='${pmp} search'
+    alias li='sudo installpkg'
+    alias lr='sudo removepkg'
+fi
 
 # Media
 alias adl='youtube-dl -x'
