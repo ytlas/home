@@ -11,7 +11,7 @@ umask -S u=rwx,g=,o=>/dev/null
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 # Startx if in the first virtual terminal (tty1)
-if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]];then
+if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]] && [ -f "$HOME/.stx" ];then
     if [ -f "$HOME/.xinitrc" ];then
 	startx
 	exit
