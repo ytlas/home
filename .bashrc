@@ -69,6 +69,13 @@ elif [ -f "$HOME/.slack" ];then
     alias s='${pmp} search'
     alias li='sudo installpkg'
     alias lr='sudo removepkg'
+elif [ -f "$HOME/.rhel" ];then
+    pmp="sudo yum"
+    alias y='${pmp}'
+    alias i='${pmp} install'
+    alias r='${pmp} erase'
+    alias u='${pmp} check-update&&${pmp} update'
+    alias s='${pmp} search'
 fi
 # If ~/.server exists, setup stuff for server environment
 if [ -f "$HOME/.server" ];then
