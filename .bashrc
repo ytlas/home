@@ -20,14 +20,15 @@ fi
 
 ## Variables
 TERM=xterm
-PS1="\u^\w>"
+PS1="\u{\w}\$ "
 
 ## Aliases
 alias sudo='sudo '
 alias m='sudo mount'
 alias um='sudo umount'
-alias h='sudo sh -c "echo mem>/sys/power/state"'
+alias hiber='sudo sh -c "echo mem>/sys/power/state"'
 alias ls='ls -lF'
+alias lsa='ls -lFA'
 alias cl='clear'
 alias mv='mv -v'
 alias cp='cp -v'
@@ -69,6 +70,7 @@ elif [ -f "$HOME/.slack" ];then
     alias s='${pmp} search'
     alias li='sudo installpkg'
     alias lr='sudo removepkg'
+# If ~/.rhel exists, setup stuff for RHEL-type systems
 elif [ -f "$HOME/.rhel" ];then
     pmp="sudo yum"
     alias y='${pmp}'

@@ -32,7 +32,7 @@
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
 
-(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char)
+(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode)
 
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)
