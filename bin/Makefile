@@ -13,7 +13,7 @@ mps: mps.c
 	gcc -o mps mps.c -std=gnu11
 
 sp: sp.c
-	gcc -o sp sp.c -std=gnu11
+	gcc -o sp sp.c -std=gnu11 -lncurses
 
 sr: sr.c
-	gcc -o sr sr.c -std=gnu11
+	gcc -o sr sr.c -std=gnu11 -lncurses
