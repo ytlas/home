@@ -1,15 +1,9 @@
 ;;; Adam's amazing init.el
 ;; Turn off mouse interface early in startup to avoid momentary display
-(when window-system (set-frame-size (selected-frame) 90 45))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-
-;; Removes GUI crap before anything
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(fringe-mode 0)
+;; (when window-system (set-frame-size (selected-frame) 90 45))
+;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;; (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;; (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
 ;; Identification
 (setq user-full-name "ytlas")
@@ -19,6 +13,13 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+(require 'exwm)
+(require 'exwm-config)
+(exwm-config-default)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(fringe-mode 0)
 
 (defun ensure-package-installed(&rest packages)
   (mapcar
@@ -32,7 +33,7 @@
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
 
-(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode)
+(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region)
 
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)
@@ -53,6 +54,12 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
+;; Ido mode
+(ido-mode 0)
+
+;; Wrap-region mode
+(wrap-region-global-mode)
+
 ;; Enables correction suggestions, errors and warnings in various programming languages
 (global-flycheck-mode)
 
@@ -100,13 +107,13 @@
 (add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
 
 ;; Enables hl-line-mode in certain major modes
-;; (add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
-;; (add-hook 'sh-mode-hook 'hl-line-mode)
-;; (add-hook 'web-mode-hook 'hl-line-mode)
-;; (add-hook 'python-mode-hook 'hl-line-mode)
-;; (add-hook 'css-mode-hook 'hl-line-mode)
-;; (add-hook 'conf-space-mode-hook 'hl-line-mode)
-;; (add-hook 'c-mode-hook 'hl-line-mode)
+(add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
+(add-hook 'sh-mode-hook 'hl-line-mode)
+(add-hook 'web-mode-hook 'hl-line-mode)
+(add-hook 'python-mode-hook 'hl-line-mode)
+(add-hook 'css-mode-hook 'hl-line-mode)
+(add-hook 'conf-space-mode-hook 'hl-line-mode)
+(add-hook 'c-mode-hook 'hl-line-mode)
 
 ;;; Autoloads
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -143,8 +150,8 @@
 ;;; Specific theme settings
 ;; (add-to-list 'default-frame-alist '(foreground-color . "#131412"))
 ;; (add-to-list 'default-frame-alist '(background-color . "#ffffff"))
-(set-face-attribute 'mode-line nil :font "Ubuntu Mono-16")
-(set-face-attribute 'default nil :font "Ubuntu Mono-13")
+(set-face-attribute 'mode-line nil :font "10x20")
+(set-face-attribute 'default nil :font "9x15")
 
 (provide  '.emacs)
 ;;; .emacs ends here

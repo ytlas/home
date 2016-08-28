@@ -10,7 +10,7 @@ umask -S u=rwx,g=,o=>/dev/null
 # Bash completion
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
-# Startx if in the first virtual terminal (tty1)
+# Startx if in the first virtual terminal (tty1) if ~/.stx exists
 if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]] && [ -f "$HOME/.stx" ];then
     if [ -f "$HOME/.xinitrc" ];then
 	startx
@@ -33,6 +33,7 @@ alias cl='clear'
 alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -v'
+alias ln='ln -v'
 alias t='touch'
 alias mkdir='mkdir -vp'
 alias nh='sudo TERM=xterm nethogs'
@@ -47,18 +48,21 @@ alias sshfssg='sshfs glas@leafscript.net:/sg ~/sg'
 # Media aliases
 alias adl='youtube-dl -x'
 alias vdl='youtube-dl'
+alias gcp='git commit -m ":)"&&git push'
+alias gcap='git commit -a -m ":)"&&git push'
 # Package manager
-# If ~/.debian exists, setup stuff for debian
+# If ~/.debian exists, setup stuff for debian-type systems
 if [ -f "$HOME/.debian" ];then
-    pmp="sudo apt-get"
+    pmp="sudo apt"
     alias y='${pmp}'
     alias i='${pmp} install'
     alias r='${pmp} remove'
     alias c='${pmp} autoremove && ${pmp} autoclean'
     alias u='${pmp} update && ${pmp} -u dist-upgrade'
-    alias s='apt search'
+    alias s='${pmp} search'
     alias ly='${lpmp}'
     alias li='${lpmp} -i'
+    alias sctl='sudo systemctl'
 # If ~/.slack exists, setup stuff for slackware
 elif [ -f "$HOME/.slack" ];then
     pmp="sudo slackpkg"
@@ -78,10 +82,27 @@ elif [ -f "$HOME/.rhel" ];then
     alias r='${pmp} erase'
     alias u='${pmp} check-update&&${pmp} update'
     alias s='${pmp} search'
+# If ~/.arch exists, setup stuff for arch-linux-type systems
+elif [ -f "$HOME/.arch" ];then
+    pmp="sudo pacman"
+    alias y='${pmp}'
+    alias i='${pmp} -S'
+    alias r='${pmp} -Rns'
+    alias u='${pmp} -Syu'
 fi
 # If ~/.server exists, setup stuff for server environment
 if [ -f "$HOME/.server" ];then
     PS1="[SERVER] ${PS1}"
 fi
 
-### End
+## Functions
+# Make it easier to dd as I do it so often.
+function dda(){
+    sudo dd bs=4M if=${1} of=${2}
+}
+
+function makea(){
+    gcc $1.c -o $1
+}
+
+### EOF
