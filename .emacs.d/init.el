@@ -13,9 +13,10 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
-(require 'exwm)
-(require 'exwm-config)
-(exwm-config-default)
+;; Exwm setup
+;; (require 'exwm)
+;; (require 'exwm-config)
+;; (exwm-config-default)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -33,7 +34,7 @@
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
 
-(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region)
+(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region 'exwm 'haskell-mode)
 
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)

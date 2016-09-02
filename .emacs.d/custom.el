@@ -15,7 +15,7 @@
  ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "deep pink"))))
  '(highlight ((t (:background "gainsboro"))))
- '(mode-line ((t (:background "#131214" :foreground "white" :box nil :slant normal :weight normal :height 151 :width normal :foundry "misc" :family "fixed"))))
+ '(mode-line ((t (:background "#131214" :foreground "white" :box (:line-width -1 :color "orange red") :slant normal :weight normal :height 151 :width normal :foundry "misc" :family "fixed"))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "black" :box (:line-width -1 :color "#131412") :weight light))))
  '(region ((t (:background "royal blue"))))
  '(web-mode-html-attr-equal-face ((t (:foreground "black"))))
