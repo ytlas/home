@@ -1,7 +1,7 @@
 urxvt*scrollBar: false
 urxvt*background: #ffffff
 urxvt*foreground: #000000
-urxvt*font:9x15
+urxvt*font:-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
 urxvt*letterSpace: 0
 urxvt*iso14755: False
 urxvt*iso14755_52: False
@@ -16,8 +16,6 @@ Xft.antialias: 0
 Xft.hinting:    1
 Xft.rgba:       rgb
 Xft.hintstyle:  hintfull
-
-emacs.font: 9x15
 
 xterm*font: 9x15
 xterm*background: #ffffff
