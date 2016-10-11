@@ -7,6 +7,9 @@
  '(custom-safe-themes
    (quote
     ("beeb5ac6b65fcccfe434071d4624ff0308b5968bf2f0c01b567d212bcaf66054" default)))
+ '(package-selected-packages
+   (quote
+    (haskell-mode xelb wrap-region web-mode js2-mode iy-go-to-char flycheck expand-region)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

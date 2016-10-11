@@ -15,5 +15,5 @@ xmodmap ~/.Xmodmap
 
 # # Start Emacs
 # exec dbus-launch --exit-with-session emacs
-i3lock
+i3lock -uc \#000000
 exec i3

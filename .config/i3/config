@@ -49,9 +49,10 @@ bindsym $mod+Up exec "ponymix --max-volume 250 increase 5 && notify-send 'Increa
 bindsym $mod+m exec "ponymix toggle"
 bindsym $mod+e exec "emacs"
 bindsym $mod+d exec "dmenu_run -fn 'Ubuntu Monospace 10' -nb black -sb white -nf white -sf black -l 10"
-bindsym $mod+l exec 'xlock'
+bindsym $mod+l exec 'lock'
+bindsym $mod+Shift+l exec "lock 0"
 bindsym $mod+y exec "scrot -s -e 'mv $f ~/www/'"
-bindsym $mod+0 exec 'conkeror'
+bindsym $mod+0 exec 'firefox-esr'
 bindsym $mod+8 fullscreen toggle
 bindsym $mod+9 exec 'mps'
 bindsym $mod+q exit
