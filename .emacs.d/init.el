@@ -17,6 +17,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (fringe-mode 0)
+(ac-config-default)
 
 (defun ensure-package-installed(&rest packages)
   (mapcar
@@ -32,6 +33,10 @@
 
 (ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region 'haskell-mode)
 
+;; Exwm setup
+(require 'exwm)
+(require 'exwm-config)
+(exwm-config-default)
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)
 (setq backup-directory-alist
@@ -102,6 +107,16 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;;; Hooks
+;; Hlint for haskell
+(add-hook 'haskell-mode-hook 'flymake-hlint-load)
+
+;; Exwm hooks
+(add-hook 'exwm-manage-finish-hook
+	  (lambda ()
+	    (when (and exwm-class-name
+		       (string= exwm-class-name "URxvt"))
+	      (setq-local exwm-input-prefix-keys '(?\C-x)))))
+
 ;; Cleans up trailing whitespace
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
@@ -126,7 +141,23 @@
 ;; (dolist (k '([mouse-1] [down-mouse-1] [double-mouse-1] [triple-mouse-1] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2] [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3] [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4] [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5] [M-down] [M-up]  [M-right]  [M-left]  [C-down]  [C-up]  [C-right]  [C-left]  [down]  [up]  [right] [left] [C-c f] [C-z]))
 ;;  (global-unset-key k))
 
-;;; Key bindings
+;;; Global key binds
+;; Exwm binds
+(exwm-input-set-key (kbd "s-<return>") (lambda ()       (interactive)(start-process "" nil "urxvt")))
+(exwm-input-set-key (kbd "s-b")        (lambda ()       (interactive)(start-process "" nil "firefox-esr")))
+(exwm-input-set-key (kbd "s-l")        (lambda ()       (interactive)(start-process "" nil "slock")))
+(exwm-input-set-key (kbd "s-<left>")   (lambda ()       (interactive)(start-process "" nil "sudo"    "abl"      "-5")))
+(exwm-input-set-key (kbd "s-<right>")  (lambda ()       (interactive)(start-process "" nil "sudo"    "abl"      "+5")))
+(exwm-input-set-key (kbd "s-<up>")     (lambda ()       (interactive)(start-process "" nil "ponymix" "increase" "5" "--max-volume" "200")))
+(exwm-input-set-key (kbd "s-<down>")   (lambda ()       (interactive)(start-process "" nil "ponymix" "decrease" "5" "--max-volume" "200")))
+(exwm-input-set-key (kbd "s-d")        (lambda (command)(interactive (list (read-shell-command "$ ")))(start-process-shell-command command nil command)))
+(exwm-input-set-key (kbd "s-l")        (lambda ()       (interactive)(start-process ""        nil       "i3lock")))
+
+;; Flymake
+(global-set-key (kbd "C-c C-e") 'flymake-popup-current-error-menu)
+(global-set-key (kbd "C-c C-n") 'flymake-goto-next-error)
+(global-set-key (kbd "C-c C-p") 'flymake-goto-prev-error)
+
 ;; Windmove
 (global-set-key (kbd "C-c b") 'windmove-left)
 (global-set-key (kbd "C-c f") 'windmove-right)
@@ -148,8 +179,8 @@
 (load custom-file)
 
 ;;; Specific theme settings
-;; (add-to-list 'default-frame-alist '(foreground-color . "#131412"))
-;; (add-to-list 'default-frame-alist '(background-color . "#ffffff"))
+;; (add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
+;; (add-to-list 'default-frame-alist '(background-color . "#000000"))
 (set-face-attribute 'mode-line nil :font "10x20")
 (set-face-attribute 'default nil :font "-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1")
 

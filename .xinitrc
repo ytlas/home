@@ -1,11 +1,11 @@
-# # Disable access control
-# xhost +SI:localuser:$USER
+# Disable access control
+xhost +SI:localuser:$USER
 
-# # Themes, etc
-# gnome-settings-daemon &
+# Themes, etc
+gnome-settings-daemon &
 
-# # Fallback cursor
-# xsetroot -cursor_name left_ptr
+# Fallback cursor
+xsetroot -cursor_name left_ptr
 
 # Keyboard repeat rate
 xset r rate 200 75
@@ -13,7 +13,6 @@ xrdb ~/.Xresources
 setxkbmap se
 xmodmap ~/.Xmodmap
 
-# # Start Emacs
-# exec dbus-launch --exit-with-session emacs
-i3lock -uc \#000000
-exec i3
+# Start Emacs
+exec dbus-launch --exit-with-session emacs
+# exec i3

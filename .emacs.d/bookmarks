@@ -2,7 +2,14 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("i3"
+(("override.conf"
+ (filename .
+	   #("/sudo:root@amadeus:/etc/systemd/system/getty@tty1.service.d/override.conf" 6 10
+	     (tramp-default t)))
+ (front-context-string . "[Service]\nExecSt")
+ (rear-context-string)
+ (position . 1))
+("i3"
  (filename . "~/.config/i3/config")
  (front-context-string . "set $mod Mod4\nfo")
  (rear-context-string)
