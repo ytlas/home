@@ -31,7 +31,7 @@
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
 
-(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region 'haskell-mode)
+(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region 'haskell-mode 'flymake-hlint 'exwm)
 
 ;; Exwm setup
 (require 'exwm)
