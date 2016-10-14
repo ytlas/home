@@ -88,7 +88,7 @@
 (setq line-move-visual nil)
 
 ;; Sets the initial scratch buffer content
-(setq initial-scratch-message ";; Meh\n")
+(setq initial-scratch-message ";; :)\n")
 
 ;; Disable annoying prompts
 (setq confirm-nonexistent-file-or-buffer nil)
