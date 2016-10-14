@@ -56,6 +56,9 @@
     (goto-char isearch-other-end)))
 
 ;;; Mode toggles
+;; If there is one or more batteries, display their combined calculated percentage
+(display-battery-mode)
+
 ;; Column number mode
 (column-number-mode 1)
 
@@ -76,6 +79,11 @@
 (show-paren-mode 1)
 
 ;;; Variables
+;; Displays date and time
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+(display-time)
+
 ;; Makes point move by logical lines
 (setq line-move-visual nil)
 
