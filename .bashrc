@@ -2,7 +2,7 @@
 
 ## Inital important setup
 export GTK_THEME="raleigh"
-export PATH="$PATH:/sbin:/usr/sbin:$HOME/bin"
+export PATH="$HOME/bin:$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin"
 export EDITOR="nano -w"
 GLOBIGNORE=".:.."
 shopt -s dotglob
