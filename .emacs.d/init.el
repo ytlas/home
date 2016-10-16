@@ -34,9 +34,9 @@
 (ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region 'haskell-mode 'flymake-hlint 'exwm)
 
 ;; Exwm setup
-(require 'exwm)
-(require 'exwm-config)
-(exwm-config-default)
+;; (require 'exwm)
+;; (require 'exwm-config)
+;; (exwm-config-default)
 
 ;; Defaults backup files to store in temporary filedirectory (depending on OS)
 (setq backup-directory-alist
@@ -80,7 +80,7 @@
 
 ;;; Variables
 ;; Exwm vars
-(setq-default exwm-layout-show-all-buffers t)
+;; (setq-default exwm-layout-show-all-buffers t)
 
 ;; Displays date and time
 (setq display-time-day-and-date t
@@ -122,11 +122,11 @@
 (add-hook 'haskell-mode-hook 'flymake-hlint-load)
 
 ;; Exwm hooks
-(add-hook 'exwm-manage-finish-hook
-	  (lambda ()
-	    (when (and exwm-class-name
-		       (string= exwm-class-name "URxvt"))
-	      (setq-local exwm-input-prefix-keys '(?\C-x)))))
+;; (add-hook 'exwm-manage-finish-hook
+;;	  (lambda ()
+;;	    (when (and exwm-class-name
+;;		       (string= exwm-class-name "URxvt"))
+;;	      (setq-local exwm-input-prefix-keys '(?\C-x)))))
 
 ;; Cleans up trailing whitespace
 (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -154,15 +154,15 @@
 
 ;;; Global key binds
 ;; Exwm binds
-(exwm-input-set-key (kbd "s-<return>") (lambda ()       (interactive)(start-process "" nil "urxvt")))
-(exwm-input-set-key (kbd "s-b")        (lambda ()       (interactive)(start-process "" nil "firefox-esr")))
-(exwm-input-set-key (kbd "s-l")        (lambda ()       (interactive)(start-process "" nil "slock")))
-(exwm-input-set-key (kbd "s-<left>")   (lambda ()       (interactive)(start-process "" nil "sudo"    "abl"      "-5")))
-(exwm-input-set-key (kbd "s-<right>")  (lambda ()       (interactive)(start-process "" nil "sudo"    "abl"      "+5")))
-(exwm-input-set-key (kbd "s-<up>")     (lambda ()       (interactive)(start-process "" nil "ponymix" "increase" "5" "--max-volume" "200")))
-(exwm-input-set-key (kbd "s-<down>")   (lambda ()       (interactive)(start-process "" nil "ponymix" "decrease" "5" "--max-volume" "200")))
-(exwm-input-set-key (kbd "s-d")        (lambda (command)(interactive (list (read-shell-command "$ ")))(start-process-shell-command command nil command)))
-(exwm-input-set-key (kbd "s-w")        'kill-buffer-and-window)
+;; (exwm-input-set-key (kbd "s-<return>") (lambda ()       (interactive)(start-process "" nil "urxvt")))
+;; (exwm-input-set-key (kbd "s-b")        (lambda ()       (interactive)(start-process "" nil "firefox-esr")))
+;; (exwm-input-set-key (kbd "s-l")        (lambda ()       (interactive)(start-process "" nil "slock")))
+;; (exwm-input-set-key (kbd "s-<left>")   (lambda ()       (interactive)(start-process "" nil "sudo"    "abl"      "-5")))
+;; (exwm-input-set-key (kbd "s-<right>")  (lambda ()       (interactive)(start-process "" nil "sudo"    "abl"      "+5")))
+;; (exwm-input-set-key (kbd "s-<up>")     (lambda ()       (interactive)(start-process "" nil "ponymix" "increase" "5" "--max-volume" "200")))
+;; (exwm-input-set-key (kbd "s-<down>")   (lambda ()       (interactive)(start-process "" nil "ponymix" "decrease" "5" "--max-volume" "200")))
+;; (exwm-input-set-key (kbd "s-d")        (lambda (command)(interactive (list (read-shell-command "$ ")))(start-process-shell-command command nil command)))
+;; (exwm-input-set-key (kbd "s-w")        'kill-buffer-and-window)
 
 ;; Flymake
 (global-set-key (kbd "C-c C-e") 'flymake-popup-current-error-menu)
