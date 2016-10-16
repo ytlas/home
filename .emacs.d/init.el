@@ -79,6 +79,9 @@
 (show-paren-mode 1)
 
 ;;; Variables
+;; Exwm vars
+(setq-default exwm-layout-show-all-buffers t)
+
 ;; Displays date and time
 (setq display-time-day-and-date t
       display-time-24hr-format t)
@@ -131,18 +134,18 @@
 
 ;; Enables hl-line-mode in certain major modes
 (add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
-(add-hook 'sh-mode-hook 'hl-line-mode)
-(add-hook 'web-mode-hook 'hl-line-mode)
-(add-hook 'python-mode-hook 'hl-line-mode)
-(add-hook 'css-mode-hook 'hl-line-mode)
+(add-hook 'sh-mode-hook         'hl-line-mode)
+(add-hook 'web-mode-hook        'hl-line-mode)
+(add-hook 'python-mode-hook     'hl-line-mode)
+(add-hook 'css-mode-hook        'hl-line-mode)
 (add-hook 'conf-space-mode-hook 'hl-line-mode)
-(add-hook 'c-mode-hook 'hl-line-mode)
+(add-hook 'c-mode-hook          'hl-line-mode)
 
 ;;; Autoloads
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'"   . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'"  . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'"  . css-mode))
 
 ;;; Key unbindings
 ;; Unbinds annoying keys that I never use
@@ -159,7 +162,7 @@
 (exwm-input-set-key (kbd "s-<up>")     (lambda ()       (interactive)(start-process "" nil "ponymix" "increase" "5" "--max-volume" "200")))
 (exwm-input-set-key (kbd "s-<down>")   (lambda ()       (interactive)(start-process "" nil "ponymix" "decrease" "5" "--max-volume" "200")))
 (exwm-input-set-key (kbd "s-d")        (lambda (command)(interactive (list (read-shell-command "$ ")))(start-process-shell-command command nil command)))
-(exwm-input-set-key (kbd "s-l")        (lambda ()       (interactive)(start-process ""        nil       "i3lock")))
+(exwm-input-set-key (kbd "s-w")        'kill-buffer-and-window)
 
 ;; Flymake
 (global-set-key (kbd "C-c C-e") 'flymake-popup-current-error-menu)
