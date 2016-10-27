@@ -1,0 +1,15 @@
+Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopP 0 300
+       , lowerOnStart = True
+       , commands = [ Run Date "%H:%M:%S" "date" 10
+		    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+		    , Run Memory ["-t","Mem: <usedratio>%"] 10
+		    , Run Battery ["BAT0","BAT1"] 10
+		    , Run StdinReader
+		    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %date% | %battery%"
+       }
