@@ -12,14 +12,14 @@ main = do
   xmonad $ defaultConfig
     { manageHook = manageDocks <+> manageHook defaultConfig
     , layoutHook = avoidStruts  $  layoutHook defaultConfig
-    -- , handleEventHook = mconcat
-    --               [ docksEventHook
-    --               , handleEventHook defaultConfig ]
     , logHook = dynamicLogWithPP xmobarPP
                     { ppOutput = hPutStrLn xmproc
                     , ppTitle = xmobarColor "green" "" . shorten 50
                     }
-    , handleEventHook    = fullscreenEventHook
+    , handleEventHook    = mconcat
+                     [ fullscreenEventHook
+                     , docksEventHook
+                     , handleEventHook defaultConfig ]
     , modMask = mod4Mask
     } `additionalKeys`
     [ ((mod4Mask, xK_l), spawn "lock")
