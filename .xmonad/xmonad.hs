@@ -3,6 +3,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Hooks.EwmhDesktops
 import qualified XMonad.StackSet as W
 import System.IO
 
@@ -11,10 +12,14 @@ main = do
   xmonad $ defaultConfig
     { manageHook = manageDocks <+> manageHook defaultConfig
     , layoutHook = avoidStruts  $  layoutHook defaultConfig
+    -- , handleEventHook = mconcat
+    --               [ docksEventHook
+    --               , handleEventHook defaultConfig ]
     , logHook = dynamicLogWithPP xmobarPP
                     { ppOutput = hPutStrLn xmproc
                     , ppTitle = xmobarColor "green" "" . shorten 50
                     }
+    , handleEventHook    = fullscreenEventHook
     , modMask = mod4Mask
     } `additionalKeys`
     [ ((mod4Mask, xK_l), spawn "lock")
