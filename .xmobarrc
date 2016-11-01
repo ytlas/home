@@ -8,8 +8,9 @@ Config { font = "9x15"
 		    , Run Memory ["-t","Mem: <usedratio>%"] 10
 		    , Run Battery ["BAT0","BAT1"] 10
 		    , Run StdinReader
+		    , Run Com "getFancyVolume.sh" [] "volume" 10
 		    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %date% | %battery%"
+       , template = "%StdinReader% }{ %volume% | %cpu% | %memory% | %date% | %battery%"
        }
