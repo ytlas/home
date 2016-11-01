@@ -45,6 +45,7 @@ alias sshls='ssh glas@leafscript.net'
 alias sftpls='sftp glas@leafscript.net'
 alias sshfsls='sshfs glas@leafscript.net:/home/glas/leafscript.net ~/leafscript.net'
 alias sshfssg='sshfs glas@leafscript.net:/sg ~/sg'
+alias fl='du -hsx * | sort -rh | head -n'
 # Media aliases
 alias adl='youtube-dl -x'
 alias vdl='youtube-dl'
