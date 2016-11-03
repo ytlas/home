@@ -12,5 +12,5 @@ Config { font = "9x15"
 		    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %volume% | %cpu% | %memory% | %date% | %battery%"
+       , template = "%StdinReader% }{ Vol: %volume% | %cpu% | %memory% | %date% | %battery%"
        }
