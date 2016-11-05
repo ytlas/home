@@ -1,0 +1,1 @@
+lock&&sudo sh -c "echo mem>/sys/power/state"&&sudo systemctl restart NetworkManager
