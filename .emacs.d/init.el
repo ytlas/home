@@ -140,6 +140,7 @@
 (add-hook 'css-mode-hook        'hl-line-mode)
 (add-hook 'conf-space-mode-hook 'hl-line-mode)
 (add-hook 'c-mode-hook          'hl-line-mode)
+(add-hook 'flymake-mode-hook    'hl-line-mode)
 
 ;;; Autoloads
 (add-to-list 'auto-mode-alist '("\\.js\\'"   . js2-mode))
