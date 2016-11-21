@@ -50,6 +50,8 @@
       <property name="&lt;Super&gt;l" type="string" value="dm-tool lock"/>
       <property name="&lt;Super&gt;q" type="string" value="xfce4-session-logout -f"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;l" type="string" value="xfce4-session-logout -s"/>
+      <property name="&lt;Super&gt;Return" type="string" value="urxvt"/>
+      <property name="&lt;Super&gt;0" type="string" value="firefox"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
