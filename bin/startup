@@ -1,5 +1,0 @@
-#!/bin/sh
-xset r rate 200 75
-xrdb ~/.Xresources
-setxkbmap se
-xmodmap ~/.Xmodmap

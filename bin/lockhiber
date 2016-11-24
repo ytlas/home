@@ -1,2 +1,2 @@
-lock&
-sudo sh -c "echo mem>/sys/power/state"&&sudo /etc/rc.d/rc.networkmanager restart
+$HOME/bin/lock
+xfce4-session-logout -s

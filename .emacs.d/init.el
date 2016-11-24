@@ -23,9 +23,8 @@
    (lambda(package)
      (if(package-installed-p package)
 	 nil
-       (if(y-or-n-p(format "Package %s is missing, install it? " package))
 	   (package-install package)
-	 package)))
+	 package))
    packages))
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
@@ -132,14 +131,14 @@
 (add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
 
 ;; Enables hl-line-mode in certain major modes
-(add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
-(add-hook 'sh-mode-hook         'hl-line-mode)
-(add-hook 'web-mode-hook        'hl-line-mode)
-(add-hook 'python-mode-hook     'hl-line-mode)
-(add-hook 'css-mode-hook        'hl-line-mode)
-(add-hook 'conf-space-mode-hook 'hl-line-mode)
-(add-hook 'c-mode-hook          'hl-line-mode)
-(add-hook 'flymake-mode-hook    'hl-line-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
+;; (add-hook 'sh-mode-hook         'hl-line-mode)
+;; (add-hook 'web-mode-hook        'hl-line-mode)
+;; (add-hook 'python-mode-hook     'hl-line-mode)
+;; (add-hook 'css-mode-hook        'hl-line-mode)
+;; (add-hook 'conf-space-mode-hook 'hl-line-mode)
+;; (add-hook 'c-mode-hook          'hl-line-mode)
+;; (add-hook 'flymake-mode-hook    'hl-line-mode)
 
 ;;; Autoloads
 (add-to-list 'auto-mode-alist '("\\.js\\'"   . js2-mode))
@@ -190,8 +189,8 @@
 (load custom-file)
 
 ;;; Specific theme settings
-;; (add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
-;; (add-to-list 'default-frame-alist '(background-color . "#000000"))
+(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
+(add-to-list 'default-frame-alist '(background-color . "#000000"))
 (set-face-attribute 'mode-line nil :font "10x20")
 (set-face-attribute 'default nil :font "-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1")
 

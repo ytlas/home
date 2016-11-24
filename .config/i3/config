@@ -1,3 +1,4 @@
+exec /usr/libexec/gnome-settings-daemon
 # Initial setup
 set $mod Mod3
 font pango:Ubuntu Mono 13

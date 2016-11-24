@@ -1,25 +1,18 @@
 import XMonad
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
+import qualified Data.Map as M
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
 import qualified XMonad.StackSet as W
-import System.IO
 
 main = do
-  xmproc <- spawnPipe "/usr/bin/xmobar /home/glas/.xmobarrc"
   xmonad $ defaultConfig
-    { manageHook = manageDocks <+> manageHook defaultConfig <+> myManageHook
-    , layoutHook = avoidStruts  $  layoutHook defaultConfig
-    , logHook = dynamicLogWithPP xmobarPP
-                    { ppOutput = hPutStrLn xmproc
-                    , ppTitle = xmobarColor "green" "" . shorten 50
-                    }
-    , handleEventHook    = mconcat
-                     [ fullscreenEventHook
-                     , docksEventHook
-                     , handleEventHook defaultConfig ]
+    { manageHook = manageDocks <+> myManageHook
+    , logHook = ewmhDesktopsLogHook
+    , layoutHook = avoidStruts $ layoutHook defaultConfig
+    , handleEventHook = ewmhDesktopsEventHook
+    , startupHook = ewmhDesktopsStartup
     , modMask = mod4Mask
     } `additionalKeys`
     [ ((mod4Mask                ,xK_l       ),spawn "lock")
