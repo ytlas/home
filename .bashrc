@@ -3,7 +3,7 @@
 ## Inital important setup
 export GTK_THEME="raleigh"
 export PATH="$HOME/bin:$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin"
-export EDITOR="emacsclient -nw"
+export EDITOR="emacsclient"
 GLOBIGNORE=".:.."
 shopt -s dotglob
 umask -S u=rwx,g=,o=>/dev/null
@@ -24,6 +24,7 @@ PS1="\u{\w}\$ "
 
 ## Aliases
 alias sudo='sudo '
+alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
 alias m='devmon --mount'
 alias um='devmon --unmount'
 alias mall='devmon -ag'

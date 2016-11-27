@@ -1,0 +1,8 @@
+set imap_user = 'adam@ytlas.com'
+source "gpg -d ~/.mutt/passwords.gpg |"
+set folder = imaps://imap.gmail.com/
+set spoolfile = +INBOX
+set record = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set editor=emacsclient
+set pager=emacsclient

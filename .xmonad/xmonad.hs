@@ -19,6 +19,7 @@ main = do
     , ((mod4Mask .|. shiftMask  ,xK_l       ),spawn "lockhiber"         )
     , ((mod4Mask                ,xK_Return  ),spawn "urxvt"             )
     , ((mod4Mask                ,xK_0       ),spawn "firefox-esr"       )
+    , ((mod4Mask                ,xK_e       ),spawn "emacsclient -c"    )
     , ((mod4Mask                ,xK_d       ),spawn "rofi -show run"    )
     , ((mod4Mask                ,xK_Left    ),spawn "sudo /sbin/abl -5" )
     , ((mod4Mask                ,xK_Right   ),spawn "sudo /sbin/abl +5" )
