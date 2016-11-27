@@ -3,7 +3,6 @@ xrdb ~/.Xresources
 setxkbmap se
 xmodmap ~/.Xmodmap
 xfce4-panel&
-xcompmgr -n&
 #pulseaudio&
 feh --bg-scale ~/Documents/Pictures/bg.png
 #trayer --edge top --align right --width 22 --height 19 --tint "0x000000" --transparent true --alpha 0&

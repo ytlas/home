@@ -15,7 +15,7 @@ main = do
     , startupHook = ewmhDesktopsStartup
     , modMask = mod4Mask
     } `additionalKeys`
-    [ ((mod4Mask                ,xK_l       ),spawn "lock")
+    [ ((mod4Mask                ,xK_l       ),spawn "lock"              )
     , ((mod4Mask .|. shiftMask  ,xK_l       ),spawn "lockhiber"         )
     , ((mod4Mask                ,xK_Return  ),spawn "urxvt"             )
     , ((mod4Mask                ,xK_0       ),spawn "firefox-esr"       )
