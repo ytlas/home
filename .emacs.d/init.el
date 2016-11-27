@@ -8,7 +8,8 @@
 ;; Identification
 (setq user-full-name "ytlas")
 (setq user-mail-address "adam@ytlas.com")
-
+(server-start)
+(add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 ;;; Packages setup
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
