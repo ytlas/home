@@ -13,7 +13,6 @@
         <value type="int" value="8"/>
         <value type="int" value="4"/>
         <value type="int" value="9"/>
-        <value type="int" value="5"/>
       </property>
       <property name="background-style" type="uint" value="0"/>
       <property name="background-alpha" type="uint" value="80"/>
@@ -53,7 +52,7 @@
     </property>
     <property name="plugin-1" type="string" value="applicationsmenu">
       <property name="show-button-title" type="bool" value="false"/>
-      <property name="button-icon" type="string" value="debian-logo"/>
+      <property name="button-icon" type="string" value="emacs"/>
     </property>
     <property name="plugin-6" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>

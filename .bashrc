@@ -93,6 +93,12 @@ elif [ -f "$HOME/.arch" ];then
     alias i='${pmp} -S'
     alias r='${pmp} -Rns'
     alias u='${pmp} -Syu'
+elif [ -f "$HOME/.gentoo" ];then
+    pmp="sudo emerge"
+    alias y='${pmp}'
+    alias i='${pmp} --ask --verbose'
+    alias r='${pmp} -cav'
+    alias s='emerge --search'
 fi
 # If ~/.server exists, setup stuff for server environment
 if [ -f "$HOME/.server" ];then
