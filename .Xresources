@@ -10,6 +10,11 @@ urxvt*termName: rxvt-256color
 urxvt*cursorColor: #ff0066
 urxvt*internalBorder: 0
 urxvt*externalBorder: 0
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
 ! Xft.dpi:        96
 Xft.dpi: 96
 Xft.antialias: 0
