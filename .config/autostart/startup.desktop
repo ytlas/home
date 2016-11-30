@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=startup
+GenericName=startup
+Comment=Some description about your script
+Exec=/home/glas/bin/startup
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
