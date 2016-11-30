@@ -1,18 +1,20 @@
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
-logout='<Primary><Shift>q'
-screensaver='<Primary>l'
-volume-up='<Primary>Up'
-volume-down='<Primary>Down'
-volume-mute='<Primary>m'
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
+logout='<Primary><Shift><Super>q'
+screensaver='<Primary><Super>l'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Primary>e'
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Primary><Super>e'
 command='emacsclient -c'
 name='emacs'
 
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Primary><Super>d'
+command='rofi -show run'
+name='rofi'
+
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Primary>Return'
+binding='<Primary><Super>Return'
 command='urxvt'
 name='urxvt'
 
@@ -28,15 +30,29 @@ locate-pointer=false
 [org/gnome/shell]
 app-picker-view=uint32 1
 enabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com']
-favorite-apps=['firefox-esr.desktop', 'org.gnome.Nautilus.desktop', 'rxvt-unicode.desktop', 'emacs24-term.desktop', 'gimp.desktop', 'gnome-tweak-tool.desktop', 'gnome-control-center.desktop', 'mutt.desktop', 'mumble.desktop']
+favorite-apps=['firefox-esr.desktop', 'org.gnome.Nautilus.desktop', 'rxvt-unicode.desktop', 'gnome-tweak-tool.desktop', 'gnome-control-center.desktop', 'mutt.desktop', 'mumble.desktop', 'steam.desktop', 'emacs24.desktop', 'pavucontrol.desktop']
 
 [org/gnome/shell/extensions/dash-to-dock]
-apply-custom-theme=true
-scroll-switch-workspace=false
 animate-show-apps=false
-click-action='launch'
-dock-position='LEFT'
+shift-click-action='minimize'
+shift-middle-click-action='launch'
 extend-height=true
+dock-fixed=false
+intellihide=true
+click-action='skip'
+scroll-switch-workspace=false
+intellihide-mode='FOCUS_APPLICATION_WINDOWS'
+preferred-monitor=0
+custom-background-color=false
+require-pressure-to-show=false
+apply-custom-theme=false
+custom-theme-running-dots=true
+dock-position='LEFT'
+custom-theme-shrink=true
+background-opacity=0.80000000000000004
+icon-size-fixed=false
+middle-click-action='launch'
+opaque-background=true
 
 [org/gnome/shell/overrides]
 dynamic-workspaces=false
@@ -62,6 +78,7 @@ clock-show-date=true
 gtk-im-module='gtk-im-context-simple'
 clock-show-seconds=true
 enable-animations=false
+gtk-theme='Adwaita'
 
 [org/gnome/desktop/notifications]
 application-children=['gnome-tweak-tool']
@@ -84,31 +101,38 @@ categories=['X-GNOME-Sundry']
 apps=['alacarte.desktop', 'authconfig.desktop', 'ca.desrt.dconf-editor.desktop', 'fedora-release-notes.desktop', 'firewall-config.desktop', 'flash-player-properties.desktop', 'gconf-editor.desktop', 'gnome-abrt.desktop', 'gnome-power-statistics.desktop', 'ibus-setup-anthy.desktop', 'ibus-setup.desktop', 'ibus-setup-hangul.desktop', 'ibus-setup-libbopomofo.desktop', 'ibus-setup-libpinyin.desktop', 'ibus-setup-m17n.desktop', 'ibus-setup-typing-booster.desktop', 'im-chooser.desktop', 'itweb-settings.desktop', 'jhbuild.desktop', 'javaws.desktop', 'java-1.7.0-openjdk-jconsole.desktop', 'java-1.7.0-openjdk-policytool.desktop', 'log4j-chainsaw.desktop', 'log4j-logfactor5.desktop', 'nm-connection-editor.desktop', 'orca.desktop', 'setroubleshoot.desktop', 'system-config-date.desktop', 'system-config-firewall.desktop', 'system-config-keyboard.desktop', 'system-config-language.desktop', 'system-config-printer.desktop', 'system-config-users.desktop', 'vino-preferences.desktop']
 name='X-GNOME-Sundry.directory'
 
+[org/gnome/desktop/screensaver]
+picture-options='stretched'
+
 [org/gnome/desktop/peripherals/mouse]
 accel-profile='flat'
+
+[org/gnome/desktop/calendar]
+show-weekdate=true
 
 [org/gnome/desktop/search-providers]
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
 disabled=['org.gnome.Software.desktop']
-
-[org/gnome/desktop/calendar]
-show-weekdate=true
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
 num-workspaces=4
 
 [org/gnome/desktop/wm/keybindings]
-close=['<Primary>w']
-switch-to-workspace-1=['<Primary>1']
-switch-to-workspace-2=['<Primary>2']
-move-to-workspace-2=['<Primary><Shift>quotedbl']
-move-to-workspace-1=['<Primary><Shift>exclam']
-move-to-workspace-4=['<Primary><Shift>currency']
-move-to-workspace-3=['<Primary><Shift>numbersign']
-switch-to-workspace-4=['<Primary>4']
-toggle-fullscreen=['<Primary>f']
-switch-to-workspace-3=['<Primary>3']
+close=['<Primary><Super>w']
+switch-to-workspace-1=['<Primary><Super>1']
+switch-to-workspace-2=['<Primary><Super>2']
+move-to-workspace-2=['<Primary><Shift><Super>quotedbl']
+move-to-workspace-1=['<Primary><Shift><Super>exclam']
+move-to-workspace-4=['<Primary><Shift><Super>currency']
+move-to-workspace-3=['<Primary><Shift><Super>numbersign']
+switch-to-workspace-4=['<Primary><Super>4']
+toggle-fullscreen=['<Primary><Super>f']
+switch-to-workspace-3=['<Primary><Super>3']
+
+[org/gnome/desktop/sound]
+theme-name='__custom'
+event-sounds=true
 
 [org/gnome/desktop/background]
 show-desktop-icons=false
@@ -117,7 +141,7 @@ picture-options='stretched'
 [org/gnome/desktop/input-sources]
 show-all-sources=true
 sources=[('xkb', 'se'), ('xkb', 'us')]
-xkb-options=['ctrl:nocaps']
+xkb-options=['ctrl:nocaps', 'ctrl:swap_lwin_lctl']
 
 [org/gnome/terminal/legacy]
 schema-version=uint32 3
