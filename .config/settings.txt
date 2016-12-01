@@ -1,7 +1,7 @@
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
-logout='<Primary><Shift><Super>q'
-screensaver='<Primary><Super>l'
+logout='<Shift><Super>q'
+screensaver='<Super>l'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Super>e'
@@ -9,12 +9,12 @@ command='emacsclient -c'
 name='emacs'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Primary><Super>d'
+binding='<Super>d'
 command='rofi -show run'
 name='rofi'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Primary><Super>Return'
+binding='<Super>Return'
 command='urxvt'
 name='urxvt'
 
@@ -22,7 +22,7 @@ name='urxvt'
 overrides={'Gtk/ShellShowsAppMenu': <1>, 'Gdk/WindowScalingFactor': <1>}
 
 [org/gnome/settings-daemon/peripherals/keyboard]
-numlock-state='off'
+numlock-state='on'
 
 [org/gnome/settings-daemon/peripherals/mouse]
 locate-pointer=false
@@ -81,10 +81,16 @@ enable-animations=false
 gtk-theme='Adwaita'
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-tweak-tool']
+application-children=['gnome-tweak-tool', 'mumble', 'org-gnome-nautilus']
 
 [org/gnome/desktop/notifications/application/gnome-tweak-tool]
 application-id='gnome-tweak-tool.desktop'
+
+[org/gnome/desktop/notifications/application/mumble]
+application-id='mumble.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Sundry']
@@ -119,7 +125,7 @@ button-layout='appmenu:minimize,maximize,close'
 num-workspaces=4
 
 [org/gnome/desktop/wm/keybindings]
-close=['<Primary><Super>w']
+close=['<Super>w']
 switch-to-workspace-1=['<Primary><Super>1']
 switch-to-workspace-2=['<Primary><Super>2']
 move-to-workspace-2=['<Primary><Shift><Super>quotedbl']

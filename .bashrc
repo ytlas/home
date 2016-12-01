@@ -4,6 +4,7 @@
 export GTK_THEME="raleigh"
 export PATH="$HOME/bin:$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin"
 export EDITOR="emacsclient"
+export WINEDLLOVERRIDES='winemenubuilder.exe=d'
 GLOBIGNORE=".:.."
 shopt -s dotglob
 umask -S u=rwx,g=,o=>/dev/null
