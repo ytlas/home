@@ -2,9 +2,12 @@
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 logout='<Shift><Super>q'
 screensaver='<Super>l'
+volume-up='<Super>Up'
+volume-down='<Super>Down'
+volume-mute='<Super>m'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='<Primary><Super>e'
+binding='<Super>e'
 command='emacsclient -c'
 name='emacs'
 
@@ -20,6 +23,7 @@ name='urxvt'
 
 [org/gnome/settings-daemon/plugins/xsettings]
 overrides={'Gtk/ShellShowsAppMenu': <1>, 'Gdk/WindowScalingFactor': <1>}
+antialiasing='grayscale'
 
 [org/gnome/settings-daemon/peripherals/keyboard]
 numlock-state='on'
@@ -30,22 +34,26 @@ locate-pointer=false
 [org/gnome/shell]
 app-picker-view=uint32 1
 enabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com']
-favorite-apps=['firefox-esr.desktop', 'org.gnome.Nautilus.desktop', 'rxvt-unicode.desktop', 'gnome-tweak-tool.desktop', 'gnome-control-center.desktop', 'mutt.desktop', 'mumble.desktop', 'steam.desktop', 'emacs24.desktop', 'pavucontrol.desktop']
+favorite-apps=['firefox-esr.desktop', 'org.gnome.Nautilus.desktop', 'rxvt-unicode.desktop', 'gnome-tweak-tool.desktop', 'gnome-control-center.desktop', 'mutt.desktop', 'mumble.desktop', 'steam.desktop', 'emacs24.desktop', 'pavucontrol.desktop', 'teamspeak.desktop']
 
 [org/gnome/shell/extensions/dash-to-dock]
+show-favorites=true
 animate-show-apps=false
 shift-click-action='minimize'
 shift-middle-click-action='launch'
-extend-height=true
+extend-height=false
 dock-fixed=false
 intellihide=true
 click-action='skip'
 scroll-switch-workspace=false
 intellihide-mode='FOCUS_APPLICATION_WINDOWS'
+show-apps-at-top=false
 preferred-monitor=0
 custom-background-color=false
+custom-theme-customize-running-dots=true
 require-pressure-to-show=false
 apply-custom-theme=false
+show-running=true
 custom-theme-running-dots=true
 dock-position='LEFT'
 custom-theme-shrink=true
@@ -54,16 +62,25 @@ icon-size-fixed=false
 middle-click-action='launch'
 opaque-background=true
 
+[org/gnome/shell/extensions/auto-move-windows]
+application-list=['steam.desktop:5', 'mumble.desktop:4', 'firefox-esr.desktop:2', 'mpv.desktop:3', 'teamspeak.desktop:4']
+
 [org/gnome/shell/overrides]
 dynamic-workspaces=false
 attach-modal-dialogs=true
+
+[org/gnome/gnome-system-log]
+width=652
+logfiles=['/var/log/dpkg.log']
+height=779
 
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
-geometry='890x550+26+23'
+sidebar-width=189
+geometry='890x550+953+229'
 maximized=false
 
 [org/gnome/nautilus/desktop]
@@ -74,11 +91,14 @@ network-monitor-gio-name=''
 migrated=true
 
 [org/gnome/desktop/interface]
-clock-show-date=true
+text-scaling-factor=1.0
+font-name='Monospace 11'
+document-font-name='Monospace 11'
 gtk-im-module='gtk-im-context-simple'
 clock-show-seconds=true
-enable-animations=false
+enable-animations=true
 gtk-theme='Adwaita'
+clock-show-date=true
 
 [org/gnome/desktop/notifications]
 application-children=['gnome-tweak-tool', 'mumble', 'org-gnome-nautilus']
@@ -111,6 +131,7 @@ name='X-GNOME-Sundry.directory'
 picture-options='stretched'
 
 [org/gnome/desktop/peripherals/mouse]
+speed=0.014705882352941124
 accel-profile='flat'
 
 [org/gnome/desktop/calendar]
@@ -122,19 +143,34 @@ disabled=['org.gnome.Software.desktop']
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
-num-workspaces=4
+num-workspaces=9
+titlebar-font='Monospace Bold 11'
 
 [org/gnome/desktop/wm/keybindings]
+maximize=['']
+unmaximize=['', '<Alt>F5']
 close=['<Super>w']
-switch-to-workspace-1=['<Primary><Super>1']
-switch-to-workspace-2=['<Primary><Super>2']
-move-to-workspace-2=['<Primary><Shift><Super>quotedbl']
-move-to-workspace-1=['<Primary><Shift><Super>exclam']
-move-to-workspace-4=['<Primary><Shift><Super>currency']
-move-to-workspace-3=['<Primary><Shift><Super>numbersign']
-switch-to-workspace-4=['<Primary><Super>4']
-toggle-fullscreen=['<Primary><Super>f']
-switch-to-workspace-3=['<Primary><Super>3']
+move-to-workspace-1=['<Shift><Super>exclam']
+move-to-workspace-2=['<Shift><Super>quotedbl']
+move-to-workspace-3=['<Shift><Super>numbersign']
+move-to-workspace-4=['<Shift><Super>currency']
+move-to-workspace-5=['<Shift><Super>percent']
+move-to-workspace-6=['<Shift><Super>ampersand']
+move-to-workspace-7=['<Shift><Super>slash']
+move-to-workspace-8=['<Shift><Super>parenleft']
+move-to-workspace-9=['<Shift><Super>parenright']
+switch-applications-backward=['<Shift><Alt>Tab', '<Shift><Alt>Tab']
+switch-to-workspace-1=['<Super>1']
+switch-applications=['<Alt>Tab', '<Alt>Tab']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-5=['<Super>5']
+switch-to-workspace-6=['<Super>6']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-8=['<Super>8']
+switch-to-workspace-9=['<Super>9']
+toggle-fullscreen=['<Super>t']
+switch-to-workspace-7=['<Super>7']
 
 [org/gnome/desktop/sound]
 theme-name='__custom'
@@ -148,6 +184,10 @@ picture-options='stretched'
 show-all-sources=true
 sources=[('xkb', 'se'), ('xkb', 'us')]
 xkb-options=['ctrl:nocaps', 'ctrl:swap_lwin_lctl']
+
+[org/gnome/eog/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
 
 [org/gnome/terminal/legacy]
 schema-version=uint32 3
@@ -180,9 +220,54 @@ work-day-wednesday=true
 work-day-monday=true
 work-day-friday=true
 
+[org/gnome/mutter/keybindings]
+toggle-tiled-right=['<Shift><Super>f']
+toggle-tiled-left=['<Shift><Super>b']
+
+[org/gnome/gnome-system-monitor]
+show-dependencies=false
+current-tab='resources'
+maximized=false
+show-whose-processes='user'
+window-state=(700, 500, 597, 329)
+
+[org/gnome/gnome-system-monitor/disktreenew]
+col-6-visible=true
+col-6-width=0
+
 [org/gnome/software]
 first-run=false
-check-timestamp=int64 1480507382
+check-timestamp=int64 1480709283
+
+[org/gtk/settings/file-chooser]
+sort-column='name'
+sidebar-width=189
+window-position=(717, 27)
+show-size-column=true
+show-hidden=false
+window-size=(1203, 902)
+sort-directories-first=false
+date-format='regular'
+sort-order='ascending'
+location-mode='path-bar'
+
+[org/virt-manager/virt-manager/paths]
+media-default='/home/glas/Downloads'
+
+[org/virt-manager/virt-manager/connections]
+autoconnect=['qemu:///system']
+uris=['qemu:///system']
+
+[org/virt-manager/virt-manager]
+manager-window-height=550
+manager-window-width=550
+
+[org/virt-manager/virt-manager/vmlist-fields]
+network-traffic=false
+disk-usage=false
+
+[org/virt-manager/virt-manager/urls]
+isos=['/home/glas/Downloads/ubuntu-16.04.1-desktop-amd64.iso']
 
 [apps/light-locker]
 late-locking=false
