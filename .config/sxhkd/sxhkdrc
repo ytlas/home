@@ -123,10 +123,3 @@ super + d
 # Emacs
 super + e
 	emacs
-
-# Firefox
-super + 0
-	firefox-esr
-
-super + alt + r
-	pkill -x panel; bspc quit
