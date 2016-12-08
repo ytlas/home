@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("xmonad"
+(("sxhkdrc"
+ (filename . "~/.config/sxhkd/sxhkdrc")
+ (front-context-string . "#\n# wm independe")
+ (rear-context-string)
+ (position . 1))
+("bspwmrc"
+ (filename . "~/.config/bspwm/bspwmrc")
+ (front-context-string . "  0.52\nbspc conf")
+ (rear-context-string . "it_ratio        ")
+ (position . 172))
+("xmonad"
  (filename . "~/.xmonad/xmonad.hs")
  (front-context-string . "import XMonad\nim")
  (rear-context-string)
