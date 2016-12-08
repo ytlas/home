@@ -2,4 +2,3 @@ xset r rate 200 75
 xset m 0 5
 xrdb ~/.Xresources
 xmodmap ~/.Xmodmap
-emacs --daemon
