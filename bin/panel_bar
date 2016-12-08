@@ -1,9 +1,6 @@
 #! /bin/sh
 #
-# Example panel for lemonbar
-
-. ~/panel_colors
-
+. ~/.config/bspwm/panel_colors
 num_mon=$(bspc query -M | wc -l)
 
 while read -r line ; do
