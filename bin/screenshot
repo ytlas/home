@@ -1,0 +1,2 @@
+mkdir /tmp/screenshots
+scrot -s -e 'scp $f glas@leafscript.net:/home/glas/ytlas.com/public/i/'
