@@ -2,7 +2,6 @@
 
 ## Inital important setup
 export GTK_THEME="raleigh"
-export PATH="$HOME/bin:$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin"
 export EDITOR="emacsclient"
 export WINEDLLOVERRIDES='winemenubuilder.exe=d'
 GLOBIGNORE=".:.."

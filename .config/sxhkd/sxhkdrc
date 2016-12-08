@@ -27,8 +27,11 @@ super + m
 	bspc desktop -l next
 
 # if the current node is automatic, send it to the last manual, otherwise pull the last leaf
-super + y
+super + shift + y
 	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
+
+super + q
+	sleep 0.5 && urxvt -name sc -e sh -c "screenshot"
 
 # swap the current node and the biggest node
 super + g

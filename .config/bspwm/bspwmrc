@@ -10,10 +10,12 @@ bspc config window_gap          12
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+bspc config click_to_focus	 true
 
 bspc rule -a Firefox desktop='^2'
+bspc rule -a URxvt:sc desktop='^8'
 bspc rule -a mpv desktop='^3' state=floating
-bspc rule -a Teamspeak desktop='^4'
+bspc rule -a "TeamSpeak 3" desktop='^4'
 bspc rule -a Mumble desktop='^4'
 bspc rule -a Steam desktop='^5'
 bspc rule -a Gimp desktop='^8' state=floating follow=on
