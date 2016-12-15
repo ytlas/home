@@ -74,5 +74,5 @@ while read -r line ; do
 			done
 			;;
 	esac
-	printf "%s\n" "%{l}${wm}%{r}$(date +'%Y-%m-%d %H:%M:%S') $(ibam --percentbattery|head -n 1|grep -o '[0-9]\+') Volume: $(pactl list sinks | grep '^[[:space:]]Volume:' |     head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')"
+	printf "%s\n" "%{l}${wm}%{r}$(date +'%Y-%m-%d %H:%M:%S') Battery: $(ibam --percentbattery|head -n 1|grep -o '[0-9]\+') Volume: $(pactl list sinks | grep '^[[:space:]]Volume:' |     head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')"
 done
