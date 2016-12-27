@@ -16,7 +16,10 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
-	bspc quit
+	pkill panel&&bspc quit&&pkill xinit
+
+super + shift + Escape
+	pkill panel&&/home/glas/.config/bspwm/bspwmrc
 
 super + {Left,Right}
 	sudo abl {-,+}5
