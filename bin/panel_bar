@@ -1,10 +1,29 @@
 #! /bin/sh
 #
+# Example panel for lemonbar
+
 . ~/.config/bspwm/panel_colors
+
 num_mon=$(bspc query -M | wc -l)
 
 while read -r line ; do
 	case $line in
+		S*)
+			# clock output
+			sys="%{F$COLOR_FREE_FG}%{B$COLOR_FREE_BG} ${line#?} %{B-}%{F-}"
+			;;
+		T*)
+			# xtitle output
+			title="%{F$COLOR_FREE_FG}%{B$COLOR_FREE_BG} ${line#?} %{B-}%{F-}"
+			;;
+		V*)
+			# volume output
+			volume="%{F$COLOR_FREE_FG}%{B$COLOR_FREE_BG} Volume: ${line#?}%%{B-}%{F-}"
+			;;
+		Ö*)
+			# battery output
+			battery="%{F$COLOR_FREE_FG}%{B$COLOR_FREE_BG} Battery: ${line#?}%%{B-}%{F-}"
+			;;
 		W*)
 			# bspwm's state
 			wm=""
@@ -65,21 +84,14 @@ while read -r line ; do
 						esac
 						wm="${wm}%{F${FG}}%{B${BG}}%{A:bspc desktop -f ${name}:} ${name} %{A}%{B-}%{F-}"
 						;;
-					[LTG]*)
-						# layout, state and flags
-						#wm="${wm}%{F$COLOR_STATE_FG}%{B$COLOR_STATE_BG} ${name} %{B-}%{F-}"
-						;;
+					# [LTG]*)
+					#	# layout, state and flags
+					#	wm="${wm}%{F$COLOR_STATE_FG}%{B$COLOR_STATE_BG} ${name} %{B-}%{F-}"
+					#	;;
 				esac
 				shift
 			done
 			;;
 	esac
-	if [ -d /sys/class/power_supply/BAT0 ] && [ -f /usr/bin/acpitool ];then
-	    BATTERY="Battery: $(acpitool|grep 'All batteries'|grep -o '[0-9]\+'|head -n 1)% "
-	fi
-	if [ -d /sys/class/backlight/intel_backlight ];then
-	    BRIGHTNESS="Brightness: $(echo "($(cat /sys/class/backlight/intel_backlight/brightness) * 100 / $(cat /sys/class/backlight/intel_backlight/max_brightness) * 100)/100"|bc)% "
-	fi
-	VOLUME="Volume: $(pactl list sinks | grep '^[[:space:]]Volume:' |     head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')%"
-	printf "%s\n" "%{l}${wm}%{c}$(date +'%Y-%m-%d %H:%M:%S')%{r}${BRIGHTNESS}${BATTERY}${VOLUME}"
+	printf "%s\n" "%{l}${wm}%{c}${title}%{r}${battery}${volume}${sys}"
 done
