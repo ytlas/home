@@ -127,7 +127,7 @@ super + ctrl + shift + {b,n,p,f}
 
 # Rofi
 super + d
-	dmenu_run
+	rofi -show run
 
 # Emacs
 super + e

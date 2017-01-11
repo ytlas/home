@@ -20,8 +20,7 @@ fi
 
 ## Variables
 TERM=xterm
-PS1="\u{\w}\$ "
-
+PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 ## Aliases
 alias sudo='sudo '
 alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
