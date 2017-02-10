@@ -4,7 +4,7 @@ setxkbmap se
 xmodmap ~/.Xmodmap
 #xfce4-panel&
 #pulseaudio&
-#feh --bg-scale ~/Documents/Pictures/bg.jpg&
+feh --bg-scale ~/Documents/Pictures/bg.*&
 trayer --margin 350 --edge top --align right --width 22 --height 24 --tint "0xffffff" --transparent true --alpha 0&
 #pasystray&
 #sxhkd &

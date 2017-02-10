@@ -7,6 +7,7 @@
  '(custom-safe-themes
    (quote
     ("beeb5ac6b65fcccfe434071d4624ff0308b5968bf2f0c01b567d212bcaf66054" default)))
+ '(jdee-server-dir "~/Documents/jars")
  '(package-selected-packages
    (quote
     (matlab-mode auto-complete exwm flymake-hlint haskell-mode xelb wrap-region web-mode js2-mode iy-go-to-char flycheck expand-region)))
