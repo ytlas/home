@@ -17,6 +17,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (fringe-mode 0)
+(display-battery-mode 1)
 
 (defun ensure-package-installed(&rest packages)
   (mapcar
@@ -29,7 +30,7 @@
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
 
-(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region 'haskell-mode 'flymake-hlint 'exwm)
+(ensure-package-installed 'expand-region 'flycheck 'iy-go-to-char 'web-mode 'js2-mode 'wrap-region 'haskell-mode 'flymake-hlint)
 
 ;; Exwm setup
 ;; (require 'exwm)

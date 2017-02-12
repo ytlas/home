@@ -20,7 +20,7 @@ while read -r line ; do
 			# volume output
 			volume="%{F$COLOR_FREE_FG}%{B$COLOR_FREE_BG} Volume: ${line#?}%%{B-}%{F-}"
 			;;
-		Ö*)
+		C*)
 			# battery output
 			battery="%{F$COLOR_FREE_FG}%{B$COLOR_FREE_BG} Battery: ${line#?}%%{B-}%{F-}"
 			;;

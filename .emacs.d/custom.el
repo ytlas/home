@@ -10,7 +10,7 @@
  '(jdee-server-dir "~/Documents/jars")
  '(package-selected-packages
    (quote
-    (matlab-mode auto-complete exwm flymake-hlint haskell-mode xelb wrap-region web-mode js2-mode iy-go-to-char flycheck expand-region)))
+    (helm-spotify helm matlab-mode auto-complete exwm flymake-hlint haskell-mode xelb wrap-region web-mode js2-mode iy-go-to-char flycheck expand-region)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

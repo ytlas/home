@@ -5,10 +5,10 @@ xmodmap ~/.Xmodmap
 #xfce4-panel&
 #pulseaudio&
 feh --bg-scale ~/Documents/Pictures/bg.*&
-trayer --margin 350 --edge top --align right --width 22 --height 24 --tint "0xffffff" --transparent true --alpha 0&
+emacs&
+#trayer --margin 350 --edge top --align right --width 22 --height 24 --tint "0xffffff" --transparent true --alpha 0&
 #pasystray&
 #sxhkd &
-#exec bspwm
 exec bspwm
 #exec startxfce4
 #exec mate-session

@@ -16,7 +16,7 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
-	pkill panel&&bspc quit&&pkill xinit
+	pkill panel;bspc quit;pkill xinit
 
 super + shift + Escape
 	pkill panel&&/home/glas/.config/bspwm/bspwmrc

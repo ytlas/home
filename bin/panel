@@ -12,15 +12,14 @@ mkfifo "$PANEL_FIFO"
 
 bspc config top_padding $PANEL_HEIGHT
 bspc subscribe report > "$PANEL_FIFO" &
-xtitle -sf 'T%s' > "$PANEL_FIFO" &
 while [ 1 ];do date +"S%H:%M:%S %Y-%m-%d %a";sleep 1;done > "$PANEL_FIFO" &
-while [ 1 ];do printf V&&pactl list sinks | grep '^[[:space:]]Volume:' |     head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,';sleep 1;done > "$PANEL_FIFO" &
-if [ -d /sys/class/backlight/intel_backlight ];then
-    while [ 1 ];do echo "($(cat /sys/class/backlight/intel_backlight/brightness) * 100 / $(cat /sys/class/backlight/intel_backlight/max_brightness) * 100)/100"|bc;sleep 5;done > "$PANEL_FIFO" &
-fi
-if [ -d /sys/class/power_supply/BAT0 ] && [ -f /usr/bin/acpitool ];then
-    while [ 1 ];do printf Ö&&acpitool|grep 'All batteries'|grep -o '[0-9]\+'|head -n 1;sleep 60;done > "$PANEL_FIFO" &
-fi
+#while [ 1 ];do printf V&&pactl list sinks | grep '^[[:space:]]Volume:' |     head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,';sleep 1;done > "$PANEL_FIFO" &
+#if [ -d /sys/class/backlight/intel_backlight ];then
+#    while [ 1 ];do echo "($(cat /sys/class/backlight/intel_backlight/brightness) * 100 / $(cat /sys/class/backlight/intel_backlight/max_brightness) * 100)/100"|bc;sleep 5;done > "$PANEL_FIFO" &
+#fi
+# if [ -d /sys/class/power_supply/BAT0 ] && [ -f /usr/bin/acpitool ];then
+#     while [ 1 ];do printf C&&acpitool|grep 'All batteries'|grep -o '[0-9]\+'|head -n 1;sleep 60;done > "$PANEL_FIFO" &
+# fi
 . ~/.config/bspwm/panel_colors
 
 ~/bin/panel_bar < "$PANEL_FIFO" | lemonbar -a 32 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh &

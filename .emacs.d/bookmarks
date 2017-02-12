@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("sxhkdrc"
+(("leafscript.net"
+ (filename . "/ssh:glas@leafscript.net:/home/glas/leafscript.net/")
+ (front-context-string . "app.js\n  -rwx---")
+ (rear-context-string . "11 Feb 10 12:18 ")
+ (position . 206))
+("sxhkdrc"
  (filename . "~/.config/sxhkd/sxhkdrc")
  (front-context-string . "#\n# wm independe")
  (rear-context-string)
