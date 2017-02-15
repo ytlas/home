@@ -3,10 +3,10 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("leafscript.net"
- (filename . "/ssh:glas@leafscript.net:/home/glas/leafscript.net/")
- (front-context-string . "app.js\n  -rwx---")
- (rear-context-string . "11 Feb 10 12:18 ")
- (position . 206))
+ (filename . "/ssh:glas@leafscript.net:/var/www/leafscript.net/index.php")
+ (front-context-string . "<?php\nini_set('d")
+ (rear-context-string)
+ (position . 1))
 ("sxhkdrc"
  (filename . "~/.config/sxhkd/sxhkdrc")
  (front-context-string . "#\n# wm independe")
