@@ -12,7 +12,7 @@ bspc config gapless_monocle      true
 bspc config click_to_focus	 true
 
 bspc rule -a Emacs desktop='^1'
-bspc rule -a Firefox desktop='^2'
+bspc rule -a Firefox-esr desktop='^2'
 bspc rule -a mpv desktop='^5' state=floating
 bspc rule -a "TeamSpeak 3" desktop='^4'
 bspc rule -a Mumble desktop='^4'

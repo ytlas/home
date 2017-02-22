@@ -27,7 +27,7 @@ alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
 alias mall='devmon -ag'
 alias umall='devmon -rg'
 alias m='sudo mount -o uid=1000'
-alias hiber='sudo sh -c "echo mem>/sys/power/state"&&sudo systemctl restart NetworkManager'
+alias hiber='sudo sh -c "echo mem>/sys/power/state"&&sudo systemctl restart NetworkManager&&sudo systemctl restart openvpn'
 alias ls='ls -lF'
 alias lsa='ls -lFA'
 alias cl='clear'

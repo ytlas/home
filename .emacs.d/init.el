@@ -38,7 +38,7 @@
 (column-number-mode 1)
 
 ;; Ido mode
-(ido-mode 1)
+(ido-mode 0)
 
 ;; Wrap-region mode
 (wrap-region-global-mode)
