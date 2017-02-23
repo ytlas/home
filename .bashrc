@@ -2,7 +2,7 @@
 
 ## Inital important setup
 export GTK_THEME="raleigh"
-export EDITOR="emacsclient"
+export EDITOR="nano"
 export WINEDLLOVERRIDES='winemenubuilder.exe=d'
 GLOBIGNORE=".:.."
 shopt -s dotglob
