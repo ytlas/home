@@ -99,7 +99,4 @@ function makea(){
     gcc $1.c -o $1
 }
 
-# Launch screen if not already running
-pgrep screen>/dev/null ||screen -R
-
 ### EOF
