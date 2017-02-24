@@ -9,14 +9,6 @@ shopt -s dotglob
 # Bash completion
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
-# Startx if in the first virtual terminal (tty1) if ~/.stx exists
-if ! [[ $(tty) == *"/pts/"* ]] && [[ $(tty) == *"tty1"* ]] && [ -f "$HOME/.stx" ];then
-    if [ -f "$HOME/.xinitrc" ];then
-	startx
-	exit
-    fi
-fi
-
 ## Variables
 TERM=xterm
 PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
@@ -106,5 +98,8 @@ function dda(){
 function makea(){
     gcc $1.c -o $1
 }
+
+# Launch screen if not already running
+pgrep screen>/dev/null ||screen -R
 
 ### EOF

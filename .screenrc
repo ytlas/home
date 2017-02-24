@@ -1,1 +1,5 @@
-escape ^Tt
+shell -${SHELL}
+caption always "%n(%t) : %C"
+defscrollback 1024
+startup_message off
+layout save default
