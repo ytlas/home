@@ -87,6 +87,8 @@ fi
 # If ~/.server exists, setup stuff for server environment
 if [ -f "$HOME/.server" ];then
     PS1="[SERVER] ${PS1}"
+	pgrep screen&&screen -r>/dev/null
+	pgrep screen||screen
 fi
 
 ## Functions
