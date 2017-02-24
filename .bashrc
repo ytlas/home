@@ -6,7 +6,6 @@ export EDITOR="nano"
 export WINEDLLOVERRIDES='winemenubuilder.exe=d'
 GLOBIGNORE=".:.."
 shopt -s dotglob
-umask -S u=rwx,g=,o=>/dev/null
 # Bash completion
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
