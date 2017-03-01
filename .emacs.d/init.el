@@ -24,6 +24,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (display-battery-mode 1)
+(menu-bar-mode 0)
 
 ;; Shows matching parentheses
 (show-paren-mode 1)
@@ -54,6 +55,9 @@
 ;;; Key bindings
 ;; Navigation
 (global-set-key (kbd "€") 'er/expand-region)
+
+;; Shell
+(global-set-key (kbd "þ") (lambda() (interactive) (eshell t)))
 
 ;; Comment binds
 (global-set-key (kbd "©") 'comment-region)

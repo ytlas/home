@@ -1,13 +1,13 @@
 urxvt*scrollBar: false
-urxvt*background: #ffffff
-urxvt*foreground: #000000
+urxvt*background: #181A26
+urxvt*foreground: #FFFFFF
 urxvt*font:-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
 urxvt*letterSpace: 0
 urxvt*iso14755: False
 urxvt*iso14755_52: False
 urxvt*geometry: 80x24
 urxvt*termName: rxvt-256color
-urxvt*cursorColor: #ff0066
+urxvt*cursorColor: #00FF00
 urxvt*internalBorder: 0
 urxvt*externalBorder: 0
 
@@ -22,7 +22,7 @@ Xft.hinting:    1
 Xft.rgba:       rgb
 Xft.hintstyle:  hintfull
 
-xterm*font: 9x15
-xterm*background: #ffffff
-xterm*foreground: #000000
+xterm*font: -Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
+xterm*background: #181A26
+xterm*foreground: #FFFFFF
 xterm*geometry: 80x24

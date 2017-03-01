@@ -11,14 +11,15 @@ shopt -s dotglob
     . /usr/share/bash-completion/bash_completion
 ## Variables
 TERM=xterm
-PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+PS1="\u\w-> "
 ## Aliases
 alias sudo='sudo '
+alias nano='emacsclient -nw'
 alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
 alias mall='devmon -ag'
 alias umall='devmon -rg'
 alias m='sudo mount -o uid=1000'
-alias hiber='sudo sh -c "echo mem>/sys/power/state"&&sudo systemctl restart NetworkManager&&sudo systemctl restart openvpn'
+alias hiber='sudo sh -c "echo mem>/sys/power/state"&&sudo systemctl restart NetworkManager'
 alias ls='ls -lF'
 alias lsa='ls -lFA'
 alias cl='clear'
@@ -87,8 +88,6 @@ fi
 # If ~/.server exists, setup stuff for server environment
 if [ -f "$HOME/.server" ];then
     PS1="[SERVER] ${PS1}"
-	pgrep screen&&screen -r>/dev/null
-	pgrep screen||screen
 fi
 
 ## Functions
