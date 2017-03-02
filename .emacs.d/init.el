@@ -25,6 +25,7 @@
 (tool-bar-mode -1)
 (display-battery-mode 1)
 (menu-bar-mode 0)
+(subword-mode 1)
 
 ;; Shows matching parentheses
 (show-paren-mode 1)
@@ -53,6 +54,7 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'"  . css-mode))
 
 ;;; Key bindings
+(windmove-default-keybindings)
 ;; Navigation
 (global-set-key (kbd "€") 'er/expand-region)
 
@@ -66,5 +68,6 @@
 ;; Other shit
 (set-face-attribute 'mode-line nil :font "10x20")
 (set-face-attribute 'default nil :font "-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1")
+(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
 
 (provide  '.emacs)

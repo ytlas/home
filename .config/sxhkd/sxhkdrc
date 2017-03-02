@@ -131,7 +131,7 @@ super + d
 
 # Emacs
 super + e
-	emacs
+	emacsclient -c
 
 # Controls
 
