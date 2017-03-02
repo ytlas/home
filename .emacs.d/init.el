@@ -26,6 +26,7 @@
 (display-battery-mode 1)
 (menu-bar-mode 0)
 (subword-mode 1)
+(fringe-mode -1)
 
 ;; Shows matching parentheses
 (show-paren-mode 1)
@@ -57,6 +58,9 @@
 (windmove-default-keybindings)
 ;; Navigation
 (global-set-key (kbd "€") 'er/expand-region)
+
+;;; Key unbindings
+(global-unset-key (kbd "C-z"))
 
 ;; Shell
 (global-set-key (kbd "þ") (lambda() (interactive) (eshell t)))
