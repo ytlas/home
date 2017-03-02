@@ -86,7 +86,7 @@ show-weekdate=true
 [org/gnome/desktop/input-sources]
 show-all-sources=true
 sources=[('xkb', 'se'), ('xkb', 'us')]
-xkb-options=['caps:ctrl_modifier']
+xkb-options=['caps:ctrl_modifier', 'ctrl:swap_lwin_lctl']
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
@@ -131,6 +131,12 @@ monospace-font-name='FreeMono 11'
 enable-animations=false
 gtk-theme='Adwaita'
 clock-show-date=true
+
+[org/gnome/libgnomekbd/preview]
+width=1049
+height=452
+x=170
+y=96
 
 [org/gnome/terminal/legacy]
 schema-version=uint32 3
