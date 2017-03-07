@@ -1,3 +1,9 @@
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-battery-type='nothing'
+sleep-inactive-ac-timeout=3600
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-timeout=1800
+
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 logout='<Alt><Super>Escape'
@@ -30,7 +36,7 @@ numlock-state='off'
 locate-pointer=false
 
 [org/gnome/shell]
-enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com']
 favorite-apps=['firefox-esr.desktop', 'rxvt-unicode.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']
 
 [org/gnome/shell/extensions/auto-move-windows]
@@ -46,12 +52,41 @@ app-icon-mode='both'
 dynamic-workspaces=false
 attach-modal-dialogs=true
 
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+geometry='890x550+38+65'
+maximized=false
+
 [org/gnome/photos]
 window-maximized=true
 
 [org/gnome/evolution-data-server]
 network-monitor-gio-name=''
 migrated=true
+
+[org/gnome/desktop/interface]
+gtk-key-theme='Default'
+font-name='FreeSans 11'
+document-font-name='FreeSans 11'
+gtk-im-module='gtk-im-context-simple'
+clock-show-seconds=true
+icon-theme='gnome'
+monospace-font-name='FreeMono 11'
+enable-animations=false
+gtk-theme='Adwaita'
+clock-show-date=true
+
+[org/gnome/desktop/notifications]
+application-children=['org-gnome-software', 'gnome-tweak-tool']
+
+[org/gnome/desktop/notifications/application/gnome-tweak-tool]
+application-id='gnome-tweak-tool.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-software]
+application-id='org.gnome.Software.desktop'
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Sundry']
@@ -68,25 +103,16 @@ categories=['X-GNOME-Sundry']
 apps=['alacarte.desktop', 'authconfig.desktop', 'ca.desrt.dconf-editor.desktop', 'fedora-release-notes.desktop', 'firewall-config.desktop', 'flash-player-properties.desktop', 'gconf-editor.desktop', 'gnome-abrt.desktop', 'gnome-power-statistics.desktop', 'ibus-setup-anthy.desktop', 'ibus-setup.desktop', 'ibus-setup-hangul.desktop', 'ibus-setup-libbopomofo.desktop', 'ibus-setup-libpinyin.desktop', 'ibus-setup-m17n.desktop', 'ibus-setup-typing-booster.desktop', 'im-chooser.desktop', 'itweb-settings.desktop', 'jhbuild.desktop', 'javaws.desktop', 'java-1.7.0-openjdk-jconsole.desktop', 'java-1.7.0-openjdk-policytool.desktop', 'log4j-chainsaw.desktop', 'log4j-logfactor5.desktop', 'nm-connection-editor.desktop', 'orca.desktop', 'setroubleshoot.desktop', 'system-config-date.desktop', 'system-config-firewall.desktop', 'system-config-keyboard.desktop', 'system-config-language.desktop', 'system-config-printer.desktop', 'system-config-users.desktop', 'vino-preferences.desktop']
 name='X-GNOME-Sundry.directory'
 
-[org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'gnome-tweak-tool']
-
-[org/gnome/desktop/notifications/application/gnome-tweak-tool]
-application-id='gnome-tweak-tool.desktop'
-
-[org/gnome/desktop/notifications/application/org-gnome-software]
-application-id='org.gnome.Software.desktop'
+[org/gnome/desktop/peripherals/keyboard]
+repeat-interval=uint32 83
+delay=uint32 232
+repeat=true
 
 [org/gnome/desktop/peripherals/mouse]
 accel-profile='flat'
 
 [org/gnome/desktop/calendar]
 show-weekdate=true
-
-[org/gnome/desktop/input-sources]
-show-all-sources=true
-sources=[('xkb', 'se'), ('xkb', 'us')]
-xkb-options=['caps:ctrl_modifier', 'ctrl:swap_lwin_lctl']
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
@@ -120,17 +146,32 @@ switch-input-source-backward=@as []
 toggle-fullscreen=['<Super>space']
 switch-to-workspace-7=['<Super>7']
 
-[org/gnome/desktop/interface]
-gtk-key-theme='Default'
-font-name='FreeSans 11'
-document-font-name='FreeSans 11'
-gtk-im-module='gtk-im-context-simple'
-clock-show-seconds=true
-icon-theme='gnome'
-monospace-font-name='FreeMono 11'
-enable-animations=false
-gtk-theme='Adwaita'
-clock-show-date=true
+[org/gnome/desktop/a11y/keyboard]
+slowkeys-beep-press=true
+mousekeys-accel-time=1200
+bouncekeys-beep-reject=true
+slowkeys-beep-reject=false
+togglekeys-enable=false
+disable-timeout=120
+enable=false
+bouncekeys-enable=false
+stickykeys-enable=false
+feature-state-change-beep=false
+slowkeys-beep-accept=true
+bouncekeys-delay=300
+mousekeys-max-speed=750
+mousekeys-enable=false
+timeout-enable=false
+slowkeys-delay=300
+stickykeys-modifier-beep=true
+stickykeys-two-key-off=true
+mousekeys-init-delay=160
+slowkeys-enable=false
+
+[org/gnome/desktop/input-sources]
+show-all-sources=true
+sources=[('xkb', 'se'), ('xkb', 'us')]
+xkb-options=['caps:ctrl_modifier', 'ctrl:swap_lwin_lctl']
 
 [org/gnome/libgnomekbd/preview]
 width=1049
@@ -138,11 +179,12 @@ height=452
 x=170
 y=96
 
+[org/gnome/eog/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
+
 [org/gnome/terminal/legacy]
 schema-version=uint32 3
-
-[org/gnome/software]
-check-timestamp=int64 1488476708
 
 [org/gnome/evolution/bogofilter]
 command=''
@@ -192,10 +234,14 @@ statusbar-visible=true
 [org/gnome/evolution]
 version='3.22.5'
 
+[org/gnome/software]
+first-run=false
+check-timestamp=int64 1488912871
+
 [org/gtk/settings/file-chooser]
 sort-column='name'
 sidebar-width=157
-window-position=(0, 27)
+window-position=(82, 27)
 show-size-column=true
 show-hidden=true
 window-size=(1203, 661)
