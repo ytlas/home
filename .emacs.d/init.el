@@ -72,6 +72,6 @@
 ;; Other shit
 (set-face-attribute 'mode-line nil :font "10x20")
 (set-face-attribute 'default nil :font "-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1")
-(add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
+;; (add-to-list 'default-frame-alist '(foreground-color . "#ffffff"))
 
 (provide  '.emacs)

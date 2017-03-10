@@ -1,5 +1,4 @@
-### Adam's amazing bash configuration
-
+### Personal bash configuration
 ## Inital important setup
 export GTK_THEME="raleigh"
 export EDITOR="nano"
@@ -101,3 +100,4 @@ function makea(){
 }
 
 ### EOF
+
