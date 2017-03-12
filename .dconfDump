@@ -72,12 +72,12 @@ migrated=true
 
 [org/gnome/desktop/interface]
 gtk-key-theme='Default'
-font-name='FreeSans 11'
-document-font-name='FreeSans 11'
+font-name='Liberation Sans 11'
+document-font-name='Liberation Sans 11'
 gtk-im-module='gtk-im-context-simple'
 clock-show-seconds=true
 icon-theme='elementaryXubuntu-dark'
-monospace-font-name='FreeMono 11'
+monospace-font-name='Liberation Mono 11'
 enable-animations=false
 gtk-theme='Arc'
 clock-show-date=true
@@ -118,9 +118,10 @@ accel-profile='flat'
 show-weekdate=true
 
 [org/gnome/desktop/wm/preferences]
+workspace-names=['Devel', 'Browse', 'Term', 'Media', 'Games & movies', 'Gimp, misc', 'misc0', 'misc1', 'misc2']
 button-layout='appmenu:minimize,maximize,close'
 num-workspaces=9
-titlebar-font='FreeMono Bold 11'
+titlebar-font='Monospace 11'
 
 [org/gnome/desktop/wm/keybindings]
 switch-to-workspace-9=['<Super>9']
