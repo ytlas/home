@@ -36,11 +36,14 @@ numlock-state='off'
 locate-pointer=false
 
 [org/gnome/shell]
-enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']
 favorite-apps=['firefox-esr.desktop', 'rxvt-unicode.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']
 
+[org/gnome/shell/extensions/user-theme]
+name='Arc'
+
 [org/gnome/shell/extensions/auto-move-windows]
-application-list=['firefox-esr.desktop:2', 'emacs25.desktop:1', 'gimp.desktop:7', 'google-chrome.desktop:5', 'mpv.desktop:5', 'steam.desktop:5', 'spotify.desktop:4', 'evolution.desktop:6']
+application-list=['firefox-esr.desktop:2', 'emacs25.desktop:1', 'gimp.desktop:7', 'mpv.desktop:5']
 
 [org/gnome/shell/extensions/window-list]
 grouping-mode='never'
@@ -57,7 +60,7 @@ default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
-geometry='890x550+38+65'
+geometry='890x550+26+23'
 maximized=false
 
 [org/gnome/photos]
@@ -73,10 +76,10 @@ font-name='FreeSans 11'
 document-font-name='FreeSans 11'
 gtk-im-module='gtk-im-context-simple'
 clock-show-seconds=true
-icon-theme='gnome'
+icon-theme='elementaryXubuntu-dark'
 monospace-font-name='FreeMono 11'
 enable-animations=false
-gtk-theme='Adwaita'
+gtk-theme='Arc'
 clock-show-date=true
 
 [org/gnome/desktop/notifications]
@@ -168,6 +171,13 @@ stickykeys-two-key-off=true
 mousekeys-init-delay=160
 slowkeys-enable=false
 
+[org/gnome/desktop/background]
+picture-uri='file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
+color-shading-type='solid'
+primary-color='#3465a4'
+picture-options='zoom'
+secondary-color='#000000'
+
 [org/gnome/desktop/input-sources]
 show-all-sources=true
 sources=[('xkb', 'se'), ('xkb', 'us')]
@@ -183,8 +193,36 @@ y=96
 background-color='rgb(0,0,0)'
 use-background-color=true
 
-[org/gnome/terminal/legacy]
-schema-version=uint32 3
+[org/gnome/rhythmbox/library/source]
+show-browser=true
+
+[org/gnome/rhythmbox/plugins/audioscrobbler/Last.fm]
+scrobbling-enabled=true
+
+[org/gnome/rhythmbox/plugins/audioscrobbler/Libre.fm]
+scrobbling-enabled=true
+
+[org/gnome/rhythmbox/plugins/iradio]
+initial-stations-loaded=true
+
+[org/gnome/rhythmbox/plugins/iradio/source]
+show-browser=true
+
+[org/gnome/rhythmbox/plugins]
+active-plugins=['audiocd', 'mmkeys', 'rb', 'power-manager', 'mpris', 'audioscrobbler', 'artsearch', 'cd-recorder', 'mtpdevice', 'iradio', 'notification', 'generic-player', 'dbus-media-server', 'ipod', 'daap']
+seen-plugins=['context', 'grilo', 'rb', 'lyrics', 'mpris', 'replaygain', 'audioscrobbler', 'fmradio', 'artsearch', 'cd-recorder', 'pythonconsole', 'mtpdevice', 'sendto', 'rbzeitgeist', 'rblirc', 'notification', 'magnatune', 'im-status', 'dbus-media-server', 'ipod', 'daap']
+
+[org/gnome/rhythmbox/player]
+volume=1.0
+
+[org/gnome/rhythmbox/podcast/source]
+show-browser=true
+
+[org/gnome/rhythmbox]
+position=(0, 27)
+
+[org/gnome/rhythmbox/rhythmdb]
+locations=['file:///home/glas/Music']
 
 [org/gnome/evolution/bogofilter]
 command=''
@@ -234,17 +272,24 @@ statusbar-visible=true
 [org/gnome/evolution]
 version='3.22.5'
 
+[org/gnome/nm-applet/eap/f0449228-98fe-4d11-9de4-658eaa92a3db]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/terminal/legacy]
+schema-version=uint32 3
+
 [org/gnome/software]
 first-run=false
-check-timestamp=int64 1488912871
+check-timestamp=int64 1489337975
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
-sidebar-width=157
-window-position=(82, 27)
+sidebar-width=173
+window-position=(0, 0)
 show-size-column=true
 show-hidden=true
-window-size=(1203, 661)
+window-size=(1366, 694)
 sort-directories-first=false
 date-format='regular'
 sort-order='ascending'
