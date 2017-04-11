@@ -25,12 +25,15 @@ bspc rule -a "TeamSpeak 3" desktop='^4'
 bspc rule -a Mumble desktop='^4'
 # Entertainment & media
 bspc rule -a mpv desktop='^5' state=fullscreen
-bspc rule -a Steam desktop='^5'
+bspc rule -a Google-chrome desktop='^5' state=fullscreen
+bspc rule -a Steam desktop='^7'
 # E-mail
 bspc rule -a Icedove desktop='^6'
+bspc rule -a Thunderbird desktop='^6'
 # Drawing
-bspc rule -a Gimp desktop='^7' state=floating follow=on
+bspc rule -a Gimp desktop='^9' state=floating follow=on
 # Background terminal
 bspc rule -a URxvt:sc desktop='^8'
 
-panel&
+#panel&
+xfce4-panel&

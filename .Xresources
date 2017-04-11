@@ -1,11 +1,12 @@
 urxvt*scrollBar: false
-urxvt*background: #FFFFFF
-urxvt*foreground: #000000
+urxvt*depth: 32
+urxvt*background: [75]#000000
+urxvt*foreground: #FFFFFF
 urxvt*font:-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
 urxvt*letterSpace: 0
 urxvt*iso14755: False
 urxvt*iso14755_52: False
-urxvt*geometry: 80x24
+urxvt*geometry: 50x20
 urxvt*termName: rxvt-256color
 urxvt*cursorColor: #00FF00
 urxvt*internalBorder: 0
