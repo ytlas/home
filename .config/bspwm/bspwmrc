@@ -37,3 +37,8 @@ bspc rule -a URxvt:sc desktop='^8'
 
 #panel&
 xfce4-panel&
+
+# AUTOSTART
+xset r rate 200 75&
+xrdb ~/.Xresources&
+xmodmap ~/.Xmodmap&
