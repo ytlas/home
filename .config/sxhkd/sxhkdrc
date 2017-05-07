@@ -16,10 +16,10 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
-	pkill panel;bspc quit;pkill xinit
+	pkill lxpanel&&bspc quit;pkill xinit
 
 super + shift + Escape
-	pkill panel&&/home/glas/.config/bspwm/bspwmrc
+	pkill lxpanel&&sh /home/glas/.config/bspwm/bspwmrc
 
 super + {Left,Right}
 	sudo ~/bin/abl {-,+}5
@@ -137,3 +137,6 @@ super + e
 
 super + {Down,Up}
 	pactl set-sink-mute 0 false ; pactl set-sink-volume 0 {-,+}5%
+
+super + l
+	i3lock
