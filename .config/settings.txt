@@ -1,3 +1,7 @@
+[org/gnome/software]
+first-run=false
+check-timestamp=int64 1494844382
+
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 logout='<Shift><Super>q'
@@ -63,7 +67,7 @@ middle-click-action='launch'
 opaque-background=true
 
 [org/gnome/shell/extensions/auto-move-windows]
-application-list=['steam.desktop:5', 'mumble.desktop:4', 'firefox-esr.desktop:2', 'mpv.desktop:3', 'teamspeak.desktop:4']
+application-list=['firefox.desktop:2']
 
 [org/gnome/shell/overrides]
 dynamic-workspaces=false
@@ -96,15 +100,19 @@ font-name='Monospace 11'
 document-font-name='Monospace 11'
 gtk-im-module='gtk-im-context-simple'
 clock-show-seconds=true
-enable-animations=true
+icon-theme='hicolor'
+enable-animations=false
 gtk-theme='Adwaita'
 clock-show-date=true
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-tweak-tool', 'mumble', 'org-gnome-nautilus']
+application-children=['gnome-tweak-tool', 'mumble', 'org-gnome-nautilus', 'firefox']
 
 [org/gnome/desktop/notifications/application/gnome-tweak-tool]
 application-id='gnome-tweak-tool.desktop'
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
 
 [org/gnome/desktop/notifications/application/mumble]
 application-id='mumble.desktop'
@@ -183,6 +191,7 @@ picture-options='stretched'
 [org/gnome/desktop/input-sources]
 show-all-sources=true
 sources=[('xkb', 'se'), ('xkb', 'us')]
+mru-sources=[('xkb', 'se'), ('xkb', 'us')]
 xkb-options=['ctrl:nocaps', 'ctrl:swap_lwin_lctl']
 
 [org/gnome/eog/view]
@@ -235,17 +244,17 @@ window-state=(700, 500, 597, 329)
 col-6-visible=true
 col-6-width=0
 
-[org/gnome/software]
-first-run=false
-check-timestamp=int64 1480709283
+[org/gnome/nm-applet/eap/99ca1d97-3fb9-48f6-98f6-ce332964fb6b]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=true
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
 sidebar-width=189
-window-position=(717, 27)
+window-position=(82, 27)
 show-size-column=true
 show-hidden=false
-window-size=(1203, 902)
+window-size=(1203, 694)
 sort-directories-first=false
 date-format='regular'
 sort-order='ascending'
