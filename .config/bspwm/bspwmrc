@@ -40,7 +40,7 @@ bspc rule -a URxvt:sc desktop='^8'
 lxpanel&
 
 # AUTOSTART
-feh --bg-fill ~/Documents/Pictures/bg.jpg
+feh --bg-fill ~/Pictures/bg.jpg
 xset r rate 200 75&
 xrdb ~/.Xresources&
 setxbkmap se&
