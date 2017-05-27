@@ -35,13 +35,17 @@ bspc rule -a Thunderbird desktop='^6'
 bspc rule -a Gimp desktop='^9' state=floating follow=on
 # Background terminal
 bspc rule -a URxvt:sc desktop='^8'
-
-#panel&
-lxpanel&
+# Initial terminal
+bspc rule -a URxvt:init desktop='^3'
 
 # AUTOSTART
 feh --bg-fill ~/Pictures/bg.jpg
 xset r rate 200 75&
-xrdb ~/.Xresources&
+xrdb ~/.Xresources&&urxvt -name init -e sh -c screen&
 setxbkmap se&
 xmodmap ~/.Xmodmap&
+lxpanel&
+sleep 3&&nm-applet&
+emacs&
+thunderbird&
+firefox&

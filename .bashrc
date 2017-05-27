@@ -42,6 +42,7 @@ alias gcap='git commit -a -m ":)"&&git push'
 # If ~/.debian exists, setup stuff for debian-type systems
 if [ -f "$HOME/.debian" ];then
     pmp="sudo apt"
+    lpmp="sudo dpkg"
     alias y='${pmp}'
     alias i='${pmp} install'
     alias r='${pmp} remove'
