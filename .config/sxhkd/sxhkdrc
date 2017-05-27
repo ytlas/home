@@ -22,7 +22,7 @@ super + shift + Escape
 	pkill lxpanel&&sh /home/glas/.config/bspwm/bspwmrc
 
 super + {Left,Right}
-	sudo ~/bin/abl {-,+}5
+	sudo /usr/sbin/abl {-,+}5
 
 # close and kill
 super + {_,shift + }w
