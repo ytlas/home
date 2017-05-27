@@ -21,6 +21,7 @@ bspc desktop 1 -l monocle
 # Browser
 bspc rule -a Firefox-esr desktop='^2'
 bspc rule -a Firefox desktop='^2'
+bspc rule -a Chromium-browser desktop='^2'
 # Communication
 bspc rule -a "TeamSpeak 3" desktop='^4'
 bspc rule -a Mumble desktop='^4'
@@ -35,6 +36,8 @@ bspc rule -a Thunderbird desktop='^6'
 bspc rule -a Gimp desktop='^9' state=floating follow=on
 # Background terminal
 bspc rule -a URxvt:sc desktop='^8'
+# VPN
+bspc rule -a Mullvad desktop='^8'
 # Initial terminal
 bspc rule -a URxvt:init desktop='^3'
 
@@ -48,4 +51,4 @@ lxpanel&
 sleep 3&&nm-applet&
 emacs&
 thunderbird&
-firefox&
+chromium&
