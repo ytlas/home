@@ -1,38 +1,20 @@
-urxvt*scrollBar: false
-urxvt*depth: 32
-urxvt*background: #FFFFFF
-urxvt*foreground: #000000
-urxvt*font:-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
-urxvt*letterSpace: 0
-urxvt*iso14755: False
-urxvt*iso14755_52: False
-urxvt*geometry: 50x20
-urxvt*cursorColor: #AA00CC
-urxvt*internalBorder: 0
-urxvt*externalBorder: 0
-urxvt*termName: xterm-color
+URxvt*scrollBar: false
+URxvt*depth: 32
+URxvt*background: #FFFFFF
+URxvt*foreground: #000000
+URxvt*font:-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
+URxvt*letterSpace: 0
+URxvt*iso14755: False
+URxvt*iso14755_52: False
+URxvt*geometry: 50x20
+URxvt*cursorColor: #AA00CC
+URxvt*internalBorder: 0
+URxvt*externalBorder: 0
+URxvt*termName: xterm-color
 
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-
-init*scrollBar: false
-init*depth: 32
-init*background: #FFFFFF
-init*foreground: #000000
-init*font:-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
-init*letterSpace: 0
-init*iso14755: False
-init*iso14755_52: False
-init*geometry: 50x20
-init*cursorColor: #AA00CC
-init*internalBorder: 0
-init*externalBorder: 0
-init*termName: xterm-color
-
-init.perl-ext-common: default,matcher
-init.url-launcher: /usr/bin/xdg-open
-init.matcher.button: 1
 
 ! Xft.dpi:        96
 Xft.dpi: 96

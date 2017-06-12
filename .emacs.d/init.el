@@ -35,6 +35,9 @@
 (display-time-mode 1)
 
 ;;; Variables
+;; Disable lock-files
+(setq create-lockfiles nil)
+
 ;; Disables Emacs welcome screen
 (setq inhibit-startup-message t)
 

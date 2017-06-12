@@ -13,7 +13,6 @@ bspc config split_ratio 0.52
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config click_to_focus true
-bspc config top_padding 26
 
 # Emacs
 bspc rule -a Emacs desktop='^1' state=tiled
@@ -44,10 +43,12 @@ bspc rule -a URxvt:init desktop='^3'
 # AUTOSTART
 feh --bg-fill ~/Pictures/bg.jpg
 xset r rate 200 75&
-xrdb ~/.Xresources&&urxvt -name init -e sh -c screen&
+xset m 0 5&
+xrdb ~/.Xresources&&urxvt -title poop -e sh -c screen&
 setxbkmap se&
 xmodmap ~/.Xmodmap&
-lxpanel&
+xfce4-panel&
+#sleep 10&&wmname LG3D&
 sleep 3&&nm-applet&
 emacs&
 thunderbird&
