@@ -128,8 +128,7 @@ new_window pixel 1
 exec "feh --bg-fill ~/Pictures/bg.jpg"
 exec "xset r rate 200 75"
 exec "xset m 0 5"
-exec "setxbkmap se"
-exec "xmodmap ~/.Xmodmap"
+exec "setxkmap se && xmodmap ~/.Xmodmap"
 # Applications
 exec "xrdb ~/.Xresources&&urxvt -title init -e sh -c screen"
 exec "emacs"
