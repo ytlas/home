@@ -122,7 +122,7 @@ assign [class="Steam"] 7
 assign [class="Mullvad"] 8
 
 # Window border
-new_window 1 pixel
+new_window pixel 1
 
 # AUTOSTART
 exec "feh --bg-fill ~/Pictures/bg.jpg"
