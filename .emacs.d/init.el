@@ -27,6 +27,7 @@
 (menu-bar-mode 0)
 (subword-mode 1)
 (fringe-mode -1)
+(require 'dirtree)
 
 ;; Shows matching parentheses
 (show-paren-mode 1)

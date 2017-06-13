@@ -20,6 +20,9 @@ bindsym $mod+Right exec "sudo /usr/sbin/abl +5"
 bindsym $mod+Down exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
 bindsym $mod+Up exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
 
+# Lock
+bindsym $mod+l exec "dm-tool lock"
+
 # Kill focused window
 bindsym $mod+w kill
 
