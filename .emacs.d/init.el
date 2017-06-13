@@ -23,7 +23,8 @@
 ;;; Modes
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(display-battery-mode 1)
+;(display-battery-mode 1)
+(column-number-mode 1)
 (menu-bar-mode 0)
 (subword-mode 1)
 (fringe-mode -1)
