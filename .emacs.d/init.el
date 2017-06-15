@@ -13,7 +13,7 @@
    packages))
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
-(ensure-package-installed 'expand-region 'web-mode)
+(ensure-package-installed 'expand-region 'web-mode 'flycheck 'helm 'yasnippet 'dirtree 'company 'expand-region)
 ;; Store backup files in /tmp
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
@@ -28,6 +28,8 @@
 (menu-bar-mode 0)
 (subword-mode 1)
 (fringe-mode -1)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook 'global-company-mode)
 (require 'dirtree)
 
 ;; Shows matching parentheses
