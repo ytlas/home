@@ -33,8 +33,8 @@
         <value type="int" value="12"/>
         <value type="int" value="16"/>
         <value type="int" value="17"/>
-        <value type="int" value="18"/>
         <value type="int" value="19"/>
+        <value type="int" value="18"/>
         <value type="int" value="13"/>
         <value type="int" value="14"/>
       </property>
@@ -62,9 +62,16 @@
     </property>
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="teamspeak 3"/>
         <value type="string" value="thunar"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="telegramdesktop"/>
+        <value type="string" value="steam"/>
+        <value type="string" value="teamspeak 3"/>
+        <value type="string" value="mullvad"/>
+        <value type="string" value="deluge"/>
+        <value type="string" value="telegram"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="showdesktop"/>
@@ -105,17 +112,20 @@
     <property name="plugin-17" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="14975570542.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-18" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="14975570643.desktop"/>
+        <value type="string" value="14979639713.desktop"/>
       </property>
     </property>
     <property name="plugin-19" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="14975583705.desktop"/>
+        <value type="string" value="14979639561.desktop"/>
+        <value type="string" value="14979639602.desktop"/>
         <value type="string" value="14975570974.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-18" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="14984316111.desktop"/>
       </property>
     </property>
   </property>
