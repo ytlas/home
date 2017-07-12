@@ -91,6 +91,7 @@
     <property name="plugin-11" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="14975552183.desktop"/>
+        <value type="string" value="14997898241.desktop"/>
       </property>
     </property>
     <property name="plugin-12" type="string" value="launcher">
