@@ -71,6 +71,7 @@
         <value type="string" value="teamspeak 3"/>
         <value type="string" value="mullvad"/>
         <value type="string" value="deluge"/>
+        <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="telegram"/>
       </property>
     </property>

@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("pest.plus"
+(("binero"
+ (filename . "/ssh:226269_logentit@ssh.binero.se:/storage/content/69/226269/logentcustoms.site/public_html/")
+ (front-context-string . ".htaccess\n  -rw-")
+ (rear-context-string . " 0 Jul 27 12:41 ")
+ (position . 290))
+("pest.plus"
  (filename . "/ssh:rabbitfood@leafscript.net:/var/www/pest.plus/")
  (front-context-string . "classes\n  -rwxrw")
  (rear-context-string . "96 Feb 24 01:30 ")
