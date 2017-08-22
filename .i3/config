@@ -128,8 +128,8 @@ assign [class="Mullvad"] 8
 new_window pixel 1
 
 # AUTOSTART
-exec "feh --bg-fill ~/Pictures/bg.jpg"
-exec "xset r rate 200 75"
-exec "xset m 0 5"
-exec "setxkmap se && xmodmap ~/.Xmodmap"
-exec "xrdb ~/.Xresources"
+# exec "feh --bg-fill ~/Pictures/bg.jpg"
+# exec "xset r rate 200 75"
+# exec "xset m 0 5"
+# exec "setxkmap se && xmodmap ~/.Xmodmap"
+# exec "xrdb ~/.Xresources"

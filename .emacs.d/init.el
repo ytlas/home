@@ -28,7 +28,7 @@
 (menu-bar-mode 0)
 (subword-mode 1)
 (fringe-mode -1)
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook 'global-flycheck-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 (require 'dirtree)
 
@@ -60,8 +60,20 @@
 (add-to-list 'auto-mode-alist '("\\.ejs\\'"  . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'"  . css-mode))
+(defun my-php-folding-hook ()
+   (folding-mode 1))
+(add-hook 'web-mode-hook 'my-php-folding-hook)
+
+(load "folding" 'nomessage 'noerror)
+(folding-mode-add-find-file-hook)
+(folding-add-to-marks-list 'web-mode "//{{{" "//}}}" nil t)
 
 ;;; Key bindings
+;; Helm
+;; (global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
 (windmove-default-keybindings)
 ;; Navigation
 (global-set-key (kbd "€") 'er/expand-region)
@@ -71,6 +83,9 @@
 
 ;; Shell
 (global-set-key (kbd "þ") (lambda() (interactive) (eshell t)))
+
+;; Toggle fold
+(global-set-key (kbd "đ") 'folding-toggle-show-hide)
 
 ;; Comment binds
 (global-set-key (kbd "©") 'comment-region)
