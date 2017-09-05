@@ -13,7 +13,7 @@
    packages))
 (or(file-exists-p package-user-dir)
    (package-refresh-contents))
-(ensure-package-installed 'expand-region 'web-mode 'flycheck 'helm 'yasnippet 'dirtree 'company 'expand-region)
+(ensure-package-installed 'expand-region 'web-mode 'flycheck 'helm 'yasnippet 'dirtree 'company 'expand-region 'folding 'auctex)
 ;; Store backup files in /tmp
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
