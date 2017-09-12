@@ -1,0 +1,10 @@
+#!/bin/sh
+imagePath='/tmp/blurredscreenshot.png'
+scrot 'blurredscreenshot.png' -e 'mv $f /tmp/'
+if [ $1 ];then
+    convert -blur 0.0x${1} ${imagePath} ${imagePath}
+    i3lock -i ${imagePath} -u
+else
+    convert -blur 0.0x5 ${imagePath} ${imagePath}
+    i3lock -i ${imagePath}
+fi

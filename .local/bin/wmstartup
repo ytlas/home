@@ -1,0 +1,4 @@
+#!/bin/bash
+urxvt -title init -e sh -c screen&
+sleep 1
+wmctrl -r "init" -t 8
