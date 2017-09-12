@@ -3,7 +3,7 @@ PANEL_HEIGHT=24
 PANEL_FONT="-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1"
 PANEL_WM_NAME=bspwm_panel
 export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
-export PATH="$HOME/bin:$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin"
+export PATH="$HOME/.local/bin:$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin"
 #pgrep pulseaudio>/dev/null || pulseaudio>/dev/null&
 #pgrep emacs>/dev/null || emacs --daemon&
 
