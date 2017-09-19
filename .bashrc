@@ -9,7 +9,6 @@ shopt -s dotglob
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 ## Variables
-TERM=xterm
 PS1="\u\w-> "
 ## Aliases
 alias sudo='sudo '
@@ -101,4 +100,3 @@ function makea(){
 }
 
 ### EOF
-

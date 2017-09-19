@@ -40,7 +40,7 @@
  (rear-context-string)
  (position . 1))
 ("i3"
- (filename . "~/.config/i3/config")
+ (filename . "~/.i3/config")
  (front-context-string . "set $mod Mod4\nfo")
  (rear-context-string)
  (position . 1))
