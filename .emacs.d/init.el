@@ -30,7 +30,6 @@
 (fringe-mode -1)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 (add-hook 'after-init-hook 'global-company-mode)
-(require 'dirtree)
 
 ;; Shows matching parentheses
 (show-paren-mode 1)
