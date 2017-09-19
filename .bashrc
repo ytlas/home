@@ -1,8 +1,5 @@
 ### Personal bash configuration
 ## Inital important setup
-export GTK_THEME="raleigh"
-export EDITOR="nano"
-export WINEDLLOVERRIDES='winemenubuilder.exe=d'
 GLOBIGNORE=".:.."
 shopt -s dotglob
 # Bash completion

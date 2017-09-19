@@ -1,5 +1,3 @@
-# i3 config file (v4)
-
 # Set modifier to Superkey
 set $mod Mod4
 
@@ -129,5 +127,8 @@ new_window pixel 1
 
 # AUTOSTART
 exec "xset r rate 200 75"
+exec "redshift-gtk -l 57:12"
+# Applications
 exec "urxvt -title init -e sh -c screen"
-exec "emacs"
+exec "emacs --eval '(server-start)'"
+exec "firefox"

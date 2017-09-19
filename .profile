@@ -3,7 +3,11 @@ PANEL_HEIGHT=24
 PANEL_FONT="-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1"
 PANEL_WM_NAME=bspwm_panel
 PATH="$HOME/.local/bin:$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin"
-export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME PATH
+GTK_THEME="raleigh"
+EDITOR="emacsclient"
+
+export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
+export PATH GTK_THEME EDITOR
 #pgrep pulseaudio>/dev/null || pulseaudio>/dev/null&
 #pgrep emacs>/dev/null || emacs --daemon&
 
