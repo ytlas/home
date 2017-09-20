@@ -1,3 +1,5 @@
+exec_always ~/.i3/init
+
 # Set modifier to Superkey
 set $mod Mod4
 

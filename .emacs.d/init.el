@@ -59,8 +59,7 @@
 (add-to-list 'auto-mode-alist '("\\.ejs\\'"  . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'"  . css-mode))
-(defun my-php-folding-hook ()
-   (folding-mode 1))
+(defun my-php-folding-hook () (folding-mode 1))
 (add-hook 'web-mode-hook 'my-php-folding-hook)
 
 (load "folding" 'nomessage 'noerror)

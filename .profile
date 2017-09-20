@@ -2,7 +2,7 @@ PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=24
 PANEL_FONT="-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1"
 PANEL_WM_NAME=bspwm_panel
-PATH="$HOME/.local/bin:$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin"
+PATH="$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin:$HOME/.local/bin"
 GTK_THEME="raleigh"
 EDITOR="emacsclient"
 
