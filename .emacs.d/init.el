@@ -1,24 +1,28 @@
 ;;; Packages setup
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-;; Ensure certain packages are installed
-(defun ensure-package-installed(&rest packages)
-  (mapcar
-   (lambda(package)
-     (if(package-installed-p package)
-	 nil
-       (package-install package)
-       package))
-   packages))
-(or(file-exists-p package-user-dir)
-   (package-refresh-contents))
-(ensure-package-installed 'expand-region 'web-mode 'flycheck 'yasnippet 'company 'expand-region 'folding 'auctex)
-;; Store backup files in /tmp
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package try :ensure t)
+(use-package which-key :ensure t
+  :config (which-key-mode))
+(use-package expand-region :ensure t)
+(use-package web-mode :ensure t)
+(use-package flycheck :ensure t)
+(use-package yasnippet :ensure t)
+(use-package company :ensure t)
+(use-package folding :ensure t)
+(use-package ivy :ensure t
+  :config (ivy-mode 1))
+(use-package org-bullets :ensure t
+  :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+(use-package helm :ensure t)
+(use-package projectile :ensure t
+  :config (projectile-mode 1))
 
 ;;; Modes
 (scroll-bar-mode -1)
@@ -27,7 +31,7 @@
 (column-number-mode 1)
 (menu-bar-mode 0)
 (subword-mode 1)
-(fringe-mode -1)
+(fringe-mode 8)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -38,10 +42,16 @@
 (display-time-mode 1)
 
 ;;; Variables
+;; Store backup files in /tmp
+(setq backup-directory-alist
+	  `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+	  `((".*" ,temporary-file-directory t)))
+
 ;; C-mode
 (setq-default c-basic-offset 4
-		  tab-width 4
-		  indent-tabs-mode t)
+			  tab-width 4
+			  indent-tabs-mode t)
 
 ;; Disable lock-files
 (setq create-lockfiles nil)
