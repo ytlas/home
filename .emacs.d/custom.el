@@ -10,7 +10,7 @@
  '(custom-enabled-themes (quote (leuven)))
  '(package-selected-packages
    (quote
-	(tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region))))
+	(system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

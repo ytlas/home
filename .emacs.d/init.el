@@ -23,6 +23,12 @@
 (use-package helm :ensure t)
 (use-package projectile :ensure t
   :config (projectile-mode 1))
+(use-package system-packages
+  :ensure t)
+(use-package tex
+  :ensure auctex)
+(use-package magit
+  :ensure t)
 
 ;;; Modes
 (scroll-bar-mode -1)
