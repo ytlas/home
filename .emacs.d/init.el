@@ -38,6 +38,11 @@
 (display-time-mode 1)
 
 ;;; Variables
+;; C-mode
+(setq-default c-basic-offset 4
+		  tab-width 4
+		  indent-tabs-mode t)
+
 ;; Disable lock-files
 (setq create-lockfiles nil)
 
