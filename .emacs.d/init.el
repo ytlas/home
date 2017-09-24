@@ -29,6 +29,8 @@
   :ensure auctex)
 (use-package magit
   :ensure t)
+(use-package counsel-projectile :ensure t
+  :config (counsel-projectile-on))
 
 ;;; Modes
 (scroll-bar-mode -1)
