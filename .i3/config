@@ -4,7 +4,17 @@ exec_always ~/.i3/init
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
-font pango:DejaVu Sans Mono 8
+font -Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #FFFFFF #000000 #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #FFFFFF #000000 #FFFFFF #292d2e   #222222
+client.urgent           #000000 #FF0000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -134,6 +144,7 @@ new_window pixel 1
 # AUTOSTART
 exec "xset r rate 200 75"
 exec "redshift-gtk -l 57:12"
+exec "feh --bg-fill ~/Pictures/background.jpg"
 # Applications
 exec "urxvt -title init -e sh -c screen"
 exec "emacs --eval '(server-start)'"
