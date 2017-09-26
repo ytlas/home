@@ -37,7 +37,7 @@ bindsym $mod+l exec "dm-tool lock"
 bindsym $mod+w kill
 
 # Start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -nb white -nf black -sb lightgray -sf black -l 10 -i
 bindsym $mod+Shift+d exec xfce4-appfinder
 
 # move focused window
