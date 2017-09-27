@@ -13,6 +13,8 @@
 (use-package expand-region :ensure t)
 (use-package web-mode :ensure t)
 (use-package flycheck :ensure t)
+(use-package flymake-php :ensure t
+  :config (add-hook 'web-mode-hook 'flymake-php-load))
 (use-package yasnippet :ensure t)
 (use-package company :ensure t)
 (use-package folding :ensure t)
