@@ -33,6 +33,7 @@
   :ensure t)
 (use-package counsel-projectile :ensure t
   :config (counsel-projectile-on))
+(use-package fill-column-indicatior :ensure t)
 
 ;;; Modes
 (scroll-bar-mode -1)
@@ -52,6 +53,9 @@
 (display-time-mode 1)
 
 ;;; Variables
+;; Set column-limit
+(setq-default fill-column 80)
+
 ;; Store backup files in /tmp
 (setq backup-directory-alist
 	  `((".*" . ,temporary-file-directory)))
@@ -84,12 +88,6 @@
 (add-to-list 'auto-mode-alist '("\\.ejs\\'"  . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'"  . css-mode))
-(defun my-php-folding-hook () (folding-mode 1))
-(add-hook 'web-mode-hook 'my-php-folding-hook)
-
-(load "folding" 'nomessage 'noerror)
-(folding-mode-add-find-file-hook)
-(folding-add-to-marks-list 'web-mode "//{{{" "//}}}" nil t)
 
 ;;; Key bindings
 ;; Helm
