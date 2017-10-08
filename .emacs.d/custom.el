@@ -10,7 +10,7 @@
  '(custom-enabled-themes nil)
  '(package-selected-packages
    (quote
-	(fill-column-indicatior flymake-php counsel-projectile consel-projectile system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region))))
+	(hideshow-org fill-column-indicatior flymake-php counsel-projectile consel-projectile system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

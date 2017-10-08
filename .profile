@@ -6,6 +6,12 @@ PATH="$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin:$HOME/.local/bin"
 EDITOR="emacsclient"
 
 export PATH EDITOR
+
+if [ -n "$BASH_VERSION" ]; then
+	 if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+	 fi
+fi
 # export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
 
 # if running bash

@@ -53,6 +53,7 @@
 (use-package counsel-projectile :ensure t
   :config (counsel-projectile-on))
 (use-package fill-column-indicatior :ensure t)
+(use-package hideshow-org :ensure t)
 #+END_SRC
 
 * Modes
@@ -78,6 +79,13 @@
 (add-to-list 'auto-mode-alist '("\\.ejs\\'"  . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'"  . css-mode))
+
+(add-hook 'web-mode-hook
+  (lambda()
+	(hs-minor-mode t)
+	(hs-hide-all)
+	(hs-org/minor-mode)
+))
 #+END_SRC
 
 * Variables
@@ -104,6 +112,16 @@
 
 ;; Replaces yes-or-no prompts with y-or-n prompts
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;; Folding
+(defvar hs-special-modes-alist
+  (mapcar 'purecopy
+  '((c-mode "{" "}" "/[*/]" nil nil)
+	(web-mode "{" "}" "/[*/]" nil nil)
+	(c++-mode "{" "}" "/[*/]" nil nil)
+	(bibtex-mode ("@\\S(*\\(\\s(\\)" 1))
+	(java-mode "{" "}" "/[*/]" nil nil)
+	(js-mode "{" "}" "/[*/]" nil))))
 #+END_SRC
 * Keybinds
 #+BEGIN_SRC emacs-lisp
