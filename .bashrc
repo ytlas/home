@@ -8,7 +8,7 @@ shopt -s dotglob
 	. /usr/share/bash-completion/bash_completion
 
 ## Variables
-PS1="\u\w-> "
+PS1="\u{\w}-> "
 
 ## Aliases
 alias sudo='sudo '
