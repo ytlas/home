@@ -1,5 +1,11 @@
+alias ls ls -l $1 $2
+alias push magit-push
 alias status magit-status
 alias commit magit-commit
 alias ff nil
 alias edit find-file $1
 alias sudoedit find-file /sudo::/$1
+alias u sudo apt update; sudo apt -u dist-upgrade
+alias i sudo apt install $1
+alias r sudo apt remove $1
+alias c sudo apt autoremove; sudo apt autoclean; sudo aptitude purge ~c
