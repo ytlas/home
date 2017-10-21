@@ -1,0 +1,5 @@
+alias status magit-status
+alias commit magit-commit
+alias ff nil
+alias edit find-file $1
+alias sudoedit find-file /sudo::/$1
