@@ -8,7 +8,4 @@
 
 (org-babel-load-file (expand-file-name "config.org" user-emacs-directory))
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-(eshell)
-
 (provide  '.emacs)

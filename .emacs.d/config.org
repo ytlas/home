@@ -91,6 +91,12 @@
 
 * Variables
 #+BEGIN_SRC emacs-lisp
+;; Syntax highlight org code blocks
+(setq org-src-fontify-natively t)
+
+;; Pop confirm dialog when exiting Emacs
+(setq confirm-kill-emacs 'y-or-n-p)
+
 ;; Set column-limit
 (setq-default fill-column 80)
 
