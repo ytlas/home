@@ -12,7 +12,7 @@
  '(display-time-mode t)
  '(package-selected-packages
    (quote
-	(hideshow-org fill-column-indicatior flymake-php counsel-projectile consel-projectile system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region)))
+	(apt-sources-list hideshow-org fill-column-indicatior flymake-php counsel-projectile consel-projectile system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces

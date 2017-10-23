@@ -124,11 +124,14 @@ application-children=['org-gnome-nautilus', 'evolution', 'org-gnome-software', '
 [org/gnome/desktop/notifications/application/emacs25]
 application-id='emacs25.desktop'
 
-[org/gnome/desktop/notifications/application/spotify]
-application-id='spotify.desktop'
+[org/gnome/desktop/notifications/application/gnome-tweak-tool]
+application-id='gnome-tweak-tool.desktop'
 
 [org/gnome/desktop/notifications/application/evolution]
 application-id='evolution.desktop'
+
+[org/gnome/desktop/notifications/application/spotify]
+application-id='spotify.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
