@@ -5,42 +5,57 @@ sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-timeout=1800
 
 [org/gnome/settings-daemon/plugins/color]
+night-light-schedule-automatic=true
 night-light-enabled=true
 night-light-last-coordinates=(57.716700000000003, 11.966699999999999)
 
 [org/gnome/settings-daemon/plugins/xsettings]
 overrides={'Gdk/WindowScalingFactor': <1>, 'Gtk/ShellShowsAppMenu': <1>}
-antialiasing='grayscale'
+antialiasing='rgba'
 hinting='slight'
 
 [org/gnome/settings-daemon/peripherals/keyboard]
 numlock-state='off'
 
 [org/gnome/shell]
-enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'night-light-slider.timur@linux.com', 'clipboard-indicator@tudmotu.com', 'TopIcons@phocean.net']
+enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'night-light-slider.timur@linux.com', 'clipboard-indicator@tudmotu.com', 'TopIcons@phocean.net', 'user-theme@gnome-shell-extensions.gcampax.github.com']
 favorite-apps=['firefox-esr.desktop', 'evolution.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-tweak-tool.desktop', 'emacs25.desktop', 'chrome-eppojlglocelodeimnohnlnionkobfln-Default.desktop', 'org.gnome.Terminal.desktop', 'spotify.desktop']
 
-[org/gnome/shell/extensions/redshift]
-active=true
+[org/gnome/shell/extensions/user-theme]
+name='Arc-Dark'
+
+[org/gnome/shell/extensions/classic-overrides]
+workspaces-only-on-primary=true
 
 [org/gnome/shell/extensions/dash-to-dock]
+opaque-background=false
+show-windows-preview=false
 extend-height=true
 dock-fixed=true
 force-straight-corner=true
 show-show-apps-button=true
+custom-background-color=false
 apply-custom-theme=false
 custom-theme-running-dots=true
 unity-backlit-items=true
-custom-theme-shrink=false
-background-opacity=0.80000000000000004
+custom-theme-shrink=true
+background-opacity=0.0
 icon-size-fixed=false
-opaque-background=false
+background-color='#2e3436'
+isolate-workspaces=false
+
+[org/gnome/shell/extensions/redshift]
+active=true
 
 [org/gnome/shell/extensions/clipboard-indicator]
 notify-on-copy=false
 
 [org/gnome/shell/extensions/auto-move-windows]
 application-list=['firefox-esr.desktop:2', 'emacs25.desktop:1', 'mpv.desktop:4', 'chromium.desktop:4', 'deluge.desktop:3', 'evolution.desktop:2']
+
+[org/gnome/shell/extensions/window-list]
+grouping-mode='always'
+show-on-all-monitors=false
 
 [org/gnome/shell/window-switcher]
 app-icon-mode='app-icon-only'
@@ -81,8 +96,11 @@ default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
-geometry='890x550+26+23'
+geometry='890x550+23+15'
 maximized=false
+
+[org/gnome/nautilus/icon-view]
+default-zoom-level='standard'
 
 [org/gnome/mines]
 window-width=1228
@@ -114,8 +132,10 @@ document-font-name='Ubuntu 12'
 toolkit-accessibility=false
 gtk-im-module='gtk-im-context-simple'
 clock-show-seconds=true
+icon-theme='Adwaita'
 monospace-font-name='Ubuntu Mono 14'
 enable-animations=false
+gtk-theme='Arc'
 clock-show-date=true
 
 [org/gnome/desktop/notifications]
@@ -213,6 +233,7 @@ y=135
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 foreground-color='rgb(0,0,0)'
 rewrap-on-resize=true
+palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
 default-size-columns=80
 scroll-on-output=false
 use-system-font=false
@@ -316,7 +337,7 @@ completion-minimum-query-length=3
 
 [org/gnome/software]
 first-run=false
-check-timestamp=int64 1508765605
+check-timestamp=int64 1508952823
 install-timestamp=int64 1508072727
 
 [org/gnome/gnome-system-monitor]
@@ -343,7 +364,7 @@ sort-order='ascending'
 location-mode='path-bar'
 
 [org/gtk/settings/color-chooser]
-selected-color=(true, 0.1803921568627451, 0.20392156862745098, 0.21176470588235294, 1.0)
+selected-color=(true, 0.95294117647058818, 0.95294117647058818, 0.95294117647058818, 1.0)
 custom-colors=[(0.1803921568627451, 0.20392156862745098, 0.21176470588235294, 1.0), (0.0, 1.0, 0.0, 1.0)]
 
 [apps/light-locker]
