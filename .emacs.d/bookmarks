@@ -2,11 +2,21 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("binero"
- (filename . "/ssh:226269_logentit@ssh.binero.se:/storage/content/69/226269/logentcustoms.site/public_html/")
- (front-context-string . ".htaccess\n  -rw-")
- (rear-context-string . " 0 Jul 27 12:41 ")
- (position . 290))
+(("logentcustoms"
+ (filename . "/ssh:183614_adam@ssh.binero.se:/storage/content/14/183614/customs.logent.se/public_html/")
+ (front-context-string . "ajax\n  drwxr-sr-")
+ (rear-context-string . "96 Oct 27 15:01 ")
+ (position . 277))
+("devlogentcustoms"
+ (filename . "/ssh:183614_adam@ssh.binero.se:/storage/content/14/183614/dev.customs.logent.se/public_html/")
+ (front-context-string . "ajax\n  drwxr-sr-")
+ (rear-context-string . "96 Oct 27 15:37 ")
+ (position . 281))
+("binero"
+ (filename . "/ssh:183614_adam@ssh.binero.se:/storage/content/14/183614/")
+ (front-context-string . "4pl.logent.se\n  ")
+ (rear-context-string . "96 Mar 18  2015 ")
+ (position . 252))
 ("pest.plus"
  (filename . "/ssh:rabbitfood@leafscript.net:/var/www/pest.plus/")
  (front-context-string . "classes\n  -rwxrw")
@@ -34,8 +44,8 @@
  (position . 1))
 ("override.conf"
  (filename .
-	   #("/sudo:root@amadeus:/etc/systemd/system/getty@tty1.service.d/override.conf" 6 10
-	     (tramp-default t)))
+		   #("/sudo:root@amadeus:/etc/systemd/system/getty@tty1.service.d/override.conf" 6 10
+			 (tramp-default t)))
  (front-context-string . "[Service]\nExecSt")
  (rear-context-string)
  (position . 1))
