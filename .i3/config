@@ -108,7 +108,7 @@ bindsym $mod+Shift+Escape reload
 #bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+mod1+q exec "xfce4-session-logout"
+bindsym $mod+mod1+q exec "i3-msg exit"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -146,6 +146,5 @@ exec "xset r rate 200 75"
 exec "redshift-gtk -l 57:12"
 exec "feh --bg-fill ~/Pictures/background.jpg"
 # Applications
-exec "urxvt -title init -e sh -c screen"
+exec "xrdb ~/.Xresources && urxvt -title init -e sh -c screen"
 exec "emacs --eval '(server-start)'"
-exec "firefox"
