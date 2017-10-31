@@ -26,35 +26,17 @@
 #+END_SRC
 ** use-package
 #+BEGIN_SRC emacs-lisp
-(use-package try :ensure t)
 (use-package which-key :ensure t
   :config (which-key-mode))
 (use-package expand-region :ensure t)
 (use-package web-mode :ensure t)
-(use-package flycheck :ensure t)
-(use-package flymake-php :ensure t
-  :config (add-hook 'web-mode-hook 'flymake-php-load))
-(use-package yasnippet :ensure t)
-(use-package company :ensure t)
-(use-package folding :ensure t)
 (use-package ivy :ensure t
   :config (ivy-mode 1))
-(use-package org-bullets :ensure t
-  :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-(use-package helm :ensure t)
-(use-package projectile :ensure t
-  :config (projectile-mode 1))
-(use-package system-packages
-  :ensure t)
 (use-package tex
   :ensure auctex)
+(use-package find-file-in-project :ensure t)
 (use-package magit
   :ensure t)
-(use-package counsel-projectile :ensure t
-  :config (counsel-projectile-on))
-(use-package fill-column-indicatior :ensure t)
-(use-package hideshow-org :ensure t)
-(use-package tao-theme :ensure t)
 #+END_SRC
 
 * Modes
@@ -72,22 +54,9 @@
 
 * Hooks
 #+BEGIN_SRC emacs-lisp
-(add-hook 'after-init-hook 'global-flycheck-mode)
-(add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.ejs\\'"  . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'"  . css-mode))
-
-(add-hook 'web-mode-hook
-  (lambda()
-	(hs-minor-mode t)
-	(hs-hide-all)
-	(hs-org/minor-mode)
-))
-
 #+END_SRC
 
 * Variables
@@ -133,30 +102,25 @@
 #+END_SRC
 * Keybinds
 #+BEGIN_SRC emacs-lisp
-;; Helm
-;; (global-set-key (kbd "M-x") 'helm-M-x)
-;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (windmove-default-keybindings)
 ;; Navigation
-(global-set-key (kbd "€") 'er/expand-region)
+;(global-set-key (kbd "€") 'er/expand-region)
 
 ;;; Key unbindings
 (global-unset-key (kbd "C-z"))
 
 ;; Shell
-(global-set-key (kbd "þ") (lambda() (interactive) (eshell t)))
-
-;; Toggle fold
-(global-set-key (kbd "đ") 'folding-toggle-show-hide)
+;(global-set-key (kbd "þ") (lambda() (interactive) (eshell t)))
 
 ;; Comment binds
-(global-set-key (kbd "©") 'comment-region)
-(global-set-key (kbd "C-©") 'uncomment-region)
+;(global-set-key (kbd "©") 'comment-region)
+;(global-set-key (kbd "C-©") 'uncomment-region)
+
+;; Projects
+(global-set-key (kbd "C-c p f") 'find-file-in-project)
 
 ;; Scroll-up and down
 (global-set-key (kbd "C-v") (lambda() (interactive) (scroll-up-command) (recenter)))
