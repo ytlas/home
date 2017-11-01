@@ -31,7 +31,7 @@ bindsym $mod+Down exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5
 bindsym $mod+Up exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
 
 # Lock
-bindsym $mod+l exec "dm-tool lock"
+bindsym $mod+l exec "i3lock"
 
 # Kill focused window
 bindsym $mod+w kill
