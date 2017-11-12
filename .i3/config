@@ -131,6 +131,7 @@ assign [class="Emacs"] 1
 assign [class="jetbrains-phpstorm"] 1
 assign [title="init"] 3
 assign [class="Firefox"] 2
+assign [class="Chromium"] 2
 assign [class="TeamSpeak"] 4
 assign [class="Mumble"] 4
 assign [class="mpv"] 5
