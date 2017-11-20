@@ -2,7 +2,7 @@
 # PANEL_HEIGHT=24
 # PANEL_FONT="-Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1"
 # PANEL_WM_NAME=bspwm_panel
-PATH="$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin:$HOME/.local/bin"
+PATH="$HOME/node_modules/.bin:$PATH:/sbin:/usr/sbin:$HOME/.local/bin:/opt/bin"
 EDITOR="emacsclient"
 
 export PATH EDITOR

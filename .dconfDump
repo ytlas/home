@@ -1,166 +1,65 @@
-[org/gnome/settings-daemon/plugins/power]
-sleep-inactive-battery-type='nothing'
-sleep-inactive-ac-timeout=3600
-sleep-inactive-ac-type='nothing'
-sleep-inactive-battery-timeout=1800
-
 [org/gnome/settings-daemon/plugins/color]
-night-light-schedule-automatic=true
+night-light-schedule-automatic=false
 night-light-enabled=true
-night-light-last-coordinates=(57.716700000000003, 11.966699999999999)
-
-[org/gnome/settings-daemon/plugins/xsettings]
-overrides={'Gdk/WindowScalingFactor': <1>, 'Gtk/ShellShowsAppMenu': <1>}
-antialiasing='rgba'
-hinting='slight'
-
-[org/gnome/settings-daemon/peripherals/keyboard]
-numlock-state='off'
 
 [org/gnome/shell]
-enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'night-light-slider.timur@linux.com', 'clipboard-indicator@tudmotu.com', 'TopIcons@phocean.net', 'user-theme@gnome-shell-extensions.gcampax.github.com']
-favorite-apps=['firefox-esr.desktop', 'evolution.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'gnome-tweak-tool.desktop', 'emacs25.desktop', 'chrome-eppojlglocelodeimnohnlnionkobfln-Default.desktop', 'org.gnome.Terminal.desktop', 'spotify.desktop']
-
-[org/gnome/shell/extensions/user-theme]
-name='Arc-Dark'
-
-[org/gnome/shell/extensions/classic-overrides]
-workspaces-only-on-primary=true
+enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com']
+remember-mount-password=false
+favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'yelp.desktop', 'org.gnome.Terminal.desktop', 'emacs25.desktop', 'chromium.desktop']
 
 [org/gnome/shell/extensions/dash-to-dock]
-opaque-background=false
-show-windows-preview=false
+animate-show-apps=true
 extend-height=true
 dock-fixed=true
-force-straight-corner=true
-show-show-apps-button=true
-custom-background-color=false
+force-straight-corner=false
+show-show-apps-button=false
 apply-custom-theme=false
 custom-theme-running-dots=true
-unity-backlit-items=true
+unity-backlit-items=false
+dock-position='BOTTOM'
 custom-theme-shrink=true
-background-opacity=0.0
+background-opacity=0.90000000000000002
+dash-max-icon-size=32
+opaque-background=true
 icon-size-fixed=false
-background-color='#2e3436'
-isolate-workspaces=false
-
-[org/gnome/shell/extensions/redshift]
-active=true
-
-[org/gnome/shell/extensions/clipboard-indicator]
-notify-on-copy=false
-
-[org/gnome/shell/extensions/auto-move-windows]
-application-list=['firefox-esr.desktop:2', 'emacs25.desktop:1', 'mpv.desktop:4', 'chromium.desktop:4', 'deluge.desktop:3', 'evolution.desktop:2']
-
-[org/gnome/shell/extensions/window-list]
-grouping-mode='always'
-show-on-all-monitors=false
-
-[org/gnome/shell/window-switcher]
-app-icon-mode='app-icon-only'
-
-[org/gnome/shell/overrides]
-dynamic-workspaces=false
-attach-modal-dialogs=true
-
-[org/gnome/gedit/preferences/ui]
-show-tabs-mode='auto'
-
-[org/gnome/gedit/plugins]
-active-plugins=['docinfo', 'filebrowser', 'modelines', 'time', 'spell']
-
-[org/gnome/gedit/state/window]
-size=(900, 700)
-state=128
-bottom-panel-size=140
-side-panel-size=200
-side-panel-active-page='GeditWindowDocumentsPanel'
-
-[org/gnome/calculator]
-target-currency=''
-show-zeroes=false
-source-currency=''
-show-thousands=false
-button-mode='basic'
-target-units='radian'
-word-size=64
-number-format='automatic'
-angle-units='degrees'
-base=10
-source-units='degree'
-accuracy=9
 
 [org/gnome/nautilus/preferences]
-default-folder-viewer='icon-view'
+default-folder-viewer='list-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
-geometry='890x550+23+15'
+sidebar-width=229
+geometry='890x539+859+62'
 maximized=false
 
-[org/gnome/nautilus/icon-view]
-default-zoom-level='standard'
+[org/gnome/file-roller/listing]
+sort-method='name'
+name-column-width=250
+sort-type='ascending'
+list-mode='as-folder'
+show-path=false
 
-[org/gnome/mines]
-window-width=1228
-mode=2
-use-animations=true
-window-is-maximized=false
-window-height=516
-
-[org/gnome/evince]
-document-directory=@ms 'file:///home/pest/src/datatekniskt-projekt/Rapporter/Projektplan'
-
-[org/gnome/evince/default]
-window-ratio=(1.1630252100840337, 1.3052256532066508)
-
-[org/gnome/calendar]
-window-position=[26, 23]
-window-maximized=false
-window-size=[768, 600]
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
 
 [org/gnome/evolution-data-server]
 network-monitor-gio-name=''
 migrated=true
 
-[org/gnome/desktop/interface]
-text-scaling-factor=1.0
-cursor-size=32
-font-name='Ubuntu 12'
-document-font-name='Ubuntu 12'
-toolkit-accessibility=false
-gtk-im-module='gtk-im-context-simple'
-clock-show-seconds=true
-icon-theme='Adwaita'
-monospace-font-name='Ubuntu Mono 14'
-enable-animations=false
-gtk-theme='Arc'
-clock-show-date=true
+[org/gnome/deja-dup]
+backend='goa'
+prompt-check='2017-11-16T17:20:03.631651Z'
 
-[org/gnome/desktop/notifications]
-application-children=['org-gnome-nautilus', 'evolution', 'org-gnome-software', 'spotify', 'emacs25']
+[org/gnome/deja-dup/goa]
+type='owncloud'
 
-[org/gnome/desktop/notifications/application/emacs25]
-application-id='emacs25.desktop'
-
-[org/gnome/desktop/notifications/application/gnome-tweak-tool]
-application-id='gnome-tweak-tool.desktop'
-
-[org/gnome/desktop/notifications/application/evolution]
-application-id='evolution.desktop'
-
-[org/gnome/desktop/notifications/application/spotify]
-application-id='spotify.desktop'
-
-[org/gnome/desktop/notifications/application/org-gnome-nautilus]
-application-id='org.gnome.Nautilus.desktop'
-
-[org/gnome/desktop/notifications/application/org-gnome-software]
-application-id='org.gnome.Software.desktop'
+[org/gnome/deja-dup/file]
+migrated=true
 
 [org/gnome/desktop/app-folders]
-folder-children=['Utilities', 'Sundry']
+folder-children=['Utilities', 'Sundry', 'YaST']
 
 [org/gnome/desktop/app-folders/folders/Utilities]
 translate=true
@@ -174,217 +73,85 @@ categories=['X-GNOME-Sundry']
 apps=['alacarte.desktop', 'authconfig.desktop', 'ca.desrt.dconf-editor.desktop', 'fedora-release-notes.desktop', 'firewall-config.desktop', 'flash-player-properties.desktop', 'gconf-editor.desktop', 'gnome-abrt.desktop', 'gnome-power-statistics.desktop', 'ibus-setup-anthy.desktop', 'ibus-setup.desktop', 'ibus-setup-hangul.desktop', 'ibus-setup-libbopomofo.desktop', 'ibus-setup-libpinyin.desktop', 'ibus-setup-m17n.desktop', 'ibus-setup-typing-booster.desktop', 'im-chooser.desktop', 'itweb-settings.desktop', 'jhbuild.desktop', 'javaws.desktop', 'java-1.7.0-openjdk-jconsole.desktop', 'java-1.7.0-openjdk-policytool.desktop', 'log4j-chainsaw.desktop', 'log4j-logfactor5.desktop', 'nm-connection-editor.desktop', 'orca.desktop', 'setroubleshoot.desktop', 'system-config-date.desktop', 'system-config-firewall.desktop', 'system-config-keyboard.desktop', 'system-config-language.desktop', 'system-config-printer.desktop', 'system-config-users.desktop', 'vino-preferences.desktop']
 name='X-GNOME-Sundry.directory'
 
-[org/gnome/desktop/screensaver]
-picture-uri='file:///usr/share/desktop-base/spacefun-theme/wallpaper/gnome-background.xml'
-color-shading-type='solid'
-primary-color='#ffffff'
-picture-options='zoom'
-secondary-color='#000000'
+[org/gnome/desktop/app-folders/folders/YaST]
+translate=true
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
 
-[org/gnome/desktop/search-providers]
-sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+[org/gnome/desktop/notifications]
+application-children=['org-gnome-nautilus', 'spotify', 'org-gnome-software']
 
-[org/gnome/desktop/calendar]
-show-weekdate=true
+[org/gnome/desktop/notifications/application/spotify]
+application-id='spotify.desktop'
 
-[org/gnome/desktop/session]
-idle-delay=uint32 0
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
 
-[org/gnome/desktop/privacy]
-recent-files-max-age=7
-remove-old-temp-files=true
-remove-old-trash-files=true
+[org/gnome/desktop/notifications/application/org-gnome-software]
+application-id='org.gnome.Software.desktop'
 
-[org/gnome/desktop/wm/preferences]
-num-workspaces=1
-titlebar-font='Ubuntu Medium 11'
-
-[org/gnome/desktop/wm/keybindings]
-switch-to-workspace-1=['<Super>1']
-switch-to-workspace-2=['<Super>2']
-switch-to-workspace-3=['<Super>3']
-move-to-workspace-1=['<Shift><Super>exclam']
-move-to-workspace-2=['<Shift><Super>at']
-move-to-workspace-3=['<Shift><Super>numbersign']
-move-to-workspace-4=['<Shift><Super>dollar']
-switch-to-workspace-4=['<Super>4']
-
-[org/gnome/desktop/a11y/applications]
-screen-keyboard-enabled=false
-
-[org/gnome/desktop/background]
-picture-uri='file:////usr/share/gnome-control-center/pixmaps/noise-texture-light.png'
-show-desktop-icons=false
-color-shading-type='solid'
-primary-color='#475b52'
-picture-options='wallpaper'
-secondary-color='#475b52'
+[org/gnome/desktop/interface]
+gtk-im-module='gtk-im-context-simple'
 
 [org/gnome/desktop/input-sources]
-sources=[('xkb', 'us'), ('xkb', 'se')]
-xkb-options=['lv3:ralt_alt', 'terminate:ctrl_alt_bksp', 'keypad:legacy', 'grp:win_space_toggle', 'compose:caps']
+sources=[('xkb', 'us')]
+xkb-options=@as []
 
-[org/gnome/libgnomekbd/preview]
-width=1104
-height=473
-x=180
-y=135
+[org/gnome/rhythmbox/library/source]
+show-browser=true
 
-[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-foreground-color='rgb(0,0,0)'
-rewrap-on-resize=true
-palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
-default-size-columns=80
-scroll-on-output=false
-use-system-font=false
-highlight-colors-set=false
-use-theme-colors=false
-font='Ubuntu Mono 14'
-allow-bold=true
-bold-color-same-as-fg=true
-background-color='rgb(255,255,255)'
-audible-bell=false
-scrollbar-policy='never'
+[org/gnome/rhythmbox/plugins/audioscrobbler/Last.fm]
+scrobbling-enabled=true
 
-[org/gnome/terminal/legacy]
-schema-version=uint32 3
-default-show-menubar=false
+[org/gnome/rhythmbox/plugins/audioscrobbler/Libre.fm]
+scrobbling-enabled=true
 
-[org/gnome/evolution/plugin/prefer-plain]
-show-suppressed=true
-mode='normal'
+[org/gnome/rhythmbox/plugins/iradio]
+initial-stations-loaded=true
 
-[org/gnome/evolution/shell]
-menubar-visible=true
-file-chooser-folder='file:///home/pest/Downloads'
-folder-bar-width=259
-sidebar-visible=true
-default-component-id='mail'
-buttons-visible=true
-attachment-view=0
-toolbar-visible=true
-statusbar-visible=true
+[org/gnome/rhythmbox/plugins/iradio/source]
+show-browser=true
 
-[org/gnome/evolution/shell/window]
-width=992
-maximized=true
-height=581
-x=0
-y=0
+[org/gnome/rhythmbox/plugins]
+active-plugins=['mpris', 'ipod', 'iradio', 'audioscrobbler', 'mtpdevice', 'audiocd', 'daap', 'mmkeys', 'generic-player', 'notification', 'dbus-media-server', 'rb', 'alternative-toolbar', 'artsearch', 'power-manager', 'android']
+seen-plugins=['mpris', 'ipod', 'fmradio', 'rblirc', 'audioscrobbler', 'grilo', 'mtpdevice', 'daap', 'notification', 'dbus-media-server', 'pythonconsole', 'rb', 'alternative-toolbar', 'artsearch', 'sendto', 'magnatune', 'soundcloud', 'webremote', 'replaygain', 'lyrics', 'im-status']
 
-[org/gnome/evolution/calendar]
-work-day-friday=true
-confirm-purge=true
-hpane-position=400
-work-day-wednesday=true
-task-vpane-position=307
-work-day-sunday=false
-recur-events-italic=false
-last-notification-time=1508496300
-prefer-new-item=''
-memo-vpane-position=307
-work-day-saturday=false
-work-day-thursday=true
-time-divisions=30
-work-day-tuesday=true
-date-navigator-pane-position=175
-week-start-day-name='monday'
-primary-memos='system-memo-list'
-work-day-monday=true
-tag-vpane-position=0.0012531328320802004
-primary-tasks='system-task-list'
+[org/gnome/rhythmbox/plugins/alternative_toolbar]
+expanders='{1: True, 2: False, 0: False, 3: False}'
+show-source-toolbar=false
 
-[org/gnome/evolution/spamassassin]
-learn-command=''
-command=''
-local-only=true
+[org/gnome/rhythmbox/podcast/source]
+show-browser=true
 
-[org/gnome/evolution/mail]
-paned-size=1491879
-junk-check-incoming=true
-composer-show-from-override=false
-browser-close-on-reply-policy='ask'
-headers=['<?xml version="1.0"?>\n<header name="From" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="Reply-To" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="To" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="Cc" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="Bcc" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="Subject" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="Date" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="Newsgroups" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="Face" enabled=""/>\n', '<?xml version="1.0"?>\n<header name="x-evolution-mailer"/>\n']
-reply-style-name='quoted'
-forward-style-name='attached'
-image-loading-policy='never'
-search-gravatar-for-photo=false
-to-do-bar-width=1499
-show-headers=[('From', true), ('Reply-To', true), ('To', true), ('Cc', true), ('Bcc', true), ('Subject', true), ('Date', true), ('Newsgroups', true), ('Face', true), ('x-evolution-mailer', false)]
-prompt-on-composer-mode-switch=true
-prompt-on-mark-all-read=true
+[org/gnome/rhythmbox]
+position=(36, 32)
+statusbar-visible=false
 
-[org/gnome/evolution/mail/browser-window]
-width=600
-maximized=false
-height=551
-
-[org/gnome/evolution/mail/composer-window]
-width=600
-maximized=true
-height=500
-
-[org/gnome/evolution/bogofilter]
-command=''
-utf8-for-spam-filter=true
-
-[org/gnome/evolution]
-version='3.26.1'
-
-[org/gnome/evolution/addressbook]
-completion-show-address=false
-completion-minimum-query-length=3
+[org/gnome/rhythmbox/rhythmdb]
+locations=['file:///home/adam/Music']
 
 [org/gnome/software]
 first-run=false
-check-timestamp=int64 1508952823
-install-timestamp=int64 1508072727
+check-timestamp=int64 1511182337
 
-[org/gnome/gnome-system-monitor]
-show-dependencies=false
-current-tab='disks'
-maximized=false
-show-whose-processes='user'
-window-state=(700, 500, 26, 23)
+[org/gnome/Totem]
+subtitle-encoding='UTF-8'
+active-plugins=['variable-rate', 'skipto', 'recent', 'apple-trailers', 'screenshot', 'autoload-subtitles', 'vimeo', 'media_player_keys', 'movie-properties', 'save-file', 'screensaver']
 
-[org/gnome/gnome-system-monitor/disktreenew]
-col-6-visible=true
-col-6-width=0
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-transparency-percent=6
+use-theme-transparency=false
+use-system-font=true
+use-transparent-background=true
+audible-bell=false
+font='Ubuntu Mono 13'
+
+[org/gnome/terminal/legacy]
+schema-version=uint32 3
 
 [org/gtk/settings/file-chooser]
-sort-column='name'
-sidebar-width=378
-window-position=(398, 79)
-show-size-column=true
-show-hidden=false
-window-size=(1203, 902)
-sort-directories-first=false
-date-format='regular'
-sort-order='ascending'
-location-mode='path-bar'
+show-hidden=true
 
-[org/gtk/settings/color-chooser]
-selected-color=(true, 0.95294117647058818, 0.95294117647058818, 0.95294117647058818, 1.0)
-custom-colors=[(0.1803921568627451, 0.20392156862745098, 0.21176470588235294, 1.0), (0.0, 1.0, 0.0, 1.0)]
-
-[apps/light-locker]
-late-locking=false
-lock-after-screensaver=uint32 5
-lock-on-suspend=true
-idle-hint=false
-lock-on-lid=false
-
-[apps/seahorse/windows/key-manager]
-width=1920
-height=1024
-
-[apps/seahorse/listing]
-sidebar-width=148
-keyrings-selected=['secret-service://login', 'secret-service:///org/freedesktop/secrets/collection/Default']
-
-[com/vinszent/GnomeTwitch]
-oauth-token='41zy0burexqgt4s90yte26epkcrypn'
-user-name='adam_ytlas'
-volume=0.29999999999999999
-window-height=710
-window-width=1110
+[apps/update-manager]
+first-run=false
+launch-time=int64 1510852626
