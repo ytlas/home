@@ -129,13 +129,13 @@ bar {
 # Rules
 assign [class="Emacs"] 1
 assign [class="jetbrains-phpstorm"] 1
-assign [title="init"] 3
 assign [class="Firefox"] 2
 assign [class="Chromium"] 2
+assign [title="init"] 3
 assign [class="TeamSpeak"] 4
+assign [class="Pavucontrol"] 4
 assign [class="Mumble"] 4
 assign [class="mpv"] 5
-assign [class="chrom"] 5
 assign [class="Thunderbird"] 6
 assign [class="Steam"] 7
 assign [class="Mullvad"] 8
@@ -143,10 +143,14 @@ assign [class="Mullvad"] 8
 # Window border
 new_window pixel 1
 
-# AUTOSTART
+## Autorun
 exec "xset r rate 200 75"
 exec "redshift-gtk -l 57:12"
 exec "feh --bg-fill ~/Pictures/background.jpg"
+
 # Applications
 exec "xrdb ~/.Xresources && urxvt -title init -e sh -c screen"
 exec "emacs --eval '(server-start)'"
+exec "pavucontrol"
+exec "chromium"
+exec "thunderbird"

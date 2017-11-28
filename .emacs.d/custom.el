@@ -14,9 +14,10 @@
 	("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "0e0c37ee89f0213ce31205e9ae8bce1f93c9bcd81b1bcda0233061bb02c357a8" "086970da368bb95e42fd4ddac3149e84ce5f165e90dfc6ce6baceae30cf581ef" "f2057733672d3b119791f5b7d1a778bf8880121f22ea122a21d221b45081f49e" default)))
  '(display-time-mode t)
  '(fci-rule-color "#F1F1F1")
+ '(line-spacing 0.2)
  '(package-selected-packages
    (quote
-	(find-file-in-project projectile company yasnippet flycheck smart-mode-line tao-theme apt-sources-list hideshow-org fill-column-indicatior flymake-php counsel-projectile consel-projectile system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region)))
+	(swipe swiper find-file-in-project projectile company yasnippet flycheck smart-mode-line tao-theme apt-sources-list hideshow-org fill-column-indicatior flymake-php counsel-projectile consel-projectile system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region)))
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(vc-annotate-background "#F6F6F6")
@@ -46,6 +47,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "white smoke" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 143 :width normal :foundry "DAMA" :family "Ubuntu Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "white smoke" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 128 :width normal :foundry "unknown" :family "Liberation Mono"))))
  '(mode-line ((t (:background "#616161" :foreground "#FAFAFA" :height 1.1))))
  '(org-block-background ((t (:foreground "black")))))

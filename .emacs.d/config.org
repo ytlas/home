@@ -32,6 +32,7 @@
 (use-package web-mode :ensure t)
 (use-package ivy :ensure t
   :config (ivy-mode 1))
+(use-package swiper :ensure t)
 (use-package tex
   :ensure auctex)
 (use-package find-file-in-project :ensure t)
