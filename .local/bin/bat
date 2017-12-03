@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from os import listdir
+
+path = "/sys/class/power_supply/"
+
+batteries = list(map(
+    lambda dir: open(path  + dir + "/uevent"), filter(
+    lambda dir: dir.startswith('BAT'), listdir(path)))
+)
+
+energy = 0.0
+energy_max = 0.0
+
+for uevent in batteries:
+    dict = {}
+
+    for line in uevent:
+        key, val = line.partition('=')[::2]
+        dict[key] = val[:-1]
+
+    energy += int(dict["POWER_SUPPLY_ENERGY_NOW"])
+    energy_max += int(dict["POWER_SUPPLY_ENERGY_FULL"])
+
+per = int(float(energy / energy_max) * 100)
+if per >= 80: icon = ''
+elif per >= 60: icon = ''
+elif per >= 40: icon = ''
+elif per >= 20: icon = ''
+elif per >= 0: icon = ''
+
+print(icon + ' ' + str(per) + '%')

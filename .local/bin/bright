@@ -1,12 +1,22 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from sys import argv, exit
+from os import environ
+from math import ceil
 
 with open('/sys/class/backlight/intel_backlight/brightness') as a, \
      open('/sys/class/backlight/intel_backlight/max_brightness') as m:
 
     ab = int(a.read()[:-1]) * 100
     mb = int(m.read()[:-1]) * 100
+
+if len(argv) < 2:
+    level = int(ceil(float(ab) / float(mb) * 100))
+    icon = " " if level <= 25 else " "
+
+    print(icon + str(level) + "%")
+    exit()
 
 sign = argv[1][0] == '+'
 if not sign and argv[1][0] != '-': exit('Invalid sign.')

@@ -1,7 +1,12 @@
-exec_always ~/.i3/init
+exec ~/.i3/init
 
 # Set modifier to Superkey
 set $mod Mod4
+
+# Colors
+set $bg #FFFFFF
+set $fg #000000
+set $font pango:Ubuntu Mono Regular, Awesome 11
 
 # Rules
 assign [class="Emacs"] 1
@@ -21,7 +26,7 @@ assign [class="Mullvad"] 8
 new_window pixel 1
 
 # Font for window titles. Will also be used by the bar unless a different font
-font -Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
+font $font
 # class                 border  backgr. text    indicator child_border
 client.focused          #000000 #FFFFFF #000000 #2e9ef4   #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
@@ -38,12 +43,13 @@ floating_modifier $mod
 bindsym $mod+Return exec rxvt-unicode
 
 # Change brightness
-bindsym $mod+Left exec "sudo /opt/sbin/bright -5"
-bindsym $mod+Right exec "sudo /opt/sbin/bright +5"
+bindsym XF86MonBrightnessDown exec "sudo /opt/sbin/bright -5 && pkill -RTMIN+1 i3blocks"
+bindsym XF86MonBrightnessUp exec "sudo /opt/sbin/bright +5 && pkill -RTMIN+1 i3blocks"
 
 # Change master volume
-bindsym $mod+Down exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
-bindsym $mod+Up exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false; pactl set-sink-volume 0 -5% && pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false; pactl set-sink-volume 0 +5% && pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks"
 
 # Lock
 bindsym $mod+l exec "i3lock"
@@ -121,21 +127,19 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+Escape reload
-#bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+mod1+q exec "i3-msg exit"
 
-# Colors
-set $bg #FFFFFF
-set $fg #000000
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3status
+	separator_symbol 
+	status_command i3blocks
 	position top
-	font pango:Ubuntu Mono Regular 13
+	font $font
+
 	colors {
 		background         $bg
 		statusline         $fg

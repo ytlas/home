@@ -8,3 +8,5 @@ emacs --eval '(server-start)' &
 pavucontrol &
 chromium &
 thunderbird &
+nm-applet &
+gnome-settings-daemon &
