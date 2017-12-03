@@ -13,11 +13,12 @@ PS1="\u{\w}-> "
 ## Aliases
 alias sudo='sudo '
 alias nano='emacsclient -nw'
+alias edit=$EDITOR
 alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
 alias mall='devmon -ag'
 alias umall='devmon -rg'
 alias m='sudo mount -o uid=1000'
-alias hiber='sudo sh -c "echo mem>/sys/power/state"&&sudo systemctl restart NetworkManager'
+alias hiber='sudo sh -c "echo mem>/sys/power/state" && sudo systemctl restart NetworkManager'
 alias ls='ls -1F --color=always'
 alias lsa='ls -lFA'
 alias cl='clear'
@@ -29,15 +30,13 @@ alias t='touch'
 alias mkdir='mkdir -vp'
 alias pg='ping google.com'
 alias vi='$EDITOR'
-alias sshls='ssh rabbitfood@leafscript.net'
-alias sftpls='sftp rabbitfood@leafscript.net'
 alias fl='du -hsx * | sort -rh | head -n'
 
 # Media aliases
 alias adl='youtube-dl -x'
 alias vdl='youtube-dl'
-alias gcp='git commit -m ":)"&&git push'
-alias gcap='git commit -a -m ":)"&&git push'
+alias gcp='git commit && git push'
+alias gcap='git commit -a" && git push'
 
 ## Package manager
 # If ~/.debian exists, setup stuff for debian-type systems

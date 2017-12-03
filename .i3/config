@@ -3,6 +3,23 @@ exec_always ~/.i3/init
 # Set modifier to Superkey
 set $mod Mod4
 
+# Rules
+assign [class="Emacs"] 1
+assign [class="jetbrains-phpstorm"] 1
+assign [class="Firefox"] 2
+assign [class="Chromium"] 2
+assign [class="Gnome-terminal"] 3
+assign [class="TeamSpeak"] 4
+assign [class="Pavucontrol"] 4
+assign [class="Mumble"] 4
+assign [class="mpv"] 5
+assign [class="Thunderbird"] 6
+assign [class="Steam"] 7
+assign [class="Mullvad"] 8
+
+# Window border
+new_window pixel 1
+
 # Font for window titles. Will also be used by the bar unless a different font
 font -Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
 # class                 border  backgr. text    indicator child_border
@@ -14,8 +31,6 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
-
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -23,8 +38,8 @@ floating_modifier $mod
 bindsym $mod+Return exec rxvt-unicode
 
 # Change brightness
-bindsym $mod+Left exec "sudo /usr/sbin/abl -5"
-bindsym $mod+Right exec "sudo /usr/sbin/abl +5"
+bindsym $mod+Left exec "sudo /opt/sbin/bright -5"
+bindsym $mod+Right exec "sudo /opt/sbin/bright +5"
 
 # Change master volume
 bindsym $mod+Down exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
@@ -111,47 +126,22 @@ bindsym $mod+Shift+Escape reload
 # exit i3 (logs you out of your X session)
 bindsym $mod+mod1+q exec "i3-msg exit"
 
+# Colors
+set $bg #FFFFFF
+set $fg #000000
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 	status_command i3status
 	position top
-	font -Misc-Fixed-Medium-R-Normal--18-120-100-100-C-90-ISO10646-1
+	font pango:Ubuntu Mono Regular 13
 	colors {
-	background #FFFFFF
-	statusline #000000
-	focused_workspace  #000000 #FFFFFF #000000
-	active_workspace   #000000 #EEEEEE #000000
-	inactive_workspace #000000 #000000 #FFFFFF
-	urgent_workspace   #000000 #FF0000 #FFFFFF
+		background         $bg
+		statusline         $fg
+		focused_workspace  $bg $fg $bg
+		active_workspace   $bg #EEEEEE $bg
+		inactive_workspace $bg $bg $fg
+		urgent_workspace   $bg #FF0000 $fg
 	}
 }
-
-# Rules
-assign [class="Emacs"] 1
-assign [class="jetbrains-phpstorm"] 1
-assign [class="Firefox"] 2
-assign [class="Chromium"] 2
-assign [title="init"] 3
-assign [class="TeamSpeak"] 4
-assign [class="Pavucontrol"] 4
-assign [class="Mumble"] 4
-assign [class="mpv"] 5
-assign [class="Thunderbird"] 6
-assign [class="Steam"] 7
-assign [class="Mullvad"] 8
-
-# Window border
-new_window pixel 1
-
-## Autorun
-exec "xset r rate 200 75"
-exec "redshift-gtk -l 57:12"
-exec "feh --bg-fill ~/Pictures/background.jpg"
-
-# Applications
-exec "xrdb ~/.Xresources && urxvt -title init -e sh -c screen"
-exec "emacs --eval '(server-start)'"
-exec "pavucontrol"
-exec "chromium"
-exec "thunderbird"

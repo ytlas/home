@@ -1,0 +1,10 @@
+#!/bin/sh
+xset r rate 200 75 &
+redshift-gtk -l 57:12 &
+feh --bg-fill ~/Pictures/background.jpg &
+
+gnome-terminal --class=initTerm -e screen &
+emacs --eval '(server-start)' &
+pavucontrol &
+chromium &
+thunderbird &

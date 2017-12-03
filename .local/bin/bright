@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+from sys import argv, exit
+
+with open('/sys/class/backlight/intel_backlight/brightness') as a, \
+     open('/sys/class/backlight/intel_backlight/max_brightness') as m:
+
+    ab = int(a.read()[:-1]) * 100
+    mb = int(m.read()[:-1]) * 100
+
+sign = argv[1][0] == '+'
+if not sign and argv[1][0] != '-': exit('Invalid sign.')
+
+try: mag = int(float(float(argv[1][1:]) / 100.0) * mb)
+except ValueError: exit("That's not a valid number.")
+
+try:
+    with open('/sys/class/backlight/intel_backlight/brightness', 'w+') as f:
+        if sign:
+            diff = ab + mag
+
+            if diff >= mb: f.write(str(mb / 100))
+            else:          f.write(str(diff / 100))
+
+        else:
+            diff = ab - mag
+
+            if diff <= 0: f.write('0')
+            else:         f.write(str(diff / 100))
+
+except IOError: exit('Something went opening that file.')

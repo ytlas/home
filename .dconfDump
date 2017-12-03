@@ -5,7 +5,8 @@ night-light-enabled=true
 [org/gnome/shell]
 enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com']
 remember-mount-password=false
-favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'yelp.desktop', 'org.gnome.Terminal.desktop', 'emacs25.desktop', 'chromium.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'yelp.desktop', 'org.gnome.Terminal.desktop', 'emacs25.desktop', 'chromium.desktop', 'audacity.desktop', 'gnome-control-center.desktop']
+had-bluetooth-devices-setup=true
 
 [org/gnome/shell/extensions/dash-to-dock]
 animate-show-apps=true
@@ -130,24 +131,50 @@ statusbar-visible=false
 [org/gnome/rhythmbox/rhythmdb]
 locations=['file:///home/adam/Music']
 
-[org/gnome/software]
-first-run=false
-check-timestamp=int64 1511182337
+[org/gnome/nm-applet/eap/6a844d1b-f35b-4e95-9afb-9555127b2bb5]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=true
+
+[org/gnome/nm-applet/eap/bac07e9f-f64e-4046-ae68-36f2c1bf89bf]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=true
+
+[org/gnome/nm-applet/eap/5d595ce9-3b21-4712-9d84-732b3a8a4965]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=true
+
+[org/gnome/nm-applet/eap/3ca59ac4-2311-4820-a465-aef3659a8ae1]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/fe55d36c-5cda-4ebd-95f9-b5ea6153ca53]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
 
 [org/gnome/Totem]
 subtitle-encoding='UTF-8'
 active-plugins=['variable-rate', 'skipto', 'recent', 'apple-trailers', 'screenshot', 'autoload-subtitles', 'vimeo', 'media_player_keys', 'movie-properties', 'save-file', 'screensaver']
 
-[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-background-transparency-percent=6
-use-theme-transparency=false
-use-system-font=true
-use-transparent-background=true
-audible-bell=false
-font='Ubuntu Mono 13'
-
 [org/gnome/terminal/legacy]
+new-terminal-mode='tab'
 schema-version=uint32 3
+theme-variant='system'
+default-show-menubar=false
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+login-shell=false
+custom-command='/usr/bin/screen'
+use-system-font=false
+use-custom-command=false
+use-transparent-background=true
+use-theme-transparency=false
+font='Ubuntu Mono 13'
+audible-bell=false
+background-transparency-percent=6
+
+[org/gnome/software]
+first-run=false
+check-timestamp=int64 1511267131
 
 [org/gtk/settings/file-chooser]
 show-hidden=true
