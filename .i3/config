@@ -66,6 +66,7 @@ bindsym $mod+v split v
 # bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+space layout toggle split
+bindsym $mod+q sticky toggle
 
 # toggle tiling / floating
 bindsym $mod+s floating toggle
