@@ -43,13 +43,15 @@ floating_modifier $mod
 bindsym $mod+Return exec rxvt-unicode
 
 # Change brightness
-bindsym XF86MonBrightnessDown exec "sudo /opt/sbin/bright -5 && pkill -RTMIN+3 i3blocks"
-bindsym XF86MonBrightnessUp exec "sudo /opt/sbin/bright +5 && pkill -RTMIN+3 i3blocks"
+bindsym XF86MonBrightnessDown exec "sudo /opt/sbin/bright -5 && pkill -RTMIN+1 i3blocks"
+bindsym XF86MonBrightnessUp exec "sudo /opt/sbin/bright +5 && pkill -RTMIN+1 i3blocks"
 
 # Change master volume
 bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false; pactl set-sink-volume 0 -5% && pkill -RTMIN+1 i3blocks"
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false; pactl set-sink-volume 0 +5% && pkill -RTMIN+1 i3blocks"
 bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks"
+
+bindsym XF86Explorer exec "BLOCK_BUTTON=2 key_layout && pkill -RTMIN+1 i3blocks"
 
 # Lock
 bindsym $mod+l exec "i3lock"
