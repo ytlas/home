@@ -36,7 +36,7 @@ alias fl='du -hsx * | sort -rh | head -n'
 alias adl='youtube-dl -x'
 alias vdl='youtube-dl'
 alias gcp='git commit && git push'
-alias gcap='git commit -a" && git push'
+alias gcap='git commit -a && git push'
 
 ## Package manager
 # If ~/.debian exists, setup stuff for debian-type systems
