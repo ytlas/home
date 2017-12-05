@@ -24,4 +24,4 @@ default-jdk
 gcc
 make
 cmake
-
+scrot

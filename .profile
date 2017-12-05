@@ -9,6 +9,10 @@ EDITOR="emacsclient"
 # Export variables
 export PATH EDITOR
 
+if [ "/dev/tty1" == "`tty`" ] && [ -f ~/.config/.stx ];then
+	startx && exit
+fi
+
 # Run bash, if in a shell.
 if [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ]; then
 	source ~/.bashrc

@@ -9,3 +9,4 @@ chromium &
 thunderbird &
 nm-applet &
 gnome-settings-daemon &
+redshift -l 57:12 &
