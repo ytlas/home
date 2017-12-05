@@ -1,2 +1,0 @@
-#!/bin/sh
-scrot '%Y-%m-%d_%H%M%S_$wx$h_screenshot.png' -s -e 'scp $f glas@leafscript.net:/home/glas/ytlas.com/public/i/&&rm $f&&firefox-esr ytlas.com/i/$f'

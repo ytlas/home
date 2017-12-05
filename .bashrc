@@ -12,7 +12,6 @@ PS1="\u{\w}-> "
 
 ## Aliases
 alias sudo='sudo '
-alias nano='emacsclient -nw'
 alias edit=$EDITOR
 alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
 alias mall='devmon -ag'
