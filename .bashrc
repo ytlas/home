@@ -45,6 +45,7 @@ alias adl='youtube-dl -x'
 alias vdl='youtube-dl'
 alias gcp='git commit && git push'
 alias gcap='git commit -a && git push'
+alias gcapa='git commit -a -m ":)" && git push'
 
 ## Package manager
 # If ~/.debian exists, setup stuff for debian-type systems

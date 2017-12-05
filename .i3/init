@@ -1,6 +1,5 @@
 #!/bin/sh
 xset r rate 200 75 &
-redshift-gtk -l 57:12 &
 feh --bg-fill ~/Pictures/background.jpg &
 
 xrdb ~/.Xresources && urxvt -title initTerm -e sh -c screen &
