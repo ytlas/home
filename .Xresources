@@ -2,8 +2,8 @@ URxvt*scrollBar: false
 URxvt*depth: 32
 URxvt*background: #FFFFFF
 URxvt*foreground: #000000
-URxvt*font: xft:Ubuntu Mono Regular:size=10
-URxvt*letterSpace: -4
+URxvt*font: xft:Terminus:size=15
+URxvt*letterSpace: 0
 URxvt*iso14755: False
 URxvt*iso14755_52: False
 URxvt*geometry: 50x20

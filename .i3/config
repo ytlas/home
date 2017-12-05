@@ -6,14 +6,14 @@ set $mod Mod4
 # Colors
 set $bg #FFFFFF
 set $fg #000000
-set $font pango:Ubuntu Mono Regular, Awesome 11
+set $font pango:Terminus, Awesome 13
 
 # Rules
 assign [class="Emacs"] 1
 assign [class="jetbrains-phpstorm"] 1
 assign [class="Firefox"] 2
 assign [class="Chromium"] 2
-assign [class="Gnome-terminal"] 3
+assign [title="initTerm"] 3
 assign [class="TeamSpeak"] 4
 assign [class="Pavucontrol"] 4
 assign [class="Mumble"] 4
