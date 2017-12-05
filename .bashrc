@@ -49,18 +49,17 @@ alias gcapa='git commit -a -m ":)" && git push'
 
 ## Package manager
 # If ~/.debian exists, setup stuff for debian-type systems
-if [ -f "$HOME/.debian" ];then
-	pmp="sudo aptitude"
+if [ -f "$HOME/.config/.debian" ];then
+	pmp="sudo apt"
 	lpmp="sudo dpkg"
 	alias y='${pmp}'
 	alias i='${pmp} install'
 	alias r='${pmp} remove'
-	alias c='${pmp} autoclean && ${pmp} purge ~c'
-	alias u='${pmp} update && ${pmp} full-upgrade'
-	alias s='aptitude search'
+	alias c='sudo apt autoclean && sudo aptitude purge ~c'
+	alias u='${pmp} update && ${pmp} -u dist-upgrade'
+	alias s='apt search'
 	alias ly='${lpmp}'
 	alias li='${lpmp} -i'
-	alias sctl='sudo systemctl'
 
 # If ~/.slack exists, setup stuff for slackware
 elif [ -f "$HOME/.slack" ];then
