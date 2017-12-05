@@ -138,7 +138,7 @@ bindsym $mod+mod1+q exec "i3-msg exit"
 # finds out, if available)
 bar {
 	separator_symbol 
-	status_command i3blocks
+	status_command ~/.i3/i3blockcond
 	position top
 	font $font
 

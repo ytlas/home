@@ -32,6 +32,14 @@ alias pg='ping google.com'
 alias vi='$EDITOR'
 alias fl='du -hsx * | sort -rh | head -n'
 
+# SystemD aliases
+alias ctl=systemctl
+alias ctlo='systemctl stop'
+alias ctls='systemctl start'
+alias ctlr='systemctl restart'
+alias ctle='systemctl enable'
+alias ctld='systemctl disable'
+
 # Media aliases
 alias adl='youtube-dl -x'
 alias vdl='youtube-dl'

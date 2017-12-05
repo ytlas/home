@@ -42,4 +42,4 @@ try:
             if diff <= 0: f.write('0')
             else:         f.write(str(int(diff / 100)))
 
-except IOError: exit('Something went opening that file.')
+except IOError: exit('Something went wrong opening that file.')
