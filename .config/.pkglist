@@ -3,10 +3,10 @@ git
 redshift
 chromium
 i3
+i3lock
 i3blocks
 pavucontrol
 thunderbird
-lightdm
 php-cli
 python
 screen
@@ -25,3 +25,4 @@ gcc
 make
 cmake
 scrot
+xfonts-terminus
