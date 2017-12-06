@@ -8,7 +8,8 @@ shopt -s dotglob
 	. /usr/share/bash-completion/bash_completion
 
 ## Variables
-PS1="\u{\w}-> "
+source ~/.bashcolors
+PS1="${RED}\u${RESET}{${BLUE}\w${RESET}}-> "
 
 ## Aliases
 alias sudo='sudo '
