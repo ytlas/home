@@ -1,0 +1,10 @@
+#!/bin/bash
+
+con=`nmcli connection show | sed '2q;d' | awk '{print $1;}'`
+dev=`nmcli connection show | sed '2q;d' | awk '{print $4;}'`
+
+if [ "$dev" = "--" ]; then
+	echo 
+else
+	echo  $con
+fi
