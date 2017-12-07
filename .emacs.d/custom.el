@@ -47,6 +47,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "white smoke" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 151 :width normal :foundry "xos4" :family "Terminus"))))
+ '(default ((t (:inherit nil :stipple nil :background "white smoke" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 131 :width normal :foundry "xos4" :family "Terminus"))))
  '(mode-line ((t (:inherit default :background "gainsboro" :box (:line-width 1 :color "black") :height 1.25))))
  '(org-block-background ((t (:foreground "black")))))

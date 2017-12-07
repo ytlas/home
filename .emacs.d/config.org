@@ -56,6 +56,9 @@
 ;; Syntax highlight org code blocks
 (setq org-src-fontify-natively t)
 
+;; Line spacing
+(setq-default line-spacing 4)
+
 ;; Pop confirm dialog when exiting Emacs
 (setq confirm-kill-emacs 'y-or-n-p)
 

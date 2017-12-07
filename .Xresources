@@ -2,7 +2,7 @@ URxvt*scrollBar: false
 URxvt*depth: 32
 URxvt*background: #FFFFFF
 URxvt*foreground: #000000
-URxvt*font: xft:Terminus:size=15
+URxvt*font: xft:Terminus:size=12
 URxvt*letterSpace: 0
 URxvt*iso14755: False
 URxvt*iso14755_52: False
