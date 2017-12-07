@@ -2,9 +2,19 @@
 
 con=`nmcli connection show | sed '2q;d' | awk '{print $1;}'`
 dev=`nmcli connection show | sed '2q;d' | awk '{print $4;}'`
+ethdev=`nmcli connection show | sed '2q;d' | awk '{print $6;}'`
+no='<span color="red"></span>'
 
-if [ "$dev" = "--" ]; then
-	echo 
+if [ "$con" = "Wired" ]; then
+	if [ $ethdev = "--" ];then
+		echo $no
+	else
+		echo  $ethdev
+	fi
 else
-	echo  $con
+	if [ "$dev" = "--" ]; then
+		echo $no
+	else
+		echo  $con
+	fi
 fi

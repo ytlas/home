@@ -22,11 +22,11 @@ assign [class="Thunderbird"] 6
 assign [class="Steam"] 7
 assign [class="Mullvad"] 8
 
-# Window border
-new_window pixel 1
+for_window [class="URxvt"] floating enable
 
 # Font for window titles. Will also be used by the bar unless a different font
 font $font
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #000000 #FFFFFF #000000 #2e9ef4   #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
@@ -44,12 +44,12 @@ bindsym $mod+Return exec rxvt-unicode
 
 # Change brightness
 bindsym XF86MonBrightnessDown exec "sudo /opt/sbin/bright -5 && pkill -RTMIN+1 i3blocks"
-bindsym XF86MonBrightnessUp exec "sudo /opt/sbin/bright +5 && pkill -RTMIN+1 i3blocks"
+bindsym XF86MonBrightnessUp exec   "sudo /opt/sbin/bright +5 && pkill -RTMIN+1 i3blocks"
 
 # Change master volume
-bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false; pactl set-sink-volume 0 -5% && pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false; pactl set-sink-volume 0 +5% && pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-    && pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+    && pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioMute exec        "amixer sset Master toggle && pkill -RTMIN+1 i3blocks"
 
 bindsym XF86Explorer exec "BLOCK_BUTTON=2 key_layout && pkill -RTMIN+1 i3blocks"
 
@@ -139,7 +139,7 @@ bindsym $mod+mod1+q exec "i3-msg exit"
 bar {
 	separator_symbol 
 	status_command ~/.i3/i3blockcond
-	position top
+	position bottom
 	font $font
 
 	colors {
