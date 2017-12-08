@@ -1,20 +1,24 @@
-#!/bin/bash
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-con=`nmcli connection show | sed '2q;d' | awk '{print $1;}'`
-dev=`nmcli connection show | sed '2q;d' | awk '{print $4;}'`
-ethdev=`nmcli connection show | sed '2q;d' | awk '{print $6;}'`
-no='<span color="red"></span>'
+from os import listdir
+from os import popen
 
-if [ "$con" = "Wired" ]; then
-	if [ $ethdev = "--" ];then
-		echo $no
-	else
-		echo  $ethdev
-	fi
-else
-	if [ "$dev" = "--" ]; then
-		echo $no
-	else
-		echo  $con
-	fi
-fi
+path = "/sys/class/net/"
+output = popen("nmcli")
+device = ""
+dict = {}
+
+line = output.readline()
+
+device = line.partition(':')[0]
+status = line.split(' ')[1]
+
+if status == "connected":
+    if device[0] == 'e': print("")
+
+    elif device[0] == 'w': print('')
+
+    else: print('Error')
+
+else: print('<span color="red"></span>')
