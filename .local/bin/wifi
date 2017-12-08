@@ -4,7 +4,6 @@
 from os import listdir
 from os import popen
 
-path = "/sys/class/net/"
 output = popen("nmcli")
 device = ""
 dict = {}
@@ -17,7 +16,7 @@ status = line.split(' ')[1]
 if status == "connected":
     if device[0] == 'e': print("")
 
-    elif device[0] == 'w': print('')
+    elif device[0] == 'w': print(' ' + line.partition('connected to ')[2])
 
     else: print('Error')
 
