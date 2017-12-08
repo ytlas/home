@@ -6,7 +6,7 @@ set $mod Mod4
 # Colors
 set $bg #FFFFFF
 set $fg #000000
-set $font pango:Terminus, Awesome 13
+set $font pango:Terminus, FontAwesome 13
 
 # Rules
 assign [class="Emacs"] 1
