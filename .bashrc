@@ -101,7 +101,7 @@ fi
 
 # If ~/.server exists, setup stuff for server environment
 if [ -f "$HOME/.config/.server" ];then
-	PS1="[SERVER] ${PS1}"
+	PS1="[${PURPLE}SRV${RESET}]${PS1}"
 fi
 
 ## Functions
