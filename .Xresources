@@ -1,12 +1,12 @@
 URxvt*scrollBar: false
 URxvt*depth: 32
-URxvt*background: #FFFFFF
+URxvt*background: #F5F5F5
 URxvt*foreground: #000000
 URxvt*font: xft:Terminus:size=12
 URxvt*letterSpace: 0
 URxvt*iso14755: False
 URxvt*iso14755_52: False
-URxvt*geometry: 50x20
+URxvt*geometry: 80x25
 URxvt*cursorColor: #AA00CC
 URxvt*internalBorder: 0
 URxvt*externalBorder: 0

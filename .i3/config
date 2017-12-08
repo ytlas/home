@@ -4,7 +4,7 @@ exec ~/.i3/init
 set $mod Mod4
 
 # Colors
-set $bg #FFFFFF
+set $bg #F5F5F5
 set $fg #000000
 set $font pango:Terminus, FontAwesome 13
 
@@ -28,13 +28,13 @@ for_window [class="URxvt"] floating enable
 font $font
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #000000 #FFFFFF #000000 #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #FFFFFF #000000 #FFFFFF #292d2e   #222222
-client.urgent           #000000 #FF0000 #FFFFFF #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          $fg     $bg     $fg     #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a $bg     #484e50   #5f676a
+client.unfocused        $bg     $fg     $bg     #292d2e   #222222
+client.urgent           $fg     #FF0000 $bg     #900000   #900000
+client.placeholder      $fg     #0c0c0c $bg     $fg       #0c0c0c
 
-client.background       #ffffff
+client.background       $bg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
