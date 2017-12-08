@@ -2,7 +2,7 @@
 xset r rate 200 75 &
 feh --bg-fill ~/Pictures/background.jpg &
 
-xrdb ~/.Xresources && urxvt -title initTerm -e sh -c screen &
+xrdb ~/.Xresources && urxvt -title initTerm -e sh -c screen -g 200x50 &
 emacs --eval '(server-start)' -fn Terminus &
 pavucontrol &
 chromium &
