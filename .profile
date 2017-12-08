@@ -1,7 +1,18 @@
 #!/bin/sh
 
 # Path
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:~/node_modules/.bin:~/.config/composer/vendor/bin/:~/.local/bin:/opt/bin:/opt/sbin:/usr/local/bin:/usr/sbin:/usr/local/games:/usr/games
+PATH=~/.local/bin
+PATH=$PATH:~/node_modules/.bin
+PATH=$PATH:~/.config/composer/vendor/bin/
+PATH=$PATH:/bin
+PATH=$PATH:/sbin
+PATH=$PATH:/usr/bin
+PATH=$PATH:/usr/sbin
+PATH=$PATH:/opt/bin:/opt/sbin
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/sbin
+PATH=$PATH:/usr/local/games
+PATH=$PATH:/usr/games
 
 # Editor
 EDITOR="emacsclient"
