@@ -100,7 +100,7 @@ elif [ -f "$HOME/.gentoo" ];then
 fi
 
 # If ~/.server exists, setup stuff for server environment
-if [ -f "$HOME/.server" ];then
+if [ -f "$HOME/.config/.server" ];then
 	PS1="[SERVER] ${PS1}"
 fi
 
