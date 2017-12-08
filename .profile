@@ -3,7 +3,8 @@
 # Path
 PATH=~/.local/bin
 PATH=$PATH:~/node_modules/.bin
-PATH=$PATH:~/.config/composer/vendor/bin/
+PATH=$PATH:~/.config/composer/vendor/bin
+PATH=$PATH:/usr/local/php70/bin
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
 PATH=$PATH:/usr/bin
