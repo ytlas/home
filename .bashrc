@@ -31,7 +31,7 @@ alias mkdir='mkdir -vp'
 alias pg='ping google.com'
 alias vi='$EDITOR'
 alias fl='du -hsx * | sort -rh | head -n'
-alias artisan="php artisan"
+alias art="php artisan"
 
 # SystemD aliases
 alias ctl=systemctl
