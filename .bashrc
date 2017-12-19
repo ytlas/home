@@ -34,12 +34,12 @@ alias fl='du -hsx * | sort -rh | head -n'
 alias art="php artisan"
 
 # SystemD aliases
-alias ctl=systemctl
-alias ctlo='systemctl stop'
-alias ctls='systemctl start'
-alias ctlr='systemctl restart'
-alias ctle='systemctl enable'
-alias ctld='systemctl disable'
+alias ctl='sudo systemctl'
+alias ctlo='sudo systemctl stop'
+alias ctls='sudo systemctl start'
+alias ctlr='sudo systemctl restart'
+alias ctle='sudo systemctl enable'
+alias ctld='sudo systemctl disable'
 
 # Media aliases
 alias adl='youtube-dl -x'
