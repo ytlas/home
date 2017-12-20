@@ -1,0 +1,1 @@
+<input type="$1" name="$2" placeholder="$3" $4>

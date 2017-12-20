@@ -1,0 +1,5 @@
+<form action="$1" method="POST">
+	$0
+
+	<button>$3</button>
+</form>

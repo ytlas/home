@@ -23,12 +23,14 @@
   :config (which-key-mode))
 (use-package expand-region :ensure t)
 (use-package web-mode :ensure t)
+(use-package php-mode :ensure t)
 (use-package ivy :ensure t
   :config (ivy-mode 1))
 (use-package swiper :ensure t)
 (use-package tex
   :ensure auctex)
 (use-package find-file-in-project :ensure t)
+(use-package yasnippet :ensure t)
 #+END_SRC
 
 * Modes
@@ -42,17 +44,22 @@
 (fringe-mode 8)
 (show-paren-mode 1)
 (display-time-mode 1)
+(yas-global-mode 1)
 #+END_SRC
 
 * Hooks
 #+BEGIN_SRC emacs-lisp
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.blade.php\\'" . web-mode))
 #+END_SRC
 
 * Variables
 #+BEGIN_SRC emacs-lisp
+;; Yasnippet
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+
 ;; Syntax highlight org code blocks
 (setq org-src-fontify-natively t)
 
@@ -85,15 +92,6 @@
 ;; Replaces yes-or-no prompts with y-or-n prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Folding
-; (defvar hs-special-modes-alist
-;  (mapcar 'purecopy
-;  '((c-mode "{" "}" "/[*/]" nil nil)
-;	(web-mode "{" "}" "/[*/]" nil nil)
-;	(c++-mode "{" "}" "/[*/]" nil nil)
-;	(bibtex-mode ("@\\S(*\\(\\s(\\)" 1))
-;	(java-mode "{" "}" "/[*/]" nil nil)
-;	(js-mode "{" "}" "/[*/]" nil))))
 #+END_SRC
 * Keybinds
 #+BEGIN_SRC emacs-lisp
@@ -119,6 +117,7 @@
 
 ;; Projects
 (global-set-key (kbd "C-c p f") 'find-file-in-project)
+(global-set-key (kbd "C-c p s g") 'projectile-grep)
 
 ;; Scroll-up and down
 (global-set-key (kbd "C-v") (lambda() (interactive) (scroll-up-command) (recenter)))

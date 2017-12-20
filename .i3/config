@@ -11,6 +11,7 @@ set $font pango:Terminus, FontAwesome 13
 # Rules
 assign [class="Emacs"] 1
 assign [class="jetbrains-phpstorm"] 1
+assign [class="libreoffice-writer"] 1
 assign [class="Firefox"] 2
 assign [class="Chromium"] 2
 assign [title="initTerm"] 3

@@ -31,7 +31,9 @@ alias mkdir='mkdir -vp'
 alias pg='ping google.com'
 alias vi='$EDITOR'
 alias fl='du -hsx * | sort -rh | head -n'
-alias art="php artisan"
+
+# PHP aliases
+alias art='php `git rev-parse --show-toplevel`/artisan'
 
 # SystemD aliases
 alias ctl='sudo systemctl'

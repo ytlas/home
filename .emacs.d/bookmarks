@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("logentcustoms"
+(("snippets"
+ (filename . "~/.emacs.d/snippets/")
+ (front-context-string . "html-mode\n  drwx")
+ (rear-context-string . "96 Dec 20 17:06 ")
+ (position . 215))
+("logentcustoms"
  (filename . "/ssh:183614_adam@ssh.binero.se:/storage/content/14/183614/customs.logent.se/public_html/")
  (front-context-string . "ajax\n  drwxr-sr-")
  (rear-context-string . "96 Oct 27 15:01 ")
