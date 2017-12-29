@@ -32,6 +32,8 @@ alias pg='ping google.com'
 alias vi='$EDITOR'
 alias fl='du -hsx * | sort -rh | head -n'
 
+alias tcli='transmission-cli'
+
 # PHP aliases
 alias art='php `git rev-parse --show-toplevel`/artisan'
 

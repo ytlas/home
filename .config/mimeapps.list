@@ -20,6 +20,7 @@ application/rdf+xml=firefox-esr.desktop;
 image/gif=firefox-esr.desktop;
 image/jpeg=firefox-esr.desktop;
 image/png=firefox-esr.desktop;
+video/x-matroska=mpv.desktop;vlc.desktop;
 
 [Default Applications]
 x-scheme-handler/http=userapp-Firefox-PQ5JBZ.desktop
