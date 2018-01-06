@@ -1,5 +1,4 @@
-exec ~/.i3/init
-
+## Variables
 # Set modifier to Superkey
 set $mod Mod4
 
@@ -7,8 +6,29 @@ set $mod Mod4
 set $bg #F5F5F5
 set $fg #000000
 set $font pango:Terminus, FontAwesome 13
+font $font
 
-# Rules
+# Startup-programs and configurations.
+exec ~/.i3/init
+
+# i3-bar and i3-blocks.
+bar {
+	separator_symbol 
+	status_command ~/.i3/i3blockcond
+	position bottom
+	font $font
+
+	colors {
+		background         $bg
+		statusline         $fg
+		focused_workspace  $bg $fg $bg
+		active_workspace   $bg #EEEEEE $bg
+		inactive_workspace $bg $bg $fg
+		urgent_workspace   $bg #FF0000 $fg
+	}
+}
+
+## Rules
 assign [class="Emacs"] 1
 assign [class="jetbrains-phpstorm"] 1
 assign [class="libreoffice-writer"] 1
@@ -23,10 +43,8 @@ assign [class="Thunderbird"] 6
 assign [class="Steam"] 7
 assign [class="Mullvad"] 8
 
+# Floats etc.
 for_window [class="URxvt"] floating enable
-
-# Font for window titles. Will also be used by the bar unless a different font
-font $font
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $fg     $bg     $fg     #2e9ef4   #285577
@@ -34,12 +52,12 @@ client.focused_inactive #333333 #5f676a $bg     #484e50   #5f676a
 client.unfocused        $bg     $fg     $bg     #292d2e   #222222
 client.urgent           $fg     #FF0000 $bg     #900000   #900000
 client.placeholder      $fg     #0c0c0c $bg     $fg       #0c0c0c
-
 client.background       $bg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+## Keybinds
 # Start a terminal
 bindsym $mod+Return exec rxvt-unicode
 
@@ -52,6 +70,7 @@ bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-    && pkill -RTMIN+1 i
 bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+    && pkill -RTMIN+1 i3blocks"
 bindsym XF86AudioMute exec        "amixer sset Master toggle && pkill -RTMIN+1 i3blocks"
 
+# Toggle layout between english - swedish
 bindsym $mod+z exec "BLOCK_BUTTON=2 key_layout && pkill -RTMIN+1 i3blocks"
 
 # Lock
@@ -77,14 +96,17 @@ bindsym $mod+p focus up
 bindsym $mod+f focus right
 bindsym $mod+c focus right
 
-# split in horizontal orientation
+# Split in horizontal orientation.
 bindsym $mod+h split h
 
-# split in vertical orientation
+# Split in vertical orientation.
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
-#bindsym $mod+f fullscreen
+# Toggle tiling / floating.
+bindsym $mod+s floating toggle
+
+# Enter fullscreen mode for the focused container.
+bindsym $mod+Shift+s fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -92,8 +114,6 @@ bindsym $mod+t layout tabbed
 bindsym $mod+space layout toggle split
 bindsym $mod+q sticky toggle
 
-# toggle tiling / floating
-bindsym $mod+s floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+e focus mode_toggle
@@ -134,21 +154,3 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+mod1+q exec "i3-msg exit"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-	separator_symbol 
-	status_command ~/.i3/i3blockcond
-	position bottom
-	font $font
-
-	colors {
-		background         $bg
-		statusline         $fg
-		focused_workspace  $bg $fg $bg
-		active_workspace   $bg #EEEEEE $bg
-		inactive_workspace $bg $bg $fg
-		urgent_workspace   $bg #FF0000 $fg
-	}
-}
