@@ -52,7 +52,7 @@ bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-    && pkill -RTMIN+1 i
 bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+    && pkill -RTMIN+1 i3blocks"
 bindsym XF86AudioMute exec        "amixer sset Master toggle && pkill -RTMIN+1 i3blocks"
 
-bindsym XF86Explorer exec "BLOCK_BUTTON=2 key_layout && pkill -RTMIN+1 i3blocks"
+bindsym $mod+z exec "BLOCK_BUTTON=2 key_layout && pkill -RTMIN+1 i3blocks"
 
 # Lock
 bindsym $mod+l exec ~/.local/bin/lock
