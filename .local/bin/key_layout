@@ -26,8 +26,10 @@ layout=`setxkbmap -query | awk '
 
 if [ $BLOCK_BUTTON ]; then
 	case $layout in
-		'us') setxkbmap se ; layout=se;;
-		*) setxkbmap us ; layout=us;;
+		'us') setxkbmap se && xmodmap ~/.config/.xmodmap-se
+			  layout=se;;
+		*) setxkbmap us && xmodmap ~/.config/.xmodmap-eng
+		   layout=us;;
 	esac
 
 	pkill -RTMIN+1 i3blocks
