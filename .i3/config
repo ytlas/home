@@ -76,6 +76,9 @@ bindsym $mod+z exec "BLOCK_BUTTON=2 key_layout && pkill -RTMIN+1 i3blocks"
 # Lock
 bindsym $mod+l exec ~/.local/bin/lock
 
+# Lock and hibernate
+bindsym $mod+Shift+l exec ~/.local/bin/lock && sudo sh -c "echo mem>/sys/power/state" && sudo systemctl restart NetworkManager
+
 # Kill focused window
 bindsym $mod+w kill
 
