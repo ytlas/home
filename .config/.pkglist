@@ -30,3 +30,5 @@ network-manager
 network-manager-gnome
 imagemagick
 fonts-font-awesome
+udisks2
+udiskie

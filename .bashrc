@@ -31,7 +31,6 @@ alias mkdir='mkdir -vp'
 alias pg='ping google.com'
 alias vi='$EDITOR'
 alias fl='du -hsx * | sort -rh | head -n'
-
 alias tcli='transmission-cli'
 
 # PHP aliases
@@ -119,4 +118,10 @@ function makea(){
 	gcc $1.c -o $1
 }
 
+function um(){
+	udiskie-mount /dev/${@}
+}
+function uu(){
+	udiskie-umount /dev/${@}
+}
 ### EOF
