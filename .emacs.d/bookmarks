@@ -65,8 +65,8 @@
  (rear-context-string . "n't work right.\n")
  (position . 246))
 ("init"
- (filename . "~/.emacs.d/init.el")
- (front-context-string . ";;; package --- ")
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "* Init\n#+BEGIN_S")
  (rear-context-string)
  (position . 1))
 ("Emacs cheat sheet"
