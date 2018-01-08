@@ -7,3 +7,22 @@ function dd(){
 function um(){ udiskie-mount /dev/${@}; }
 
 function uu(){ udiskie-umount /dev/${@}; }
+
+function poweroff() {
+	read -p "Are you sure you want to shutdown the machine? " -n 1 -r
+	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+		return 1
+	fi
+
+	sudo poweroff
+}
+
+function reboot(){
+	read -p "Are you sure you want to reboot the machine? " -n 1 -r
+	echo    # (optional) move to a new line
+	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+		return 1
+	fi
+
+	sudo reboot
+}
