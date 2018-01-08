@@ -10,4 +10,4 @@ thunderbird &
 nm-applet &
 gnome-settings-daemon &
 redshift -l 57:12 &
-udiskie &
+udiskie --tray &
