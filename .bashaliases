@@ -13,11 +13,12 @@ alias suspend='sudo sh -c "echo mem>/sys/power/state" && sudo systemctl restart 
 
 # File management
 alias ls='ls -1F --color=always'
+alias lsl='ls -1Fl --color=always'
 alias lsa='ls -1FA'
-alias cl='clear'
-alias mv='mv -v'
-alias cp='cp -v'
-alias rm='rm -v'
+alias lsal='ls -1FAl'
+alias mv='mv -vi'
+alias cp='cp -vri'
+alias rm='rm -vri'
 alias ln='ln -v'
 alias mkdir='mkdir -vp'
 
