@@ -19,18 +19,18 @@
 #+END_SRC
 ** use-package
 #+BEGIN_SRC emacs-lisp
-(use-package which-key :ensure t
-  :config (which-key-mode))
-(use-package expand-region :ensure t)
-(use-package web-mode :ensure t)
-(use-package php-mode :ensure t)
-(use-package ivy :ensure t
-  :config (ivy-mode 1))
-(use-package swiper :ensure t)
-(use-package tex
-  :ensure auctex)
+(use-package which-key            :ensure t :config (which-key-mode))
+(use-package expand-region        :ensure t)
+(use-package web-mode             :ensure t)
+(use-package php-mode             :ensure t)
+(use-package ivy                  :ensure t :config (ivy-mode 1))
+(use-package swiper               :ensure t)
+(use-package tex                  :ensure auctex)
 (use-package find-file-in-project :ensure t)
-(use-package yasnippet :ensure t)
+(use-package yasnippet            :ensure t)
+(use-package projectile           :ensure t)
+(use-package try                  :ensure t)
+(use-package counsel-projectile   :ensure t)
 #+END_SRC
 
 * Modes
@@ -45,6 +45,8 @@
 (show-paren-mode 1)
 (display-time-mode 1)
 (yas-global-mode 1)
+(projectile-mode 1)
+(counsel-projectile-mode 1)
 #+END_SRC
 
 * Hooks

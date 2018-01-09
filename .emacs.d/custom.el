@@ -17,7 +17,7 @@
  '(line-spacing 0.2)
  '(package-selected-packages
    (quote
-	(swipe swiper find-file-in-project projectile company yasnippet flycheck smart-mode-line tao-theme apt-sources-list hideshow-org fill-column-indicatior flymake-php counsel-projectile consel-projectile system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region)))
+	(counsel-projectile-mode swipe swiper find-file-in-project projectile company yasnippet flycheck smart-mode-line tao-theme apt-sources-list hideshow-org fill-column-indicatior flymake-php counsel-projectile consel-projectile system-packages rtags tabbar-ruler helm ivy org-bullets which-key try use-package magit w3 auctex php-mode folding tabbar web-mode expand-region)))
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(vc-annotate-background "#F6F6F6")
