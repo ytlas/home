@@ -28,7 +28,7 @@ fi
 # Aliases
 source $PD/bashaliases
 
-# Prompt format
+## Prompt format
 source $PD/bashcolors
 PS1="${RED}\u${RESET}{${BLUE}\w${RESET}}-> "
 

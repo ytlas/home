@@ -1,5 +1,0 @@
-#!/bin/bash
-
-ENV_DISTRO=debian
-ENV_TYPE=laptop
-ENV_STARTX=1
