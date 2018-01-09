@@ -26,7 +26,7 @@ layout=`setxkbmap -query | awk '
 
 if [ $BLOCK_BUTTON ]; then
 	case $layout in
-		'us') setxkbmap se && xmodmap ~/.config/qwerty/xmodmap_se
+		us) setxkbmap se && xmodmap ~/.config/qwerty/xmodmap_se
 			  layout=se;;
 		*) setxkbmap us && xmodmap ~/.config/qwerty/xmodmap_eng
 		   layout=us;;
