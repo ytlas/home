@@ -11,6 +11,12 @@ function um() { udiskie-mount /dev/${@}; }
 
 function uu() { udiskie-umount /dev/${@}; }
 
+function setup() {
+	if [ "$ENV_DISTRO" == debian ]; then
+		sudo apt install `cat $PD/packagelist`
+	fi
+}
+
 function poweroff() {
 	read -p "Are you sure you want to shutdown the machine? " -n 1 -r
 	if [[ ! $REPLY =~ ^[Yy]$ ]]; then

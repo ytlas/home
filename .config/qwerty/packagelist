@@ -13,7 +13,7 @@ screen
 rxvt-unicode
 mpv
 vlc
-deluge
+transmission-cli
 libreoffice
 firefox-esr
 gnome-settings-daemon
@@ -31,4 +31,5 @@ network-manager-gnome
 imagemagick
 fonts-font-awesome
 udisks2
-udiskiegnome-tweak-tool
+udiskie
+gnome-tweak-tool
