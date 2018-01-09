@@ -12,7 +12,7 @@ shopt -s dotglob
 # Functions
 if [ -f ~/.bashfunctions ]; then source ~/.bashfunctions; fi
 
-# Editor
+# Set editor, depending on what is available.
 if exists emacs && test -e /tmp/emacs1000/server; then
 	EDITOR=emacsclient
 elif exists emacs; then
