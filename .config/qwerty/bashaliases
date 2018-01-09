@@ -1,0 +1,102 @@
+#!/bin/bash
+
+## Aliases
+alias sudo='sudo '
+alias edit=$EDITOR
+
+# List files and directories by size, argument is how many files/folders to show.
+alias fl='du -hsx * | sort -rh | head -n'
+
+# Suspends the computer.
+alias suspend='sudo sh -c "echo mem > /sys/power/state" && sudo systemctl restart NetworkManager'
+
+# File management
+alias ls='ls -1F --color=always'
+alias lsl='ls -1Fl --color=always'
+alias lsa='ls -1FA'
+alias lsal='ls -1FAl'
+alias mv='mv -vi'
+alias cp='cp -vri'
+alias rm='rm -vri'
+alias ln='ln -v'
+alias mkdir='mkdir -vp'
+
+# Application specific aliases
+alias tcli='transmission-cli'
+
+# PHP aliases
+alias art='php `git rev-parse --show-toplevel`/artisan'
+
+# SystemD aliases
+alias ctl='sudo systemctl'
+alias ctlo='sudo systemctl stop'
+alias ctls='sudo systemctl start'
+alias ctlr='sudo systemctl restart'
+alias ctle='sudo systemctl enable'
+alias ctld='sudo systemctl disable'
+
+# Media aliases
+alias adl='youtube-dl -x'
+alias vdl='youtube-dl'
+
+# Git aliases
+# Commit and push
+alias gcp='git commit && git push'
+
+# Commit all modified tracked files and push
+alias gcap='git commit -a && git push'
+
+# Commit all modified tracked files with predefined message and push.
+alias gcapa='git commit -a -m ":)" && git push'
+
+## Distribution-specific aliases
+if [ $ENV_DISTRO ]; then
+	case $ENV_DISTRO in
+		# If in a debian distribution, setup crud for debian-type systems.
+		debian)
+			pmp="sudo apt"
+			lpmp="sudo dpkg"
+			alias y='${pmp}'
+			alias i='${pmp} install'
+			alias r='${pmp} remove'
+			alias c='sudo apt autoclean && sudo aptitude purge ~c'
+			alias u='${pmp} update && ${pmp} -u dist-upgrade'
+			alias s='apt search'
+			alias ly='${lpmp}'
+			alias li='${lpmp} -i'
+			;;
+		slackware)
+			pmp="sudo slackpkg"
+			alias y='${pmp}'
+			alias i='${pmp} install'
+			alias r='${pmp} remove'
+			alias c='sudo pkgtool'
+			alias u='${pmp} update&&${pmp} upgrade-all'
+			alias s='${pmp} search'
+			alias li='sudo installpkg'
+			alias lr='sudo removepkg'
+			;;
+		rhel)
+			pmp="sudo yum"
+			alias y='${pmp}'
+			alias i='${pmp} install'
+			alias r='${pmp} erase'
+			alias u='${pmp} check-update&&${pmp} update'
+			alias s='${pmp} search'
+			;;
+		arch)
+			pmp="sudo pacman"
+			alias y='${pmp}'
+			alias i='${pmp} -S'
+			alias r='${pmp} -Rns'
+			alias u='${pmp} -Syu'
+			;;
+		gentoo)
+			pmp="sudo emerge"
+			alias y='${pmp}'
+			alias i='${pmp} --ask --verbose'
+			alias r='${pmp} -cav'
+			alias s='emerge --search'
+			;;
+	esac
+fi

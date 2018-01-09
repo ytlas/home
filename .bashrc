@@ -4,13 +4,15 @@
 ## Init
 GLOBIGNORE=".:.."
 shopt -s dotglob
+PD=~/.config/qwerty
+source $PD/config
 
 # Bash completion
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 	. /usr/share/bash-completion/bash_completion
 
 # Functions
-if [ -f ~/.bashfunctions ]; then source ~/.bashfunctions; fi
+source $PD/bashfunctions
 
 # Set editor, depending on what is available.
 if exists emacs && test -e /tmp/emacs1000/server; then
@@ -24,17 +26,15 @@ elif exists vi; then
 fi
 
 # Aliases
-if [ -f ~/.bashaliases ]; then source ~/.bashaliases; fi
+source $PD/bashaliases
 
 # Prompt format
-if [ -f ~/.bashcolors ]; then
-	source ~/.bashcolors
-	PS1="${RED}\u${RESET}{${BLUE}\w${RESET}}-> "
+source $PD/bashcolors
+PS1="${RED}\u${RESET}{${BLUE}\w${RESET}}-> "
 
-	# If ~/.config/.server exists, setup stuff for server environment
-	if [ -f "$HOME/.config/.server" ];then
-		PS1="[${PURPLE}SRV${RESET}]${PS1}"
-	fi
+# If ~/.config/.server exists, setup stuff for server environment
+if [ "$ENV_TYPE" == server ];then
+	PS1="[${PURPLE}SRV${RESET}]${PS1}"
 fi
 
 ### EOF

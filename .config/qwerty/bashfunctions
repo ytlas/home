@@ -1,6 +1,9 @@
 #!/bin/bash
 
 ## Functions
+# Returns 1 or 0, depending on whether the specified program is available.
+function exists() { type "$1" >/dev/null 2>/dev/null; }
+
 # Make dd format more conventional.
 function dd() { sudo dd bs=4M if=$PWD/${1} of=${2}; }
 
@@ -25,9 +28,4 @@ function reboot() {
 	fi
 
 	sudo reboot
-}
-
-# Returns 1 or 0, depending on whether the specified program is available.
-exists() {
-  type "$1" >/dev/null 2>/dev/null
 }
