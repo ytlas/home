@@ -1,13 +1,37 @@
 #!/bin/sh
+
+###
+# Code to be run when starting an wm.
+###
+
+## Init
 xset r rate 200 75 &
 feh --bg-fill ~/Pictures/background.jpg &
 
-xrdb ~/.Xresources && urxvt -title initTerm -e sh -c screen -g 200x50 &
-emacs --eval '(server-start)' -fn "Terminus 12" &
-pavucontrol &
-firefox &
-thunderbird &
-nm-applet &
-gnome-settings-daemon &
-redshift -l 57:12 &
+## Applications
+# Start udiskie with an interactive tray icon.
 udiskie --tray &
+
+# NetworkManager tray icon.
+nm-applet &
+
+# Settings daemon.
+gnome-settings-daemon &
+
+# Redshift, for eyes. Currently set for sweden.
+redshift -l 57:12 &
+
+# After parsing Xresources, start the initial terminal.
+xrdb ~/.Xresources && urxvt -title initTerm -e sh -c screen -g 200x50 &
+
+# Start Emacs GUI with a server.
+emacs --eval '(server-start)' -fn "Terminus 12" &
+
+# Audio mixer.
+pavucontrol &
+
+# Browser.
+firefox &
+
+# Mail
+thunderbird &

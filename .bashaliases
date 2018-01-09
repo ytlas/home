@@ -2,7 +2,6 @@
 
 ## Aliases
 alias sudo='sudo '
-alias edit=$EDITOR
 alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
 
 # List files and directories by size, argument is how many files/folders to show.
