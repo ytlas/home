@@ -2,13 +2,13 @@
 
 ## Aliases
 alias sudo='sudo '
-alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
+alias edit=$EDITOR
 
 # List files and directories by size, argument is how many files/folders to show.
 alias fl='du -hsx * | sort -rh | head -n'
 
 # Suspends the computer.
-alias suspend='sudo sh -c "echo mem>/sys/power/state" && sudo systemctl restart NetworkManager'
+alias suspend='sudo sh -c "echo mem > /sys/power/state" && sudo systemctl restart NetworkManager'
 
 # File management
 alias ls='ls -1F --color=always'

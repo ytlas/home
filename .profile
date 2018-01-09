@@ -16,7 +16,10 @@ PATH=$PATH:/usr/local/games
 PATH=$PATH:/usr/games
 
 # Editor
-EDITOR="emacsclient"
+if exists emacs && test -e /tmp/emacs1000/server; then export EDITOR=emacsclient
+elif exists emacs; then	export EDITOR="emacs -nw -q"
+elif exists nano; then export EDITOR=nano
+fi
 
 # Export variables
 export PATH EDITOR

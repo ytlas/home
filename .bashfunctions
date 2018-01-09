@@ -8,36 +8,6 @@ function um(){ udiskie-mount /dev/${@}; }
 
 function uu(){ udiskie-umount /dev/${@}; }
 
-function edit(){
-	if exists emacs && test -e /tmp/emacs1000/server; then
-		emacsclient ${@}
-	elif exists emacs; then
-		emacs -nw -q ${@}
-	elif exists nano; then
-		nano ${@}
-	else
-		echo "Didn't find an editor, exiting."
-		return 0
-	fi
-
-	return 1
-}
-
-function sedit(){
-	if exists emacs && test -e /tmp/emacs1000/server; then
-		EDITOR=emacsclient sudoedit ${@}
-	elif exists emacs; then
-		EDITOR="emacs -nw -q" sudoedit ${@}
-	elif exists nano; then
-		EDITOR=nano sudoedit ${@}
-	else
-		echo "Didn't find an editor, exiting."
-		return 0
-	fi
-
-	return 1
-}
-
 function poweroff() {
 	read -p "Are you sure you want to shutdown the machine? " -n 1 -r
 	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
